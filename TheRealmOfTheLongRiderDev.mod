@@ -1,4 +1,4 @@
-name="LotR: Realms in Exile Developer"
+name="The Realm of the Long Rider, for RiE"
 tags={
 	"Total Conversion"
 	"Gameplay"
@@ -15,4 +15,4 @@ replace_path="history/titles"
 replace_path="common/bookmark_portraits"
 replace_path="tests"
 supported_version="1.12.*"
-path="mod/LotRRealmsInExileDev"
+path="mod/TheRealmOfTheLongRiderDev"
