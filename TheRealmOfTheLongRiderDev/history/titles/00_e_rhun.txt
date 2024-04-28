@@ -1,5 +1,5 @@
 ### From MERP and LUSH ###
-# nayal_
+# c_nabal_mayzri
 # Ûvatha reappeared in Middle-earth around T.A. 1050, returning to his old abode at Olbamarl in the southwesternmost spur of the Ephel Dúath
 # Tol Súlereb (S."Lonewind isle") or Ugadhol Buruth (BS."Isle of the outcast") (Tol Buruth or in RiE called Nabal Mayzri) was the largest island on the Rhûnaer. It was known to the indigenous Sea-Easterlings as Egil Dorn. The island was known as a source of evil to the Free peoples, home to a temple of the Dark Worship which was guarded by fallen Shapeshifters and regarded by some as the secret source of the Shapeshifter-disease. In Elendor MUSH, the island is the site of a tower sometimes inhabited by The Ninth of the Nazgûl, which may be identified with the above temple.
 # 
@@ -304,12 +304,19 @@ d_dacranamel = {
 #	}
 }
 
-c_nabal_mayzri = {
-    4082.3.12 = {
-        holder = nazgul9 # Ovatha the Black Horseman
+d_tol_buruth = {
+    6050.8.22 = {
+        holder = nazgul9 # Ovatha the Long Rider
         change_development_level = 6
     }
-}    
+}
+
+c_tol_buruth = {
+    6050.8.22 = {
+        holder = nazgul9 # Ovatha the Long Rider
+        change_development_level = 6
+    }
+}   
 
 c_lest = {
     4186.1.22 = {

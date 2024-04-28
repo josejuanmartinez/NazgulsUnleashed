@@ -181,19 +181,19 @@
 	holding = none
 }
 
-##	Nabal Mayzri (c_nabal_mayzri)
+##	Tol Buruth (c_tol_buruth)
 
-3694 = {	# Tol Sureleb (b_egil_dorn)
+3694 = {	# Tol Buruth (b_tol_buruth)
+	#culture = igath
+	#religion = faith_kerkassk
+	#holding = castle_holding
+
 	culture = ringwraith
 	religion = lidless_eye
 	holding = castle_holding
-	5.3.12 = {			
-		special_building_slot = wonder_temple_sulereb_01
-		special_building = wonder_temple_sulereb_01
-	}
-	3589.1.1 = {
-		special_building = wonder_temple_sulereb_02
+	6050.8.22 = {		
 		buildings = {
+			castle_03
 			common_tradeport_05
 			orc_siege_works_03
 			warg_pits_03
@@ -201,10 +201,22 @@
 	}
 }
 
-3695 = {	#Nabal Mayzri (b_nabal_mayzri)
-	culture = igath
-	religion = faith_kerkassk
+3695 = {	#Egil Dorn (b_egil_dorn)
+	#culture = igath
+	#religion = faith_kerkassk
+	#holding = church_holding
+	
+	culture = ringwraith
+	religion = lidless_eye
 	holding = church_holding
+	
+	5.3.12 = {			
+		special_building_slot = wonder_temple_sulereb_01
+		special_building = wonder_temple_sulereb_01
+	}
+	3589.1.1 = {
+		special_building = wonder_temple_sulereb_02
+	}
 }
 
 ###	Sûrûbeki (d_surubeki)

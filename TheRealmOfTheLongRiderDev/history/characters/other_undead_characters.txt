@@ -660,8 +660,9 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 	}
 
 	
-	6984.1.1 = {
+	6050.8.22 = {
 		effect = {
+			add_unpressed_claim = title:e_rhovanion
 			create_character_memory = {
 				type = ascended_throne_memory
 			}
@@ -669,7 +670,7 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 				save_scope_as = ascended_throne_memory
 				set_variable = {
 					name = landed_title
-					value = title:c_nabal_mayzri
+					value = title:e_ovatha_unleashed
 				}
 			}
 		}

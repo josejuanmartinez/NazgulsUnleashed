@@ -1,0 +1,1564 @@
+﻿
+
+################################
+# Free Peoples of Middle-earth #
+################################
+
+### DÚNEDAIN ###
+halifirien = {
+	county = c_everholt
+	barony = b_halifirien
+	character_modifier = {
+		name = holy_site_halifirien_effect_name
+		direct_vassal_opinion = 5
+	}
+}
+
+minas_tirith = {
+	county = c_minas_tirith
+	character_modifier = {
+		direct_vassal_opinion = 5
+	}
+}
+
+tharagrondost = {
+	county = c_tharagrondost
+	character_modifier = {
+		different_faith_liege_opinion = 10
+	}
+}
+
+minas_ithil = {
+	county = c_minas_ithil
+	character_modifier = {
+		heavy_infantry_damage_mult = 0.05
+	}
+}
+
+pelargir = { # Sacred pool to Ulmo located here, ancient Numenorean colony
+	county = c_pelargir
+	character_modifier = {
+		stewardship_per_piety_level = 1
+		monthly_piety = 0.3
+	}
+}
+
+
+dol_amroth = {
+	county = c_dol_amroth
+	character_modifier = {
+		heavy_cavalry_damage_mult = 0.1
+		heavy_cavalry_pursuit_mult = 0.1
+	}
+}
+
+imrazor_hallow = { #Burial Site of the Princes of Belfalas, sacred to Uinen 
+	county = c_fortolfalas
+	barony = b_gilros 
+	character_modifier = {
+		naval_movement_speed_mult = 0.15
+		prowess_per_piety_level = 1
+	}
+}
+
+barrow_downs = {
+	county = c_dol_daergorthad
+	barony = b_gorthadun
+	character_modifier = {
+		monthly_piety_gain_mult = 0.1
+		dynasty_opinion = 5
+	}
+}
+
+annuminas = {
+	county = c_annuminas
+	barony = b_annuminas
+	character_modifier = {
+		domain_tax_same_faith_mult = 0.1
+		long_reign_bonus_mult = 1
+	}
+}
+
+lond_daer = {
+	county = c_lond_daer
+	barony = b_lond_daer
+	character_modifier = {
+		diplomacy_per_piety_level = 1
+		supply_duration = 0.1
+	}
+}
+
+### ELVES ###
+# Lothlorien
+caras_galadhon = { # The Heart of Elvendom on Earth
+	county = c_caras_galadhon
+	character_modifier = {
+		controlled_province_advantage = 10
+		monthly_piety = 1
+	}
+}
+
+cerin_amroth = { # Capital of Amdir and Amroth
+	county = c_cerin_amroth
+	character_modifier = {
+		development_growth_factor = 0.1
+		monthly_piety = 0.3
+	}
+}
+
+# Gondor
+edhellond = {
+	county = c_edhellond
+	character_modifier = {
+		direct_vassal_opinion = 5
+	}
+}
+
+# Greenwood
+amon_lanc = {
+	county = c_amon_lanc
+	character_modifier = {
+		knight_limit = 2
+		knight_effectiveness_mult = 0.2
+	}
+}
+
+aradhrynd = {
+	county = c_aradhrynd
+	character_modifier = {
+		martial = 1
+		stewardship = 1
+	}
+}
+
+amarthrynd = { # Caves of Fate, of old a spiritual place of the Silvan Elves
+	county = c_amarthrynd
+	character_modifier = {
+		forest_advantage = 6
+		deep_forest_advantage = 6
+		forest_cancel_negative_supply = yes
+		deep_forest_cancel_negative_supply = yes
+		forest_attrition_mult = -0.5
+		deep_forest_attrition_mult = -0.5
+	}
+}
+
+##########################
+### Dwarven Holy Sites ###
+##########################
+
+mirrormere = {
+	county = c_dimrill_dale
+	barony = b_mirrormere
+	character_modifier = {
+		monthly_piety = 0.5
+		stress_gain_mult = -0.1
+	}
+}
+durinsthrone = {
+	county = c_durins_hall
+	barony = b_durins_hall
+	character_modifier = {
+		long_reign_bonus_mult = 0.5
+		vassal_tax_mult = 0.05
+	}
+}
+gundabadhallofawakening = {
+	county = c_chamber_of_awakening
+	barony = b_chamber_of_awakening
+	character_modifier = {
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.1
+		same_faith_opinion = 10
+	}
+}
+dolmed = {
+	county = c_lugnaurdsir
+	barony = b_lugnaurdsir
+	character_modifier = {
+		same_faith_opinion = 5
+		stewardship = 1
+	}	
+}
+erebor = { # Arkenstone, Thorin's tomb
+	county = c_throne_of_erebor
+	barony = b_throne_of_erebor
+	character_modifier = {
+		stewardship_per_piety_level = 1
+		monthly_piety_gain_mult = 0.1
+	}	
+}
+
+### Eriador ###
+
+rivendell = {
+	county = c_imladris
+	barony = b_imladris
+	character_modifier = {
+		monthly_learning_lifestyle_xp_gain_mult = 0.1
+		stress_gain_mult = -0.1
+	}
+}
+
+eregion = {
+	county = c_ost_in_edhil
+	barony = b_ost_in_edhil
+	character_modifier = {
+		build_gold_cost = -0.05
+		build_speed = -0.05
+	}
+}
+
+# Shire
+michel_delving = {
+	county = c_westfarthing
+	barony = b_michel_delving
+	character_modifier = {
+		tax_mult = 0.1
+		same_culture_opinion = 5
+	}
+}
+
+tookborough = {
+	county = c_tookland
+	barony = b_tookborough
+	character_modifier = {
+		build_gold_cost = -0.05
+		vassal_opinion = 10
+	}
+}
+
+buckland = {
+	county = c_buckland
+	barony = b_bucklebury
+	character_modifier = {
+		fertility = 0.15
+	}
+}
+
+marishborough = {
+	county = c_swanfleet
+	barony = b_marishborough
+	character_modifier = {
+		wetlands_levy_size = 0.1
+		wetlands_supply_limit_mult = 0.25
+
+	}
+}
+
+gladden_fields = {
+	county = c_gladden_fields
+	character_modifier = {
+		wetlands_construction_gold_cost = -0.15
+		wetlands_holding_construction_gold_cost = -0.15
+	}
+}
+
+### Lindon ###
+tower_hills = {
+	county = c_elostirion
+	barony = b_elostirion
+	character_modifier = {
+		opinion_of_same_faith = 5
+		monthly_piety = 0.3
+	}
+}
+
+grey_haven_north = {
+	county = c_mithannunlond
+	barony = b_mithannunlond
+	character_modifier = {
+		stewardship_per_piety_level = 1
+		direct_vassal_opinion = 5
+	}
+}
+
+grey_haven_south = {
+	county = c_mithrhulond
+	barony = b_mithrhulond
+	character_modifier = {
+		diplomacy_per_piety_level = 1
+		fellow_vassal_opinion = 5
+	}
+}
+
+forlond = {
+	county = c_forlond
+	barony = b_forlond
+	character_modifier = {
+		build_gold_cost = -0.05
+		build_speed = -0.05
+	}
+}
+
+harlond = {
+	county = c_harlond
+	barony = b_harlond
+	character_modifier = {
+		same_culture_opinion = 5
+		knight_limit = 1
+	}
+}
+
+himring = {
+	county = c_himring
+	barony = b_himring
+	character_modifier = {
+		defender_advantage = 5
+		prowess_per_piety_level = 1
+	}
+}
+
+amon_ereb = {
+	county = c_amon_ereb
+	barony = b_amon_ereb
+	character_modifier = {
+		knight_effectiveness_mult = 0.1
+		monthly_piety = 0.3
+	}
+}
+
+helevorn = {
+	county = c_helevorn
+	barony = b_helevorn
+	character_modifier = {
+		tax_mult = 0.1
+		vassal_tax_mult = 0.05
+	}
+}
+
+# Rhudaur
+athaircuile = {
+	county = c_glinkinlin
+	barony = b_athaircuile
+	character_modifier = {
+		dynasty_opinion = 10
+		monthly_piety = 0.4
+	}
+}
+
+moin_duldachd = {
+	county = c_moin_duldachd
+	barony = b_moin_duldachd
+	character_modifier = {
+		stewardship_per_piety_level = 1
+	}
+}
+
+creagtaile = {
+	county = c_creagtaile
+	barony = b_glin_a_creag
+	character_modifier = {
+		prowess_per_prestige_level = 1
+		monthly_prestige_gain_mult = 0.1
+	}
+}
+
+# Cardolan
+suthure = {
+	county = c_mistalonde
+	barony = b_mistalonde
+	character_modifier = {
+		martial = 1
+		monthly_prestige = 0.2
+	}
+}
+
+andronn = {
+	county = c_argond
+	barony = b_argond
+	character_modifier = {
+		men_at_arms_maintenance = -0.05
+		tax_mult = 0.05
+	}
+}
+
+
+turgrisuisge = {
+	county = c_girithlindor
+	barony = b_barad_girithlin
+	character_modifier = {
+		defender_advantage = 5
+	}
+}
+
+
+
+# Lindon
+
+# Avarin Holy Sites
+eglarond = { # Grove of Willowshanks
+	county = c_padrand
+	barony = b_esgarond
+	character_modifier = {
+		monthly_piety = 0.1
+		monthly_learning_lifestyle_xp_gain_mult = 0.05
+	}
+}
+
+caras_torn = { # Capital of Nelornieth
+	county = c_caras_torn
+	barony = b_caras_torn
+	character_modifier = {
+		vassal_opinion = 5
+		build_gold_cost = -0.05
+	}
+}
+
+egil_dorn = { # Obsidian temple in the Sea of Rhûn
+	county = c_tol_buruth
+	barony = b_egil_dorn
+	character_modifier = {
+		men_at_arms_maintenance = -0.1
+	}
+}
+
+### ROHIRRIM ###
+eorlshallow = {
+	county = c_northundeep
+	barony = b_eorlshallow
+	character_modifier = {
+		name = holy_site_earlshallow_effect_name
+		monthly_piety_gain_per_knight_mult = 0.02
+		heavy_infantry_damage_mult = 0.05
+	}
+}
+edoras = {
+	county = c_kingstead
+	barony = b_edoras
+	character_modifier = {
+		short_reign_duration_mult = -0.1
+		long_reign_bonus_mult = 0.1
+	}
+}
+aglarond = {
+	county = c_helmsdeep
+	barony = b_deepingcoomb
+	character_modifier = {
+		name = holy_site_aglarond_effect_name
+		prowess_per_piety_level = 1
+		supply_duration = 0.2
+	}
+}
+amon_anwar = {
+	county = c_everholt
+	barony = b_halifirien
+	character_modifier = {
+		name = holy_site_halifirien_effect_name
+		direct_vassal_opinion = 5
+	}
+}
+framsburg = {
+	county = c_framsburg
+	barony = b_framsburg
+	character_modifier = {
+		monthly_prestige_gain_per_knight_mult = 0.02
+		heavy_cavalry_damage_mult = 0.05
+	}
+}
+drownholt = {
+	county = c_thorlorien
+	barony = b_tirnhirion
+	character_modifier = {
+		monthly_piety = 0.2
+		diplomacy_per_piety_level = 1
+	}
+}
+
+### WOODSMEN ###
+
+sairtheod = { # Sairtheod
+	county = c_thon_gwaeren
+	barony = b_thon_gwaeren
+	character_modifier = {
+		monthly_piety = 0.2
+		diplomacy_per_piety_level = 1
+	}
+}
+
+east_bight = { # East Bight
+	county = c_east_bight
+	barony = b_vidusbaurg
+	character_modifier = {
+		character_capital_county_monthly_development_growth_add = 0.05
+		monthly_prestige = 0.2
+	}
+}
+
+beornsele = { # Culturally Important Site for Valemen
+	county = c_beornsele
+	barony = b_beornsele
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+		monthly_prestige = 0.1
+	}
+}
+
+#rhosghobel = { # Radagasts Home	#juke note: unused, dont think we want the woodmen conquering him, sairthiuda is also really close
+#	county = c_rhosghobel
+#	barony = b_rhosghobel
+#	character_modifier = {
+#		monthly_piety = 0.2
+#		learning_per_piety_level = 1
+#	}
+#}
+
+### RHOVANION ###
+dale = {
+	county = c_dale
+	barony = b_dale
+	character_modifier = {
+		monthly_piety = 0.2
+		stewardship_per_piety_level = 1
+	}
+}
+
+cryptsofcelduin = { # Burial place of Aivadiuria and his heirs before they migrated north
+	county = c_miklalond
+	barony = b_smarholt
+	character_modifier = {
+		dynasty_opinion = 5
+		opinion_of_same_culture = 5
+	}
+}
+
+esgaroth = {
+	county = c_esgaroth
+	barony = b_esgaroth
+	character_modifier = {
+		men_at_arms_maintenance = -0.05
+		tax_mult = 0.05
+	}
+}
+
+thorontir = { # Gondorian Capital of Dor Rhunen
+	county = c_thoron
+	barony = b_tirith_thoron
+	character_modifier = {
+		martial = 1
+		monthly_prestige = 0.3
+	}
+}
+
+alcisbaurg = { # Former Capital of the Kingdom of Rhovanion, and site of a temple dedicated to Wolcenfrea the Skylord (Manwe)
+	county = c_alcisbaurg
+	barony = b_alcisbaurg
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+		monthly_prestige = 0.1
+	}
+}
+
+korpan = { # Temple of Afodrea, the warrior
+	county = c_korpan
+	barony = b_korpan
+	character_modifier = {
+		men_at_arms_maintenance = -0.05
+		prowess_per_piety_level = 1s
+	}
+}
+
+### DORWINION ###
+riavod = { # One of the Gardens of the Three Entwives of Dorwinion was located here, Silloth 
+	county = c_riavod
+	barony = b_riavod
+	character_modifier = {
+		development_growth_factor = 0.1
+		domain_tax_same_faith_mult = 0.05
+		monthly_piety = 0.2
+	}
+}
+
+eryn_gwinion = { # One of the Gardens of the Three Entwives of Dorwinion was located here, Dorollin
+	county = c_eryn_gwinion
+	barony = b_eryn_gwinion
+	character_modifier = {
+		same_faith_opinion = 5
+		monthly_piety = 0.2
+	}
+}
+
+rinnavod = { # One of the Gardens of the Three Entwives of Dorwinion was located here, Caniruth
+	county = c_rinnavod
+	barony = b_rinnavod
+	character_modifier = {
+		learning_per_piety_level = 1
+		monthly_piety = 0.2
+	}
+}
+
+### Rhun ###
+
+lest = { # The second largest city of Rhun
+	county = c_lest
+	barony = b_lest
+	character_modifier = {
+		monthly_piety = 0.5
+		monthly_piety_gain_per_dread_add = 0.01 # At 100 dread should give +1 piety per month
+		short_reign_duration_mult = -0.1
+	}
+}
+
+mistrand = { # Greatest and oldest city of central Middle-earth
+	county = c_mistrand
+	barony = b_mistrand
+	character_modifier = {
+		vassal_opinion = 5
+		tax_mult = 0.05
+	}
+}
+
+egildorn = { # The Isle of the Shapeshifters, ruled by Murlâm, one of the dark sorcerers trained by the Nazgul
+	county = c_nabal_mayzri
+	barony = b_egil_dorn
+	character_modifier = {
+		intrigue_per_prestige_level = 1
+		negate_intrigue_penalty_add = 3
+	}
+}
+
+kravod = { # Gondorian Capital of Dor Rhunen
+	county = c_thoron
+	barony = b_tirith_thoron
+	character_modifier = {
+		martial = 1
+		monthly_prestige = 0.3
+	}
+}
+
+### Logath ###
+
+sadvar = { # Largest settlement of the logath
+	county = c_sadvar
+	barony = b_sadvar
+	character_modifier = {
+		diplomacy = 1
+		opinion_of_female_rulers = 5
+		monthly_piety = 0.3
+	}
+}
+
+mahlicandar = { # The Rest of Mahlic
+	county = c_zutibor
+	barony = b_mahlicandar
+	character_modifier = {
+		opinion_of_different_culture = 5
+		opinion_of_different_faith = 5
+		stress_gain_mult = -0.05
+	}
+}
+
+naugrihal = { # Where the Dwarves and Logath meet
+	county = c_kyzandar
+	barony = b_olurtur
+	character_modifier = {
+		tax_mult = 0.05
+		stewardship_per_piety_level = 1
+	}
+}
+
+
+### SACRED ISLANDS ###
+#	concept: Sacred Isles
+#	Ulmo made blessed the isles of the Belegaer, for those are closest to his dwelling in Ulmonan.
+# Úland-Hûb, Narrowhaven
+uland_hub = {
+	county = c_sunira
+	barony = b_menqal
+	character_modifier = {
+		name = holy_site_uland_hub_effect_name
+		# A dark day, the people of Narrowhaven quietly leave their wrecked houses, the tropical storm made flat the landscape for miles. They build shoreline pyres in worship to the gods of the ocean and rebuild their harbour.
+		monthly_prestige_gain_per_knight_mult = 0.05
+		build_prestige_cost = -0.1
+		levy_size = -0.1
+	}
+}
+# Tol-in-Uîlana, Pelican Isles
+tol_in_uilana = {
+	county = c_pelican_isles
+	barony = b_pelican_isles
+	character_modifier = {
+		name = holy_site_tol_in_uilana_effect_name
+		# To the locals the pelican of Far Haradwaith is known to strike its own breast in times of famine, dripping blood to feed its young.
+		martial_per_piety_level = 1
+		stewardship = 1
+		dread_baseline_add = -5
+	}
+}
+# Tol Ereb, Lone Isles
+tol_ereb = {
+	county = c_lonely_isles
+	barony = b_lonely_isles
+	character_modifier = {
+		name = holy_site_tol_ereb_effect_name
+		# Between a pale sky and dark-blue sea, tiny white caps of foam mark the presence of the Lone Isles. Peradventure you notice a sea-grey horse on Tol Ereb's green hill.
+		stress_loss_mult = 0.2
+		learning = 2
+		intrigue_per_piety_level = -1
+	}
+}
+# Tol Lanc, Barren Isles
+tol_lanc = {
+	county = c_tol_uialgaer
+	barony = b_tol_uialgaer
+	character_modifier = {
+		name = holy_site_tol_lanc_effect_name
+		# Though the barren isles have long been the seat of the Black Númenóreans, the deep waves strum against its naked beaches. And a single conch shell washes up, its spire pointed up, inside the voice of the ocean god.
+		heavy_infantry_damage_mult = 0.05
+		raid_speed = 0.1
+		diplomacy = -1
+	}
+}
+
+
+### LEOFRINGS ###
+#	eorlshallow
+
+thorlorien = {
+	county = c_caras_galadhon
+	character_modifier = {
+		monthly_piety_gain_mult = 0.1
+	}
+}
+
+### DRUEDAIN ###
+underharrow = {
+	county = c_harrowdale
+	barony = b_underharrow
+	character_modifier = {
+		name = holy_site_underharrow_effect_name
+		knight_effectiveness_mult = 0.2
+		prowess_per_piety_level = 1
+	}
+}
+dwimorberg = {
+	county = c_dunharrow
+	barony = b_dwimorberg
+	character_modifier = {
+		name = holy_site_dwimorberg_effect_name
+		men_at_arms_maintenance = -0.1
+	}
+}
+parth_iaur = { #Ancient stone circles the Druedain claim to have built
+	county =  c_an_cosa_bras
+	barony = b_pilindhir 
+	character_modifier = {
+		name = holy_site_parth_iaur_effect_name
+		build_gold_cost = -0.1
+		build_speed = -0.1
+	}
+}
+e_gynd = { # A place where the Daen and Druedain would go to seek communion with the spirits
+	county =  c_parth_iaur
+	barony = b_e_gynd 
+	character_modifier = {
+		monthly_piety = 0.3
+	}
+}
+dunstrem = {
+	county = c_frecalund
+	barony = b_dunstrem
+	character_modifier = {
+		defender_advantage = 5
+	}
+}
+dru_bhuta = {
+	county = c_dru_bhuta
+	barony = b_dru_bhuta
+	character_modifier = {
+		opinion_of_same_culture = 10
+	}
+}
+
+
+lanthirlant = {
+	county = c_rast_vorn
+	barony = b_lanthirlant
+	character_modifier = {
+		defender_advantage = 5
+		deep_forest_advantage = 5
+	}
+}
+
+################
+### Bellakar ###
+################
+
+### Felaya ###
+urud_ah_khibil = { #Holy Mountain of the Batan an-Izindi
+	county = c_urud_an_khibil
+	barony = b_urud_an_khibil
+	character_modifier = {
+		same_faith_opinion = 5
+		monthly_piety = 0.3
+	}
+}
+joam = { #Izanadubeth's home city
+	county = c_joam
+	barony = b_joam
+	character_modifier = {
+		realm_priest_opinion = 5
+		learning_per_piety_level = 1
+	}
+}
+hazaj_tollin = {
+	county = c_hazaj_tollin
+	barony = b_hazaj_tollin
+	character_modifier = {
+		men_at_arms_maintenance = -0.1
+	}
+}
+
+### Central Bellakar ###
+nilulonde = { 
+	county = c_nilulonde
+	barony = b_nilulonde
+	character_modifier = {
+		monthly_piety = 0.5
+		general_opinion = 5
+	}
+}
+urezayan = {
+	county = c_urezayan
+	barony = b_urezayan
+	character_modifier = {
+		tax_mult = 0.1
+		different_faith_liege_opinion = 10
+	}
+}
+korlea = {
+	county = c_korlea
+	barony = b_korlea
+	character_modifier = {
+		monthly_prestige = 0.2
+		martial_per_prestige_level = 1
+	}
+}
+esmer = {
+	county = c_esmer 
+	barony = b_bur_esmer
+	character_modifier = {
+		fertility = 0.15
+	}
+}
+
+### Mardruak ###
+narik_zadan = {
+	county = c_narik_zadan
+	barony = b_narik_zadan
+	character_modifier = {
+		same_culture_opinion = 5
+	}
+}
+
+arka = {
+	county = c_arka
+	barony = b_shom_tai 
+	character_modifier = {
+		monthly_piety = 0.5
+		martial_per_piety_level = 1
+	}
+}
+
+
+zimrenzil = { 
+	county = c_zimrenzil
+	barony = b_zimrenzil
+	character_modifier = {
+		monthly_piety = 0.5
+		martial_per_piety_level = 1
+	}
+}
+
+###################
+# Men of Darkness #
+###################
+
+### DUNLENDINGS ###
+#	underharrow
+#	dwimorberg
+riascach = {
+	county = c_dunfearnshaws
+	barony = b_riascach
+	character_modifier = {
+		name = holy_site_riascach_effect_name
+		martial_per_piety_level = 1
+		dread_baseline_add = 5
+	}
+}
+ceanas_moor = {
+	county = c_lond_daer
+	barony = b_lond_daer
+	character_modifier = {
+		name = holy_site_ceanas_moor_effect_name
+		stewardship_per_piety_level = 1
+		supply_duration = 0.1
+	}
+}
+swanfleet = {
+	county = c_swanfleet
+	barony = b_swanfleet
+	character_modifier = {
+		name = holy_site_swanfleet_effect_name
+		monthly_piety_gain_mult = 0.05
+		diplomacy = 1
+	}
+}
+
+
+### Men of the White Mountains ###
+#	underharrow
+#	dwimorberg
+erech = {
+	county = c_erech
+	barony = b_erech
+	character_modifier = {
+		name = holy_site_dwimorberg_effect_name
+		men_at_arms_maintenance = -0.1
+	}
+}
+enie_iaur = { #Enië Iaur
+	county = c_an_khorgan
+	barony = b_todolb
+	character_modifier = {
+		name = holy_site_enie_iaur_effect_name
+		learning_per_piety_level = 1
+	}
+}
+
+araheledh = { # Araheledh
+	county = c_araheledh
+	barony = b_cabed_araheledh
+	character_modifier = {
+		defender_advantage = 3
+		monthly_piety = 0.2
+	}
+}
+
+imrathion = {
+	county = c_imrathion
+	barony = b_imrathion
+	character_modifier = {
+		same_culture_mercenary_hire_cost_mult = -0.1
+		same_culture_opinion = 5
+	}
+}
+
+### Donan ###
+#	gonngaran
+#	winion
+#	cirith_nargil
+#	minas_morgul
+
+gonngaran = {
+	county = c_gonngaran
+	barony = b_nan_i_gothrim
+	character_modifier = {
+		#name = holy_site_gonngaran_effect_name
+		mountains_advantage = 5
+	}
+}
+
+winion = {
+	county = c_winion
+	barony = b_gwiniant
+	character_modifier = {
+		#name = holy_site_winion_effect_name
+		hills_advantage = 5
+	}
+}
+
+cirith_nargil = {
+	county = c_cirith_nargil
+	barony = b_cirith_nargil
+	character_modifier = {
+		#name = holy_site_winion_effect_name
+		max_combat_roll = 4
+	}
+}
+
+
+### Faiths of Harad ###
+barad_dur = {
+	county = c_barad_dur
+	barony = b_barad_dur
+	character_modifier = {
+		name = holy_site_barad_dur_effect_name
+		martial_per_piety_level = 1
+		dread_baseline_add = 10
+	}
+}
+amrun = {
+	county = c_amrun
+	barony = b_amrun
+	character_modifier = {
+		name = holy_site_amrun_effect_name
+		diplomacy = 2
+		monthly_prestige = 0.2
+	}
+}
+
+kal_nargil = {
+	county = c_muzeida
+	character_modifier = {
+		name = kal_nargil_effect_name
+		dread_gain_mult = 0.1
+	}
+}
+
+parzee = { 
+	county = c_parzee
+	barony = b_parzee
+	
+	character_modifier = {
+		name = holy_site_parzee_effect_name
+		intrigue_per_piety_level = 1
+		defender_advantage = 2
+	}
+}	
+
+mazharath = {
+	county = c_mazharath
+	barony = b_mazharath
+	character_modifier = {
+		name = holy_site_mazharath_effect_name
+		dune_sea_advantage = 10
+		desert_advantage = 5
+	}
+}
+
+scheatorh = {
+	county = c_scheatorh
+	barony = b_chikehr
+	character_modifier = {
+		name = holy_site_scheatorh_effect_name
+		health = 0.1
+	}
+}
+
+maresh = {
+	county = c_maresh
+	barony = b_hamat_maresh
+	character_modifier = {
+		name = holy_site_maresh_effect_name
+		tax_mult = 0.05
+		stewardship_per_piety_level = 1
+	}
+}
+
+fejar = {
+	county = c_fejar
+	barony = b_mitajan
+	character_modifier = {
+		name = holy_site_fejar_effect_name
+		monthly_piety_gain_mult = 0.1
+	}
+}
+
+azhanna = {
+	county = c_azhanna
+	barony = b_nenari
+	character_modifier = {
+		name = holy_site_azhanna_effect_name
+		learning = 2
+	}
+}
+
+rokhbin = {
+	county = c_rokhbin
+	barony = b_nenadija
+	character_modifier = {
+		name =  holy_site_rokhbin_effect_name
+		defender_advantage = 5
+		same_culture_opinion = 5
+	}
+}
+
+trijha = {
+	county = c_trijha
+	barony = b_salizhat
+	character_modifier = {
+		name = holy_site_trijha_effect_name
+		desert_advantage = 5
+		monthly_piety = 0.2
+	}
+}
+
+rakhudish = { # Important dune sea oasis
+	county = c_jetin
+	barony = b_rakhudish
+	character_modifier = {
+		name = holy_site_rakhudish_effect_name
+		monthly_prestige_gain_mult = 0.1
+		monthly_prestige = 0.1
+	}
+}
+
+badrazain = {
+	county = c_menaja
+	barony = b_badrazain
+	character_modifier = {
+		name = holy_site_badrazain_effect_name
+		supply_duration = 0.25
+		monthly_piety = 0.3
+	}
+}
+
+bozhab = { # Old tribe of the mother of shadows
+	county = c_saluren
+	barony = b_bozhab
+	character_modifier = {
+		name = holy_site_bozhab_effect_name
+		intrigue_per_piety_level = 1
+		dread_gain_mult = 0.15
+	}
+}
+
+### Khand ###
+starlurtsa_khand = { # Southern Capital of Khand
+	county = c_starlurtsa_khand
+	character_modifier = {
+		stewardship = 1
+		martial = 1
+	}
+}
+
+hron_tumrakhi = { # Center of the Tumrakhi Clergy
+	county = c_hron_tumrakhi
+	barony = b_hron_tumrakhi
+	character_modifier = {
+		monthly_piety = 0.8
+		clergy_opinion = 5
+	}
+}
+
+obamarl = { # Burial grounds of the Kings of Khand - rumored ascension place of Ovatha I
+	county = c_obamarl
+	barony = b_obamarl
+	character_modifier = {
+		monthly_prestige = 0.3
+		dynasty_opinion = 2
+	}
+}
+
+
+# Abrakhân Holy Sites
+#	Tombs of Abrakhân
+ra_i_abrakhan = {
+	county = c_tahni
+	barony = b_ra_i_abrakhan
+	character_modifier = {
+		learning_per_piety_level = 1
+		monthly_piety_gain_mult = 0.1
+		short_reign_duration_mult = -0.05
+	}
+}
+#	"Tomb of Hoar"
+hoarakhan = {
+	county = c_raahr
+	barony = b_hoarakhan
+	character_modifier = {
+		domain_tax_same_faith_mult = 0.1
+		dread_gain_mult = 0.1
+		fertility = -0.1
+	}
+}
+#	Ancient water temple
+arzahr = {
+	county = c_irhishadorh
+	barony = b_arzahr
+	character_modifier = {
+		councillor_opinion = 5
+		diplomacy_per_piety_level = 1
+	}
+}
+#	Ancient fire temple
+khrarcor = {
+	county = c_zaikhandorh
+	barony = b_khrarcor
+	character_modifier = {
+		name = holy_site_kayor_effect_name
+		owned_personal_scheme_success_chance_add = 5
+		intrigue_per_piety_level = 1
+	}
+}
+#	Nafarati Holy Site
+marra = {
+	county = c_dtatradorh
+	barony = b_marra_abrakhan
+	character_modifier = {
+		desert_advantage = 5
+		drylands_advantage = 5
+#		red_desert_advantage = 5
+	}
+}
+nafar = {
+	county = c_arsamita
+	barony = b_ozrekha
+	character_modifier = {
+		floodplains_advantage = 5
+		monthly_piety_gain_mult = 0.1
+		knight_effectiveness_mult = 0.2
+	}
+}
+#	Nafarati Oasis
+hidar = {
+	county = c_hidar
+	barony = b_hidar
+	character_modifier = {
+		martial_per_piety_level = 1
+		raid_speed = 0.1
+	}
+}
+
+### Black Numenorean & Umbarean ###
+umbar = {
+	county = c_umbar
+	character_modifier = {
+		naval_movement_speed_mult = 0.25
+		embarkation_cost_mult = -0.25
+	}
+}
+
+caldur = {
+	county = c_caldur
+	character_modifier = {
+		defender_advantage = 5
+	}
+}
+
+mirlond = {
+	county = c_mirlond
+	character_modifier = {
+		stewardship = 1
+		tax_mult = 0.05
+	}	
+}
+
+hartolfalas = {
+	county = c_hartolfalas
+	character_modifier = {
+		supply_capacity_mult = 0.25
+		raid_speed = 0.25
+		supply_limit_mult = 0.25
+	}
+}
+
+black_pelargir = {
+	county = c_pelargir
+	character_modifier = {
+		intrigue_per_piety_level = 1
+		monthly_piety_gain_mult = 0.05
+	}
+}
+
+#dusalan = {
+#	county = c_badharkan
+#	barony = b_badharkan
+#	character_modifier = {
+#	}	
+#}
+
+### Nurniags ###
+sturlurzanurn = { # The City of Slaves, the great administrative center of Eastern Mordern, and the heart of the cruel Nurniag slaver culture.
+	county = c_sturlurza_nurn
+	barony = b_sturlurza_nurn
+		character_modifier = {
+			domain_tax_mult = 0.1
+	}
+}
+
+### Bozisha-Miraz ###
+bozishadar = { # Coastal great metropol of Ray
+	county = c_bozisha_dar
+	barony = b_bozisha_dar
+	character_modifier = {
+		tax_mult = 0.1
+		intrigue_per_piety_level = 1
+	}
+}
+tresti = { # Inland traditional capital of Ray
+	county = c_tresti
+	barony = b_tresti
+	character_modifier = {
+		monthly_piety = 0.2
+		defender_advantage = 5
+	}
+}
+
+khorsaj = {
+	county = c_khorsaj
+	barony = b_khorsaj
+	character_modifier = {
+		mercenary_hire_cost_mult = -0.1	
+	}
+}
+			
+soriya = {
+	county = c_soriya
+	barony = b_soriya
+		character_modifier = {
+			hostile_county_attrition = 0.05
+			controlled_province_advantage = 3
+		}
+}
+suza_sumar = { # Tears of the Goddess, the Suza Sumar
+	county = c_rhan_dazu
+	barony = b_xhan_xhan
+	character_modifier = {
+		development_growth_factor = 0.1
+	}
+}
+
+pred = { # Ancient Temple-city of the Honnin, now mostly consumed by the jungle
+	county = c_pred
+	barony = b_pred
+	character_modifier = {
+		monthly_piety = 0.5
+		learning_per_piety_level = 1
+	}
+}
+
+ashatur = {
+	county = c_norja
+	barony = b_norjadar
+	character_modifier = {
+		development_growth_factor = 0.1
+		tax_mult = 0.05
+	}
+}
+zayyen = {
+	county = c_samigal
+	barony = b_zayyen
+	character_modifier = {
+		same_culture_opinion = 5
+	}
+}
+
+### An-Balkumagan ###
+
+tariketh_an_kharat = { # Târikêth an-Kharat, the 'Citadel of the South', seat of the Anballukhori Kings, home to Zadan an-Adûn, the House of the West
+	county = c_tariketh_an_kharat
+	barony = b_zadan_an_adun
+	character_modifier = {
+		monthly_piety_gain_mult = 0.1
+	}
+}
+
+adunazain = {
+	county = c_adunazain
+	barony = b_kadar_an_kharadun
+	character_modifier = {
+		development_growth_factor = 0.2
+		stewardship_per_piety_level = 1
+	}
+}
+
+######################
+# Forces of Darkness #
+######################
+
+orthanc = {
+	county = c_isengard
+	barony = b_orthanc
+	character_modifier = {
+		name = holy_site_orthanc_effect_name
+		men_at_arms_maintenance = -0.1
+	}
+}
+dol_baran = {
+	county = c_riverwatch
+	barony = b_dolbaran
+	character_modifier = {
+		name = holy_site_dol_baran_effect_name
+		supply_capacity_mult = 0.05
+		intrigue_per_piety_level = 1
+	}
+}
+lichbluffs = {
+	county = c_frecalund
+	barony = b_vinyatir
+	character_modifier = {
+		name = holy_site_placeofdread_effect_name
+		heavy_infantry_damage_mult = 0.05
+	}
+}
+morannon = {
+	county = c_morannon
+	character_modifier = {
+		garrison_size = 0.1
+		levy_size = 0.1
+	}
+}
+thaurband = {
+	county = c_thaurband
+	barony = b_thaurband
+	character_modifier = {
+		supply_duration = 0.3
+		supply_capacity_mult = 0.25
+	}
+}	
+orodruin = {
+	county = c_orodruin
+	character_modifier = {
+		monthly_piety_gain_mult = 0.05
+	}
+}
+agarnaith = { #The site at which the Red Eye Cult Shamans have established their own temple and school for sorcery in their exile in the hills - a pale imitation of sorcery, but sorcery nonetheless
+	county = c_agarnaith
+	barony = b_agarnaith
+	character_modifier = {
+		general_opinion = 5
+		vassal_opinion = 10
+	}
+}
+dol_guldur = { # A Place of Dread
+	county = c_amon_lanc
+	character_modifier = {
+		cowed_vassal_tax_contribution_mult = 0.05
+		cowed_vassal_levy_contribution_mult = 0.05
+	}
+}	
+gundabad = { # The seat of Skorg whom he conquered it from the dwarves. Where he was crowned "Ashdurbúk" by the secound dark lord, and where the Ulûkai rests with Skorg.
+	county = c_mattugard
+	barony = b_mattugard
+	character_modifier = { # since it's only gundabad for now i give them 3 modifers to make up for it.
+		vassal_opinion = 10
+		garrison_size = 0.1
+		levy_size = 0.1
+	}
+}
+gondmaeglorn = { # Mount Gondmaeglorn in  the Iron Mountains
+	county = c_gondmaeglorn
+	barony = b_gondmaeglorn
+		character_modifier = {
+		supply_capacity_mult = 0.1
+		monthly_piety_gain_mult = 0.05
+	}
+}
+thundercleft = { # Iron Mountains, here be dragons
+	county = c_thundercleft
+	barony = b_thundercleft
+		character_modifier = {
+		controlled_province_advantage = 5
+		monthly_prestige = 0.2
+	}
+}
+dying_glacier = { # Iron Mountains old dragon cave nearby
+	county = c_usmek
+	barony = b_usmek
+	character_modifier = {
+		monthly_piety = 0.2
+		men_at_arms_maintenance = -0.05
+	}
+}
+goblin_town = { # Goblin Town - Important Orc settlement in misty mountains	
+	county = c_goblin_town
+	barony = b_goblin_town
+	character_modifier = {
+		vassal_opinion = 5
+		stewardship_per_piety_level = 1
+	}
+}
+mount_gram = { # Mount Gram, important Orc settlement in misty mountains
+	county = c_baruk_zigil
+	barony = b_baruk_zigil
+	character_modifier = {
+		monthly_prestige = 0.5
+		men_at_arms_maintenance = -0.05
+	}
+}
+carn_dum = { # Capital of Angmar, Seat of the Witch-King
+	county = c_carn_dum
+	barony = b_carn_dum
+	character_modifier = {
+		martial_per_piety_level = 1
+		dread_baseline_add = 10
+	}
+}
+ancient_crossing = { # Goblin holy site in Moria, central location for "negotiations" between tribes
+	county = c_etharul_nula
+	barony = b_etharul_nula
+	character_modifier = {
+		diplomacy = 1
+		monthly_prestige_gain_mult = 0.1
+	}
+}
+depths_of_moria = { # deepest and darkest holes of Moria, where goblins worship strange creatures
+	county = c_mainthiri_ikrihi
+	barony = b_mainthiri_ikrihi
+	character_modifier = {
+		learning_per_piety_level = 1
+		monthly_piety = 0.3
+	}
+}
+scorched_throne = { #Durins Throne - balrog worshipping goblins site
+	county = c_durins_hall
+	barony = b_durins_hall
+	character_modifier = {
+		monthly_prestige = 0.2
+		dread_baseline_add = 10
+	}
+}
+ashen_hallway = { # Durin's way - holy to goblins, crude ashen cave paintings on the walls
+	county = c_durins_way
+	barony = b_durins_way
+	character_modifier = {
+		monthly_learning_lifestyle_xp_gain_mult = 0.1
+		monthly_piety = 0.2
+	}
+}
+isa_point = { # Isä Point - Eastern Entrance to the Bay of Forochel
+	county = c_salmi
+	barony = b_ylaman
+	character_modifier = {
+		monthly_piety = 0.2
+		learning_per_piety_level = 1
+		same_culture_opinion = 5
+	}
+}
+kuru_leiri = { # Kuru Leiri Western Entrance to the Bay of Forochel
+	county = c_rovala
+	barony = b_kuru_leiri
+	character_modifier = {
+		supply_capacity_mult = 0.1
+		coastal_advantage = 5
+	}
+}
+korkeama = { # Korkeama - Forochel, Ruins of an ancient tower that may have once been a lighthouse. Origin unknown
+	county = c_ja_rannit
+	barony = b_korkeama
+	character_modifier = {
+		monthly_piety = 0.1
+		arctic_advantage = 10
+	}
+}
+tor_of_thamba = { # Tor of Thamba - Hill upon which Angmarrim held rituals in honor of Thamba, god of death
+	county = c_fladweth_raud
+	barony = b_hethuladen
+	character_modifier = {
+		monthly_learning_lifestyle_xp_gain_mult = 0.1
+	}
+}
+litash = { # Litash - At the foot of the Misties in eastern Angmar proper
+	county = c_litash
+	barony = b_litash
+	character_modifier = {
+		supply_capacity_mult = 0.1
+	}
+}
+balshas_rest = { # Balsha's Rest - Angmar, barrow of the prophet Balsha
+	county = c_ram_duath
+	barony = b_barras_dar
+	character_modifier = {
+		faith_creation_piety_cost_mult = -0.1
+		monthly_piety_gain_mult = 0.05
+	}
+}
+kolthuld = { # Kolthuld - Cold Hold, eastern capital of angmar in the vale
+	county = c_langburg
+	barony = b_langburg
+	character_modifier = {
+		dread_baseline_add = 5
+		monthly_piety_gain_per_dread_add = 0.01 # At 100 dread should give +1 piety per month
+	}
+}

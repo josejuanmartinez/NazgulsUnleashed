@@ -75,6 +75,74 @@ k_wastelands = { # For Wastelands to not show their CoA. Do not add additional p
 	}
 }
 
+k_obamarl = {
+	definite_form = yes	
+	landless = yes
+	de_jure_drift_disabled = yes
+	no_automatic_claims = yes
+
+	color = { 94 52 49 }
+	capital = c_tol_buruth
+	
+	d_obamarl = {
+		color = { 94 52 49 }
+		capital = c_tol_buruth
+
+		c_tol_buruth = {
+			color = { 94 52 49 }
+			cultural_names = {
+				name_list_elven = cn_tol_buruth_elven
+				name_list_orc = cn_tol_buruth_orc
+			}
+			
+			b_tol_buruth = {
+				province = 3694
+				cultural_names = {
+					name_list_elven = cn_tol_buruth_elven
+					name_list_orc = cn_tol_buruth_orc
+				}
+				
+				color = { 94 52 49 }
+				
+			}
+			
+			b_egil_dorn = {
+				province = 3695
+				
+				color = { 94 52 49 }
+				
+			}
+			
+		}
+
+		c_obamarl = {
+			color = { 94 52 49 }				
+			
+			b_obamarl = {
+				province = 4051
+				
+				color = { 94 52 49 }
+				
+			}
+
+			b_ubesesh_uta_paveter = {
+				province = 4049
+				
+				color = { 94 52 49 }
+				
+			}
+			
+			b_purluz = {
+				province = 4050
+				
+				color = { 94 52 49 }
+				
+			}
+		}
+	}
+}
+
+
 
 
 ### CUSTOM EMPIRES ###
@@ -35063,27 +35131,27 @@ e_rhun = {
 				
 			}
 			
-			c_nabal_mayzri = {
-				color = { 162 1 1 }
-				cultural_names = {
-					name_list_elven = cn_nabal_mayzri_elven
-				}
+			# c_nabal_mayzri = {
+			# 	color = { 162 1 1 }
+			# 	cultural_names = {
+			# 		name_list_elven = cn_nabal_mayzri_elven
+			# 	}
 				
-				b_egil_dorn = {
-					province = 3694
+			# 	b_egil_dorn = {
+			# 		province = 3694
 					
-					color = { 156 109 65 }
+			# 		color = { 156 109 65 }
 					
-				}
+			# 	}
 				
-				b_nabal_mayzri = {
-					province = 3695
+			# 	b_nabal_mayzri = {
+			# 		province = 3695
 					
-					color = { 216 134 58 }
+			# 		color = { 216 134 58 }
 					
-				}
+			# 	}
 				
-			}
+			# }
 			
 		}
 		
@@ -37682,55 +37750,40 @@ e_khand = {
 					
 				}
 				
-			}
-			
+			}			
 		}
 
-		d_obamarl = {
-			color = { 150 30 30 }
-			capital = c_obamarl
-
-			c_obamarl = {
-				color = { 194 1 21}
-				b_obamarl = {
-					province = 4051
-					
-					color = { 236 43 1 }
-					
-				}
-			}
-		}
-		
 		d_gap_of_khand = {
 			color = { 150 30 30 }
 			
-			capital = c_ubesesh
+			# capital = c_ubesesh
+			capital = c_pashar
 			
-			c_ubesesh = {
-				color = { 194 1 21 }
+			# c_ubesesh = {
+			# 	color = { 194 1 21 }
 				
-				b_ubesesh_uta_paveter = {
-					province = 4049
+			# 	b_ubesesh_uta_paveter = {
+			# 		province = 4049
 					
-					color = { 218 193 48 }
+			# 		color = { 218 193 48 }
 					
-				}
+			# 	}
 				
-				b_purluz = {
-					province = 4050
+			# 	b_purluz = {
+			# 		province = 4050
 					
-					color = { 205 194 94 }
+			# 		color = { 205 194 94 }
 					
-				}
+			# 	}
 				
-				#b_obamarl = {
-				#	province = 4051
-				#	
-				#	color = { 236 43 1 }
-				#	
-				#}
+			# 	b_obamarl = {
+			# 		province = 4051
+					
+			# 		color = { 236 43 1 }
+					
+			# 	}
 				
-			}
+			# }
 			
 			c_pashar = {
 				color = { 158 16 37 }

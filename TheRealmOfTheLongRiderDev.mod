@@ -1,4 +1,4 @@
-name="The Realm of the Long Rider, for RiE"
+name="Ûvatha Unleashed: The Long Rider"
 tags={
 	"Total Conversion"
 	"Gameplay"

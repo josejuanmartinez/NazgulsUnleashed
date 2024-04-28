@@ -1903,7 +1903,7 @@ k_easterling_south_rhovanion = {
 	}
 }
 
-c_nabal_mayzri = {
+c_tol_buruth = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 78 113 144 }
 	colored_emblem = {
@@ -1911,9 +1911,24 @@ c_nabal_mayzri = {
 		texture = "cc_b_car_na_lorn_e.dds"
 		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
 	}
-	#colored_emblem = {
-	#	color1 = umbar_dark_gold
-	#	texture = "ce_rhun_border_01.dds"
-	#	instance = { position = { 0.5 0.5 } scale = { 0.95 0.95 } depth = 1.01 }
-	#}
+}
+
+c_obamarl = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 94 52 49 }
+	colored_emblem = {
+		color1 = black
+		texture = "cc_b_car_na_lorn_e.dds"
+		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+	}
+}
+
+d_obamarl = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 78 113 144 }
+	colored_emblem = {
+		color1 = black
+		texture = "cc_b_car_na_lorn_e.dds"
+		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+	}
 }
