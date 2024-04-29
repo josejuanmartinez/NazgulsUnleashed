@@ -763,7 +763,7 @@
 	# religion = faith_khandish_sauronic
 	# holding = castle_holding
 	
-	culture = ringwraith
+	culture = variag
 	religion = lidless_eye
 	holding = none
 }
@@ -773,7 +773,7 @@
 	# religion = faith_khandish_sauronic
 	# holding = none
 	
-	culture = ringwraith
+	culture = variag
 	religion = lidless_eye
 	holding = none
 }
@@ -783,15 +783,16 @@
 	# religion = faith_khandish_sauronic
 	# holding = castle_holding
 	
-	culture = ringwraith
+	culture = variag
 	religion = lidless_eye
 	holding = castle_holding
-
-	buildings = {
-		castle_05
-		watchtowers_03
-		uruk_pits_03
-		stables_03
+	6050.8.22 = {
+		buildings = {
+			castle_04
+			watchtowers_03
+			uruk_pits_03
+			stables_03
+		}
 	}
 }
 

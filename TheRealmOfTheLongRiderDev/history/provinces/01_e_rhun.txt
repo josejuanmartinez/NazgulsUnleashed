@@ -188,7 +188,7 @@
 	#religion = faith_kerkassk
 	#holding = castle_holding
 
-	culture = ringwraith
+	culture = igath
 	religion = lidless_eye
 	holding = castle_holding
 	6050.8.22 = {		
@@ -206,7 +206,7 @@
 	#religion = faith_kerkassk
 	#holding = church_holding
 	
-	culture = ringwraith
+	culture = igath
 	religion = lidless_eye
 	holding = church_holding
 	

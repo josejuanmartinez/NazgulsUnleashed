@@ -304,13 +304,6 @@ d_dacranamel = {
 #	}
 }
 
-d_tol_buruth = {
-    6050.8.22 = {
-        holder = nazgul9 # Ovatha the Long Rider
-        change_development_level = 6
-    }
-}
-
 c_tol_buruth = {
     6050.8.22 = {
         holder = nazgul9 # Ovatha the Long Rider

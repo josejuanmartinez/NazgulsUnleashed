@@ -1030,16 +1030,6 @@ d_gap_of_khand = {
     }
 }
 
-d_obamarl = {
-    5191.1.1 = { # Yurzal of the Middle Army, great variag warlord
-        holder = khandwarlord2
-    }
-    6050.8.22 = {
-		holder = nazgul9
-        
-        change_development_level = 12
-	}
-}
 
 c_obamarl = {
 	5191.1.1 = { # Yurzal of the Middle Army, great variag warlord

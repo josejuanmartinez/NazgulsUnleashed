@@ -608,7 +608,7 @@ mistrand = { # Greatest and oldest city of central Middle-earth
 }
 
 egildorn = { # The Isle of the Shapeshifters, ruled by Murlâm, one of the dark sorcerers trained by the Nazgul
-	county = c_nabal_mayzri
+	county = c_tol_buruth
 	barony = b_egil_dorn
 	character_modifier = {
 		intrigue_per_prestige_level = 1
