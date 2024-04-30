@@ -1,4 +1,4 @@
-name="Nazguls Unleashed: Ôvatha The Long Rider"
+name="Nazguls Unleashed"
 tags={
 	"Total Conversion"
 	"Gameplay"
