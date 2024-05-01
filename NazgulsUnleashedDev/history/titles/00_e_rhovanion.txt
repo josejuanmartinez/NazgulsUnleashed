@@ -8808,7 +8808,7 @@ c_ongushar = {
 	}	
     6050.8.22 = {
         holder = nazgul9 # Ovatha the Long Rider
-        change_development_level = 6
+        change_development_level = 4
     }
     #6897.11.28 = {
     #    holder = lineofguthmunding1 #Guthmund

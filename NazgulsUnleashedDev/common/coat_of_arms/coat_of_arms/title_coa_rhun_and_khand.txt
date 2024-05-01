@@ -1922,3 +1922,13 @@ c_obamarl = {
 		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
 	}
 }
+
+c_ongushar = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 94 52 49 }
+	colored_emblem = {
+		color1 = black
+		texture = "ce_horse_01.dds"
+		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+	}
+}

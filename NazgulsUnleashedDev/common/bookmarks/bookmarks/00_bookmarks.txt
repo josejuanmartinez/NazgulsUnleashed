@@ -347,7 +347,7 @@ bm_3000_rhovanion = {
 		government = feudal_government
 		religion = lidless_eye
 		culture = ringwraith
-		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_HARD"
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
 		history_id = nazgul9
 		position = { 1200 580 } #{ 620 700 }
 		animation = personality_cynical
@@ -649,6 +649,23 @@ bm_3000_gondor = {
 		history_id = vangarisofkhand
 		position = { 1150 830 }
 		animation = personality_bold
+	}
+
+	# Ovatha, the Long Rider
+	character = {
+		name = "bookmark_gondor_ovatha"
+		dynasty = dynasty_uvatha
+		dynasty_splendor_level = 5
+		type = male
+		birth = 2562.3.17
+		title = c_obamarl
+		government = feudal_government
+		religion = lidless_eye
+		culture = ringwraith
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = nazgul9
+		position = { 1250 530 } #{ 620 700 }
+		animation = personality_cynical
 	}
 }
 

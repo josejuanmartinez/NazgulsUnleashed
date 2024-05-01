@@ -414,7 +414,8 @@ nazgul5 = {
 	trait = kinslayer_3
 
 	disallow_random_traits = yes
-
+	
+	learning = 8
 
 	trait = blood_of_numenor_8
 	2480.1.1 = {
@@ -450,6 +451,10 @@ nazgul5 = {
 				}
 			}
 		}
+												
+		effect = {					
+			add_unpressed_claim = title:k_lower_khand
+		}	
 	}
 
 	7032.1.1 = {
@@ -624,7 +629,7 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 	trait = callous
 	trait = brave
 	trait = open_terrain_expert
-
+	
 	disallow_random_traits = yes
 
 	2562.3.17 = {
@@ -655,14 +660,6 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 
 	3227.8.12 = {										
 		effect = {					
-			add_unpressed_claim = title:e_khand			
-		}					
-	}
-
-	
-	6050.8.22 = {
-		effect = {
-			add_unpressed_claim = title:e_rhovanion
 			create_character_memory = {
 				type = ascended_throne_memory
 			}
@@ -670,7 +667,23 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 				save_scope_as = ascended_throne_memory
 				set_variable = {
 					name = landed_title
-					value = title:e_ovatha_unleashed
+					value = title:c_obamarl
+				}
+			}
+		}					
+	}
+
+	
+	6050.8.22 = {
+		effect = {
+			create_character_memory = {
+				type = ascended_throne_memory
+			}
+			scope:new_memory = {
+				save_scope_as = ascended_throne_memory
+				set_variable = {
+					name = landed_title
+					value = title:c_tol_buruth
 				}
 			}
 		}
@@ -680,11 +693,22 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 			TRIBUTARY = character:nazgul9
 		}
 	}
-
+	
 	7032.1.1 = {
 		effect = {
 			add_dread = 100
+			create_character_memory = {
+				type = ascended_throne_memory
+			}
+			scope:new_memory = {
+				save_scope_as = ascended_throne_memory
+				set_variable = {
+					name = landed_title
+					value = title:c_ongushar
+				}
+			}
 		}
+		employer = lineofsauron
 	}
 
 	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring

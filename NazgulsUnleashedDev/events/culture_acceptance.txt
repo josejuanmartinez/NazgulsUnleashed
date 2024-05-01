@@ -181,17 +181,17 @@ culture_acceptance.1 = {
 				desc = cultural_acceptance_historical_relations
 			}
 			change_cultural_acceptance = {
-				target = culture:variag	#The Long Rider is highly recognized among Variags
+				target = culture:variag	#The Long Rider is highly recognized among Variags (Olmabarl)
 				value = 40
 				desc = cultural_acceptance_historical_relations
 			}
 			change_cultural_acceptance = {
-				target = culture:igath	#The Long Rider has long been accepted by Igath
+				target = culture:igath	#The Long Rider has long been accepted by Igath (Tol Buruth)
 				value = 30
 				desc = cultural_acceptance_historical_relations
 			}
 			change_cultural_acceptance = {
-				target = culture:magriag	#The Long Rider is accepted by Igath
+				target = culture:magriag	#The Long Rider is accepted by Magriag (Ongushar)
 				value = 20
 				desc = cultural_acceptance_historical_relations
 			}

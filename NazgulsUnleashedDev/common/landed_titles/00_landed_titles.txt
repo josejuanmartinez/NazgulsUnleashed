@@ -33968,6 +33968,15 @@ e_rhovanion = {
 		d_brown_lands = {
 			color = { 160 100 15 }
 			capital = c_nanlothanduin
+
+			can_create = {	# Only can be created if all the provinces are there
+				AND = {
+					completely_controls = title:c_nanlothanduin
+					completely_controls = title:c_ongushar
+					completely_controls = title:c_varad
+				}	
+			
+			}
 			
 			c_nanlothanduin = {
 				color = { 179 150 40 }

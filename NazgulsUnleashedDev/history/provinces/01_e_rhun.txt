@@ -193,7 +193,7 @@
 	holding = castle_holding
 	6050.8.22 = {		
 		buildings = {
-			castle_03
+			castle_02
 			common_tradeport_05
 			orc_siege_works_03
 			warg_pits_03

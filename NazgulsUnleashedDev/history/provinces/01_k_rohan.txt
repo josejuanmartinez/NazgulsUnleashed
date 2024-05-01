@@ -1246,6 +1246,7 @@
 	holding = settlement_holding
 	6050.8.22 = {
 		buildings = {
+			settlement_02
 			palisades_02
 			watchtowers_01
 			stables_02

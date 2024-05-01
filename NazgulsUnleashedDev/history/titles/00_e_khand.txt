@@ -1038,7 +1038,7 @@ c_obamarl = {
     6050.8.22 = {
 		holder = nazgul9
         
-        change_development_level = 12
+        change_development_level = 9
 	}
 	# 6050.8.22 = {
 	# 	holder = lineofskakali2

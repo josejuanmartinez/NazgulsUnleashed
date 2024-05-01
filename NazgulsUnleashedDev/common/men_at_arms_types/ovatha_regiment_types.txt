@@ -1,0 +1,75 @@
+olbamarl_riders = {
+	type = light_cavalry
+	
+	can_recruit = { 
+		has_title = title:c_obamarl
+		is_nazgul = yes		
+	}
+
+	buy_cost = { gold = 85 }
+	low_maintenance_cost = { gold = 0.35 }
+	high_maintenance_cost = { gold = 1.25 }
+
+	stack = 100	
+	damage = 26
+	toughness = 13
+	pursuit = 35
+	screen = 45
+
+	counters = {
+		archers = 1
+	}	
+
+	terrain_bonus = {
+		steppe = { damage = 35 }
+		plains = { damage = 15 }
+		drylands = { damage = 15 }
+		mountains = { damage = -5 pursuit = -20 }
+		desert = { damage = 15 }
+		desert_mountains = { damage = 5 pursuit = -10 }
+		wetlands = { damage = -15 toughness = -10 pursuit = -30 screen = -30 }
+	}
+
+	winter_bonus = {
+		normal_winter = { toughness = -1 damage = -3 }
+		harsh_winter = { toughness = -3 damage = -5 }
+	}
+	
+	holy_order_fallback = yes
+	
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = windriders_of_khand
+}
+
+sea_easterlings = { #represents Gondorian maritime traditions and mainly there for flavor. From gameplay perspective they are good skirmishers
+	can_recruit = { 
+		AND = {
+			any_directly_owned_province = { is_coastal = yes }			
+			can_recruit = { 
+				has_title = title:c_tol_buruth
+			}
+		}
+	}
+	type = skirmishers
+	
+	damage = 12
+	toughness = 20
+	screen = 20
+	
+	terrain_bonus = {
+	}
+
+	counters = {
+		heavy_infantry = 1
+	}
+
+	buy_cost = { gold = 75 }
+	low_maintenance_cost = { gold = 0.20 }
+	high_maintenance_cost = { gold = 0.70 }
+
+	allowed_in_hired_troops = no
+	
+	stack = 100
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = easterling_pikemen
+}
