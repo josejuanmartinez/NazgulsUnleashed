@@ -1,0 +1,41 @@
+﻿namespace = olbamarl
+
+olbamarl.0001 = {
+	content_source = realms_dlc
+	type = character_event
+	title = olbamarl.0001.t
+	desc = olbamarl.0001.desc
+	theme = martial_strategy_focus
+	override_background = {
+		reference = throne_room_evil
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		play_music_cue = lotr_cue_nazgul
+		culture:ringwraith = {
+			change_cultural_acceptance = {
+				target = culture:variag	#The Long Rider is highly recognized among Variags (Olmabarl)
+				value = 40
+				desc = cultural_acceptance_historical_relations
+			}
+			change_cultural_acceptance = {
+				target = culture:igath	#The Long Rider has long been accepted by Igath (Tol Buruth)
+				value = 30
+				desc = cultural_acceptance_historical_relations
+			}
+			change_cultural_acceptance = {
+				target = culture:magriag	#The Long Rider is accepted by Magriag (Ongushar)
+				value = 20
+				desc = cultural_acceptance_historical_relations
+			}
+		}
+	}
+	
+	option = { 
+		name = olbamarl.0001.a
+	}
+}

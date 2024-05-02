@@ -1,4 +1,4 @@
-### The Undead ###
+﻿### The Undead ###
 
 # Within the ranks of the Undead, the Wights and Wraiths are accounted.
 
@@ -667,7 +667,7 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 				save_scope_as = ascended_throne_memory
 				set_variable = {
 					name = landed_title
-					value = title:c_obamarl
+					value = title:d_obamarl
 				}
 			}
 		}					

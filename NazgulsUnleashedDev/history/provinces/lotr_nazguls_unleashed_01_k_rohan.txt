@@ -1,0 +1,27 @@
+﻿# Ongushar (2) - c_ongushar
+192 = {			# b_ongushar
+	# culture = wastelands
+	# religion = faith_wastelands_pagan
+	# holding = none	
+	
+	culture = magriag
+	religion = lidless_eye
+	holding = settlement_holding
+	6050.8.22 = {
+		buildings = {
+			settlement_02
+			stockades_01
+			watchtowers_01
+			stables_02
+		}
+	}
+}			
+193 = {			# b_tiringon
+	# culture = wastelands
+	# religion = faith_wastelands_pagan
+	# holding = none
+	
+	culture = magriag
+	religion = lidless_eye
+	holding = none
+}

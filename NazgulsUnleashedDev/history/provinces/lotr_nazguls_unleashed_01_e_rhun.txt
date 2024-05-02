@@ -1,0 +1,42 @@
+##	Tol Buruth (c_tol_buruth)
+
+3694 = {	# Tol Buruth (b_tol_buruth)
+	#culture = igath
+	#religion = faith_kerkassk
+	#holding = castle_holding
+
+	culture = igath
+	religion = lidless_eye
+	holding = castle_holding
+	6050.8.22 = {		
+		buildings = {
+			castle_02
+			common_tradeport_05
+			orc_siege_works_03
+			warg_pits_03
+		}
+	}
+}
+
+3695 = {	#Egil Dorn (b_egil_dorn)
+	#culture = igath
+	#religion = faith_kerkassk
+	#holding = church_holding
+	
+	culture = igath
+	religion = lidless_eye
+	#holding = church_holding
+	holding = none
+	
+	#5.3.12 = {			
+	#	special_building_slot = wonder_temple_sulereb_01
+	#	special_building = wonder_temple_sulereb_01
+	#}
+	#3589.1.1 = {
+	#	special_building = wonder_temple_sulereb_02
+	#}
+	#6050.8.22 = {
+		# Temple destroyed
+	#	special_building = wonder_temple_sulereb_03
+	#}
+}

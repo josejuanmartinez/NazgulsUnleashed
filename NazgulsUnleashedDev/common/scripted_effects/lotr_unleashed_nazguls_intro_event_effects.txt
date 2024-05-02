@@ -1,0 +1,29 @@
+fire_nazgul_unleashed_intro_events = {
+	character:nazgul9 = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = { 
+				id = olbamarl.0001
+				days = 1
+			}			
+			
+			hidden_effect = {
+				add_truce_both_ways = { 
+					character = character:vangarisofkhand
+					years = 25
+					name = TRUCE_KHAND_OLBAMARL
+				}
+			}
+			hidden_effect = {
+				add_truce_both_ways = { 
+					character = character:keiseimuofkhand
+					years = 25
+					name = TRUCE_KHAND_OLBAMARL
+				}
+			}
+		}
+	}	
+}

@@ -1,0 +1,17 @@
+﻿4051 = {	#Olbamarl / Obamarl (b_obamarl)
+	# culture = variag
+	# religion = faith_khandish_sauronic
+	# holding = castle_holding
+	
+	culture = variag
+	religion = lidless_eye
+	holding = castle_holding
+	6050.8.22 = {
+		buildings = {
+			castle_02
+			watchtowers_03
+			uruk_pits_01
+			stables_03
+		}
+	}
+}

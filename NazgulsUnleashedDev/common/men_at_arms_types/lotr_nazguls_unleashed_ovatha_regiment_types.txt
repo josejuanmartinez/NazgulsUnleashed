@@ -1,3 +1,9 @@
+﻿# standard costs
+@maa_buy_cost = 150
+@maa_low_maintenance_cost = 1.0
+@maa_high_maintenance_cost = 5.0
+@cultural_maa_extra_ai_score = 80 # Equivalent to having 8 extra regiments beyond what the code scoring would indicate (see NEGATIVE_SCORE_PER_EXISTING_REGIMENT)
+
 olbamarl_riders = {
 	type = light_cavalry
 	
@@ -42,6 +48,8 @@ olbamarl_riders = {
 }
 
 sea_easterlings = { #represents Gondorian maritime traditions and mainly there for flavor. From gameplay perspective they are good skirmishers
+	type = skirmishers
+	
 	can_recruit = { 
 		AND = {
 			any_directly_owned_province = { is_coastal = yes }			
@@ -50,15 +58,11 @@ sea_easterlings = { #represents Gondorian maritime traditions and mainly there f
 			}
 		}
 	}
-	type = skirmishers
 	
 	damage = 12
 	toughness = 20
 	screen = 20
 	
-	terrain_bonus = {
-	}
-
 	counters = {
 		heavy_infantry = 1
 	}

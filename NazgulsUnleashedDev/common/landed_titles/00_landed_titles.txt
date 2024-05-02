@@ -37737,38 +37737,10 @@ e_khand = {
 			}			
 		}
 
-		d_gap_of_khand = {
-			color = { 150 30 30 }
+		d_obamarl = {
+			color = { 94 52 49 }
+			capital = c_obamarl
 			
-			# capital = c_ubesesh
-			capital = c_pashar
-			
-			# c_ubesesh = {
-			# 	color = { 194 1 21 }
-				
-			# 	b_ubesesh_uta_paveter = {
-			# 		province = 4049
-					
-			# 		color = { 218 193 48 }
-					
-			# 	}
-				
-			# 	b_purluz = {
-			# 		province = 4050
-					
-			# 		color = { 205 194 94 }
-					
-			# 	}
-				
-			# 	b_obamarl = {
-			# 		province = 4051
-					
-			# 		color = { 236 43 1 }
-					
-			# 	}
-				
-			# }
-
 			c_obamarl = {
 				color = { 94 52 49 }				
 				
@@ -37793,6 +37765,12 @@ e_khand = {
 					
 				}
 			}
+		}
+
+		d_gap_of_khand = {
+			color = { 150 30 30 }
+			
+			capital = c_pashar			
 			
 			c_pashar = {
 				color = { 158 16 37 }
@@ -45152,4 +45130,3 @@ e_yellow_mountains = {
 		}
 	}
 }
-

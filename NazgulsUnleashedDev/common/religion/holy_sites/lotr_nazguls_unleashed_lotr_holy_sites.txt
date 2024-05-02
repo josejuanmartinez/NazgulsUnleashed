@@ -1,0 +1,26 @@
+﻿egil_dorn = { # The Isle of the Shapeshifters, ruled by Murlâm, one of the dark sorcerers trained by the Nazgul
+	county = c_tol_buruth
+	barony = b_tol_buruth
+	character_modifier = {
+		intrigue_per_prestige_level = 1
+		negate_intrigue_penalty_add = 3
+	}
+}
+
+egildorn = { # The Isle of the Shapeshifters, ruled by Murlâm, one of the dark sorcerers trained by the Nazgul
+	county = c_tol_buruth
+	barony = b_tol_buruth
+	character_modifier = {
+		intrigue_per_prestige_level = 1
+		negate_intrigue_penalty_add = 3
+	}
+}
+
+obamarl = { # Burial grounds of the Kings of Khand - rumored ascension place of Ovatha I
+	county = c_obamarl
+	barony = b_obamarl
+	character_modifier = {
+		monthly_prestige = 0.3
+		dynasty_opinion = 2
+	}
+}
