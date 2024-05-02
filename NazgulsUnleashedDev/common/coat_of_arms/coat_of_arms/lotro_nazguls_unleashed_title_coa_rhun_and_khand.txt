@@ -3,7 +3,7 @@
 	color1 = rgb { 78 113 144 }
 	colored_emblem = {
 		color1 = black
-		texture = "cc_b_car_na_lorn_e.dds"
+		texture = "ce_ras_morthil_01.dds"
 		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
 	}
 }
@@ -12,9 +12,9 @@ d_obamarl = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 94 52 49 }
 	colored_emblem = {
-		color1 = black
-		texture = "cc_b_car_na_lorn_e.dds"
-		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+		color1 = rgb { 154 82 49 }
+		texture = "cat_mountain.dds"
+		instance = { position = { 0.5 0.5 } scale = { 2.5 2.5 } }
 	}
 }
 
@@ -22,9 +22,9 @@ c_obamarl = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 94 52 49 }
 	colored_emblem = {
-		color1 = black
-		texture = "cc_b_car_na_lorn_e.dds"
-		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+		color1 = grey
+		texture = "cat_mountain.dds"
+		instance = { position = { 0.5 0.5 } scale = { 2.5 2.5 } }
 	}
 }
 
@@ -33,7 +33,49 @@ c_ongushar = {
 	color1 = rgb { 94 52 49 }
 	colored_emblem = {
 		color1 = black
-		texture = "ce_horse_01.dds"
+		texture = "ce_leofrings_02.dds"
+		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+	}
+}
+
+c_luglurak = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 168 50 164 }
+	colored_emblem = {
+		color1 = white
+		texture = "ce_cc_akhorahil.dds"
+		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+	}
+}
+
+d_luglurak = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 168 50 164 }
+	colored_emblem = {
+		color1 = white
+		texture = "ce_cc_akhorahil.dds"
+		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+	}
+}
+
+c_cirith_nargil = {
+	pattern = "pattern_solid.dds"
+	color1 = black
+	colored_emblem = {
+		color1 = grey
+		color2 = white
+		texture = "ce_edainsword_01.dds"
+		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+	}
+}
+
+d_cirith_nargil = {
+	pattern = "pattern_solid.dds"
+	color1 = black
+	colored_emblem = {
+		color1 = grey
+		color2 = white
+		texture = "ce_edainsword_01.dds"
 		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
 	}
 }

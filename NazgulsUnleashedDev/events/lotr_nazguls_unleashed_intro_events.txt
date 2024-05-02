@@ -1,10 +1,15 @@
-﻿namespace = olbamarl
+﻿namespace = nazguls_unleashed
+#####################
+# 0004 - Indur Intro
+# 0009 - Ovatha Intro
+# 0005 - Akhorahil Intro
 
-olbamarl.0001 = {
+
+nazguls_unleashed.0004 = { # Indur
 	content_source = realms_dlc
 	type = character_event
-	title = olbamarl.0001.t
-	desc = olbamarl.0001.desc
+	title = nazguls_unleashed.0004.t
+	desc = nazguls_unleashed.0004.desc
 	theme = martial_strategy_focus
 	override_background = {
 		reference = throne_room_evil
@@ -36,6 +41,87 @@ olbamarl.0001 = {
 	}
 	
 	option = { 
-		name = olbamarl.0001.a
+		name = nazguls_unleashed.0004.a
+	}
+}
+
+
+nazguls_unleashed.0005 = { # Akhorahil
+	content_source = realms_dlc
+	type = character_event
+	title = nazguls_unleashed.0005.t
+	desc = nazguls_unleashed.0005.desc
+	theme = martial_strategy_focus
+	override_background = {
+		reference = throne_room_evil
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		play_music_cue = lotr_cue_nazgul
+		culture:ringwraith = {
+			change_cultural_acceptance = {
+				target = culture:variag	#The Long Rider is highly recognized among Variags (Olmabarl)
+				value = 40
+				desc = cultural_acceptance_historical_relations
+			}
+			change_cultural_acceptance = {
+				target = culture:igath	#The Long Rider has long been accepted by Igath (Tol Buruth)
+				value = 30
+				desc = cultural_acceptance_historical_relations
+			}
+			change_cultural_acceptance = {
+				target = culture:magriag	#The Long Rider is accepted by Magriag (Ongushar)
+				value = 20
+				desc = cultural_acceptance_historical_relations
+			}
+		}
+	}
+	
+	option = { 
+		name = nazguls_unleashed.0005.a
+	}
+}
+
+nazguls_unleashed.0009 = { # Ovatha
+	content_source = realms_dlc
+	type = character_event
+	title = nazguls_unleashed.0009.t
+	desc = nazguls_unleashed.0009.desc
+	theme = martial_strategy_focus
+	override_background = {
+		reference = throne_room_evil
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		play_music_cue = lotr_cue_nazgul
+		culture:ringwraith = {
+			change_cultural_acceptance = {
+				target = culture:variag	#The Long Rider is highly recognized among Variags (Olmabarl)
+				value = 40
+				desc = cultural_acceptance_historical_relations
+			}
+			change_cultural_acceptance = {
+				target = culture:igath	#The Long Rider has long been accepted by Igath (Tol Buruth)
+				value = 30
+				desc = cultural_acceptance_historical_relations
+			}
+			change_cultural_acceptance = {
+				target = culture:magriag	#The Long Rider is accepted by Magriag (Ongushar)
+				value = 20
+				desc = cultural_acceptance_historical_relations
+			}
+		}
+	}
+	
+	option = { 
+		name = nazguls_unleashed.0009.a
 	}
 }

@@ -1,12 +1,13 @@
 fire_nazgul_unleashed_intro_events = {
-	character:nazgul9 = {
+
+	character:nazgul9 = { # Ovatha
 		if = {
 			limit = {
 				is_alive = yes
 				is_landed = yes
 			}
 			trigger_event = { 
-				id = olbamarl.0001
+				id = nazguls_unleashed.0009
 				days = 1
 			}			
 			
@@ -23,6 +24,38 @@ fire_nazgul_unleashed_intro_events = {
 					years = 25
 					name = TRUCE_KHAND_OLBAMARL
 				}
+			}
+		}
+	}
+	character:nazgul4 = { # Indur
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = { 
+				id = nazguls_unleashed.0004
+				days = 1
+			}			
+			
+			hidden_effect = {
+				add_truce_both_ways = { 
+					character = character:vangarisofkhand
+					years = 25
+					name = TRUCE_KHAND_OLBAMARL
+				}
+			}
+		}
+	}
+	character:nazgul5 = { # Akhorahil
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = { 
+				id = nazguls_unleashed.0005
+				days = 1
 			}
 		}
 	}	

@@ -13348,6 +13348,67 @@ e_mordor = {
 
 		}
 
+		d_luglurak = {
+			color = { 145 70 45 }
+			capital = c_luglurak
+			c_luglurak = {
+				color = { 145 70 45 }
+				
+				b_luglurak = {
+					province = 1423
+					
+					color = { 115 46 121 }
+					
+				}
+				
+				b_odnad = {
+					province = 1422
+					
+					color = { 144 176 172 }
+					
+				}
+				
+				b_ugbak = {
+					province = 1421
+					
+					color = { 160 172 32 }
+					
+				}
+				
+				b_ladgrub = {
+					province = 1420
+					
+					color = { 52 38 138 }
+					
+				}
+				
+				b_yarluk = {
+					province = 1418
+					
+					color = { 148 168 55 }
+					
+				}
+				
+			}
+		}
+
+		d_cirith_nargil = {
+			color = { 101 55 39 }
+			capital = c_cirith_nargil
+			c_cirith_nargil = {
+				color = { 101 55 39 }
+				
+				b_cirith_nargil = {
+					province = 785
+					
+					color = { 29 101 25 }
+					
+				}
+				
+			}
+		}
+		
+
 		d_nargil = {
 			color = { 140 77 55 }
 			
@@ -13461,58 +13522,6 @@ e_mordor = {
 					province = 680
 					
 					color = { 239 63 159 }
-					
-				}
-				
-			}
-
-			c_luglurak = {
-				color = { 145 70 45 }
-				
-				b_luglurak = {
-					province = 1423
-					
-					color = { 115 46 121 }
-					
-				}
-				
-				b_odnad = {
-					province = 1422
-					
-					color = { 144 176 172 }
-					
-				}
-				
-				b_ugbak = {
-					province = 1421
-					
-					color = { 160 172 32 }
-					
-				}
-				
-				b_ladgrub = {
-					province = 1420
-					
-					color = { 52 38 138 }
-					
-				}
-				
-				b_yarluk = {
-					province = 1418
-					
-					color = { 148 168 55 }
-					
-				}
-				
-			}
-
-			c_cirith_nargil = {
-				color = { 101 55 39 }
-				
-				b_cirith_nargil = {
-					province = 785
-					
-					color = { 29 101 25 }
 					
 				}
 				

@@ -98,6 +98,18 @@ male_headgear_ovatha_01 = {
 	entity = { required_tags = ""		shared_pose_entity = head		entity = male_norman_fpl_helmet_02_entity }
 }
 
+male_headgear_akhorahil_01 = {
+	set_tags = "no_hair"
+	set_tags = "hood_beard"
+	entity = { required_tags = ""		shared_pose_entity = head		entity = male_headgear_sauron_01_entity }
+}
+
+male_headgear_indur_01 = {
+	set_tags = "no_hair"
+	set_tags = "hood_beard"
+	entity = { required_tags = ""		shared_pose_entity = head		entity = male_norman_fpl_helmet_02_entity }
+}
+
 ## URUKHAI ##
 male_headgear_uruk_isengard_1 = {	
 	set_tags = "helmet"

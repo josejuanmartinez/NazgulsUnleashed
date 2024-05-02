@@ -1,10 +1,111 @@
-﻿bm_3000_eriador = {
+﻿bm_3000_nazguls_unleashed = {
 	start_date = 7033.1.1
 	is_playable = yes
 	group = bm_group_3000TA
 
 	weight = {
 		value = 1
+	}
+
+	
+	# Murazor
+	character = {
+		name = "bookmark_murazor"
+		dynasty = dynasty_witchking
+		dynasty_splendor_level = 5
+		type = male
+		birth = 2412.1.1
+		title = k_morgul
+		government = feudal_government
+		religion = lidless_eye
+		culture = ringwraith
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		history_id = nazgul1
+		position = { 380 580 } #{ 620 700 }
+		animation = personality_callous
+	}
+
+	
+	# Khamul
+	character = {
+		name = "bookmark_rhovanion_khamul"
+		dynasty = dynasty_womawdrus
+		dynasty_splendor_level = 5
+		type = male
+		birth = 2511.2.30
+		title = k_amon_lanc
+		government = feudal_government
+		religion = lidless_eye
+		culture = ringwraith
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_EASY"
+		history_id = nazgul2
+		position = { 280 150 } #{ 620 700 }
+		animation = personality_callous
+	}
+
+	# Ovatha
+	character = {
+		name = "bookmark_ovatha"
+		dynasty = dynasty_uvatha
+		dynasty_splendor_level = 5
+		type = male
+		birth = 2562.3.17
+		title = d_obamarl
+		government = feudal_government
+		religion = lidless_eye
+		culture = ringwraith
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = nazgul9
+		position = { 1600 580 } #{ 620 700 }
+		animation = personality_cynical
+	}
+
+	
+	# Ji Indur
+	character = {
+		name = "bookmark_indur"
+		dynasty = dynasty_mumakan
+		dynasty_splendor_level = 5
+		type = male
+		birth = 2547.5.25
+		title = d_cirith_nargil
+		government = feudal_government
+		religion = lidless_eye
+		culture = ringwraith
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = nazgul4
+		position = { 750 825 } #{ 620 700 }
+		animation = personality_cynical
+	}
+
+	
+	
+	# Akhorahil
+	character = {
+		name = "bookmark_akhorahil"
+		dynasty = dynasty_ciryamir
+		dynasty_splendor_level = 5
+		type = male
+		birth = 2480.1.1
+		title = d_luglurak
+		government = feudal_government
+		religion = lidless_eye
+		culture = ringwraith
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = nazgul5
+		position = { 1200 825 } #{ 620 700 }
+		animation = personality_cynical
+	}
+
+}
+
+bm_3000_eriador = {
+	start_date = 7033.1.1
+	is_playable = yes
+	group = bm_group_3000TA
+
+	weight = {
+		value = 0
 	}
 
 	# Aragorn
@@ -338,7 +439,7 @@ bm_3000_rhovanion = {
 
 	# Ovatha
 	character = {
-		name = "bookmark_rhovanion_ovatha"
+		name = "bookmark_ovatha"
 		dynasty = dynasty_uvatha
 		dynasty_splendor_level = 5
 		type = male
@@ -650,7 +751,25 @@ bm_3000_gondor = {
 		position = { 1150 830 }
 		animation = personality_bold
 	}
+	
+	# Ovatha, the Long Rider
+	character = {
+		name = "bookmark_gondor_ovatha"
+		dynasty = dynasty_uvatha
+		dynasty_splendor_level = 5
+		type = male
+		birth = 2562.3.17
+		title = d_obamarl
+		government = feudal_government
+		religion = lidless_eye
+		culture = ringwraith
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = nazgul9
+		position = { 1250 530 } #{ 620 700 }
+		animation = personality_cynical
+	}
 
+	
 	# Ovatha, the Long Rider
 	character = {
 		name = "bookmark_gondor_ovatha"

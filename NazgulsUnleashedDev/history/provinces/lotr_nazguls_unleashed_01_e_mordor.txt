@@ -1,0 +1,10 @@
+1423 = { #Luglurak (b_luglurak)
+	culture = nurnoth	
+	religion = lidless_eye
+	holding = castle_holding
+}
+785 = { #Cirith Nargil (b_cirith_nargil)
+	culture = murdurhai	
+	religion = lidless_eye
+	holding = castle_holding
+}
