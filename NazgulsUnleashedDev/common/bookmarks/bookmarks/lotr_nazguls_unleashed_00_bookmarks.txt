@@ -50,7 +50,7 @@
 		dynasty_splendor_level = 5
 		type = male
 		birth = 2562.3.17
-		title = d_obamarl
+		title = k_obamarl
 		government = feudal_government
 		religion = lidless_eye
 		culture = ringwraith
@@ -68,7 +68,7 @@
 		dynasty_splendor_level = 5
 		type = male
 		birth = 2547.5.25
-		title = d_cirith_nargil
+		title = k_cirith_nargil
 		government = feudal_government
 		religion = lidless_eye
 		culture = ringwraith
@@ -85,7 +85,7 @@
 		dynasty_splendor_level = 5
 		type = male
 		birth = 2480.1.1
-		title = d_luglurak
+		title = k_luglurak
 		government = feudal_government
 		religion = lidless_eye
 		culture = ringwraith
@@ -181,7 +181,7 @@ bm_3000_rhovanion = {
 		dynasty_splendor_level = 5
 		type = male
 		birth = 2562.3.17
-		title = d_obamarl
+		title = k_obamarl
 		government = feudal_government
 		religion = lidless_eye
 		culture = ringwraith

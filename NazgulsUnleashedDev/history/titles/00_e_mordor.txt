@@ -2684,28 +2684,35 @@ c_friyar = {
 		liege = k_nurn
 	}						
 }
-							
-#Cirith Nargil							
-c_cirith_nargil = {
-    6050.8.22 = {
-		holder = nazgul4
-        
+
+#Cirith Nargil
+k_cirith_nargil = {
+    7000.1.1 = {
+		liege = e_mordor
+        holder = nazgul4
         change_development_level = 12
 	}
 }
 
-#Cirith Nargil							
 d_cirith_nargil = {
-    6050.8.22 = {
-		holder = nazgul4
-        
+    7000.1.1 = {
+        liege = e_mordor
+        holder = nazgul4
         change_development_level = 12
 	}
 }
-							
-#Luglurak							
-d_luglurak = {
-5800.3.20 = {	# Old Nurniag Dynasty
+
+c_cirith_nargil = {
+    7000.1.1 = {
+        holder = nazgul4
+        change_development_level = 12
+	}
+}
+			
+# Luglurak
+
+k_luglurak = {
+    5800.3.20 = {	# Old Nurniag Dynasty
         holder = lineadro1 
 		change_development_level = 7
     }
@@ -2733,9 +2740,45 @@ d_luglurak = {
     6049.7.20 = {
         holder = lineibo7
     }
-    6050.8.22 = {
-		holder = nazgul5
-        
+    7000.2.1 = {
+        holder = nazgul5
+		liege = e_mordor
+        change_development_level = 12
+	}
+}
+
+d_luglurak = {
+    5800.3.20 = {	# Old Nurniag Dynasty
+        holder = lineadro1 
+		change_development_level = 7
+    }
+    5876.11.12 = {
+        holder = lineadro3
+    }
+    5902.4.2 = {
+        holder = lineadro5 
+    }
+    5904.7.12 = {
+        holder = lineadro7 
+    }
+    5970.11.15 = {
+        holder = lineadro11 
+    }
+	5909.8.26 = {
+        holder = lineibo1 
+    }
+    5970.3.2 = {
+        holder = lineibo3 
+    }
+    6032.10.13 = {
+        holder = lineibo5 
+    }
+    6049.7.20 = {
+        holder = lineibo7
+    }
+    7000.2.1 = {
+        holder = nazgul5
+        liege = e_mordor
         change_development_level = 12
 	}
 }
@@ -2769,9 +2812,8 @@ c_luglurak = {
     6049.7.20 = {
         holder = lineibo7
     }
-    6050.8.22 = {
-		holder = nazgul5
-        
+    7000.2.1 = {
+        holder = nazgul5
         change_development_level = 12
 	}
 }

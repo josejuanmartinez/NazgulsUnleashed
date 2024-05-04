@@ -1,7 +1,8 @@
 ﻿l_english:
  b_obamarl:0 "Ôlbamârl"
  c_obamarl:0 "Ôlbamârl"
- d_obamarl:0 "Ôlbamârl Unleashed"
+ d_obamarl:0 "Ôlbamârl"
+ k_obamarl:0 "Ôlbamârl Unleashed"
  
  cn_tol_buruth_elven:0 "Tol Súlereb"
  cn_tol_buruth_orc:0 "Ugadhol Buruth"
@@ -11,5 +12,8 @@
 
  c_ongushar:0 "Ongushar"
 
- d_luglurak:0 "Luglurak Unleashed"
- d_cirith_nargil:0 "Nargil Unleashed"
+ d_luglurak:0 "Luglurak"
+ k_luglurak:0 "Luglurak Unleashed"
+
+ d_cirith_nargil:0 "Cirith Nargil"
+ k_cirith_nargil:0 "Nargil Unleashed"

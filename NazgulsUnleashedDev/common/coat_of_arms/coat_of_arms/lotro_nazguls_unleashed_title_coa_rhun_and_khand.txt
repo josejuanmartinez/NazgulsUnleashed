@@ -8,6 +8,16 @@
 	}
 }
 
+k_obamarl = {
+	pattern = "pattern_solid.dds"
+	color1 = rgb { 94 52 49 }
+	colored_emblem = {
+		color1 = rgb { 154 82 49 }
+		texture = "cat_mountain.dds"
+		instance = { position = { 0.5 0.5 } scale = { 2.5 2.5 } }
+	}
+}
+
 d_obamarl = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 94 52 49 }
@@ -48,7 +58,7 @@ c_luglurak = {
 	}
 }
 
-d_luglurak = {
+k_luglurak = {
 	pattern = "pattern_solid.dds"
 	color1 = rgb { 168 50 164 }
 	colored_emblem = {
@@ -69,7 +79,7 @@ c_cirith_nargil = {
 	}
 }
 
-d_cirith_nargil = {
+k_cirith_nargil = {
 	pattern = "pattern_solid.dds"
 	color1 = black
 	colored_emblem = {

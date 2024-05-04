@@ -528,17 +528,7 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 		}
 	}
 
-	6050.1.1 = {
-		effect = {
-			make_tributary = {
-				TYPE = tributary_permanent
-				SUZERAIN = character:lineofsauron
-				TRIBUTARY = character:nazgul4
-			}
-		}
-	}
-
-	7032.1.1 = {
+	6050.8.22 = {
 		effect = {
 			add_dread = 100
 			create_character_memory = {
@@ -548,7 +538,7 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 				save_scope_as = ascended_throne_memory
 				set_variable = {
 					name = landed_title
-					value = title:d_cirith_nargil
+					value = title:k_cirith_nargil
 				}
 			}
 		}
@@ -622,17 +612,7 @@ nazgul5 = {
 		}
 	}
 
-	6050.1.1 = {
-		effect = {
-			make_tributary = {
-				TYPE = tributary_permanent
-				SUZERAIN = character:lineofsauron
-				TRIBUTARY = character:nazgul4
-			}
-		}
-	}
-
-	7032.1.1 = {
+	6050.8.22 = {
 		effect = {
 			add_dread = 100
 			create_character_memory = {
@@ -642,7 +622,7 @@ nazgul5 = {
 				save_scope_as = ascended_throne_memory
 				set_variable = {
 					name = landed_title
-					value = title:d_luglurak
+					value = title:k_luglurak
 				}
 			}
 		}
@@ -707,7 +687,7 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 				save_scope_as = ascended_throne_memory
 				set_variable = {
 					name = landed_title
-					value = title:d_obamarl
+					value = title:k_obamarl
 				}
 			}
 		}					
