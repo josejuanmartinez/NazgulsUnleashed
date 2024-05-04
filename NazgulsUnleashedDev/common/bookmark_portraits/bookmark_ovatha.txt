@@ -97,7 +97,7 @@ bookmark_ovatha={
  		complexion={ "complexion_no_face" 255 "complexion_5" 154 }
  		gene_height={ "normal_height" 139 "normal_height" 139 }
  		gene_bs_body_type={ "no_portrait" 255 "body_fat_head_fat_low" 117 }
- 		gene_bs_body_shape={ "body_shape_average" 218 "body_shape_average" 50 }
+ 		gene_bs_body_shape={ "body_shape_average" 233 "body_shape_average" 50 }
  		gene_bs_bust={ "bust_clothes" 108 "bust_shape_2_full" 136 }
  		gene_age={ "no_aging" 255 "old_2" 253 }
  		gene_eyebrows_shape={ "no_eyebrows" 255 "far_spacing_lower_thickness" 248 }
@@ -127,21 +127,11 @@ bookmark_ovatha={
  		gene_bs_cloak_offset={ "cloak_offset" 255 "" 0 }
  		gene_bs_long_beard={ "long_beard" 255 "" 0 }
  		clothes={ "nazgul_clothes" 128 "most_clothes" 0 }
- 		headgear={ "barbershop_headgear_lotr" 189 "no_headgear" 0 }
+ 		headgear={ "ovatha_unique_headgear" 86 "no_headgear" 0 }
  		gene_balding_hair_effect={ "baldness_stage_2" 255 "no_baldness" 0 }
  }
-	override={
-		portrait_modifier_overrides={
-			custom_headgear=male_norman_fpl_helmet_02
-		}
-	}
-
 	entity={ 979141817 979141817 }
 	tags={ {
-			hash=930879859
-			invert=no
-		}
- {
 			hash=1367985987
 			invert=no
 		}
@@ -154,10 +144,6 @@ bookmark_ovatha={
 			invert=no
 		}
  {
-			hash=755752967
-			invert=no
-		}
- {
 			hash=2495432340
 			invert=no
 		}
@@ -167,6 +153,10 @@ bookmark_ovatha={
 		}
  {
 			hash=2951898311
+			invert=no
+		}
+ {
+			hash=1219709797
 			invert=no
 		}
  }

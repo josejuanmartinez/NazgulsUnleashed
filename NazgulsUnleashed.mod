@@ -7,6 +7,8 @@ tags={
 	"Realms in Exile"
 	"Lord of the Rings"
 }
+replace_path="history/characters"
+replace_path="history/titles"
+picture="thumbnail.png"
 supported_version="1.12.*"
 path="mod/NazgulsUnleashedDev"
-picture="thumbnail.png"

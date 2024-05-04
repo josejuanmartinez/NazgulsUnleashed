@@ -5532,8 +5532,8 @@ headgear = {
 			accessory = {
 				mode = add		
 				gene = headgear
-				template = nazguls_unleashed_unique_headgear
-				range = { 0.1 0.11 } # For the randomness to work correctly
+				template = ovatha_unique_headgear
+				range = { 0 1 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -5552,8 +5552,8 @@ headgear = {
 			accessory = {
 				mode = add		
 				gene = headgear
-				template = nazguls_unleashed_unique_headgear
-				range = { 0.2 0.21 } # For the randomness to work correctly
+				template = akhorahil_unique_headgear
+				range = { 0 1 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -5572,8 +5572,8 @@ headgear = {
 			accessory = {
 				mode = add		
 				gene = headgear
-				template = nazguls_unleashed_unique_headgear
-				range = { 0.3 0.31 } # For the randomness to work correctly
+				template = indur_unique_headgear
+				range = { 0 1 } # For the randomness to work correctly
 			}
 		}
 		weight = {

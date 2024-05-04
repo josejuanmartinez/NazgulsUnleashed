@@ -1,0 +1,8 @@
+﻿courtier_scheme_agent = {
+	icon = wound
+
+	hostile_scheme_resistance_mult = 0.50
+	scheme_discovery_chance_mult = 2.0
+	enemy_personal_scheme_success_chance_add = -50
+	diplomatic_range_mult = 4
+}

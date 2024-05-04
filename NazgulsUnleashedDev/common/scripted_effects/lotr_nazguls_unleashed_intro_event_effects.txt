@@ -1,4 +1,4 @@
-fire_nazgul_unleashed_intro_events = {
+﻿fire_nazgul_unleashed_intro_events = {
 
 	character:nazgul9 = { # Ovatha
 		if = {
@@ -40,9 +40,9 @@ fire_nazgul_unleashed_intro_events = {
 			
 			hidden_effect = {
 				add_truce_both_ways = { 
-					character = character:vangarisofkhand
+					character = character:lineofkhadnom5
 					years = 25
-					name = TRUCE_KHAND_OLBAMARL
+					name = TRUCE_CHELKAR_NARGIL
 				}
 			}
 		}

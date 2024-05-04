@@ -53,9 +53,7 @@ sea_easterlings = { #represents Gondorian maritime traditions and mainly there f
 	can_recruit = { 
 		AND = {
 			any_directly_owned_province = { is_coastal = yes }			
-			can_recruit = { 
-				has_title = title:c_tol_buruth
-			}
+			has_title = title:c_tol_buruth
 		}
 	}
 	

@@ -3617,20 +3617,40 @@
 				}
 
 				
-				nazguls_unleashed_unique_headgear = {
-					index = 197
+				ovatha_unique_headgear = {
+					index = 199
 					male = {
 						1 = male_headgear_ovatha_01
-						1 = male_headgear_akhorahil_01
-						1 = male_headgear_indur_01
 					}
 					female = {
 						1 = male_headgear_ovatha_01
-						1 = male_headgear_akhorahil_01
+					}
+					boy = male
+					girl = female
+				}
+
+				indur_unique_headgear = {					
+					index = 200
+					male = {
+						1 = male_headgear_indur_01
+					}
+					female = {
 						1 = male_headgear_indur_01
 					}
 					boy = male
-					girl = male
+					girl = female
+				}
+
+				akhorahil_unique_headgear = {					
+					index = 201
+					male = {
+						1 = male_headgear_akhorahil_01
+					}
+					female = {
+						1 = male_headgear_akhorahil_01
+					}
+					boy = male
+					girl = female
 				}
 				
 		}
