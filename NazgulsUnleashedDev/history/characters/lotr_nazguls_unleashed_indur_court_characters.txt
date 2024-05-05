@@ -5176,42 +5176,7 @@ nurnoth_0_character75 = {
 
 nurnoth_0_character76_wife = {
     name = R_omendil
-    religion = lidless_eye
-    culture = nurnoth
-
-    sexuality = heterosexual
     
-    female = yes
-    
-    diplomacy = 1
-    martial = 8
-    stewardship = 9
-    intrigue = 10
-    learning = 4
-    prowess = 1
-
-    trait = education_stewardship_2
-    trait = generous
-	trait = temperate
-	trait = humble
-	trait = diligent
-    
-    7007.1.11 = {
-        birth = yes
-    }
-    7028.1.11 = {
-        employer = nazgul4
-        give_council_position = councillor_steward
-        add_trait = indur_scheme_court
-    }
-    7088.4.22 = {
-        death = { death_reason = death_natural_causes }
-    }
-}
-
-nurnoth_0_character76 = {
-    name = Tangorn
-    dynasty_house = house_vrakhara
     religion = lidless_eye
     culture = nurnoth
 
@@ -5238,11 +5203,47 @@ nurnoth_0_character76 = {
     7006.4.22 = {
         birth = yes
     }
+            
+    7088.12.7 = {
+        death = { death_reason = death_natural_causes }
+    }
+}
+
+nurnoth_0_character76 = {
+    name = Tangorn
+    dynasty_house = house_vrakhara
+    religion = lidless_eye
+    culture = nurnoth
+
+    sexuality = heterosexual
+    
+    female = yes
+    
+    diplomacy = 1
+    martial = 8
+    stewardship = 12
+    intrigue = 10
+    learning = 4
+    prowess = 1
+
+    trait = education_stewardship_2
+    trait = generous
+	trait = temperate
+	trait = humble
+	trait = diligent
+    
+    7007.1.11 = {
+        birth = yes
+    }
     7025.4.7 = {
         add_spouse = nurnoth_0_character76_wife
     }
-            
-    7088.12.7 = {
+    7028.1.11 = {
+        employer = nazgul4
+        give_council_position = councillor_steward
+        add_trait = indur_scheme_court
+    }
+    7088.4.22 = {
         death = { death_reason = death_natural_causes }
     }
 }
@@ -12703,42 +12704,7 @@ nurnoth_1_character84 = {
 
 nurnoth_1_character85_wife = {
     name = N_umell_ot_e_e
-    religion = lidless_eye
-    culture = nurnoth
-
-    sexuality = heterosexual
     
-    female = yes
-    
-    diplomacy = 10
-    martial = 2
-    stewardship = 1
-    intrigue = 10
-    learning = 7
-    prowess = 5
-
-    trait = education_diplomacy_2
-    trait = craven
-	trait = content
-	trait = arrogant
-	trait = wrathful
-    
-    6997.3.25 = {
-        birth = yes
-    }
-    7018.3.25 = {
-        employer = nazgul4
-        give_council_position = councillor_chancellor
-        add_trait = indur_scheme_court
-    }
-    7065.7.13 = {
-        death = { death_reason = death_natural_causes }
-    }
-}
-
-nurnoth_1_character85 = {
-    name = Vargaelas
-    dynasty_house = house_ibo
     religion = lidless_eye
     culture = nurnoth
 
@@ -12765,13 +12731,50 @@ nurnoth_1_character85 = {
     6994.7.13 = {
         birth = yes
     }
-    7015.7.10 = {
-        add_spouse = nurnoth_1_character85_wife
-    }
             
     7071.10.10 = {
         death = { death_reason = death_natural_causes }
     }
+}
+
+nurnoth_1_character85 = {
+    name = Vargaelas    
+    dynasty_house = house_ibo
+    religion = lidless_eye
+    culture = nurnoth
+
+    sexuality = heterosexual
+    
+    female = yes
+    
+    diplomacy = 10
+    martial = 2
+    stewardship = 1
+    intrigue = 10
+    learning = 7
+    prowess = 5
+
+    trait = education_diplomacy_2
+    trait = craven
+	trait = content
+	trait = arrogant
+	trait = wrathful
+    
+    6997.3.25 = {
+        birth = yes
+    }
+    7015.7.10 = {
+        add_spouse = nurnoth_1_character85_wife
+    }
+    7018.3.25 = {
+        employer = nazgul4
+        give_council_position = councillor_chancellor
+        add_trait = indur_scheme_court
+    }
+    7065.7.13 = {
+        death = { death_reason = death_natural_causes }
+    }
+    
 }
 
 nurnoth_1_character86_wife = {
@@ -26101,42 +26104,7 @@ nurniag_1_character78 = {
 
 nurniag_1_character79_wife = {
     name = Roshanak
-    religion = lidless_eye
-    culture = nurniag
-
-    sexuality = heterosexual
     
-    female = yes
-    
-    diplomacy = 2
-    martial = 9
-    stewardship = 3
-    intrigue = 14
-    learning = 5
-    prowess = 2
-
-    trait = education_intrigue_3
-    trait = greedy
-	trait = chaste
-	trait = trusting
-	trait = forgiving
-    
-    6988.6.8 = {
-        birth = yes
-    }
-    7008.6.8 = {
-        employer = nazgul4
-        give_council_position = councillor_spymaster
-        add_trait = indur_scheme_court
-    }
-    7060.5.3 = {
-        death = { death_reason = death_natural_causes }
-    }
-}
-
-nurniag_1_character79 = {
-    name = Huchithra
-    dynasty = dynasty_udo
     religion = lidless_eye
     culture = nurniag
 
@@ -26163,11 +26131,49 @@ nurniag_1_character79 = {
     6985.5.3 = {
         birth = yes
     }
+            
+    7063.7.27 = {
+        death = { death_reason = death_natural_causes }
+    }
+}
+
+nurniag_1_character79 = {
+    name = Huchithra
+    
+    dynasty = dynasty_udo
+    religion = lidless_eye
+    culture = nurniag
+
+    sexuality = heterosexual
+    
+    female = yes
+    
+    diplomacy = 2
+    martial = 9
+    stewardship = 3
+    intrigue = 14
+    learning = 5
+    prowess = 2
+
+    trait = education_intrigue_3
+    trait = greedy
+	trait = chaste
+	trait = wrathful
+	trait = sadistic
+    
+    6988.6.8 = {
+        birth = yes
+    }
+    
     7006.5.27 = {
         add_spouse = nurniag_1_character79_wife
     }
-            
-    7063.7.27 = {
+    7008.6.8 = {
+        employer = nazgul4
+        give_council_position = councillor_spymaster
+        add_trait = indur_scheme_court
+    }
+    7060.5.3 = {
         death = { death_reason = death_natural_causes }
     }
 }
@@ -33973,6 +33979,42 @@ orc_0_character92 = {
 
 orc_0_character93_wife = {
     name = Snargab
+    
+    religion = lidless_eye
+    culture = burgulhai
+
+    sexuality = Heterosexual
+    
+    female = no
+    
+    father = orc_0_character91
+    mother = orc_0_character91_wife
+    
+    diplomacy = 9
+    martial = 10
+    stewardship = 9
+    intrigue = 3
+    learning = 1
+    prowess = 3
+    
+    trait = education_diplomacy_3
+    trait = paranoid
+	trait = fickle
+	trait = zealous
+	trait = arbitrary
+
+    6984.4.23 = {
+        birth = yes
+    }
+            
+    7065.10.12 = {
+        death = { death_reason = death_natural_causes }
+    }
+}
+
+orc_0_character93 = {
+    name = Baaaabs
+    
     religion = lidless_eye
     culture = burgulhai
 
@@ -34001,45 +34043,11 @@ orc_0_character93_wife = {
         give_council_position = councillor_marshal
         add_trait = indur_scheme_court
     }
-    7068.4.23 = {
-        death = { death_reason = death_natural_causes }
-    }
-}
-
-orc_0_character93 = {
-    name = Baaaabs
     
-    religion = lidless_eye
-    culture = burgulhai
-
-    sexuality = Heterosexual
-    
-    female = no
-    
-    father = orc_0_character91
-    mother = orc_0_character91_wife
-    
-    diplomacy = 9
-    martial = 10
-    stewardship = 9
-    intrigue = 3
-    learning = 1
-    prowess = 3
-    
-    trait = education_diplomacy_3
-    trait = paranoid
-	trait = fickle
-	trait = zealous
-	trait = arbitrary
-
-    6984.4.23 = {
-        birth = yes
-    }
     7003.4.12 = {
         add_spouse = orc_0_character93_wife
     }
-            
-    7065.10.12 = {
+    7068.4.23 = {
         death = { death_reason = death_natural_causes }
     }
 }

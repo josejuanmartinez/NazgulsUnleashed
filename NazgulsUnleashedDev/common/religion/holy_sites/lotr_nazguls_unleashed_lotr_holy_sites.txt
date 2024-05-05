@@ -24,11 +24,3 @@ obamarl = { # Burial grounds of the Kings of Khand - rumored ascension place of 
 		dynasty_opinion = 2
 	}
 }
-
-luglurak = { # Luglurak temple
-	county = c_luglurak
-	barony = b_luglurak
-	character_modifier = {
-		monthly_piety = 5
-	}
-}

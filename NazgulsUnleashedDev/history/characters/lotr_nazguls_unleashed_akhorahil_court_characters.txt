@@ -18439,42 +18439,6 @@ akhorahil_nurniag_0_character68_wife = {
     religion = lidless_eye
     culture = nurniag
 
-    sexuality = heterosexual
-    
-    female = yes
-    
-    diplomacy = 12
-    martial = 4
-    stewardship = 4
-    intrigue = 4
-    learning = 10
-    prowess = 10
-
-    trait = education_diplomacy_3
-    trait = cynical
-	trait = generous
-	trait = arrogant
-	trait = craven
-    
-    7002.4.25 = {
-        birth = yes
-    }
-    7022.4.25 = {
-        employer = nazgul5
-        give_council_position = councillor_chancellor
-        add_trait = sorcerer_1
-    }
-    7085.10.22 = {
-        death = { death_reason = death_natural_causes }
-    }
-}
-
-akhorahil_nurniag_0_character68 = {
-    name = Goberu
-    dynasty = dynasty_udo
-    religion = lidless_eye
-    culture = nurniag
-
     sexuality = Heterosexual
     
     female = no
@@ -18498,11 +18462,49 @@ akhorahil_nurniag_0_character68 = {
     7001.10.22 = {
         birth = yes
     }
+            
+    7085.2.3 = {
+        death = { death_reason = death_natural_causes }
+    }
+}
+
+akhorahil_nurniag_0_character68 = {
+    name = Goberu
+    dynasty = dynasty_udo
+    
+    religion = lidless_eye
+    culture = nurniag
+
+    sexuality = heterosexual
+    
+    female = yes
+    
+    diplomacy = 12
+    martial = 4
+    stewardship = 4
+    intrigue = 4
+    learning = 10
+    prowess = 10
+
+    trait = education_diplomacy_3
+    trait = cynical
+	trait = generous
+	trait = arrogant
+	trait = craven
+    
+    7002.4.25 = {
+        birth = yes
+    }
+    
     7021.10.3 = {
         add_spouse = akhorahil_nurniag_0_character68_wife
     }
-            
-    7085.2.3 = {
+    7022.4.25 = {
+        employer = nazgul5
+        give_council_position = councillor_chancellor
+        add_trait = sorcerer_1
+    }
+    7085.10.22 = {
         death = { death_reason = death_natural_causes }
     }
 }
@@ -25874,7 +25876,7 @@ akhorahil_nurniag_1_character75 = {
     learning = 10
     prowess = 6
     
-    trait = education_intrigue_2
+    trait = education_intrigue_1
     trait = cynical
 	trait = callous
 	trait = gregarious

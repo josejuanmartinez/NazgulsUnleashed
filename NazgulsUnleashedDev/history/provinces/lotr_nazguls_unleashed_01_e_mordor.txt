@@ -2,9 +2,25 @@
 	culture = nurnoth	
 	religion = lidless_eye
 	holding = castle_holding
+	6050.8.22 = {		
+		buildings = {
+			castle_02
+			orc_siege_works_03
+			warg_pits_03
+		}
+		special_building_slot = sorcery_tower_of_luglurak
+		special_building = sorcery_tower_of_luglurak
+	}
 }
 785 = { #Cirith Nargil (b_cirith_nargil)
 	culture = murdurhai	
 	religion = lidless_eye
 	holding = castle_holding
+	6050.8.22 = {		
+		buildings = {
+			castle_02
+			orc_siege_works_03
+			warg_pits_03			
+		}
+	}
 }

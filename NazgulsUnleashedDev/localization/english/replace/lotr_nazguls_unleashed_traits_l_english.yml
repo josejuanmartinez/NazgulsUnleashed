@@ -1,3 +1,5 @@
 ﻿l_english:
  trait_courtier_scheme_agent:0 "Agent"
  trait_courtier_scheme_agent_desc:0 "You serve your spymaster and will join them in their schemes"
+ trait_indur_scheme_court:0 "Court of Îndur"
+ trait_indur_scheme_court_desc:0 "You are part of the court of assassins of Jí-Îndur `Dawnbreak`"

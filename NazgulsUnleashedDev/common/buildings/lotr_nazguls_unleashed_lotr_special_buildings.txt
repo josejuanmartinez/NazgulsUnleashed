@@ -42,3 +42,36 @@
 	type = special
 	flag = travel_point_of_interest_religious
 }
+
+sorcery_tower_of_luglurak = { # Obsidian Temple
+	type_icon = "icon_structure_cologne_cathedral.dds" #PLACEHOLDER
+    
+	construction_time = very_slow_construction_time
+	cost_gold = 1000
+    cost_piety = 1000
+    cost_prestige = 1000
+	can_construct = {
+		always = no
+	}
+
+	is_enabled = {
+		custom_description = {
+			text = holy_site_building_trigger			
+			faith_is_evil = yes
+		}
+	}
+
+	character_modifier = {
+		monthly_piety = 5
+	}
+
+
+    # Help to resist the stress to the fading effect
+    # Holder gain piety by month
+	
+	ai_value = {
+		base = 100
+	}
+	type = special
+	flag = travel_point_of_interest_religious
+}

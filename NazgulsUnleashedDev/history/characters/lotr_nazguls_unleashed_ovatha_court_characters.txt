@@ -5566,13 +5566,13 @@ ongushar_0_character81 = {
     diplomacy = 2
     martial = 9
     stewardship = 1
-    intrigue = 10
+    intrigue = 11
     learning = 1
     prowess = 1
     
     trait = education_intrigue_1
-    trait = lazy
-	trait = trusting
+    trait = cynical
+	trait = patient
 	trait = impatient
 	trait = zealous
 
@@ -36850,10 +36850,10 @@ olbamarl_1_character84 = {
     prowess = 5
     
     trait = education_diplomacy_2
-    trait = deceitful
-	trait = greedy
-	trait = paranoid
-	trait = impatient
+    trait = temperate
+	trait = sadistic
+	trait = brave
+	trait = gregarious
 
     6993.2.18 = {
         birth = yes
