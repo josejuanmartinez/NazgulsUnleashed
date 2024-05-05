@@ -6,3 +6,10 @@ is_human_sorcerer = {
 		has_trait = maiar
 	}
 }
+
+is_blind_sorcerer_casting = {
+	OR = {
+		this = character:nazgul5
+		is_courtier_of = character:nazgul5
+	}
+}

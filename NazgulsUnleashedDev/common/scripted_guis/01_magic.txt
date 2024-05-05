@@ -15,6 +15,8 @@ can_do_sorcery = {
 			has_character_modifier = practiced_sorcery_recently
 		}
 	}
+	gold > 0
+	faith > 0
 }
 
 can_do_sorcery_blind_sorcerer = {
@@ -34,6 +36,8 @@ can_do_sorcery_blind_sorcerer = {
 				}
 			}	
 		}
+		gold > 0
+		faith > 0
 	}
 }
 
@@ -117,7 +121,10 @@ select_invoke_watchers = {
 }
 select_summon_being_of_darkness = {
 	is_valid = {
-		NOT = { has_character_modifier = fell_beast_mount_modifier }
+		AND = {
+			NOT = { has_character_modifier = fell_beast_mount_modifier }
+			has_trait = nazgul
+		}		
 	}
 	effect = {
 		set_variable = {
@@ -307,11 +314,13 @@ cast_call_the_horde = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -250
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -1550,11 +1559,13 @@ cast_mark_of_war = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -250
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -1825,11 +1836,13 @@ cast_assemble_the_warchiefs = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
 			} 
 		}
 		else = {
 			add_piety = {
 				value = -250
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -1995,11 +2008,13 @@ cast_rise_the_dead = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -300
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -2233,11 +2248,13 @@ cast_invoke_watchers = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 400
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 200}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -400
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 200}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -2393,11 +2410,13 @@ cast_summon_being_of_darkness = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 250}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -500
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -2570,11 +2589,13 @@ cast_cracks_of_the_earth = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 600
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 300}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -600
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 300}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -2825,11 +2846,13 @@ cast_dark_vitality = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 200
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 100}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -200
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 100}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -3202,11 +3225,13 @@ cast_words_of_power = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -300
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -3564,11 +3589,13 @@ cast_forge_morgul_weapons = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 375}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -750
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -3709,11 +3736,13 @@ cast_purse_them_relentlessly = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -300
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -3860,11 +3889,13 @@ cast_black_breath = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 750}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -1500
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 750}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -4168,11 +4199,13 @@ cast_nazgul_restoration = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -250
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -4311,11 +4344,13 @@ cast_ambassador_of_darkness = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 250}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -500
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -4462,11 +4497,13 @@ cast_shapeshifting = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 250}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -500
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -4626,11 +4663,13 @@ cast_reveal_the_secrets = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -300
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -4889,11 +4928,13 @@ cast_cast_the_darkness = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1000
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 500}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -1000
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 500}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -5135,11 +5176,13 @@ cast_abnormal_winter = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 750}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -750
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -5421,11 +5464,13 @@ cast_the_plague = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
+				if = {limit = { is_blind_sorcerer_casting = yes} substract = 750}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -1500
+				if = {limit = { is_blind_sorcerer_casting = yes} add = 750}
 				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}

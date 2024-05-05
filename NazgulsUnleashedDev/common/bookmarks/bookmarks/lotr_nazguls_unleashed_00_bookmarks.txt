@@ -4,7 +4,7 @@
 	group = bm_group_3000TA
 
 	weight = {
-		value = 1
+		value = 0
 	}
 
 	
@@ -77,8 +77,8 @@
 		position = { 750 825 } #{ 620 700 }
 		animation = personality_vengeful
 	}
-	
-	# Akhorahil
+
+	# Ji Indur
 	character = {
 		name = "bookmark_akhorahil"
 		dynasty = dynasty_ciryamir
@@ -94,6 +94,23 @@
 		position = { 1000 725 } #{ 620 700 }
 		animation = personality_vengeful
 	}
+	
+	# Akhorahil
+	# character = {
+	# 	name = "bookmark_akhorahil"
+	# 	dynasty = dynasty_ciryamir
+	# 	dynasty_splendor_level = 5
+	# 	type = male
+	# 	birth = 2480.1.1
+	# 	title = k_luglurak
+	# 	government = feudal_government
+	# 	religion = lidless_eye
+	# 	culture = ringwraith
+	# 	difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+	# 	history_id = nazgul5
+	# 	position = { 1000 725 } #{ 620 700 }
+	# 	animation = personality_vengeful
+	# }
 
 }
 
