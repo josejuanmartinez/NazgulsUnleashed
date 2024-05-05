@@ -5792,6 +5792,7 @@ akhorahil_nurnoth_0_character84 = {
     7022.4.17 = {
             employer = nazgul5
             give_council_position = councillor_steward
+            add_trait = sorcerer_1
         }        
     7081.7.6 = {
         death = { death_reason = death_natural_causes }
@@ -12904,6 +12905,7 @@ akhorahil_nurnoth_1_character87 = {
     7008.3.17 = {
             employer = nazgul5
             give_council_position = councillor_court_chaplain
+            add_trait = sorcerer_2
         }        
     7066.6.27 = {
         death = { death_reason = death_natural_causes }
@@ -18460,6 +18462,7 @@ akhorahil_nurniag_0_character68_wife = {
     7022.4.25 = {
         employer = nazgul5
         give_council_position = councillor_chancellor
+        add_trait = sorcerer_1
     }
     7085.10.22 = {
         death = { death_reason = death_natural_causes }
@@ -25867,7 +25870,7 @@ akhorahil_nurniag_1_character75 = {
     diplomacy = 3
     martial = 9
     stewardship = 4
-    intrigue = 12
+    intrigue = 8
     learning = 10
     prowess = 6
     
@@ -25886,6 +25889,7 @@ akhorahil_nurniag_1_character75 = {
     6995.3.10 = {
             employer = nazgul5
             give_council_position = councillor_spymaster
+            add_trait = sorcerer_1
         }        
     7061.7.25 = {
         death = { death_reason = death_natural_causes }
@@ -33067,6 +33071,7 @@ akhorahil_orc_0_character79 = {
     7016.2.15 = {
             employer = nazgul5
             give_council_position = councillor_marshal
+            add_trait = sorcerer_1
         }        
     7079.9.18 = {
         death = { death_reason = death_natural_causes }
@@ -40799,6 +40804,7 @@ akhorahil_orc_1_character91 = {
     }
     7005.2.18 = {
             employer = nazgul5
+            add_trait = sorcerer_1
         }        
     7068.7.10 = {
         death = { death_reason = death_natural_causes }

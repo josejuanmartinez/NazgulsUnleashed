@@ -1,0 +1,8 @@
+is_human_sorcerer = {
+	is_sorcerer = yes
+	NOR = {
+		has_trait = nazgul
+		is_evil_istari = yes
+		has_trait = maiar
+	}
+}

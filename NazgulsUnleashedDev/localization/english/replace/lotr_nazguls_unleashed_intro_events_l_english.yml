@@ -10,3 +10,10 @@
  nazguls_unleashed.0004.t:0 "Nargil Unleashed: Indûr `Dawndeath`"
  nazguls_unleashed.0004.desc:0 "As Jí-Indûr, also feared as Dawndeath, your story unfolds with your origins in the city of Korosglin, where you rose from the ranks of the wealthiest family to the youngest governor ever elected. What once started as mere schemas and manipulations, later on turned into torture and silent executions of those who opposed him. You forged a formidable identity amidst the political machinations to protect your commercial dominions against the expanding influence of [numenor|E]. This quest for power led to an alliance with [sauroncharacter|E], transforming you into one of the dreaded [ringwraiths|E] after being given one of the [nineringsofmen|E].\n\nYou operate from the shadows, taking advantage of twilight and dawn, which earned you the name of 'Dawndeath'. Your dominion of terror extends from the shadowy stronghold of [GetTitleByKey('b_cirith_nargil').GetNameNoTier] under the dark influence of Êphil Duath, where you continue to serve Sauron's dark purposes as his most lethal spymaster and strategic mastermind."
  nazguls_unleashed.0004.a:0 "From dawn's shadow, our reign of terror persists."
+
+ evil.0002.t:0 "Select Ritual Caster"
+ evil.0002.desc:0 "As I plan my ritual, I need to decide which of my [sorcerer|E] courtiers will be in charge or casting the spell.\n\nNOTES:\n- Only sorcerers who have not recently casted a spell will be available.\n\n- The higher level of sorcery (e.g - [GetTrait('sorcerer_1').GetName(GetNullCharacter)], [GetTrait('sorcerer_2').GetName(GetNullCharacter)] and [GetTrait('sorcerer_3').GetName(GetNullCharacter)] traits) the caster has, the bigger chances of success and critical success.\n\n- Court sorcerers have bigger change of failure and critical failure."
+ evil.0002.a:0 "[ritual_caster_1.GetName]"
+ evil.0002.b:0 "[ritual_caster_2.GetName]"
+ evil.0002.c:0 "[ritual_caster_3.GetName]"
+ evil.0002.d:0 "I will do it myself"

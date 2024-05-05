@@ -5202,6 +5202,7 @@ nurnoth_0_character76_wife = {
     7028.1.11 = {
         employer = nazgul4
         give_council_position = councillor_steward
+        add_trait = indur_scheme_court
     }
     7088.4.22 = {
         death = { death_reason = death_natural_causes }
@@ -12728,6 +12729,7 @@ nurnoth_1_character85_wife = {
     7018.3.25 = {
         employer = nazgul4
         give_council_position = councillor_chancellor
+        add_trait = indur_scheme_court
     }
     7065.7.13 = {
         death = { death_reason = death_natural_causes }
@@ -19464,6 +19466,7 @@ nurniag_0_character82 = {
     7013.4.10 = {
             employer = nazgul4
             give_council_position = councillor_court_chaplain
+            add_trait = indur_scheme_court
         }        
     7071.5.26 = {
         death = { death_reason = death_natural_causes }
@@ -26124,6 +26127,7 @@ nurniag_1_character79_wife = {
     7008.6.8 = {
         employer = nazgul4
         give_council_position = councillor_spymaster
+        add_trait = indur_scheme_court
     }
     7060.5.3 = {
         death = { death_reason = death_natural_causes }
@@ -33995,6 +33999,7 @@ orc_0_character93_wife = {
     7001.5.21 = {
         employer = nazgul4
         give_council_position = councillor_marshal
+        add_trait = indur_scheme_court
     }
     7068.4.23 = {
         death = { death_reason = death_natural_causes }

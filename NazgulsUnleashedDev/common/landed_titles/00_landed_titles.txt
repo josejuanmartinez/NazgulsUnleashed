@@ -12970,14 +12970,14 @@ e_mordor = {
 		
 	}
 	k_luglurak = {
-		color = { 145 70 45 }
+		color = { 168 50 164 }
 		capital = c_luglurak
 
 		d_luglurak = {
-			color = { 145 70 45 }
+			color = { 168 50 164 }
 			capital = c_luglurak
 			c_luglurak = {
-				color = { 145 70 45 }
+				color = { 168 50 164 }
 				
 				b_luglurak = {
 					province = 1423
@@ -13019,19 +13019,19 @@ e_mordor = {
 	}
 
 	k_cirith_nargil = {
-		color = { 101 55 39 }
+		color = black
 		capital = c_cirith_nargil
 
 		d_cirith_nargil = {
-			color = { 101 55 39 }
+			color = black
 			capital = c_cirith_nargil
 			c_cirith_nargil = {
-				color = { 101 55 39 }
+				color =black
 				
 				b_cirith_nargil = {
 					province = 785
 					
-					color = { 29 101 25 }
+					color = black
 					
 				}
 				

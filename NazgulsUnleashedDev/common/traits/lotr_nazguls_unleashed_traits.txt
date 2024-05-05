@@ -1,0 +1,20 @@
+﻿indur_scheme_court = {
+	icon = black_breath.dds
+
+	genetic = yes
+	physical = no
+	
+	scheme = 3
+
+	negate_health_penalty_add = 2
+
+	dread_baseline_add = 15	
+	scheme_discovery_chance_mult = 2.0
+	hostile_scheme_resistance_mult = 0.50
+	enemy_personal_scheme_success_chance_add = -50
+
+	diplomatic_range_mult = 4
+	
+	same_opinion = 10
+	same_faith_opinion = 5
+}
