@@ -1,0 +1,788 @@
+namespace = agent_schemes
+
+agent_schemes.0001 = {
+	title = agent_schemes.0001.t
+	desc = agent_schemes.0001.desc
+	type = character_event
+	content_source = realms_dlc
+	theme = murder_scheme
+	left_portrait = {
+		character = root
+		animation = personality_dishonorable
+	}
+	lower_center_portrait = {
+		character = scope:selected_agent_1
+		animation = personality_dishonorable
+	}
+	lower_left_portrait = {
+		character = scope:selected_agent_2
+		animation = personality_dishonorable
+	}
+	lower_right_portrait = {
+		character = scope:selected_agent_3
+		animation = personality_dishonorable
+	}
+	override_background = { reference = throne_room_evil }
+
+	immediate = {
+		play_music_cue = "mx_cue_illness"
+
+		#add_character_flag = {
+		#	flag = planning_an_activity
+		#	days = 30
+		#}
+
+		generate_schemes_list_on_start = yes
+
+		ordered_courtier = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}
+			order_by = intrigue
+			save_scope_as = selected_agent_1
+		}
+		ordered_courtier = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+					this = scope:selected_agent_1
+				}
+			}
+			order_by = intrigue
+			save_scope_as = selected_agent_2
+		}
+		ordered_courtier = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOR = {
+					has_character_modifier = schemed_recently
+					this = scope:selected_agent_1
+					this = scope:selected_agent_2
+				}
+			}
+			order_by = intrigue
+			save_scope_as = selected_agent_3
+		}		
+	}
+
+	option = { # Caster 1
+		trigger = {
+			exists = scope:selected_agent_1
+		}
+		name = agent_schemes.0001.a
+		set_variable = {
+			name = selected_agent
+			value = scope:selected_agent_1
+		}
+	}
+
+	option = { # Caster 2
+		trigger = {
+			exists = scope:selected_agent_2
+		}
+		name = agent_schemes.0001.b
+		set_variable = {
+			name = selected_agent
+			value = scope:selected_agent_2
+		}
+	}
+
+	option = { # Caster 3
+		trigger = {
+			exists = scope:selected_agent_3
+		}
+		name = agent_schemes.0001.c
+		set_variable = {
+			name = selected_agent
+			value = scope:selected_agent_3
+		}
+	}
+
+	option = { # You will do it
+		name = agent_schemes.0001.d
+		set_variable = {
+			name = selected_agent
+			value = root
+		}
+	}
+
+}
+
+# Steal Money
+agent_schemes.0010 = {
+	title = agent_schemes.0010.t
+	desc = agent_schemes.0010.desc
+	type = character_event
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = var:selected_agent
+		animation = paranoia
+	}
+	left_portrait = {
+		character = scope:province_1.county.holder.top_liege
+		animation = bold
+	}
+	lower_left_portrait = {
+		character = scope:province_2.county.holder.top_liege
+		animation = bold
+	}
+	lower_center_portrait = {
+		character = scope:province_3.county.holder.top_liege
+		animation = bold
+	}
+	lower_right_portrait = {
+		character = scope:province_4.county.holder.top_liege
+		animation = bold
+	}
+	override_background = { reference = throne_room_evil }
+
+	immediate = {
+		random_province = {
+			limit = {
+				NOR = {
+					culture = root.location.culture
+					#culture_group = root.location.culture_group
+					culture = root.culture
+					#culture_group = root.culture_group
+					faith = root.faith
+					empire = root.location.empire
+					kingdom = root.location.kingdom
+					county.holder.top_liege = root.top_liege
+					geographical_region = middleearth_valinor
+					is_wastelands = yes
+				}
+			}
+			save_scope_as = province_1
+		}
+	
+		random_province = {
+			limit = {
+				NOR = {
+					culture = root.location.culture
+					#culture_group = root.location.culture_group
+					culture = root.culture
+					#culture_group = root.culture_group
+					faith = root.faith
+					empire = root.location.empire
+					kingdom = root.location.kingdom
+					county.holder.top_liege = root.top_liege
+					geographical_region = middleearth_valinor
+					is_wastelands = yes
+					# Variety
+					county.holder.top_liege = scope:province_1.county.holder.top_liege
+					culture = scope:province_1.culture
+					faith = scope:province_1.faith
+				}
+			}
+			save_scope_as = province_2
+		}
+		random_province = {
+			limit = {
+				NOR = {
+					culture = root.location.culture
+					#culture_group = root.location.culture_group
+					culture = root.culture
+					#culture_group = root.culture_group
+					faith = root.faith
+					empire = root.location.empire
+					kingdom = root.location.kingdom
+					county.holder.top_liege = root.top_liege
+					geographical_region = middleearth_valinor
+					is_wastelands = yes
+					# Variety
+					county.holder.top_liege = scope:province_1.county.holder.top_liege
+					culture = scope:province_1.culture
+					faith = scope:province_1.faith
+
+					# Variety
+					county.holder.top_liege = scope:province_2.county.holder.top_liege
+					culture = scope:province_2.culture
+					faith = scope:province_2.faith
+				}
+			}
+			save_scope_as = province_3
+		}
+
+		random_province = {
+			limit = {
+				NOR = {
+					culture = root.location.culture
+					#culture_group = root.location.culture_group
+					culture = root.culture
+					#culture_group = root.culture_group
+					faith = root.faith
+					empire = root.location.empire
+					kingdom = root.location.kingdom
+					county.holder.top_liege = root.top_liege
+					geographical_region = middleearth_valinor
+					is_wastelands = yes
+					# Variety
+					county.holder.top_liege = scope:province_1.county.holder.top_liege
+					culture = scope:province_1.culture
+					faith = scope:province_1.faith
+
+					# Variety
+					county.holder.top_liege = scope:province_2.county.holder.top_liege
+					culture = scope:province_2.culture
+					faith = scope:province_2.faith
+
+					# Variety
+					county.holder.top_liege = scope:province_3.county.holder.top_liege
+					culture = scope:province_3.culture
+					faith = scope:province_3.faith
+				}
+			}
+			save_scope_as = province_4
+		}
+	
+	}
+	
+	option = { # Province 1
+		trigger = {
+			exists = scope:province_1
+		}
+		name = agent_schemes.0010.a
+	}
+
+	option = { # Province 2
+		trigger = {
+			exists = scope:province_2
+		}
+		name = agent_schemes.0010.b
+	}
+
+	option = { # Province 3		
+		trigger = {
+			exists = scope:province_3
+		}
+		name = agent_schemes.0010.c
+	}
+
+	option = { # Province 4
+		trigger = {
+			exists = scope:province_4
+		}
+		name = agent_schemes.0010.d
+	}
+
+	option = { # On a better thought
+		name = agent_schemes.0010.e
+		
+		var:selected_agent = {
+			remove_character_modifier = schemed_recently
+		}
+	}
+}
+
+
+# Steal Artifact
+agent_schemes.0020 = {
+	title = agent_schemes.0020.t
+	desc = agent_schemes.0020.desc
+	type = character_event
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = var:selected_agent
+		animation = paranoia
+	}
+	left_portrait = {
+		character = scope:artifact_1.artifact_owner
+		animation = bold
+	}
+	lower_left_portrait = {
+		character = scope:artifact_2.artifact_owner
+		animation = bold
+	}
+	lower_center_portrait = {
+		character = scope:artifact_3.artifact_owner
+		animation = bold
+	}
+	lower_right_portrait = {
+		character = scope:artifact_4.artifact_owner
+		animation = bold
+	}
+	override_background = { reference = throne_room_evil }
+
+	immediate = {
+		random_artifact = {
+			limit = {
+				artifact_owner = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						AND = {
+							artifact_owner = { 
+								is_nazgul = yes
+							}
+							is_nazgul = yes
+						}
+					}
+				}
+			}					
+			save_scope_as = artifact_1
+		}
+
+		random_artifact = {
+			limit = {
+				artifact_owner = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						this = scope:artifact_1
+						AND = {
+							artifact_owner = { 
+								is_nazgul = yes
+							}
+							is_nazgul = yes
+						}
+					}
+				}
+			}					
+			save_scope_as = artifact_2
+		}
+		
+		random_artifact = {
+			limit = {
+				artifact_owner = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						this = scope:artifact_1
+						this = scope:artifact_2
+						AND = {
+							artifact_owner = { 
+								is_nazgul = yes
+							}
+							is_nazgul = yes
+						}
+					}
+				}
+			}					
+			save_scope_as = artifact_3
+		}
+
+		random_artifact = {
+			limit = {
+				artifact_owner = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						this = scope:artifact_1
+						this = scope:artifact_2
+						this = scope:artifact_3
+						AND = {
+							artifact_owner = { 
+								is_nazgul = yes
+							}
+							is_nazgul = yes
+						}
+					}
+				}
+			}					
+			save_scope_as = artifact_4
+		}
+	}
+	
+	option = { # Artifact 1
+		trigger = {
+			exists = scope:artifact_1
+		}
+		name = agent_schemes.0020.a
+	}
+
+	option = { # Artifact 2
+		trigger = {
+			exists = scope:artifact_2
+		}
+		name = agent_schemes.0020.b
+	}
+
+	option = { # Artifact 3		
+		trigger = {
+			exists = scope:artifact_3
+		}
+		name = agent_schemes.0020.c
+	}
+
+	option = { # Artifact 4
+		trigger = {
+			exists = scope:artifact_4
+		}
+		name = agent_schemes.0020.d
+	}
+
+	option = { # On a better thought
+		name = agent_schemes.0020.e
+		var:selected_agent = {
+			remove_character_modifier = schemed_recently
+		}
+	}
+}
+
+# Murder
+agent_schemes.0030 = {
+	title = agent_schemes.0030.t
+	desc = agent_schemes.0030.desc
+	type = character_event
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = var:selected_agent
+		animation = assassin
+	}
+	left_portrait = {
+		character = scope:target_1
+		animation = bold
+	}
+	lower_left_portrait = {
+		character = scope:target_2
+		animation = bold
+	}
+	lower_center_portrait = {
+		character = scope:target_3
+		animation = bold
+	}
+	lower_right_portrait = {
+		character = scope:target_4
+		animation = bold
+	}
+	override_background = { reference = throne_room_evil }
+
+	immediate = {
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+					}
+				}
+				save_scope_as = target_1
+			}
+		}
+
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+
+						scope:target_1.top_liege = top_liege
+					}
+				}
+				save_scope_as = target_2
+			}
+		}	
+
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+
+						scope:target_1.top_liege = top_liege
+						scope:target_2.top_liege = top_liege
+					}
+				}
+				save_scope_as = target_3
+			}
+		}	
+
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+
+						scope:target_1.top_liege = top_liege
+						scope:target_2.top_liege = top_liege
+						scope:target_3.top_liege = top_liege
+					}
+				}
+				save_scope_as = target_4
+			}
+		}	
+
+	}
+	
+	option = { # Province 1
+		trigger = {
+			exists = scope:target_1
+		}
+		name = agent_schemes.0030.a
+	}
+
+	option = { # Province 2
+		trigger = {
+			exists = scope:target_2
+		}
+		name = agent_schemes.0030.b
+	}
+
+	option = { # Province 3		
+		trigger = {
+			exists = scope:target_3
+		}
+		name = agent_schemes.0030.c
+	}
+
+	option = { # Province 4
+		trigger = {
+			exists = scope:target_4
+		}
+		name = agent_schemes.0030.d
+	}
+
+	option = { # On a better thought
+		name = agent_schemes.0030.e
+		var:selected_agent = {
+			remove_character_modifier = schemed_recently
+		}
+	}
+}
+
+agent_schemes.0040 = {
+	title = agent_schemes.0040.t
+	desc = agent_schemes.0040.desc
+	type = character_event
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = var:selected_agent
+		animation = eavesdrop
+	}
+	left_portrait = {
+		character = scope:target_1
+		animation = bold
+	}
+	lower_left_portrait = {
+		character = scope:target_2
+		animation = bold
+	}
+	lower_center_portrait = {
+		character = scope:target_3
+		animation = bold
+	}
+	lower_right_portrait = {
+		character = scope:target_4
+		animation = bold
+	}
+	override_background = { reference = throne_room_evil }
+
+	immediate = {
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+					}
+				}
+				save_scope_as = target_1
+			}
+		}
+
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+
+						scope:target_1.top_liege = top_liege
+					}
+				}
+				save_scope_as = target_2
+			}
+		}	
+
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+
+						scope:target_1.top_liege = top_liege
+						scope:target_2.top_liege = top_liege
+					}
+				}
+				save_scope_as = target_3
+			}
+		}	
+
+		random_ruler = {
+			random_courtier = {
+				limit = {
+					NOR = {
+						culture = root.location.culture
+						#culture_group = root.location.culture_group
+						culture = root.culture
+						#culture_group = root.culture_group
+						faith = root.faith
+						top_liege = root.top_liege
+						is_wastelands = yes
+						
+						AND = {
+							is_nazgul = yes
+							root = {
+								is_nazgul = yes
+							}
+						}
+
+						scope:target_1.top_liege = top_liege
+						scope:target_2.top_liege = top_liege
+						scope:target_3.top_liege = top_liege
+					}
+				}
+				save_scope_as = target_4
+			}
+		}	
+	}
+	
+	option = { # Secret Owner 1
+		trigger = {
+			exists = scope:target_1
+		}
+		name = agent_schemes.0040.a
+	}
+
+	option = { # Secret Owner 2
+		trigger = {
+			exists = scope:target_2
+		}
+		name = agent_schemes.0040.b
+	}
+
+	option = { # Secret Owner 3
+		trigger = {
+			exists = scope:target_3
+		}
+		name = agent_schemes.0040.c
+	}
+
+	option = { # Secret Owner 4
+		trigger = {
+			exists = scope:target_4
+		}
+		name = agent_schemes.0040.d
+	}
+
+	option = { # On a better thought
+		name = agent_schemes.0040.e
+		var:selected_agent = {
+			remove_character_modifier = schemed_recently
+		}
+	}
+}

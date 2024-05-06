@@ -1,5 +1,6 @@
 ﻿on_game_start = {	
 	effect = {
 		fire_nazgul_unleashed_intro_events = yes
+		generate_schemes_list_on_start = yes
 	}
 }

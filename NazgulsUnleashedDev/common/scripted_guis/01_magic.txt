@@ -16,7 +16,7 @@ can_do_sorcery = {
 		}
 	}
 	gold > 0
-	faith > 0
+	piety > 0
 }
 
 can_do_sorcery_blind_sorcerer = {
@@ -37,7 +37,7 @@ can_do_sorcery_blind_sorcerer = {
 			}	
 		}
 		gold > 0
-		faith > 0
+		piety > 0
 	}
 }
 
@@ -314,7 +314,7 @@ cast_call_the_horde = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
 			}
 		}
 		else = {
@@ -328,8 +328,8 @@ cast_call_the_horde = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -1559,7 +1559,7 @@ cast_mark_of_war = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
 			}
 		}
 		else = {
@@ -1574,8 +1574,8 @@ cast_mark_of_war = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -1836,7 +1836,7 @@ cast_assemble_the_warchiefs = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
 			} 
 		}
 		else = {
@@ -1851,8 +1851,8 @@ cast_assemble_the_warchiefs = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -1993,8 +1993,8 @@ cast_rise_the_dead = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -2008,7 +2008,7 @@ cast_rise_the_dead = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
 			}
 		}
 		else = {
@@ -2219,8 +2219,8 @@ cast_invoke_watchers = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -2248,7 +2248,7 @@ cast_invoke_watchers = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 400
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 200}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 200}
 			}
 		}
 		else = {
@@ -2381,8 +2381,8 @@ cast_summon_being_of_darkness = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -2410,7 +2410,7 @@ cast_summon_being_of_darkness = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 250}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 250}
 			}
 		}
 		else = {
@@ -2560,8 +2560,8 @@ cast_cracks_of_the_earth = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -2589,7 +2589,7 @@ cast_cracks_of_the_earth = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 600
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 300}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 300}
 			}
 		}
 		else = {
@@ -2817,8 +2817,8 @@ cast_dark_vitality = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -2846,7 +2846,7 @@ cast_dark_vitality = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 200
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 100}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 100}
 			}
 		}
 		else = {
@@ -3197,8 +3197,8 @@ cast_words_of_power = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -3225,7 +3225,7 @@ cast_words_of_power = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
 			}
 		}
 		else = {
@@ -3561,8 +3561,8 @@ cast_forge_morgul_weapons = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -3589,7 +3589,7 @@ cast_forge_morgul_weapons = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 375}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 375}
 			}
 		}
 		else = {
@@ -3709,8 +3709,8 @@ cast_purse_them_relentlessly = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -3736,7 +3736,7 @@ cast_purse_them_relentlessly = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
 			}
 		}
 		else = {
@@ -3862,8 +3862,8 @@ cast_black_breath = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -3889,7 +3889,7 @@ cast_black_breath = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 750}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 750}
 			}
 		}
 		else = {
@@ -4172,8 +4172,8 @@ cast_nazgul_restoration = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -4199,7 +4199,7 @@ cast_nazgul_restoration = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
 			}
 		}
 		else = {
@@ -4330,8 +4330,8 @@ cast_ambassador_of_darkness = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -4344,7 +4344,7 @@ cast_ambassador_of_darkness = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 250}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 250}
 			}
 		}
 		else = {
@@ -4483,8 +4483,8 @@ cast_shapeshifting = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -4497,7 +4497,7 @@ cast_shapeshifting = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 250}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 250}
 			}
 		}
 		else = {
@@ -4636,8 +4636,8 @@ cast_reveal_the_secrets = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -4663,7 +4663,7 @@ cast_reveal_the_secrets = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
 			}
 		}
 		else = {
@@ -4901,8 +4901,8 @@ cast_cast_the_darkness = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -4928,7 +4928,7 @@ cast_cast_the_darkness = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1000
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 500}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 500}
 			}
 		}
 		else = {
@@ -5149,8 +5149,8 @@ cast_abnormal_winter = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -5176,7 +5176,7 @@ cast_abnormal_winter = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 750}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 750}
 			}
 		}
 		else = {
@@ -5437,8 +5437,8 @@ cast_the_plague = {
 		if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 		
 		set_variable = {name = high_mod value = 0}
-		if = { has_trait = sorcerer_2 set_variable = {name = high_mod value = 15} }
-		if = { has_trait = sorcerer_3 set_variable = {name = high_mod value = 30} }
+		if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
 			limit = {exists = var:temple var:temple = 5}
@@ -5464,7 +5464,7 @@ cast_the_plague = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
-				if = {limit = { is_blind_sorcerer_casting = yes} substract = 750}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 750}
 			}
 		}
 		else = {

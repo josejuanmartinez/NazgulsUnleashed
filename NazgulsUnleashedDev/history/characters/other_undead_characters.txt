@@ -502,6 +502,7 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 	trait = ambitious
 	trait = cynical
 	trait = deceitful
+	trait = indur_scheme_court
 
 	disallow_random_traits = yes
 

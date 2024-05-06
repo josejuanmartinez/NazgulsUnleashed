@@ -3,5 +3,27 @@
 
  TRUCE_CHELKAR_NARGIL:0 "The pass or Cirith Nargil is known to be inhabited by the Cloud Lord himself. Although dreadful and dangerous, Jì Îndur does not pose a threat to the people of Chelkar, at least until his master Sauron commands otherwise"
 
- SELECT_CASTER:0 "Select Caster"
- CHANGE_CASTER:0 "Change Caster: "
+ SELECT_CASTER:0 "Select caster"
+ CHANGE_CASTER:0 "Change caster: "
+
+ SELECT_AGENT:0 "Select agent"
+ CHANGE_AGENT:0 "Change agent: "
+
+ AGENTS_TITLE:0 "Start scheme"
+ AGENTS_HUD:0 "Agents available"
+
+ PERFORM_SCHEME:0 "Perform scheme"
+ SELECT_SCHEME:0 "Select scheme"
+ AGENT_INSTRUCTIONS:0 "To perform a scheme, select one of your available courtier agents and the action to perform"
+
+ steal_gold_name:0 "Steal Gold" 
+ steal_gold_desc:0 "Attempt to steal riches from a foreign country" 
+ steal_artifact_name:0 "Steal Artifact" 
+ steal_artifact_desc:0 "Steal a personal or court artifact from a foreign liege or their courtiers" 
+ assassinate_name:0 "Assassinate" 
+ assassinate_desc:0 "Attempt an assassination on a foreign councillor"
+ extort_name:0 "Learn secrets" 
+ extort_desc:0 "Learn secrets from a councillor to gain a hook on them" 
+
+ schemed_recently:0 "Schemed recently"
+ schemed_recently_desc:0 "This character has schemed recently"

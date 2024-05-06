@@ -60,3 +60,23 @@
 		}
 	}	
 }
+
+generate_schemes_list_on_start = {
+	clear_global_variable_list = global_schemes_list
+	add_to_global_variable_list = {
+		name = global_schemes_list
+		target = flag:steal_gold
+	}
+	add_to_global_variable_list = {
+		name = global_schemes_list
+		target = flag:steal_artifact
+	}
+	add_to_global_variable_list = {
+		name = global_schemes_list
+		target = flag:assassinate
+	}
+	add_to_global_variable_list = {
+		name = global_schemes_list
+		target = flag:extort
+	}
+}

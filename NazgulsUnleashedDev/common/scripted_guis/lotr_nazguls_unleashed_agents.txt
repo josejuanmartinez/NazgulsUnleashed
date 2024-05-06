@@ -1,0 +1,138 @@
+can_do_schemes_indur = {
+	is_shown = {
+		root = character:nazgul4
+	}
+	is_valid = {
+		OR = {
+			AND = {
+				has_trait = indur_scheme_court			
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}			
+			any_courtier = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}	
+		}
+		gold > 0
+		piety > 0
+	}
+}
+
+unselect_agent = {	
+	effect = {
+		remove_variable = selected_agent
+		remove_variable = selected_scheme
+	}
+}
+
+unselect_scheme = {	
+	effect = {
+		remove_variable = selected_scheme
+	}
+}
+
+select_agent = {
+	effect = {
+		trigger_event = agent_schemes.0001
+	}
+}
+
+select_steal_gold = {
+	is_valid = {
+		always = yes
+	}
+	effect = {
+		set_variable = {
+			name = selected_scheme
+			value = flag:steal_gold
+		}
+	}
+}
+
+select_steal_artifact = {
+	is_valid = {
+		always = yes
+	}
+	effect = {
+		set_variable = {
+			name = selected_scheme
+			value = flag:steal_artifact
+		}
+	}
+}
+
+select_assassinate = {
+	is_valid = {
+		always = yes
+	}
+	effect = {
+		set_variable = {
+			name = selected_scheme
+			value = flag:assassinate
+		}
+	}
+}
+
+select_extort = {
+	is_valid = {
+		always = yes
+	}
+	effect = {
+		set_variable = {
+			name = selected_scheme
+			value = flag:extort
+		}
+	}
+}
+
+trigger_steal_gold = {
+	effect = 	{
+		var:selected_agent = { add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		} }
+
+		trigger_event = agent_schemes.0010
+
+	}
+}
+
+trigger_steal_artifact = {
+	effect = 	{
+		var:selected_agent = { add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		} }
+
+		trigger_event = agent_schemes.0020
+
+	}
+}
+
+trigger_assassinate = {
+	effect = 	{
+		var:selected_agent = { add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		} }
+
+		trigger_event = agent_schemes.0030
+
+	}
+}
+
+trigger_extort = {
+	effect = 	{
+		var:selected_agent = { add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		} }
+
+		trigger_event = agent_schemes.0040
+
+	}
+}

@@ -52,7 +52,7 @@
                                     size = { 201 201 }
                                 }
                                 icon = { # A default picture
-                                    texture = "gfx/sorcery/spell_icons/icon_template_generic_sorcery.dds" # Gets an image. Can also be in background or button blocks
+                                    texture = "gfx/interface/buttons/maintab_sorcery_blind_sorcerer.dds" # Gets an image. Can also be in background or button blocks
                                     visible = "[Not(GetPlayer.MakeScope.Var('selected_spell').IsSet)]"
                                     size = { 100 100 }
                                 }

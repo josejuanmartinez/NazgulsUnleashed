@@ -10,6 +10,7 @@ widget = {
 	# window_imperial_unity = {}
 	window_sorcery = {}
 	window_sorcery_blind_sorcerer = {}
+	window_indur_agents = {}
 	window_crafting_mechanic = {}
 	window_crafting_mechanic_artifact_icons = {}
 	using = Animation_ShowHide_Standard
@@ -991,6 +992,43 @@ widget = {
 						onclick = "[GetVariableSystem.Toggle('window_sorcery_blind_sorcerer')]"
 						onclick = "[GetScriptedGui('unselect_caster').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
 						down = "[GetVariableSystem.Exists('window_sorcery_blind_sorcerer')]" 
+					}		
+				}
+
+				widget_hud_main_tab = { ## INDUR AGENTS
+					allow_outside = yes
+					name = "indur_sorcery_button_tutorial_uses_this1"
+					datacontext = "[GetPlayer]"
+					datacontext = "[AccessLocalPlayerCachedData]" 
+					visible = "[And(GetScriptedGui('can_do_schemes_indur').IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End), And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)))]"
+					enabled = "[And(GetScriptedGui('can_do_schemes_indur').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End), And( Not( IsPauseMenuShown ), And(Or(Not(IsObserver), GetPlayer.IsValid), IsDefaultGUIMode)))]"
+					
+					tooltipwidget = {
+						using = TooltipWithFakeShortcut
+						blockoverride "shortcut_text"
+						{
+							text = "[Select_CString( StringIsEmpty(GetScriptedGui('can_do_schemes_indur').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)), Localize('AGENTS_HUD'), GetScriptedGui('can_do_schemes_indur').IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+						}
+					}
+
+					state = {
+						name = _mouse_hierarchy_enter
+						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_sorcery_leave','hud_tab_glow_sorcery_enter')]"
+						alpha = 1
+					}
+					
+					state = {
+						name = _mouse_hierarchy_leave
+						on_start = "[PdxGuiInterruptThenTriggerAllAnimations('hud_tab_glow_sorcery_enter','hud_tab_glow_sorcery_leave')]"
+						alpha = 1
+					}
+
+					blockoverride "maintab_button"
+					{
+						texture = "gfx/interface/buttons/maintab_indur_agents.dds"
+						onclick = "[GetVariableSystem.Toggle('window_indur_agents')]"
+						onclick = "[GetScriptedGui('unselect_agent').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+						down = "[GetVariableSystem.Exists('window_indur_agents')]" 
 					}		
 				}
 
