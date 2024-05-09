@@ -28,11 +28,13 @@
 
  agent_schemes.0010.t:0 "Steal Gold"
  agent_schemes.0010.desc:0 "I decide to steal gold the court of ..."
- agent_schemes.0010.a:0 "[province_1.GetTitle.GetDeJureLiege.GetHolder.GetTopLiege.GetUIName]"
- agent_schemes.0010.b:0 "[province_2.GetTitle.GetDeJureLiege.GetHolder.GetTopLiege.GetUIName]"
- agent_schemes.0010.c:0 "[province_3.GetTitle.GetDeJureLiege.GetHolder.GetTopLiege.GetUIName]"
- agent_schemes.0010.d:0 "[province_4.GetTitle.GetDeJureLiege.GetHolder.GetTopLiege.GetUIName]"
+ agent_schemes.0010.a:0 "[ruler_1.GetUIName]"
+ agent_schemes.0010.b:0 "[ruler_2.GetUIName]"
+ agent_schemes.0010.c:0 "[ruler_3.GetUIName]"
+ agent_schemes.0010.d:0 "[ruler_4.GetUIName]"
  agent_schemes.0010.e:0 "I changed my mind..."
+ agent_schemes.0010.tt.success:0 "Gold stolen"
+ agent_schemes.0010.tt.failure:0 "Scheme failed"
 
  agent_schemes.0020.t:0 "Steal Artifact"
  agent_schemes.0020.desc:0 "I decide to steal the following artifact:"

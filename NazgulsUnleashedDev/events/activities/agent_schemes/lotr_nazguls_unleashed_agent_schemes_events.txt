@@ -124,25 +124,25 @@ agent_schemes.0010 = {
 		animation = paranoia
 	}
 	left_portrait = {
-		character = scope:province_1.county.holder.top_liege
+		character = scope:ruler_1
 		animation = bold
 	}
 	lower_left_portrait = {
-		character = scope:province_2.county.holder.top_liege
+		character = scope:ruler_2
 		animation = bold
 	}
 	lower_center_portrait = {
-		character = scope:province_3.county.holder.top_liege
+		character = scope:ruler_3
 		animation = bold
 	}
 	lower_right_portrait = {
-		character = scope:province_4.county.holder.top_liege
+		character = scope:ruler_4
 		animation = bold
 	}
 	override_background = { reference = throne_room_evil }
 
 	immediate = {
-		random_province = {
+		random_ruler = {
 			limit = {
 				NOR = {
 					culture = root.location.culture
@@ -152,15 +152,16 @@ agent_schemes.0010 = {
 					faith = root.faith
 					empire = root.location.empire
 					kingdom = root.location.kingdom
-					county.holder.top_liege = root.top_liege
-					geographical_region = middleearth_valinor
-					is_wastelands = yes
+					top_liege = root.top_liege
+					capital_county.title_province = {
+						is_wastelands = yes
+					}
 				}
 			}
-			save_scope_as = province_1
+			save_scope_as = ruler_1
 		}
 	
-		random_province = {
+		random_ruler = {
 			limit = {
 				NOR = {
 					culture = root.location.culture
@@ -170,18 +171,19 @@ agent_schemes.0010 = {
 					faith = root.faith
 					empire = root.location.empire
 					kingdom = root.location.kingdom
-					county.holder.top_liege = root.top_liege
-					geographical_region = middleearth_valinor
-					is_wastelands = yes
+					top_liege = root.top_liege
+					capital_county.title_province = {
+						is_wastelands = yes
+					}
 					# Variety
-					county.holder.top_liege = scope:province_1.county.holder.top_liege
-					culture = scope:province_1.culture
-					faith = scope:province_1.faith
+					top_liege = scope:ruler_1.top_liege
+					culture = scope:ruler_1.culture
+					faith = scope:ruler_1.faith
 				}
 			}
-			save_scope_as = province_2
+			save_scope_as = ruler_2
 		}
-		random_province = {
+		random_ruler = {
 			limit = {
 				NOR = {
 					culture = root.location.culture
@@ -191,24 +193,25 @@ agent_schemes.0010 = {
 					faith = root.faith
 					empire = root.location.empire
 					kingdom = root.location.kingdom
-					county.holder.top_liege = root.top_liege
-					geographical_region = middleearth_valinor
-					is_wastelands = yes
+					top_liege = root.top_liege
+					capital_county.title_province = {
+						is_wastelands = yes
+					}
 					# Variety
-					county.holder.top_liege = scope:province_1.county.holder.top_liege
-					culture = scope:province_1.culture
-					faith = scope:province_1.faith
+					top_liege = scope:ruler_1.top_liege
+					culture = scope:ruler_1.culture
+					faith = scope:ruler_1.faith
 
 					# Variety
-					county.holder.top_liege = scope:province_2.county.holder.top_liege
-					culture = scope:province_2.culture
-					faith = scope:province_2.faith
+					top_liege = scope:ruler_2.top_liege
+					culture = scope:ruler_2.culture
+					faith = scope:ruler_2.faith
 				}
 			}
-			save_scope_as = province_3
+			save_scope_as = ruler_3
 		}
 
-		random_province = {
+		random_ruler = {
 			limit = {
 				NOR = {
 					culture = root.location.culture
@@ -218,56 +221,348 @@ agent_schemes.0010 = {
 					faith = root.faith
 					empire = root.location.empire
 					kingdom = root.location.kingdom
-					county.holder.top_liege = root.top_liege
-					geographical_region = middleearth_valinor
-					is_wastelands = yes
+					top_liege = root.top_liege
+					capital_county.title_province = {
+						is_wastelands = yes
+					}
 					# Variety
-					county.holder.top_liege = scope:province_1.county.holder.top_liege
-					culture = scope:province_1.culture
-					faith = scope:province_1.faith
+					top_liege = scope:ruler_1.top_liege
+					culture = scope:ruler_1.culture
+					faith = scope:ruler_1.faith
 
 					# Variety
-					county.holder.top_liege = scope:province_2.county.holder.top_liege
-					culture = scope:province_2.culture
-					faith = scope:province_2.faith
+					top_liege = scope:ruler_2.top_liege
+					culture = scope:ruler_2.culture
+					faith = scope:ruler_2.faith
 
 					# Variety
-					county.holder.top_liege = scope:province_3.county.holder.top_liege
-					culture = scope:province_3.culture
-					faith = scope:province_3.faith
+					top_liege = scope:ruler_3.top_liege
+					culture = scope:ruler_3.culture
+					faith = scope:ruler_3.faith
 				}
 			}
-			save_scope_as = province_4
+			save_scope_as = ruler_4
 		}
-	
+
+		if = {
+			limit = {  scope:ruler_1 = { gold > 100 } }
+			set_variable = {
+				name = stolen_gold_1
+				value = 100
+			}						
+		}
+		else_if =  {
+			limit = {  scope:ruler_1 = { gold > 75 } }
+			set_variable = {
+				name = stolen_gold_1
+				value = 75
+			}
+		}
+		else_if =  {
+			limit = {  scope:ruler_1 = { gold > 50 } }
+			set_variable = {
+				name = stolen_gold_1
+				value = 50
+			}
+		}
+		else =  {
+			set_variable = {
+				name = stolen_gold_1
+				value = 25
+			}
+		}
+
+		if = {
+			limit = {  scope:ruler_2 = { gold > 100 } }
+			set_variable = {
+				name = stolen_gold_2
+				value = 100
+			}						
+		}
+		else_if =  {
+			limit = {  scope:ruler_2 = { gold > 75 } }
+			set_variable = {
+				name = stolen_gold_2
+				value = 75
+			}
+		}
+		else_if =  {
+			limit = {  scope:ruler_2 = { gold > 50 } }
+			set_variable = {
+				name = stolen_gold_2
+				value = 50
+			}
+		}
+		else =  {
+			set_variable = {
+				name = stolen_gold_2
+				value = 25
+			}
+		}
+
+		if = {
+			limit = {  scope:ruler_3 = { gold > 100 } }
+			set_variable = {
+				name = stolen_gold_3
+				value = 100
+			}						
+		}
+		else_if =  {
+			limit = {  scope:ruler_3 = { gold > 75 } }
+			set_variable = {
+				name = stolen_gold_3
+				value = 75
+			}
+		}
+		else_if =  {
+			limit = {  scope:ruler_3 = { gold > 50 } }
+			set_variable = {
+				name = stolen_gold_3
+				value = 50
+			}
+		}
+		else =  {
+			set_variable = {
+				name = stolen_gold_3
+				value = 25
+			}
+		}
+
+		if = {
+			limit = {  scope:ruler_4 = { gold > 100 } }
+			set_variable = {
+				name = stolen_gold_4
+				value = 100
+			}						
+		}
+		else_if =  {
+			limit = {  scope:ruler_4 = { gold > 75 } }
+			set_variable = {
+				name = stolen_gold_4
+				value = 75
+			}
+		}
+		else_if =  {
+			limit = {  scope:ruler_4 = { gold > 50 } }
+			set_variable = {
+				name = stolen_gold_4
+				value = 50
+			}
+		}
+		else =  {
+			set_variable = {
+				name = stolen_gold_4
+				value = 25
+			}
+		}
 	}
 	
-	option = { # Province 1
-		trigger = {
-			exists = scope:province_1
-		}
+	option = { # Ruler 1
 		name = agent_schemes.0010.a
-	}
-
-	option = { # Province 2
 		trigger = {
-			exists = scope:province_2
+			exists = scope:ruler_1
 		}
+		random_list = {
+			40 = {
+				modifier = {
+					add = var:selected_agent.intrigue
+					multiply = 2
+				}
+				
+				send_interface_toast = {
+					title = agent_schemes.0010.tt.success
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_1
+				
+					
+					root = { add_gold = var:stolen_gold_1 }
+					scope:ruler_1 = {
+						remove_short_term_gold = root.var:stolen_gold_1
+					}					
+				}
+			}
+			60 = {
+				modifier = {
+					add = scope:ruler_1.cp:councillor_spymaster.intrigue
+					factor = 1.1
+				}
+				modifier = {
+					add = scope:ruler_1.capital_county.title_province.fort_level
+					factor = 1.1
+				}
+				send_interface_toast = {					
+					title = agent_schemes.0010.tt.failure
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_1
+					scope:ruler_1 = {
+						add_opinion = {
+							target = root
+							modifier = unfriendly_opinion
+							opinion = -25
+						}
+					}
+					var:selected_agent = {
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+			}
+		}
+	}
+	
+	option = { # Ruler 2
 		name = agent_schemes.0010.b
+		trigger = {
+			exists = scope:ruler_2
+		}
+		random_list = {
+			40 = {
+				modifier = {
+					add = var:selected_agent.intrigue
+					multiply = 2
+				}
+				
+				send_interface_toast = {
+					title = agent_schemes.0010.tt.success
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_2
+				
+					
+					root = { add_gold = var:stolen_gold_2 }
+					scope:ruler_2 = {
+						remove_short_term_gold = root.var:stolen_gold_2
+					}					
+				}
+			}
+			60 = {
+				modifier = {
+					add = scope:ruler_2.cp:councillor_spymaster.intrigue
+					factor = 1.1
+				}
+				modifier = {
+					add = scope:ruler_2.capital_county.title_province.fort_level
+					factor = 1.1
+				}
+				send_interface_toast = {					
+					title = agent_schemes.0010.tt.failure
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_2
+					scope:ruler_2 = {
+						add_opinion = {
+							target = root
+							modifier = unfriendly_opinion
+							opinion = -25
+						}
+					}
+					var:selected_agent = {
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+			}
+		}
 	}
 
-	option = { # Province 3		
-		trigger = {
-			exists = scope:province_3
-		}
+	option = { # Ruler 3
 		name = agent_schemes.0010.c
+		trigger = {
+			exists = scope:ruler_3
+		}
+		random_list = {
+			40 = {
+				modifier = {
+					add = var:selected_agent.intrigue
+					multiply = 2
+				}
+				
+				send_interface_toast = {
+					title = agent_schemes.0010.tt.success
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_3
+				
+					
+					root = { add_gold = var:stolen_gold_3 }
+					scope:ruler_3 = {
+						remove_short_term_gold = root.var:stolen_gold_3
+					}					
+				}
+			}
+			60 = {
+				modifier = {
+					add = scope:ruler_3.cp:councillor_spymaster.intrigue
+					factor = 1.1
+				}
+				modifier = {
+					add = scope:ruler_3.capital_county.title_province.fort_level
+					factor = 1.1
+				}
+				send_interface_toast = {					
+					title = agent_schemes.0010.tt.failure
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_3
+					scope:ruler_3 = {
+						add_opinion = {
+							target = root
+							modifier = unfriendly_opinion
+							opinion = -25
+						}
+					}
+					var:selected_agent = {
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+			}
+		}
 	}
 
-	option = { # Province 4
-		trigger = {
-			exists = scope:province_4
-		}
+	option = { # Ruler 4
 		name = agent_schemes.0010.d
+		trigger = {
+			exists = scope:ruler_4
+		}
+		random_list = {
+			40 = {
+				modifier = {
+					add = var:selected_agent.intrigue
+					multiply = 2
+				}
+				
+				send_interface_toast = {
+					title = agent_schemes.0010.tt.success
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_4
+				
+					
+					root = { add_gold = var:stolen_gold_4 }
+					scope:ruler_4 = {
+						remove_short_term_gold = root.var:stolen_gold_4
+					}					
+				}
+			}
+			60 = {
+				modifier = {
+					add = scope:ruler_4.cp:councillor_spymaster.intrigue
+					factor = 1.1
+				}
+				modifier = {
+					add = scope:ruler_4.capital_county.title_province.fort_level
+					factor = 1.1
+				}
+				send_interface_toast = {					
+					title = agent_schemes.0010.tt.failure
+					left_icon = var:selected_agent
+					right_icon = scope:ruler_4
+					scope:ruler_4 = {
+						add_opinion = {
+							target = root
+							modifier = unfriendly_opinion
+							opinion = -25
+						}
+					}
+					var:selected_agent = {
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+			}
+		}
 	}
 
 	option = { # On a better thought
