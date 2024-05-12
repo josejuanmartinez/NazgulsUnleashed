@@ -1,0 +1,54 @@
+quarterly_playable_pulse = {
+	on_actions = {
+		blind_sorcerer_quarterly_check
+		indur_quarterly_check
+	}
+}
+
+blind_sorcerer_quarterly_check = {
+	trigger = {
+		root = character:nazgul5
+		OR = {
+			AND = {
+				is_sorcerer = yes
+				NOT = { has_character_modifier = practiced_sorcery_recently }
+			}
+			any_courtier = {
+				is_sorcerer = yes
+				NOT = {
+					has_character_modifier = practiced_sorcery_recently
+				}
+			}	
+		}
+		gold > 0
+		piety > 0
+	}
+
+	effect = {
+		blind_sorcerer_quarterly_events_effect = yes
+	}
+}
+
+indur_quarterly_check = {
+	trigger = {
+		root = character:nazgul4
+		OR = {
+			AND = {
+				has_trait = indur_scheme_court			
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}			
+			any_courtier = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}	
+		}
+	}
+	
+	effect = {
+		indur_quarterly_events_effect = yes
+	}
+}

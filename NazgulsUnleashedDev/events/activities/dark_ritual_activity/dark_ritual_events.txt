@@ -75,7 +75,7 @@ evil.0001 = {
 		#	days = 30
 		#}
 
-		root.location = {
+		var:ritual_caster.location = {
 			save_scope_as = background_terrain_scope
 			barony = { save_scope_as = home_location }
 		}
@@ -97,11 +97,14 @@ evil.0001 = {
 
 		name = evil.0001.a
 		custom_tooltip = evil.0001.a.tt
-		set_variable = {
-			name = ritual_location 
-			#value = 1
-			value = flag:sacred_place
+		var:ritual_caster = {
+			set_variable = {
+				name = ritual_location 
+				#value = 1
+				value = flag:sacred_place
+			}
 		}
+		
 
 		if = {
 			limit = {
@@ -125,12 +128,16 @@ evil.0001 = {
 	option = { # Wilds
 		name = evil.0001.b
 		custom_tooltip = evil.0001.b.tt
-		set_variable = {
-			name = ritual_location 
-			# value = 2
-			value = flag:wilds
+		var:ritual_caster = {
+			set_variable = {
+				name = ritual_location 
+				# value = 2
+				value = flag:wilds
+			}
+			remove_variable = temple
 		}
-		remove_variable = temple
+		
+		
 
 		# trigger_event = evil.0012
 
@@ -142,13 +149,15 @@ evil.0001 = {
 	option = { # Home
 		name = evil.0001.c
 		custom_tooltip = evil.0001.c.tt
-
-		set_variable = {
-			name = ritual_location
-			# value = 3
-			value = flag:home
+		var:ritual_caster = {
+			set_variable = {
+				name = ritual_location
+				# value = 3
+				value = flag:home
+			}
+			remove_variable = temple
 		}
-		remove_variable = temple
+		
 		# trigger_event = evil.0012
 
 		ai_chance = {
@@ -164,9 +173,12 @@ evil.0001 = {
 			base = 0
 		}
 		# remove_character_flag = planning_an_activity
-		remove_variable = ritual_location		
-		remove_variable = selected_spell
-		remove_variable = temple
+		var:ritual_caster = {
+			remove_variable = ritual_location		
+			remove_variable = selected_spell
+			remove_variable = temple
+		}
+		
 	}
 
 }

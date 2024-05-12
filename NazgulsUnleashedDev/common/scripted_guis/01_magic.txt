@@ -36,15 +36,29 @@ can_do_sorcery_blind_sorcerer = {
 				}
 			}	
 		}
-		gold > 0
 		piety > 0
+	}
+}
+
+close_blind_sorcerer_gui = {
+	effect = {
+		
+		var:ritual_caster = {
+			remove_variable = selected_spell
+			remove_variable = ritual_location
+		}
+		remove_variable = ritual_caster
 	}
 }
 
 unselect_caster = {	
 	effect = {
+		
+		var:ritual_caster = {			
+			remove_variable = selected_spell
+			remove_variable = ritual_location
+		}
 		remove_variable = ritual_caster
-		remove_variable = selected_spell
 	}
 }
 
@@ -121,10 +135,12 @@ select_invoke_watchers = {
 }
 select_summon_being_of_darkness = {
 	is_valid = {
-		AND = {
-			NOT = { has_character_modifier = fell_beast_mount_modifier }
-			has_trait = nazgul
-		}		
+		var:ritual_caster = {
+			AND = {
+				NOT = { has_character_modifier = fell_beast_mount_modifier }
+				has_trait = nazgul
+			}		
+		}
 	}
 	effect = {
 		set_variable = {
@@ -179,7 +195,7 @@ select_forge_morgul_weapons = {
 }
 select_purse_them_relentlessly = {
 	is_valid = {
-		OR = {
+		var:ritual_caster = {
 			has_trait = nazgul
 		}
 	}
@@ -192,9 +208,11 @@ select_purse_them_relentlessly = {
 }
 select_black_breath = {
 	is_valid = {
-		OR = {
-			has_trait = nazgul
-			has_trait = maiar
+		var:ritual_caster = {
+			OR = {
+				has_trait = nazgul
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -206,9 +224,11 @@ select_black_breath = {
 }
 select_nazgul_restoration = {
 	is_valid = {
-		OR = {
-			has_trait = nazgul
-			has_trait = maiar
+		var:ritual_caster = {
+			OR = {
+				has_trait = nazgul
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -220,7 +240,9 @@ select_nazgul_restoration = {
 }
 select_ambassador_of_darkness = {
 	is_valid = {
-		has_trait = maiar
+		var:ritual_caster = {
+			has_trait = maiar
+		}
 	}
 	effect = {
 		set_variable = {
@@ -231,7 +253,9 @@ select_ambassador_of_darkness = {
 }
 select_shapeshifting = {
 	is_valid = {
-		has_trait = maiar
+		var:ritual_caster = {
+			has_trait = maiar
+		}
 	}
 	effect = {
 		set_variable = {
@@ -242,7 +266,9 @@ select_shapeshifting = {
 }
 select_reveal_the_secrets = {
 	is_valid = {
-		has_trait = maiar
+		var:ritual_caster = {
+			has_trait = maiar
+		}
 	}
 	effect = {
 		set_variable = {
@@ -252,8 +278,10 @@ select_reveal_the_secrets = {
 	}
 }
 select_cast_the_darkness = {
-	is_valid = {
-		has_trait = maiar
+	is_valid = {		
+		var:ritual_caster = {
+			has_trait = maiar
+		}
 	}
 	effect = {
 		set_variable = {
@@ -264,7 +292,9 @@ select_cast_the_darkness = {
 }
 select_abnormal_winter = {
 	is_valid = {
-		has_trait = maiar
+		var:ritual_caster = {
+			has_trait = maiar
+		}
 	}
 	effect = {
 		set_variable = {
@@ -275,7 +305,9 @@ select_abnormal_winter = {
 }
 select_the_plague = {
 	is_valid = {
-		has_trait = maiar
+		var:ritual_caster = {
+			has_trait = maiar
+		}
 	}
 	effect = {
 		set_variable = {
@@ -293,8 +325,10 @@ unselect_spell = {
 
 unselect_location = {	
 	effect = {
-		remove_variable = ritual_location
-		remove_variable = selected_spell
+		var:ritual_caster = {
+			remove_variable = ritual_location
+			remove_variable = selected_spell
+		}
 	}
 }
 
@@ -314,7 +348,7 @@ cast_call_the_horde = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
 			}
 		}
 		else = {
@@ -342,18 +376,18 @@ cast_call_the_horde = {
 		
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
-
+		
 		switch = {
 			trigger = var:ritual_location
 			
@@ -382,7 +416,7 @@ cast_call_the_horde = {
 									type = abrazanim_legion 
 									stacks = 12
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = black_numenorean_event_troops
 							}
@@ -400,7 +434,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 6
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -413,7 +447,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 6
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -436,7 +470,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -457,7 +491,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -489,7 +523,7 @@ cast_call_the_horde = {
 											type = urukhai_berserker
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = urukhai_event_troops
 									}
@@ -508,7 +542,7 @@ cast_call_the_horde = {
 											type = dunlending_outriders
 											stacks = 4
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = wildmen_event_troops
 									}
@@ -534,7 +568,7 @@ cast_call_the_horde = {
 									type = orc_warriors 
 									stacks = 10
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = orc_event_troops
 							}
@@ -566,7 +600,7 @@ cast_call_the_horde = {
 											type = orc_warriors 
 											stacks = 10
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = orc_event_troops
 									}
@@ -589,7 +623,7 @@ cast_call_the_horde = {
 											type = war_mumak
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -611,7 +645,7 @@ cast_call_the_horde = {
 									type = abrazanim_legion 
 									stacks = 13
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = black_numenorean_event_troops
 							}
@@ -629,7 +663,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 7
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -642,7 +676,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 7
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -665,7 +699,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -686,7 +720,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -718,7 +752,7 @@ cast_call_the_horde = {
 											type = urukhai_berserker
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = urukhai_event_troops
 									}
@@ -737,7 +771,7 @@ cast_call_the_horde = {
 											type = dunlending_outriders
 											stacks = 5
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = wildmen_event_troops
 									}
@@ -763,7 +797,7 @@ cast_call_the_horde = {
 									type = orc_warriors 
 									stacks = 11
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = orc_event_troops
 							}
@@ -795,7 +829,7 @@ cast_call_the_horde = {
 											type = orc_warriors 
 											stacks = 11
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = orc_event_troops
 									}
@@ -818,7 +852,7 @@ cast_call_the_horde = {
 											type = war_mumak
 											stacks = 3
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -836,10 +870,10 @@ cast_call_the_horde = {
 							id = evil.0121
 							days = { 15 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = critical_failure_call_the_order
 							years = 3
-						}}
+						}
 					}
 					75 = {	# Failure
 						desc = evil.0022.a
@@ -862,7 +896,7 @@ cast_call_the_horde = {
 									type = abrazanim_legion 
 									stacks = 12
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = black_numenorean_event_troops
 							}
@@ -880,7 +914,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 6
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -893,7 +927,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 6
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -916,7 +950,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -937,7 +971,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -969,7 +1003,7 @@ cast_call_the_horde = {
 											type = urukhai_berserker
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = urukhai_event_troops
 									}
@@ -988,7 +1022,7 @@ cast_call_the_horde = {
 											type = dunlending_outriders
 											stacks = 4
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = wildmen_event_troops
 									}
@@ -1014,7 +1048,7 @@ cast_call_the_horde = {
 									type = orc_warriors 
 									stacks = 10
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = orc_event_troops
 							}
@@ -1046,7 +1080,7 @@ cast_call_the_horde = {
 											type = orc_warriors 
 											stacks = 10
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = orc_event_troops
 									}
@@ -1069,7 +1103,7 @@ cast_call_the_horde = {
 											type = war_mumak
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -1090,7 +1124,7 @@ cast_call_the_horde = {
 									type = abrazanim_legion 
 									stacks = 13
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = black_numenorean_event_troops
 							}
@@ -1108,7 +1142,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 7
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -1121,7 +1155,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 8
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -1144,7 +1178,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -1165,7 +1199,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -1197,7 +1231,7 @@ cast_call_the_horde = {
 											type = urukhai_berserker
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = urukhai_event_troops
 									}
@@ -1216,7 +1250,7 @@ cast_call_the_horde = {
 											type = dunlending_outriders
 											stacks = 5
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = wildmen_event_troops
 									}
@@ -1242,7 +1276,7 @@ cast_call_the_horde = {
 									type = orc_warriors 
 									stacks = 11
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = orc_event_troops
 							}
@@ -1274,7 +1308,7 @@ cast_call_the_horde = {
 											type = orc_warriors 
 											stacks = 11
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = orc_event_troops
 									}
@@ -1297,7 +1331,7 @@ cast_call_the_horde = {
 											type = war_mumak
 											stacks = 3
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -1329,7 +1363,7 @@ cast_call_the_horde = {
 									type = abrazanim_legion 
 									stacks = 12
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = black_numenorean_event_troops
 							}
@@ -1347,7 +1381,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 6
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -1360,7 +1394,7 @@ cast_call_the_horde = {
 											type = risen_carrion 
 											stacks = 6
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = decision_guard_of_abrakhan_troops
 									}
@@ -1383,7 +1417,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -1404,7 +1438,7 @@ cast_call_the_horde = {
 											type = giant_scorpions 
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -1436,7 +1470,7 @@ cast_call_the_horde = {
 											type = urukhai_berserker
 											stacks = 1
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = urukhai_event_troops
 									}
@@ -1455,7 +1489,7 @@ cast_call_the_horde = {
 											type = dunlending_outriders
 											stacks = 4
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = wildmen_event_troops
 									}
@@ -1481,7 +1515,7 @@ cast_call_the_horde = {
 									type = orc_warriors 
 									stacks = 10
 								}
-								location = capital_province
+								location = root.location
 								inheritable = no
 								name = orc_event_troops
 							}
@@ -1513,7 +1547,7 @@ cast_call_the_horde = {
 											type = orc_warriors 
 											stacks = 10
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = orc_event_troops
 									}
@@ -1536,7 +1570,7 @@ cast_call_the_horde = {
 											type = war_mumak
 											stacks = 2
 										}
-										location = capital_province
+										location = root.location
 										inheritable = no
 										name = haradrim_event_troops
 									}
@@ -1559,7 +1593,7 @@ cast_mark_of_war = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
 			}
 		}
 		else = {
@@ -1588,16 +1622,16 @@ cast_mark_of_war = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		switch = {
 			trigger = var:ritual_location
@@ -1626,23 +1660,23 @@ cast_mark_of_war = {
 									root.faith = faith:red_eye_cult
 								}
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = red_eye_mark_modifier
 								years = 4
-							}}
+							}
 						}
 						else_if = {
 							limit = {root.faith = faith:white_hand_cult}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_white_hand_mark_modifier
 								years = 4
-							} }
+							}
 						}
 						else = {
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_invigoreted_troops_modifier
 								years = 4
-							} }
+							}
 						}	
 					}
 					25 = {	# Critical success
@@ -1660,23 +1694,23 @@ cast_mark_of_war = {
 									root.faith = faith:red_eye_cult
 								}
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = red_eye_mark_modifier
 								years = 5
-							} }
+							}
 						}
 						else_if = {
 							limit = {root.faith = faith:white_hand_cult}
-							var:ritual_caster = { add_character_modifier = {
+							dd_character_modifier = {
 								modifier = great_white_hand_mark_modifier
 								years = 5
-							} }
+							}
 						}
 						else = {
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_invigoreted_troops_modifier
 								years = 5
-							} }
+							}
 						}	
 					}
 				}
@@ -1712,23 +1746,23 @@ cast_mark_of_war = {
 									root.faith = faith:red_eye_cult
 								}
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = red_eye_mark_modifier
 								years = 4
-							} }
+							}
 						}
 						else_if = {
 							limit = {root.faith = faith:white_hand_cult}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_white_hand_mark_modifier
 								years = 4
-							} }
+							}
 						}
 						else = {
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_invigoreted_troops_modifier
 								years = 4
-							} }
+							}
 						}	
 					}
 					25 = {	# Critical success
@@ -1745,23 +1779,23 @@ cast_mark_of_war = {
 									root.faith = faith:red_eye_cult
 								}
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = red_eye_mark_modifier
 								years = 5
-							} }
+							}
 						}
 						else_if = {
 							limit = {root.faith = faith:white_hand_cult}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_white_hand_mark_modifier
 								years = 5
-							} }
+							}
 						}
 						else = {
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_invigoreted_troops_modifier
 								years = 5
-							} }
+							}
 						}	
 					}
 				}
@@ -1789,23 +1823,23 @@ cast_mark_of_war = {
 									root.faith = faith:red_eye_cult
 								}
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = red_eye_mark_modifier
 								years = 4
-							} }
+							}
 						}
 						else_if = {
 							limit = {root.faith = faith:white_hand_cult}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_white_hand_mark_modifier
 								years = 4
-							} }
+							}
 						}
 						else = {
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = great_invigoreted_troops_modifier
 								years = 4
-							} }
+							}
 						}	
 					}
 				}
@@ -1822,21 +1856,21 @@ cast_assemble_the_warchiefs = {
 	effect = {		
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
 			} 
 		}
 		else = {
@@ -1909,9 +1943,11 @@ cast_assemble_the_warchiefs = {
 				random_list = {
 					25 = {	# Critical Failure
 						desc = evil.0021.a
-						every_courtier = {
-							limit = { prowess >= 12 }
-							add_prowess_skill = -1
+						root.liege_or_court_owner =  {
+							every_courtier = {
+								limit = { prowess >= 12 }
+								add_prowess_skill = -1
+							}
 						}
 						trigger_event = {
 							id = evil.0121
@@ -2008,7 +2044,7 @@ cast_rise_the_dead = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
 			}
 		}
 		else = {
@@ -2021,16 +2057,16 @@ cast_rise_the_dead = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		switch = {
 			trigger = var:ritual_location
@@ -2063,7 +2099,7 @@ cast_rise_the_dead = {
 								type = blighted_trappers 
 								stacks = 12
 							}
-							location = capital_province
+							location = root.location
 							inheritable = no
 							uses_supply = no
 							name = wight_event_troops
@@ -2089,7 +2125,7 @@ cast_rise_the_dead = {
 								type = blighted_trappers 
 								stacks = 14
 							}
-							location = capital_province
+							location = root.location
 							inheritable = no
 							uses_supply = no
 							name = wight_event_troops
@@ -2105,10 +2141,10 @@ cast_rise_the_dead = {
 							id = evil.0121
 							days = { 15 30 }
 						}						
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = critical_failure_rise_the_dead
 							years = 3
-						} }
+						}
 					}
 					75 = {	# Failure
 						desc = evil.0022.a
@@ -2136,7 +2172,7 @@ cast_rise_the_dead = {
 								type = blighted_trappers 
 								stacks = 12
 							}
-							location = capital_province
+							location = root.location
 							inheritable = no
 							uses_supply = no
 							name = wight_event_troops
@@ -2161,7 +2197,7 @@ cast_rise_the_dead = {
 								type = blighted_trappers 
 								stacks = 14
 							}
-							location = capital_province
+							location = root.location
 							inheritable = no
 							uses_supply = no
 							name = wight_event_troops
@@ -2197,7 +2233,7 @@ cast_rise_the_dead = {
 								type = blighted_trappers 
 								stacks = 12
 							}
-							location = capital_province
+							location = root.location
 							inheritable = no
 							uses_supply = no
 							name = wight_event_troops
@@ -2233,22 +2269,22 @@ cast_invoke_watchers = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 400
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 200}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 200}
 			}
 		}
 		else = {
@@ -2273,7 +2309,7 @@ cast_invoke_watchers = {
 					}
 					50 = {	# Success
 						desc = evil.0023.a
-						capital_province = {
+						root.location = {
 							add_province_modifier = {
 								modifier = watchers_modifier
 								years = 5
@@ -2287,7 +2323,7 @@ cast_invoke_watchers = {
 					25 = {	# Critical success
 						modifier = {add = var:high_mod}
 						desc = evil.0024.a
-						capital_province = {
+						root.location = {
 							add_province_modifier = {
 								modifier = watchers_modifier
 								years = 6
@@ -2318,7 +2354,7 @@ cast_invoke_watchers = {
 					}
 					75 = {	# success
 						desc = evil.0023.a
-						capital_province = {
+						root.location = {
 							add_province_modifier = {
 								modifier = watchers_modifier
 								years = 5
@@ -2331,7 +2367,7 @@ cast_invoke_watchers = {
 					}
 					25 = {	# Critical Success
 						desc = evil.0024.a
-						capital_province = {
+						root.location = {
 							add_province_modifier = {
 								modifier = watchers_modifier
 								years = 6
@@ -2355,7 +2391,7 @@ cast_invoke_watchers = {
 					}
 					50 = {	# success				
 						desc = evil.0023.a
-						capital_province = {
+						root.location = {
 							add_province_modifier = {
 								modifier = watchers_modifier
 								years = 5
@@ -2395,22 +2431,22 @@ cast_summon_being_of_darkness = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 250}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 250}
 			}
 		}
 		else = {
@@ -2438,10 +2474,10 @@ cast_summon_being_of_darkness = {
 							id = evil.0623
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						 add_character_modifier = {
 							modifier = fell_beast_mount_modifier
 							years = 5
-						} }
+						}
 						if = {
 							limit = {has_character_modifier = drake_mount_modifier}
 							remove_character_modifier = drake_mount_modifier
@@ -2454,10 +2490,10 @@ cast_summon_being_of_darkness = {
 							id = evil.0624
 							days = { 10 30 }
 						}							
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = fell_beast_mount_modifier
 							years = 6
-						} }
+						}
 						if = {
 							limit = {has_character_modifier = drake_mount_modifier}
 							remove_character_modifier = drake_mount_modifier
@@ -2477,10 +2513,10 @@ cast_summon_being_of_darkness = {
 							limit = {has_character_modifier = drake_mount_modifier}
 							remove_character_modifier = drake_mount_modifier
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = critical_failure_being_of_darkness
 							years = 5
-						} }
+						}
 					}
 					75 = {	# Failure
 						desc = evil.0022.a
@@ -2495,10 +2531,10 @@ cast_summon_being_of_darkness = {
 							id = evil.0623
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = fell_beast_mount_modifier
 							years = 5
-						} }
+						}
 						if = {
 							limit = {has_character_modifier = drake_mount_modifier}
 							remove_character_modifier = drake_mount_modifier
@@ -2510,10 +2546,10 @@ cast_summon_being_of_darkness = {
 							id = evil.0624
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = fell_beast_mount_modifier
 							years = 6
-						} }
+						}
 						if = {
 							limit = {has_character_modifier = drake_mount_modifier}
 							remove_character_modifier = drake_mount_modifier
@@ -2536,10 +2572,10 @@ cast_summon_being_of_darkness = {
 							id = evil.0623
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = fell_beast_mount_modifier
 							years = 5
-						} }
+						}
 						if = {
 							limit = {has_character_modifier = drake_mount_modifier}
 							remove_character_modifier = drake_mount_modifier
@@ -2574,22 +2610,22 @@ cast_cracks_of_the_earth = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 600
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 300}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 300}
 			}
 		}
 		else = {
@@ -2617,7 +2653,7 @@ cast_cracks_of_the_earth = {
 							id = evil.0723
 							days = { 10 30 }
 						}
-						capital_county = {
+						root.location.county = {
 							if = {
 								limit = {
 									holder.top_liege = root.liege
@@ -2649,7 +2685,7 @@ cast_cracks_of_the_earth = {
 							id = evil.0724
 							days = { 10 30 }
 						}
-						capital_county = {
+						root.location.county = {
 							if = {
 								limit = {
 									holder.top_liege = root.liege
@@ -2684,7 +2720,7 @@ cast_cracks_of_the_earth = {
 							id = evil.0121
 							days = { 10 30 }
 						}
-						capital_province = {
+						root.location = {
 							add_province_modifier = {
 								modifier = critical_failure_cracks_of_the_earth
 								years = 5
@@ -2704,12 +2740,12 @@ cast_cracks_of_the_earth = {
 							id = evil.0723
 							days = { 10 30 }
 						}
-						capital_county = {
+						root.location.county = {
 							if = {
-								limit = {
-									holder.top_liege = root.liege
-									NOT = {has_county_modifier = cracks_of_the_earth_modifier}
-								}
+								#limit = {
+								#	holder.top_liege = root.liege
+								#	NOT = {has_county_modifier = cracks_of_the_earth_modifier}
+								#}
 								add_county_modifier = {
 									modifier = cracks_of_the_earth_modifier
 									years = 5
@@ -2735,12 +2771,12 @@ cast_cracks_of_the_earth = {
 							id = evil.0724
 							days = { 10 30 }
 						}
-						capital_county = {
+						root.location.county = {
 							if = {
-								limit = {
-									holder.top_liege = root.liege
-									NOT = {has_county_modifier = cracks_of_the_earth_modifier}
-								}
+								#limit = {
+								#	holder.top_liege = root.liege
+								#	NOT = {has_county_modifier = cracks_of_the_earth_modifier}
+								#}
 								add_county_modifier = {
 									modifier = cracks_of_the_earth_modifier
 									years = 6
@@ -2777,7 +2813,7 @@ cast_cracks_of_the_earth = {
 							id = evil.0723
 							days = { 10 30 }
 						}
-						capital_county = {
+						root.location.county = {
 							if = {
 								limit = {
 									holder.top_liege = root.liege
@@ -2831,22 +2867,22 @@ cast_dark_vitality = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 200
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 100}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 100}
 			}
 		}
 		else = {
@@ -2884,16 +2920,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -2903,10 +2937,10 @@ cast_dark_vitality = {
 								death_reason = death_murder
 							}
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = dark_vitality_modifier
 							years = 10
-						} }
+						}
 					}
 					25 = {	#Critical success
 						modifier = {add = var:high_mod}
@@ -2924,16 +2958,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -2943,10 +2975,10 @@ cast_dark_vitality = {
 								death_reason = death_murder
 							}
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = dark_vitality_modifier
 							years = 10
-						} }
+						}
 					}		
 				}
 			}
@@ -2967,16 +2999,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -2986,10 +3016,10 @@ cast_dark_vitality = {
 								death_reason = death_murder
 							}
 						}
-						var:ritual_caster = { add_character_modifier = {						
+						add_character_modifier = {						
 							modifier = critical_failure_dark_vitality
 							years = 5						
-						} }
+						}
 					}
 					75 = {	 #Failure
 						desc = evil.0022.a
@@ -3006,16 +3036,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -3041,16 +3069,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -3060,10 +3086,10 @@ cast_dark_vitality = {
 								death_reason = death_murder
 							}
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = dark_vitality_modifier
 							years = 10
-						} }
+						}
 					}
 					25 = {	 #Critical Success
 						desc = evil.0024.a
@@ -3080,16 +3106,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -3099,10 +3123,10 @@ cast_dark_vitality = {
 								death_reason = death_murder
 							}
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = dark_vitality_modifier
 							years = 12
-						} }
+						}
 					}
 				}
 			}
@@ -3123,16 +3147,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -3158,16 +3180,14 @@ cast_dark_vitality = {
 						}
 						if = {
 							limit = {
-								scope:righty = {
-									exists = yes
-								}
+								exists = scope:righty
 							}
 						}
 						else = {
 							create_character = {
 								template = servant_character
 								dynasty = none
-								location = root.capital_province
+								location = root.location
 								save_scope_as = righty
 							}
 						}
@@ -3177,10 +3197,10 @@ cast_dark_vitality = {
 								death_reason = death_murder
 							}
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = dark_vitality_modifier
 							years = 10
-						} }
+						}
 					}
 				}
 			}
@@ -3211,21 +3231,21 @@ cast_words_of_power = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
 			}
 		}
 		else = {
@@ -3365,7 +3385,7 @@ cast_words_of_power = {
 							id = evil.0121
 							days = { 10 30 }
 						}						
-						capital_province = {						
+						root.location = {						
 							add_province_modifier = {
 								modifier = critical_failure_words_of_power
 								years = 5						
@@ -3575,21 +3595,21 @@ cast_forge_morgul_weapons = {
 
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 375}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 375}
 			}
 		}
 		else = {
@@ -3617,10 +3637,10 @@ cast_forge_morgul_weapons = {
 							id = evil.1023
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = morgul_weapons
 							years = 5
-						} }
+						}
 					}
 					25 = {	# Critical Success
 					modifier = {add = var:high_mod}
@@ -3641,10 +3661,10 @@ cast_forge_morgul_weapons = {
 							id = evil.0121
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = critical_failure_morgul_weapons
 							years = 5
-						} }
+						}
 					}
 					75 = {	# Failure
 						desc = evil.0022.a
@@ -3659,10 +3679,10 @@ cast_forge_morgul_weapons = {
 							id = evil.1023
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = morgul_weapons
 							years = 5
-						} }
+						}
 					}
 					25 = {	# Critical Success
 						desc = evil.0024.a
@@ -3689,10 +3709,10 @@ cast_forge_morgul_weapons = {
 							id = evil.1023
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = morgul_weapons
 							years = 5
-						} }
+						}
 					}
 				}
 			}
@@ -3722,21 +3742,21 @@ cast_purse_them_relentlessly = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
 			}
 		}
 		else = {
@@ -3764,10 +3784,10 @@ cast_purse_them_relentlessly = {
 							id = evil.1123
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_pursue_modifier
 							years = 5
-						} }
+						}
 					}
 					25 = {	# Critical success
 						modifier = {add = var:high_mod}
@@ -3776,10 +3796,10 @@ cast_purse_them_relentlessly = {
 							id = evil.1124
 							days = { 10 30 }
 						}							
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_pursue_modifier
 							years = 6
-						} }
+						}
 					}
 				}
 			}
@@ -3791,10 +3811,10 @@ cast_purse_them_relentlessly = {
 							id = evil.0121
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = critical_failure_nazgul_pursue
 							years = 5
-						} }
+						}
 					}
 					75 = {	# Failure
 						desc = evil.0022.a
@@ -3809,10 +3829,10 @@ cast_purse_them_relentlessly = {
 							id = evil.1123
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_pursue_modifier
 							years = 5
-						} }
+						}
 					}
 					25 = {	# Critical Success
 						desc = evil.0024.a
@@ -3820,10 +3840,10 @@ cast_purse_them_relentlessly = {
 							id = evil.1124
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_pursue_modifier
 							years = 6
-						} }
+						}
 					}
 				}
 			}
@@ -3842,10 +3862,10 @@ cast_purse_them_relentlessly = {
 							id = evil.1123
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_pursue_modifier
 							years = 5
-						} }
+						}
 					}
 				}
 			}
@@ -3875,21 +3895,21 @@ cast_black_breath = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 750}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 750}
 			}
 		}
 		else = {
@@ -4024,10 +4044,10 @@ cast_black_breath = {
 							id = evil.0121
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = critical_failure_black_breath
 							years = 5
-						} }
+						}
 					}
 					75 = {	# Failure
 						desc = evil.0022.a
@@ -4185,21 +4205,21 @@ cast_nazgul_restoration = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 125}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
 			}
 		}
 		else = {
@@ -4227,10 +4247,10 @@ cast_nazgul_restoration = {
 							id = evil.1323
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_restoration_modifier
 							years = 5
-						} }
+						}
 						safe_wound_treatment_effect = yes
 					}
 					25 = {	# Critical success
@@ -4240,10 +4260,10 @@ cast_nazgul_restoration = {
 							id = evil.1324
 							days = { 10 30 }
 						}							
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_restoration_modifier
 							years = 6
-						} }
+						}
 						safe_wound_treatment_effect = yes
 					}
 				}
@@ -4256,10 +4276,10 @@ cast_nazgul_restoration = {
 							id = evil.0121
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = critical_failure_nazgul_restoration
 							years = 5
-						} }
+						}
 					}
 					75 = {	# Failure
 						desc = evil.0022.a
@@ -4274,10 +4294,10 @@ cast_nazgul_restoration = {
 							id = evil.1323
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_restoration_modifier
 							years = 5
-						} }
+						}
 						safe_wound_treatment_effect = yes
 					}
 					25 = {	# Critical Success
@@ -4286,10 +4306,10 @@ cast_nazgul_restoration = {
 							id = evil.1324
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_restoration_modifier
 							years = 6
-						} }
+						}
 						safe_wound_treatment_effect = yes
 					}
 				}
@@ -4309,10 +4329,10 @@ cast_nazgul_restoration = {
 							id = evil.1323
 							days = { 10 30 }
 						}
-						var:ritual_caster = { add_character_modifier = {
+						add_character_modifier = {
 							modifier = nazgul_restoration_modifier
 							years = 5
-						} }
+						}
 						safe_wound_treatment_effect = yes
 					}
 				}
@@ -4344,7 +4364,7 @@ cast_ambassador_of_darkness = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 250}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 250}
 			}
 		}
 		else = {
@@ -4356,16 +4376,16 @@ cast_ambassador_of_darkness = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		switch = {
 				trigger = var:ritual_location
@@ -4385,10 +4405,10 @@ cast_ambassador_of_darkness = {
 								id = evil.1423
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = ambassador_of_darkness_modifier
 								years = 5
-							} }
+							}
 						}
 						25 = {	# Critical success
 							modifier = {add = var:high_mod}
@@ -4397,10 +4417,10 @@ cast_ambassador_of_darkness = {
 								id = evil.1424
 								days = { 10 30 }
 							}							
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = ambassador_of_darkness_modifier
 								years = 6
-							} }
+							}
 						}
 					}
 				}
@@ -4412,10 +4432,10 @@ cast_ambassador_of_darkness = {
 								id = evil.0121
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = critical_failure_ambassador_of_darkness
 								years = 5
-							} }
+							}
 						}
 						75 = {	# Failure
 							desc = evil.0022.a
@@ -4430,10 +4450,10 @@ cast_ambassador_of_darkness = {
 								id = evil.1423
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = ambassador_of_darkness_modifier
 								years = 5
-							} }
+							}
 						}
 						25 = {	# Critical Success
 							desc = evil.0024.a
@@ -4441,10 +4461,10 @@ cast_ambassador_of_darkness = {
 								id = evil.1424
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = ambassador_of_darkness_modifier
 								years = 6
-							} }
+							}
 						}
 					}
 				}
@@ -4463,10 +4483,10 @@ cast_ambassador_of_darkness = {
 								id = evil.1423
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = ambassador_of_darkness_modifier
 								years = 5
-							} }
+							}
 						}
 					}
 				}
@@ -4497,7 +4517,7 @@ cast_shapeshifting = {
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 250}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 250}
 			}
 		}
 		else = {
@@ -4509,16 +4529,16 @@ cast_shapeshifting = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		switch = {
 				trigger = var:ritual_location
@@ -4538,10 +4558,10 @@ cast_shapeshifting = {
 								id = evil.1523
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = shapeshifter_modifier
 								years = 5
-							} }
+							}
 						}
 						25 = {	# Critical success
 							modifier = {add = var:high_mod}
@@ -4550,10 +4570,10 @@ cast_shapeshifting = {
 								id = evil.1524
 								days = { 10 30 }
 							}							
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = shapeshifter_modifier
 								years = 6
-							} }
+							}
 						}
 					}
 				}
@@ -4565,10 +4585,10 @@ cast_shapeshifting = {
 								id = evil.0121
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = critical_failure_shapeshifting
 								years = 5
-							} }
+							}
 						}
 						75 = {	# Failure
 							desc = evil.0022.a
@@ -4583,10 +4603,10 @@ cast_shapeshifting = {
 								id = evil.1523
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = shapeshifter_modifier
 								years = 5
-							} }
+							}
 						}
 						25 = {	# Critical Success
 							desc = evil.0024.a
@@ -4594,10 +4614,10 @@ cast_shapeshifting = {
 								id = evil.1524
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = shapeshifter_modifier
 								years = 6
-							} }
+							}
 						}
 					}
 				}
@@ -4616,10 +4636,10 @@ cast_shapeshifting = {
 								id = evil.1523
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = shapeshifter_modifier
 								years = 5
-							} }
+							}
 						}
 					}
 				}
@@ -4649,21 +4669,21 @@ cast_reveal_the_secrets = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 150}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
 			}
 		}
 		else = {
@@ -4763,10 +4783,10 @@ cast_reveal_the_secrets = {
 								id = evil.0121
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = critical_failure_reveal_the_secrets
 								years = 5
-							} }
+							}
 						}
 						75 = {	# Failure
 							desc = evil.0022.a
@@ -4914,21 +4934,21 @@ cast_cast_the_darkness = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}		
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1000
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 500}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 500}
 			}
 		}
 		else = {
@@ -5021,10 +5041,10 @@ cast_cast_the_darkness = {
 								id = evil.0121
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = critical_failure_cast_the_darkness
 								years = 5
-							} }
+							}
 						}
 						75 = {	# Failure
 							desc = evil.0022.a
@@ -5162,21 +5182,21 @@ cast_abnormal_winter = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 750}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 750}
 			}
 		}
 		else = {
@@ -5285,10 +5305,10 @@ cast_abnormal_winter = {
 								id = evil.0121
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = critical_failure_abnormal_winter
 								years = 1
-							} }
+							}
 						}
 						75 = {	# Failure
 							desc = evil.0022.a
@@ -5450,21 +5470,21 @@ cast_the_plague = {
 		}
 		if = {
 			limit = { var:ritual_location = flag:holy_site_1 }
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
-			} }
+			}
 		}
 		else = {
-			var:ritual_caster = { add_character_modifier = {
+			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 5
-			} }
+			}
 		}
 		if = {limit = {exists = var:temple var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
-				if = {limit = { is_blind_sorcerer_casting = yes} subtrack = 750}
+				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 750}
 			}
 		}
 		else = {
@@ -5663,10 +5683,10 @@ cast_the_plague = {
 								id = evil.0121
 								days = { 10 30 }
 							}
-							var:ritual_caster = { add_character_modifier = {
+							add_character_modifier = {
 								modifier = critical_failure_the_plague
 								years = 1
-							} }
+							}
 						}
 						75 = {	# Failure
 							desc = evil.0022.a

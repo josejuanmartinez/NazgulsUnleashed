@@ -1,0 +1,1586 @@
+blind_sorcerer_quarterly_events_effect = {
+	if = {
+		limit = {
+			is_sorcerer = yes
+			NOT = {
+				has_character_modifier = practiced_sorcery_recently
+			}
+		}
+		random_list = {
+			1 = { cast_call_the_horde = yes }
+			1 = { cast_mark_of_war = yes }
+			1 = { cast_assemble_the_warchiefs = yes }
+			1 = { cast_rise_the_dead = yes }
+			1 = { cast_invoke_watchers = yes }
+			0 = { 
+				modifier = {
+					add = 1
+					if = {
+						limit = {
+							is_nazgul = yes
+						}
+					}
+				}
+				cast_summon_being_of_darkness = yes
+			}
+			0 = { 
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_nazgul = yes
+								health < 50
+							}
+						}
+					}
+				}
+				cast_nazgul_restoration = yes
+			}
+			0 = { 
+				
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_at_war = yes
+							}
+						}
+					}
+				}
+				cast_words_of_power = yes
+			}
+			1 = { cast_forge_morgul_weapons = yes }
+			0 = { 
+				
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_nazgul = yes
+							}
+						}
+					}
+				}
+				cast_purse_them_relentlessly = yes
+			}
+			0 = { 
+				
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_nazgul = yes
+							}
+						}
+					}
+				}
+				cast_black_breath = yes
+			}					
+			0 = { 
+				
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_maiar = yes
+							}
+						}
+					}
+					
+				}
+				cast_ambassador_of_darkness = yes
+			}
+			0 = { 
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_maiar = yes
+							}
+						}
+					}
+				}
+				cast_shapeshifting = yes
+			}
+			0 = {
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_maiar = yes
+							}
+						}
+					}
+				}
+				cast_abnormal_winter = yes
+			}
+			
+			0 = { 
+				
+				modifier = {
+					add = {
+						value = 1
+						if = {
+							limit = {
+								is_maiar = yes
+							}
+						}
+					}
+				}
+				cast_the_plague = yes
+			}
+		}
+	}
+	else = {
+		random_courtier = {
+			limit = {
+				is_sorcerer = yes
+				NOT = {
+					has_character_modifier = practiced_sorcery_recently
+				}
+			}
+			random_list = {
+				1 = { cast_call_the_horde = yes }
+				1 = { cast_mark_of_war = yes }
+				1 = { cast_assemble_the_warchiefs = yes }
+				1 = { cast_rise_the_dead = yes }
+				1 = { cast_invoke_watchers = yes }
+				0 = { 
+					modifier = {
+						add = 1
+						if = {
+							limit = {
+								is_nazgul = yes
+							}
+						}
+					}
+					cast_summon_being_of_darkness = yes
+				}
+				0 = { 
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_nazgul = yes
+									health < 50
+								}
+							}
+						}
+					}
+					cast_nazgul_restoration = yes
+				}
+				0 = { 
+					
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_at_war = yes
+								}
+							}
+						}
+					}
+					cast_words_of_power = yes
+				}
+				1 = { cast_forge_morgul_weapons = yes }
+				0 = { 
+					
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_nazgul = yes
+								}
+							}
+						}
+					}
+					cast_purse_them_relentlessly = yes
+				}
+				0 = { 
+					
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_nazgul = yes
+								}
+							}
+						}
+					}
+					cast_black_breath = yes
+				}					
+				0 = { 
+					
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_maiar = yes
+								}
+							}
+						}
+						
+					}
+					cast_ambassador_of_darkness = yes
+				}
+				0 = { 
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_maiar = yes
+								}
+							}
+						}
+					}
+					cast_shapeshifting = yes
+				}
+				0 = {
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_maiar = yes
+								}
+							}
+						}
+					}
+					cast_abnormal_winter = yes
+				}
+				
+				0 = { 
+					
+					modifier = {
+						add = {
+							value = 1
+							if = {
+								limit = {
+									is_maiar = yes
+								}
+							}
+						}
+					}
+					cast_the_plague = yes
+				}
+			}
+		}
+	}
+}
+
+########################### CASTING EFFECTS #######################
+
+cast_call_the_horde = {
+	add_piety = {
+		value = -250
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
+	}
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 15 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.0123
+				days = { 15 30 }
+			}
+			if = {
+				limit = {root.faith = faith:melkorite}
+				spawn_army = {
+					men_at_arms = {
+						type = abrazanim_legion 
+						stacks = 12
+					}
+					location = root.location
+					inheritable = no
+					name = black_numenorean_event_troops
+				}
+			}
+			if = {
+				limit = {root.faith = faith:cult_of_zigur}
+				random_list = {
+					1 = {
+						spawn_army = {
+							men_at_arms = {
+								type = guard_of_abrakhan 
+								stacks = 10
+							}
+							men_at_arms = {
+								type = risen_carrion 
+								stacks = 6
+							}
+							location = root.location
+							inheritable = no
+							name = decision_guard_of_abrakhan_troops
+						}
+						spawn_army = {
+							men_at_arms = {
+								type = guard_of_abrakhan 
+								stacks = 10
+							}
+							men_at_arms = {
+								type = risen_carrion 
+								stacks = 6
+							}
+							location = root.location
+							inheritable = no
+							name = decision_guard_of_abrakhan_troops
+						}
+					}
+					1 = {
+						spawn_army = {
+							men_at_arms = {
+								type = desert_screamers 
+								stacks = 8
+							}
+							men_at_arms = {
+								type = desert_screamers 
+								stacks = 8
+							}
+							men_at_arms = {
+								type = risen_carrion 
+								stacks = 2
+							}
+							men_at_arms = {
+								type = giant_scorpions 
+								stacks = 1
+							}
+							location = root.location
+							inheritable = no
+							name = haradrim_event_troops
+						}
+						spawn_army = {
+							men_at_arms = {
+								type = desert_screamers 
+								stacks = 8
+							}
+							men_at_arms = {
+								type = desert_screamers 
+								stacks = 8
+							}
+							men_at_arms = {
+								type = risen_carrion 
+								stacks = 2
+							}
+							men_at_arms = {
+								type = giant_scorpions 
+								stacks = 1
+							}
+							location = root.location
+							inheritable = no
+							name = haradrim_event_troops
+						}
+					}
+				}
+			}
+			if = {
+				limit = {root.faith = faith:white_hand_cult}
+				random_list = {
+					1 = {
+						spawn_army = {
+							men_at_arms = {
+								type = urukhai_fighting 
+								stacks = 10
+							}
+							men_at_arms = {
+								type = urukhai_crossbowmen  
+								stacks = 6
+							}
+							men_at_arms = {
+								type = urukhai_pikemen
+								stacks = 6
+							}
+							men_at_arms = {
+								type = urukhai_berserker
+								stacks = 1
+							}
+							men_at_arms = {
+								type = urukhai_berserker
+								stacks = 1
+							}
+							location = root.location
+							inheritable = no
+							name = urukhai_event_troops
+						}
+					}
+					1 = {
+						spawn_army = {
+							men_at_arms = {
+								type = dunlending_huscarl 
+								stacks = 8
+							}
+							men_at_arms = {
+								type = dunlending_longbowmen 
+								stacks = 4
+							}
+							men_at_arms = {
+								type = dunlending_outriders
+								stacks = 4
+							}
+							location = root.location
+							inheritable = no
+							name = wildmen_event_troops
+						}
+					}
+				}
+			}
+			if = {
+				limit = {root.faith = faith:way_of_strength}
+				spawn_army = {
+					men_at_arms = {
+						type = urukhai_fighting 
+						stacks = 8
+					}
+					men_at_arms = {
+						type = urukhai_crossbowmen 
+						stacks = 4
+					}
+					men_at_arms = {
+						type = mountainorc_warriors 
+						stacks = 4
+					}
+					men_at_arms = {
+						type = orc_warriors 
+						stacks = 10
+					}
+					location = root.location
+					inheritable = no
+					name = orc_event_troops
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						root.faith = faith:lidless_eye
+						root.faith = faith:sons_of_sauron
+						root.faith = faith:red_eye_cult
+					}
+				}
+				random_list = {
+					1 = {
+						spawn_army = {
+							men_at_arms = {
+								type = urukhai_fighting 
+								stacks = 8
+							}
+							men_at_arms = {
+								type = urukhai_crossbowmen 
+								stacks = 4
+							}
+							men_at_arms = {
+								type = mountainorc_warriors 
+								stacks = 4
+							}
+							men_at_arms = {
+								type = orc_warriors 
+								stacks = 10
+							}
+							location = root.location
+							inheritable = no
+							name = orc_event_troops
+						}
+					}
+					1 = {
+						spawn_army = {
+							men_at_arms = {
+								type = serpent_guard 
+								stacks = 8
+							}
+							men_at_arms = {
+								type = desert_javelineers
+								stacks = 8
+							}
+							men_at_arms = {
+								type = haradrim_radiers
+								stacks = 4
+							}
+							men_at_arms = {
+								type = war_mumak
+								stacks = 2
+							}
+							location = root.location
+							inheritable = no
+							name = haradrim_event_troops
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Also called Invigorate the Horde
+cast_mark_of_war = {
+	add_piety = {
+		value = -250
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
+	}
+	
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+			
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 15 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.0223
+				days = { 15 30 }
+			}
+			if = {
+				limit = {
+					OR = {
+						root.faith = faith:lidless_eye
+						root.faith = faith:sons_of_sauron
+						root.faith = faith:red_eye_cult
+					}
+				}
+				add_character_modifier = {
+					modifier = red_eye_mark_modifier
+					years = 4
+				}
+			}
+			else_if = {
+				limit = {root.faith = faith:white_hand_cult}
+				add_character_modifier = {
+					modifier = great_white_hand_mark_modifier
+					years = 4
+				}
+			}
+			else = {
+				add_character_modifier = {
+					modifier = great_invigoreted_troops_modifier
+					years = 4
+				}
+			}	
+		}
+	}
+}
+
+#Also called assemble the warlords
+cast_assemble_the_warchiefs = {
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -250
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
+	}
+	
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	flag:home = {
+		random_list = {
+			50 = {	# Failure
+				desc = evil.0022.a
+				trigger_event = {
+					id = evil.0122
+					days = { 15 30 }
+				}
+			}
+			50 = {	# Success
+				desc = evil.0023.a
+				hidden_effect = {
+					create_knight = yes
+					create_knight = yes
+					create_knight = yes
+				}
+				custom_tooltip = assemble_the_warchiefs.success
+				trigger_event = {
+					id = evil.0323
+					days = { 15 30 }
+				}
+			}
+		}
+	}
+}
+
+# Raise the dead
+cast_rise_the_dead = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	add_piety = {
+		value = -300
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
+	}
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 15 30 }
+			}
+		}
+		50 = {	# Success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.0423
+				days = { 15 30 }
+			}
+			spawn_army = {
+				men_at_arms = {
+					type = unburied_wights
+					stacks = 1
+				}
+				men_at_arms = {
+					type = unburied_wights
+					stacks = 1
+				}
+				men_at_arms = {
+					type = blighted_trappers 
+					stacks = 12
+				}
+				location = root.location
+				inheritable = no
+				uses_supply = no
+				name = wight_event_troops
+			}
+		}
+	}
+}
+
+# Also called invoke sigils
+cast_invoke_watchers = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+
+	add_piety = {
+		value = -400
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 200}
+	}
+		
+	random_list = {
+		50 = {	# Failure							
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# success				
+			desc = evil.0023.a
+			root.location = {
+				add_province_modifier = {
+					modifier = watchers_modifier
+					years = 5
+				}
+			}
+			trigger_event = {
+				id = evil.0523
+				days = { 10 30 }
+			}
+		}
+	}
+}
+
+cast_summon_being_of_darkness = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -500
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.0623
+				days = { 10 30 }
+			}
+			add_character_modifier = {
+				modifier = fell_beast_mount_modifier
+				years = 5
+			}
+			if = {
+				limit = {has_character_modifier = drake_mount_modifier}
+				remove_character_modifier = drake_mount_modifier
+			}
+		}
+	}
+}
+
+cast_words_of_power = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -300
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
+	}
+	random_list = {
+		50 = {	 #Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	 #success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.0923
+				days = { 10 30 }
+			}
+			random_character_war = {
+				if = {
+					limit = {root = {is_at_war_as_attacker = yes}}
+					casus_belli = {
+						every_target_title = {
+							if = {limit = {title_capital_county = {holder.top_liege = root.liege}}
+								random_de_jure_county_holder = {
+									limit = {
+										top_liege = {is_at_war_with = root.liege}
+									}
+									capital_county = {
+										every_county_province = {
+											if = {
+												limit = {has_holding_type = castle_holding}
+												add_province_modifier = {
+													modifier = words_of_power_modifier
+													years = 2
+												}
+											}	
+										}
+									}
+								}
+							}
+							else = {
+								title_capital_county = {
+									if = {
+										limit = {
+											NOT = {holder.top_liege = root.liege}
+										}
+										every_county_province = {
+											if = {
+												limit = {has_holding_type = castle_holding}
+												add_province_modifier = {
+													modifier = words_of_power_modifier
+													years = 2
+												}
+											}	
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+cast_forge_morgul_weapons = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -750
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# Success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1023
+				days = { 10 30 }
+			}
+			add_character_modifier = {
+				modifier = morgul_weapons
+				years = 5
+			}
+		}
+	}	
+}
+
+cast_purse_them_relentlessly = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -300
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1123
+				days = { 10 30 }
+			}
+			add_character_modifier = {
+				modifier = nazgul_pursue_modifier
+				years = 5
+			}
+		}
+	}
+}
+
+cast_black_breath = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -1500
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 750}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# Success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1223
+				days = { 10 30 }
+			}
+			random_neighboring_and_across_water_top_liege_realm_owner = {
+				limit = {
+					religion = { is_in_family = rf_eruhini }
+					realm_size > 50
+					NOT = { culture ?= culture:wastelands }
+					NOR = { 
+						is_elf = yes
+						cannot_be_killed = yes
+						has_trait = black_breath
+						has_character_flag = contraction_cooldown_black_breath
+					}
+				}
+				alternative_limit = {
+					religion = { is_in_family = rf_eruhini }
+					NOT = { culture ?= culture:wastelands }
+					NOR = { 
+						is_elf = yes
+						cannot_be_killed = yes
+						has_trait = black_breath
+						has_character_flag = contraction_cooldown_black_breath
+					}
+				}
+				alternative_limit = {
+					NOT = { religion = { is_in_family = rf_forcesofevil } }
+					NOT = { culture ?= culture:wastelands }
+					NOR = { 
+						is_elf = yes
+						cannot_be_killed = yes
+						has_trait = black_breath
+						has_character_flag = contraction_cooldown_black_breath
+					}
+				}
+				add_to_list = black_breath_targets
+				hidden_effect = {
+					every_in_list = {
+						list = black_breath_targets
+						random_list = {
+							0 = {
+								compare_modifier = {
+									value = this.health
+									multiplier = 5
+								}
+							}
+							50 = { contract_disease_notify_effect = { DISEASE = black_breath } }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+cast_nazgul_restoration = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -250
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1323
+				days = { 10 30 }
+			}
+			add_character_modifier = {
+				modifier = nazgul_restoration_modifier
+				years = 5
+			}
+			safe_wound_treatment_effect = yes
+		}
+	}
+}
+
+cast_ambassador_of_darkness = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	add_piety = {
+		value = -500
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
+	}
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	flag:home = {
+		random_list = {
+			50 = {	# Failure
+				desc = evil.0022.a
+				trigger_event = {
+					id = evil.0122
+					days = { 10 30 }
+				}
+			}
+			50 = {	# success
+				desc = evil.0023.a
+				trigger_event = {
+					id = evil.1423
+					days = { 10 30 }
+				}
+				add_character_modifier = {
+					modifier = ambassador_of_darkness_modifier
+					years = 5
+				}
+			}
+		}
+	}
+}
+
+cast_shapeshifting = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	add_piety = {
+		value = -500
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
+	}
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1523
+				days = { 10 30 }
+			}
+			add_character_modifier = {
+				modifier = shapeshifter_modifier
+				years = 5
+			}
+		}
+	}
+}
+
+cast_reveal_the_secrets = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -300
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1623
+				days = { 10 30 }
+			}
+			every_targeting_scheme = {
+				random_scheme_agent = {
+					save_scope_as = righty
+				}
+				scheme_owner = {
+					save_scope_as = schemer
+				}
+				root = {
+					add_hook = {
+						type = manipulation_hook
+							target = scope:schemer
+					}
+				}
+				if = {
+					limit = {is_scheme_exposed = no}
+					expose_scheme = yes
+				}
+			}
+			if = {
+				limit = { exists = scope:righty }
+				add_hook = {
+					type = fabrication_hook
+					target = scope:righty
+				}
+				expose_scheme_agent = scope:righty
+			}
+		}
+	}
+}
+
+cast_cast_the_darkness = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}	
+	add_piety = {
+		value = -1000
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 500}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1723
+				days = { 10 30 }
+			}
+			custom_tooltip =  custom_desc_cast_the_darkness.tt
+			hidden_effect = {
+				every_character_to_title_neighboring_and_across_water_county = {
+					if = {
+						limit = {
+							NOR = {
+								holder.top_liege = root.liege
+								has_county_modifier = darkness_modifier
+								holder = {
+									any_character_artifact = { has_variable = elven_ring }
+								}
+								holder.top_liege = {
+									any_character_artifact = { has_variable = elven_ring }
+								}
+							}
+						}
+						add_county_modifier = {
+							modifier = darkness_modifier
+							years = 1
+						}
+					}								
+				}
+			}
+		}
+	}
+}
+
+cast_abnormal_winter = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -750
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# Success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1823
+				days = { 10 30 }
+			}
+			custom_tooltip = custom_desc_abnormal_winter.tt
+
+			every_neighboring_and_across_water_top_liege_realm_owner = {
+				limit = {
+					NOT = {	any_character_artifact = { has_variable = elven_ring } }
+				}
+				save_scope_as = enemy
+				hidden_effect = {
+					every_living_character = {
+						if = {
+							limit = {this.top_liege = scope:enemy}
+							add_character_modifier = {
+								modifier = abnormal_winter_character_modifier
+								years = 1
+							}
+						}
+					}
+				
+					every_realm_county = {
+						limit = {
+							NOT = { culture ?= culture:wastelands }
+							NOT = {
+								has_county_modifier = abnormal_winter_modifier
+							}
+						}
+						add_county_modifier = {
+							modifier = abnormal_winter_modifier
+							years = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+cast_the_plague = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -1500
+		if = {limit = { is_blind_sorcerer_casting = yes} add = 750}
+	}
+	random_list = {
+		50 = {	# Failure
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# Success
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1923
+				days = { 10 30 }
+			}
+			random_neighboring_and_across_water_top_liege_realm_owner = {
+				limit = {
+					religion = { is_in_family = rf_eruhini }
+					realm_size > 50
+					NOT = { culture ?= culture:wastelands }
+					NOT = {	any_character_artifact = { has_variable = elven_ring } }
+				}
+				alternative_limit = {
+					religion = { is_in_family = rf_eruhini }
+					NOT = { culture ?= culture:wastelands }
+					NOT = {	any_character_artifact = { has_variable = elven_ring } }
+				}
+				alternative_limit = {
+					NOT = { religion = { is_in_family = rf_forcesofevil } }
+					NOT = { culture ?= culture:wastelands }
+					NOT = {	any_character_artifact = { has_variable = elven_ring } }
+				}
+				add_to_list = plague_targets
+				capital_county = {
+					if = {
+						limit = {
+							NOT = {has_county_modifier = the_plague_modifier}
+							NOT = { culture ?= culture:wastelands }
+						}
+						add_county_modifier = {
+							modifier = the_plague_modifier
+							years = 1
+						}
+					}
+				}
+				random_realm_county = {
+					limit = {
+						NOT = {has_county_modifier = the_plague_modifier}
+						NOT = { culture ?= culture:wastelands }
+					}
+					holder = {
+						add_to_list = plague_targets
+					}
+					add_county_modifier = {
+						modifier = the_plague_modifier
+						years = 1
+					}
+				}
+				random_realm_county = {
+					limit = {
+						NOT = {has_county_modifier = the_plague_modifier}
+						NOT = { culture ?= culture:wastelands }
+					}
+					holder = {
+						add_to_list = plague_targets
+					}
+					add_county_modifier = {
+						modifier = the_plague_modifier
+						years = 1
+					}
+				}
+				hidden_effect = {
+					every_in_list = {
+						list = plague_targets
+						every_courtier_or_guest = {
+							random_list = {
+								20 = {contract_disease_notify_effect = { DISEASE = pneumonic} }
+								15 = {contract_disease_notify_effect = { DISEASE = smallpox} }
+								14 = {contract_disease_notify_effect = { DISEASE = typhus} }
+								1 = {contract_disease_notify_effect = { DISEASE = bubonic_plague} }
+								0 = {
+									compare_modifier = {
+										value = this.health
+										multiplier = 5
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

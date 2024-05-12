@@ -24,9 +24,9 @@
                 blockoverride "button_close"
                 {
                     onclick = "[GetVariableSystem.Clear( 'window_sorcery_blind_sorcerer' )]"                    
-                    onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                    onclick = "[GetScriptedGui('unselect_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                    onclick = "[GetScriptedGui('unselect_caster').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+                    #onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope.Var('ritual_caster').MakeScope).End)]"
+                    #onclick = "[GetScriptedGui('unselect_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope.Var('ritual_caster').MakeScope).End)]"
+                    onclick = "[GetScriptedGui('close_blind_sorcerer_gui').Execute(GuiScope.SetRoot( GetPlayer.MakeScope).End)]"
                 }
             }
 
@@ -46,133 +46,133 @@
                             hbox = {
                                 datacontext = "[GetPlayer]" # This box is calling a text_icon, which needs a datacontext
                                 text_single = {
-                                    visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
-                                    #text = "[GetPlayer.MakeScope.Var('selected_spell').GetFlagName]"
-                                    text = "[Localize(Concatenate(Concatenate('@icon_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName), '!'))]" # Text icons are complex, but need to start with the @icon_ and end with the !. They should be named icon_name
+                                    visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
+                                    #text = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName]"
+                                    text = "[Localize(Concatenate(Concatenate('@icon_',GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName), '!'))]" # Text icons are complex, but need to start with the @icon_ and end with the !. They should be named icon_name
                                     size = { 201 201 }
                                 }
                                 icon = { # A default picture
                                     texture = "gfx/interface/buttons/maintab_sorcery_blind_sorcerer.dds" # Gets an image. Can also be in background or button blocks
-                                    visible = "[Not(GetPlayer.MakeScope.Var('selected_spell').IsSet)]"
+                                    visible = "[Not(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet)]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/abnormal_winter.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'abnormal_winter'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'abnormal_winter'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/ambassador_of_darkness.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'ambassador_of_darkness'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'ambassador_of_darkness'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/assemble_the_warchiefs.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'assemble_the_warchiefs'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'assemble_the_warchiefs'))]"
                                     size = { 100 100 }
                                 }
 
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/black_breath.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'black_breath'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'black_breath'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/call_the_horde.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'call_the_horde'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'call_the_horde'))]"
                                     size = { 100 100 }
                                 }
 
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/cast_the_darkness.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'cast_the_darkness'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'cast_the_darkness'))]"
                                     size = { 100 100 }
                                 }
 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/cracks_of_the_earth.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'cracks_of_the_earth'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'cracks_of_the_earth'))]"
                                     size = { 100 100 }
                                 }
 
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/dark_vitality.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'dark_vitality'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'dark_vitality'))]"
                                     size = { 100 100 }
                                 }
 
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/forge_morgul_weapons.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'forge_morgul_weapons'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'forge_morgul_weapons'))]"
                                     size = { 100 100 }
                                 }
 
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/invoke_watchers.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'invoke_watchers'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'invoke_watchers'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/mark_of_war.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'mark_of_war'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'mark_of_war'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/nazgul_restoration.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'nazgul_restoration'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'nazgul_restoration'))]"
                                     size = { 100 100 }
                                 }
 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/purse_them_relentlessly.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'purse_them_relentlessly'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'purse_them_relentlessly'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/reveal_the_secrets.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'reveal_the_secrets'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'reveal_the_secrets'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/rise_the_dead.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'rise_the_dead'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'rise_the_dead'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/shapeshifting.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'shapeshifting'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'shapeshifting'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/summon_being_of_darkness.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'summon_being_of_darkness'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'summon_being_of_darkness'))]"
                                     size = { 100 100 }
                                 }
 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/the_plague.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'the_plague'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'the_plague'))]"
                                     size = { 100 100 }
                                 }
                                 
                                 icon = { # Spell picture
                                     texture = "gfx/sorcery/spell_icons/words_of_power.dds" # Gets an image based on the spell name
-                                    visible = "[And(GetPlayer.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, 'words_of_power'))]"
+                                    visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet, EqualTo_string(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName, 'words_of_power'))]"
                                     size = { 100 100 }
                                 }
                             }
@@ -180,15 +180,15 @@
                                 size = { 0 20 }
                             }
                             text_single = { # One line of text
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
-                                text = "[Localize(Concatenate(GetPlayer.MakeScope.Var('selected_spell').GetFlagName,'_name'))]" # This one is a little advanced, but it merges the flag value of the variable on you, which let's say is flag:lorem_ipsum and the word _name, and then gets the loc key for the merged lorem_ipsum_name
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
+                                text = "[Localize(Concatenate(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName,'_name'))]" # This one is a little advanced, but it merges the flag value of the variable on you, which let's say is flag:lorem_ipsum and the word _name, and then gets the loc key for the merged lorem_ipsum_name
                                 fontsize = 36 # I assume you know this
                                 align = center # Read the above
                                 minimumsize = { 275 -1 } # No matter how large it is it takes up at least 275 in space horizontally. -1 for the vertical means that the minimumsize doesn't come into affect there.
                                 default_format = "#high" # Gets textformatting. You can only have one thing in here, so "#high #bold" won't work.
                             }
                             text_single = {
-                                visible = "[Not(GetPlayer.MakeScope.Var('selected_spell').IsSet)]" # Not(), And(), Or(), Nor(), and Nand() can all be used in GUI. Seperate items are seperated by commas
+                                visible = "[Not(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet)]" # Not(), And(), Or(), Nor(), and Nand() can all be used in GUI. Seperate items are seperated by commas
                                 text = "SORCERY_INSTRUCTIONS"
                                 align = center
                                 multiline = yes
@@ -205,7 +205,7 @@
                                 default_format = "#italic"
                                 text = "BASIC_DESC"
                                 align = center
-                                visible = "[Not(GetPlayer.MakeScope.Var('selected_spell').IsSet)]"
+                                visible = "[Not(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet)]"
                             }
                             text_multi = { # A paragraph of text
                                 minimumsize = { 500 -1 }
@@ -214,64 +214,51 @@
                                 margin = { 20 4 } # A margin of twenty on the right and left and 4 on the top and bottom.
                                 fontsize = 18
                                 default_format = "#italic"
-                                text = "[Localize(Concatenate(GetPlayer.MakeScope.Var('selected_spell').GetFlagName,'_desc'))]"
+                                text = "[Localize(Concatenate(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName,'_desc'))]"
                                 align = center
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
                             }
                             spacer = {
                                 size = { 0 10 }
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
                             }
                             text_single = {
                                 text = "EFFECTS"
                                 fontsize = 20
                                 default_format = "#bold"
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
                             }
                             spacer = { 
                                 size = { 0 10 } 
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
                             }
                             scrollbox = { # A literal area where you can scroll.
                                 #size = {100% 100%} This does not work
                                 size = { 450 250 }
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
                                 blockoverride "scrollbox_content" # It's a type, and it needs this
                                 {
                                     text_single = {
                                         fontsize = 14
                                         maximumsize = { 400 -1 }
                                         multiline = yes
-                                        text = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName)).ExecuteTooltip(GuiScope.SetRoot( GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope).End)]"
+                                        text = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName)).ExecuteTooltip(GuiScope.SetRoot( GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope).End)]"
                                     }
                                 }
                             }
                             spacer = {
                                 size = { 0 20 }
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
                             }
                             spacer = {
                                 size = { 0 5 }
-                                visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+                                visible = "[GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet]"
                             }
                             # Shows location (Where to perform it)
-                            button_standard = {
-                                text = "SELECT_RITUAL_LOCATION"
-                                onclick = "[GetScriptedGui('select_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                                onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"                    
-                                visible = "[Not(GetPlayer.MakeScope.Var('ritual_location').IsSet)]"
-                                size = { 200 33 }
-                            }
-                            button_standard = {
-                                text = "[Concatenate(Localize('CHANGE_RITUAL_LOCATION'), Localize(Concatenate('ritual_location_', GetPlayer.MakeScope.Var('ritual_location').GetFlagName))))]"
-                                onclick = "[GetScriptedGui('select_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                                visible = "[GetPlayer.MakeScope.Var('ritual_location').IsSet]"
-                                size = { 250 33 }
-                            } 
+                            
                             button_standard = {
                                 text = "SELECT_CASTER"
                                 onclick = "[GetScriptedGui('select_caster').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                                onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"                    
                                 visible = "[Not(GetPlayer.MakeScope.Var('ritual_caster').IsSet)]"
                                 size = { 200 33 }
                             }
@@ -280,7 +267,19 @@
                                 onclick = "[GetScriptedGui('select_caster').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
                                 visible = "[GetPlayer.MakeScope.Var('ritual_caster').IsSet]"
                                 size = { 250 33 }
-                            }          
+                            }  
+                            button_standard = {
+                                text = "SELECT_RITUAL_LOCATION"
+                                onclick = "[GetScriptedGui('select_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+                                visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').IsSet, Not(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('ritual_location').IsSet)))]"
+                                size = { 200 33 }
+                            }
+                            button_standard = {
+                                text = "[Concatenate(Localize('CHANGE_RITUAL_LOCATION'),GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('ritual_location').GetFlagName)]"
+                                onclick = "[GetScriptedGui('select_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+                                visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').IsSet, GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('ritual_location').IsSet))]"
+                                size = { 250 33 }
+                            }         
                             spacer = {
                                 size = { 0 40 }
                             }
@@ -288,14 +287,11 @@
                                 text = "PERFORM_RITUAL"
                                 fontsize = 24
                                 size = { 200 40 }
-                                enabled = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                                onclick = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                enabled = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                onclick = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                                 onclick = "[GetScriptedGui('ritual_costs_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                                 onclick = "[GetVariableSystem.Clear( 'window_sorcery_blind_sorcerer' )]"                    
-                                onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                                onclick = "[GetScriptedGui('unselect_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                                # onclick = "[GetScriptedGui('unselect_caster').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                                visible = "[And(GetPlayer.MakeScope.Var('ritual_location').IsSet, And(GetPlayer.MakeScope.Var('ritual_caster').IsSet, GetPlayer.MakeScope.Var('selected_spell').IsSet))]"
+                                visible = "[And(GetPlayer.MakeScope.Var('ritual_location').IsSet, And(GetPlayer.MakeScope.Var('ritual_caster').IsSet, GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet))]"
                             }
                         }
                     }
@@ -310,7 +306,7 @@
                         layoutpolicy_vertical = expanding
                         #size = {100% 100%} This does not work
                         size = { 400 750 }
-                        visible = "[And(GetPlayer.MakeScope.Var('ritual_location').IsSet, GetPlayer.MakeScope.Var('ritual_caster').IsSet)]"
+                        visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').IsSet, GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('ritual_location').IsSet)]"
                         background = {
                             texture = "gfx/interface/illustrations/lifestyles_background/learning_lifestyle.dds"
                             alpha = 0.2
@@ -359,9 +355,9 @@
                                                     }
                                                     button_primary = {
                                                         text = "SELECT_SPELL"
-                                                        onclick = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" # This is a bit more advanced than a normal GetScriptedGui('gui_name'), instead again concatenating the flag of this entry with the select_
-                                                        enabled = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" # Enabled checks to see if a trigger is met. If it is, you can use the button. Otherwise, it's greyed out
-                                                        tooltip = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]" # You can get text versions of sgui, even in normal text.
+                                                        onclick = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope).End)]" # This is a bit more advanced than a normal GetScriptedGui('gui_name'), instead again concatenating the flag of this entry with the select_
+                                                        enabled = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope).End)]" # Enabled checks to see if a trigger is met. If it is, you can use the button. Otherwise, it's greyed out
+                                                        tooltip = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope).End)]" # You can get text versions of sgui, even in normal text.
                                                     }
                                                 }
                                                 expand = {}

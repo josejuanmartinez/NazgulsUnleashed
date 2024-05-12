@@ -142,6 +142,39 @@ agent_schemes.0010 = {
 	override_background = { reference = drylands }
 
 	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					exists = root.var:selected_agent
+				}
+			}
+			if = {
+				limit = {
+					has_trait = indur_scheme_court
+					NOT = {
+						has_character_modifier = schemed_recently
+					}
+				}				
+				set_variable = {
+					name = selected_agent
+					value = root
+				}
+			}					
+			else = {
+				random_courtier = {
+					limit = {
+						has_trait = indur_scheme_court
+						NOT = {
+							has_character_modifier = schemed_recently
+						}
+					}
+					set_variable = {
+						name = selected_agent
+						value = this
+					}
+				}
+			}
+		}
 		random_ruler = {
 			limit = {
 				NOR = {
@@ -150,8 +183,8 @@ agent_schemes.0010 = {
 					culture = root.culture
 					#culture_group = root.culture_group
 					faith = root.faith
-					empire = root.location.empire
-					kingdom = root.location.kingdom
+					
+					
 					top_liege = root.top_liege
 					capital_county.title_province = {
 						is_wastelands = yes
@@ -169,8 +202,8 @@ agent_schemes.0010 = {
 					culture = root.culture
 					#culture_group = root.culture_group
 					faith = root.faith
-					empire = root.location.empire
-					kingdom = root.location.kingdom
+					
+					
 					top_liege = root.top_liege
 					capital_county.title_province = {
 						is_wastelands = yes
@@ -191,8 +224,8 @@ agent_schemes.0010 = {
 					culture = root.culture
 					#culture_group = root.culture_group
 					faith = root.faith
-					empire = root.location.empire
-					kingdom = root.location.kingdom
+					
+					
 					top_liege = root.top_liege
 					capital_county.title_province = {
 						is_wastelands = yes
@@ -219,8 +252,8 @@ agent_schemes.0010 = {
 					culture = root.culture
 					#culture_group = root.culture_group
 					faith = root.faith
-					empire = root.location.empire
-					kingdom = root.location.kingdom
+					
+					
 					top_liege = root.top_liege
 					capital_county.title_province = {
 						is_wastelands = yes
@@ -356,12 +389,40 @@ agent_schemes.0010 = {
 			}
 		}
 	}
+
+	
+	trigger = {
+		AND = {
+			exists = root.var:selected_agent
+			OR = {
+				AND = {
+					exists = scope:ruler_1
+					exists = root.var:stolen_gold_1
+				}
+				AND = {
+					exists = scope:ruler_2
+					exists = root.var:stolen_gold_2
+				}
+				AND = {
+					exists = scope:ruler_3
+					exists = root.var:stolen_gold_3
+				}
+				AND = {
+					exists = scope:ruler_4
+					exists = root.var:stolen_gold_4
+				}
+			}
+		}		
+	}
 	
 	option = { # Ruler 1
 		name = agent_schemes.0010.a
 		trigger = {
 			exists = scope:ruler_1
 		}
+		ai_chance = {
+			base = 100
+		}	
 		root.var:selected_agent = { duel = {
 			skill = intrigue
 			value = medium_skill_rating
@@ -654,6 +715,14 @@ agent_schemes.0011 = {
 				remove_short_term_gold = root.var:stolen_gold
 			}					
 		}
+			
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0010.success.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0010.success.desc
+			}
+		}
 	}
 }
 
@@ -691,6 +760,14 @@ agent_schemes.0012 = {
 				increase_wounds_effect = { REASON = fight }
 			}
 		}
+		
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0010.failure.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0010.failure.desc
+			}
+		}
 	}
 }
 
@@ -725,6 +802,39 @@ agent_schemes.0020 = {
 	override_background = { reference = drylands }
 
 	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					exists = root.var:selected_agent
+				}
+			}
+			if = {
+				limit = {
+					has_trait = indur_scheme_court
+					NOT = {
+						has_character_modifier = schemed_recently
+					}
+				}				
+				set_variable = {
+					name = selected_agent
+					value = root
+				}
+			}					
+			else = {
+				random_courtier = {
+					limit = {
+						has_trait = indur_scheme_court
+						NOT = {
+							has_character_modifier = schemed_recently
+						}
+					}
+					set_variable = {
+						name = selected_agent
+						value = this
+					}
+				}
+			}
+		}
 		random_artifact = {
 			limit = {
 				artifact_owner = {
@@ -830,6 +940,9 @@ agent_schemes.0020 = {
 		}
 		name = agent_schemes.0020.a
 
+		ai_chance = {
+			base = 100
+		}	
 		root.var:selected_agent = { duel = {
 			skill = intrigue
 			value = high_skill_rating
@@ -895,6 +1008,19 @@ agent_schemes.0020 = {
 			}
 		}
 		}
+	}
+
+	
+	trigger = {
+		AND = {
+			exists = root.var:selected_agent
+			OR = {
+				exists = scope:artifact_1
+				exists = scope:artifact_2
+				exists = scope:artifact_3
+				exists = scope:artifact_4
+			}
+		}		
 	}
 
 	option = { # Artifact 2
@@ -1145,6 +1271,14 @@ agent_schemes.0021 = {
 				}
 			}				
 		}
+		
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0020.success.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0020.success.desc
+			}
+		}
 	}
 }
 
@@ -1182,6 +1316,14 @@ agent_schemes.0022 = {
 				increase_wounds_effect = { REASON = fight }
 			}
 		}
+		
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0020.failure.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0020.failure.desc
+			}
+		}
 	}
 }
 
@@ -1215,6 +1357,39 @@ agent_schemes.0030 = {
 	override_background = { reference = drylands }
 
 	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					exists = root.var:selected_agent
+				}
+			}
+			if = {
+				limit = {
+					has_trait = indur_scheme_court
+					NOT = {
+						has_character_modifier = schemed_recently
+					}
+				}				
+				set_variable = {
+					name = selected_agent
+					value = root
+				}
+			}					
+			else = {
+				random_courtier = {
+					limit = {
+						has_trait = indur_scheme_court
+						NOT = {
+							has_character_modifier = schemed_recently
+						}
+					}
+					set_variable = {
+						name = selected_agent
+						value = this
+					}
+				}
+			}
+		}
 		random_ruler = {
 			random_courtier = {
 				limit = {
@@ -1321,12 +1496,28 @@ agent_schemes.0030 = {
 
 	}
 	
+	
+	trigger = {
+		AND = {
+			exists = root.var:selected_agent
+			OR = {
+				exists = scope:target_1
+				exists = scope:target_2
+				exists = scope:target_3
+				exists = scope:target_4
+			}
+		}		
+	}
+
 	option = { # Target 1
 		trigger = {
 			exists = scope:target_1
 		}
 		name = agent_schemes.0030.a
 
+		ai_chance = {
+			base = 100
+		}	
 		root.var:selected_agent = { duel = {
 			skill = intrigue
 			value = very_high_skill_rating
@@ -1761,6 +1952,14 @@ agent_schemes.0031 = {
 				}
 			}
 		}
+		
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0030.success.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0030.success.desc
+			}
+		}
 	}
 }
 
@@ -1797,6 +1996,14 @@ agent_schemes.0032 = {
 				VICTIM = root.var:selected_victim	
 			}
 		}
+		
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0030.partial_success.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0030.partial_success.desc
+			}
+		}
 	}
 }
 
@@ -1827,6 +2034,17 @@ agent_schemes.0033 = {
 			attempted_murder_opinion_effect = {
 				MURDERER = root.var:selected_agent
 				VICTIM = root.var:selected_victim	
+			}
+		}
+		
+		every_ruler = {
+			NOT = {
+				this = root
+			}
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0030.failure.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0030.failure.desc
 			}
 		}
 	}
@@ -1862,6 +2080,39 @@ agent_schemes.0040 = {
 	override_background = { reference = garden }
 
 	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					exists = root.var:selected_agent
+				}
+			}
+			if = {
+				limit = {
+					has_trait = indur_scheme_court
+					NOT = {
+						has_character_modifier = schemed_recently
+					}
+				}				
+				set_variable = {
+					name = selected_agent
+					value = root
+				}
+			}					
+			else = {
+				random_courtier = {
+					limit = {
+						has_trait = indur_scheme_court
+						NOT = {
+							has_character_modifier = schemed_recently
+						}
+					}
+					set_variable = {
+						name = selected_agent
+						value = this
+					}
+				}
+			}
+		}
 		random_ruler = {
 			random_courtier = {
 				limit = {
@@ -1967,11 +2218,27 @@ agent_schemes.0040 = {
 		}	
 	}
 	
+	trigger = {
+		AND = {
+			exists = root.var:selected_agent
+			OR = {
+				exists = scope:target_1
+				exists = scope:target_2
+				exists = scope:target_3
+				exists = scope:target_4
+			}
+		}		
+	}
+
 	option = { # Secret Owner 1
 		trigger = {
 			exists = scope:target_1
 		}
 		name = agent_schemes.0040.a
+		
+		ai_chance = {
+			base = 100
+		}	
 		root.var:selected_agent = { duel = {
 			skill = intrigue
 			value = medium_skill_rating
@@ -2244,6 +2511,14 @@ agent_schemes.0041 = {
 				}					
 			}	
 		}
+		
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0040.success.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0040.success.desc
+			}
+		}
 	}
 }
 
@@ -2276,6 +2551,14 @@ agent_schemes.0042 = {
 					modifier = accused_crime_opinion
 					opinion = -35
 				}
+			}
+		}
+		
+		every_ruler = {
+			send_interface_message = {
+				title = indur_quarterly_events_effect.0040.failure.t
+				left_icon = character:nazgul4
+				desc = indur_quarterly_events_effect.0040.failure.desc
 			}
 		}
 	}

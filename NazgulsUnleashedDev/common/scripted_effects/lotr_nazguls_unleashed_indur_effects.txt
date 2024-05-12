@@ -1,0 +1,144 @@
+indur_quarterly_events_effect = {
+	steal_gold = yes
+}
+
+steal_gold = {
+	if = {
+		limit = {
+			NOT = {
+				exists = root.var:selected_agent
+			}
+		}
+		if = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}				
+			set_variable = {
+				name = selected_agent
+				value = root
+			}
+		}					
+		else = {
+			random_courtier = {
+				limit = {
+					has_trait = indur_scheme_court
+					NOT = {
+						has_character_modifier = schemed_recently
+					}
+				}
+				set_variable = {
+					name = selected_agent
+					value = this
+				}
+			}
+		}
+	}
+	random_ruler = {
+		limit = {
+			NOR = {
+				culture = root.location.culture
+				#culture_group = root.location.culture_group
+				culture = root.culture
+				#culture_group = root.culture_group
+				faith = root.faith
+				
+				
+				top_liege = root.top_liege
+				capital_county.title_province = {
+					is_wastelands = yes
+				}
+			}
+		}
+		save_scope_as = ruler_1
+	}
+
+	if = {
+		limit = {  scope:ruler_1 = { gold > 100 } }
+		set_variable = {
+			name = stolen_gold_1
+			value = 100
+		}						
+	}
+	else_if =  {
+		limit = {  scope:ruler_1 = { gold > 75 } }
+		set_variable = {
+			name = stolen_gold_1
+			value = 75
+		}
+	}
+	else_if =  {
+		limit = {  scope:ruler_1 = { gold > 50 } }
+		set_variable = {
+			name = stolen_gold_1
+			value = 50
+		}
+	}
+	else =  {
+		set_variable = {
+			name = stolen_gold_1
+			value = 25
+		}
+	}
+		
+		
+	root.var:selected_agent = { duel = {
+		skill = intrigue
+		value = medium_skill_rating
+		50 = {
+			custom_tooltip = {
+				text = agent_schemes.0010.a.success.desc
+			}
+			modifier = {
+				factor = 1.1
+				limit = {
+					root.var:selected_agent = root
+				}
+			}
+			compare_modifier = {
+				value = scope:duel_value
+				multiplier = 4
+			}	
+			root = {
+				set_variable = {
+					name = selected_victim
+					value = scope:ruler_1
+				}
+				set_variable = {
+					name = stolen_gold
+					value = root.var:stolen_gold_1
+				}
+				trigger_event = {
+					id = agent_schemes.0011
+					days = 15
+				}
+			}
+		}
+		50 = {
+			custom_tooltip = {
+				text = agent_schemes.0010.failure.desc
+			}
+			compare_modifier = {
+				value = scope:ruler_1.cp:councillor_spymaster.intrigue
+				multiplier = 2
+			}
+			modifier = {
+				add = scope:ruler_1.capital_county.title_province.fort_level
+				factor = 2
+			}
+			root = {
+				set_variable = {
+					name = selected_victim
+					value = scope:ruler_1
+				}
+				trigger_event = {
+					id = agent_schemes.0012
+					days = 15
+				}
+			}
+		}
+	}
+	}
+}

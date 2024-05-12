@@ -9,6 +9,8 @@
  SELECT_AGENT:0 "Select agent"
  CHANGE_AGENT:0 "Change agent: "
 
+ CHANGE_RITUAL_LOCATION:0 "Change location: "
+
  AGENTS_TITLE:0 "Start scheme"
  AGENTS_HUD:0 "Agents available"
 
