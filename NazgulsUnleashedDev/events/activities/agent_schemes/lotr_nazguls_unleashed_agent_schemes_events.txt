@@ -120,7 +120,7 @@ agent_schemes.0010 = {
 	content_source = realms_dlc
 	theme = murder_scheme
 	right_portrait = {
-		character = var:selected_agent
+		character = root.var:selected_agent
 		animation = paranoia
 	}
 	left_portrait = {
@@ -139,7 +139,7 @@ agent_schemes.0010 = {
 		character = scope:ruler_4
 		animation = bold
 	}
-	override_background = { reference = throne_room_evil }
+	override_background = { reference = drylands }
 
 	immediate = {
 		random_ruler = {
@@ -362,50 +362,62 @@ agent_schemes.0010 = {
 		trigger = {
 			exists = scope:ruler_1
 		}
-		random_list = {
-			40 = {
-				modifier = {
-					add = var:selected_agent.intrigue
-					multiply = 2
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				custom_tooltip = {
+					text = agent_schemes.0010.a.success.desc
 				}
-				
-				send_interface_toast = {
-					title = agent_schemes.0010.tt.success
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_1
-				
-					
-					root = { add_gold = var:stolen_gold_1 }
-					scope:ruler_1 = {
-						remove_short_term_gold = root.var:stolen_gold_1
-					}					
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}	
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_1
+					}
+					set_variable = {
+						name = stolen_gold
+						value = root.var:stolen_gold_1
+					}
+					trigger_event = {
+						id = agent_schemes.0011
+						days = 15
+					}
 				}
 			}
-			60 = {
-				modifier = {
-					add = scope:ruler_1.cp:councillor_spymaster.intrigue
-					factor = 1.1
+			50 = {
+				custom_tooltip = {
+					text = agent_schemes.0010.failure.desc
+				}
+				compare_modifier = {
+					value = scope:ruler_1.cp:councillor_spymaster.intrigue
+					multiplier = 2
 				}
 				modifier = {
 					add = scope:ruler_1.capital_county.title_province.fort_level
-					factor = 1.1
+					factor = 2
 				}
-				send_interface_toast = {					
-					title = agent_schemes.0010.tt.failure
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_1
-					scope:ruler_1 = {
-						add_opinion = {
-							target = root
-							modifier = unfriendly_opinion
-							opinion = -25
-						}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_1
 					}
-					var:selected_agent = {
-						increase_wounds_effect = { REASON = fight }
+					trigger_event = {
+						id = agent_schemes.0012
+						days = 15
 					}
 				}
 			}
+		}
 		}
 	}
 	
@@ -414,50 +426,63 @@ agent_schemes.0010 = {
 		trigger = {
 			exists = scope:ruler_2
 		}
-		random_list = {
-			40 = {
-				modifier = {
-					add = var:selected_agent.intrigue
-					multiply = 2
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0010.b.success.desc
 				}
-				
-				send_interface_toast = {
-					title = agent_schemes.0010.tt.success
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_2
-				
-					
-					root = { add_gold = var:stolen_gold_2 }
-					scope:ruler_2 = {
-						remove_short_term_gold = root.var:stolen_gold_2
-					}					
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_2
+					}
+					set_variable = {
+						name = stolen_gold
+						value = root.var:stolen_gold_2
+					}
+					trigger_event = {
+						id = agent_schemes.0011
+						days = 15
+					}
 				}
 			}
-			60 = {
-				modifier = {
-					add = scope:ruler_2.cp:councillor_spymaster.intrigue
-					factor = 1.1
+			50 = {
+				custom_tooltip = {
+					text = agent_schemes.0010.failure.desc
+				}
+				compare_modifier = {
+					value = scope:ruler_2.cp:councillor_spymaster.intrigue
+					multiplier = 2
 				}
 				modifier = {
 					add = scope:ruler_2.capital_county.title_province.fort_level
-					factor = 1.1
+					factor = 2
 				}
-				send_interface_toast = {					
-					title = agent_schemes.0010.tt.failure
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_2
-					scope:ruler_2 = {
-						add_opinion = {
-							target = root
-							modifier = unfriendly_opinion
-							opinion = -25
-						}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_2
 					}
-					var:selected_agent = {
-						increase_wounds_effect = { REASON = fight }
+					trigger_event = {
+						id = agent_schemes.0012
+						days = 15
 					}
 				}
 			}
+		}
 		}
 	}
 
@@ -466,50 +491,63 @@ agent_schemes.0010 = {
 		trigger = {
 			exists = scope:ruler_3
 		}
-		random_list = {
-			40 = {
-				modifier = {
-					add = var:selected_agent.intrigue
-					multiply = 2
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0010.c.success.desc
 				}
-				
-				send_interface_toast = {
-					title = agent_schemes.0010.tt.success
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_3
-				
-					
-					root = { add_gold = var:stolen_gold_3 }
-					scope:ruler_3 = {
-						remove_short_term_gold = root.var:stolen_gold_3
-					}					
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_3
+					}
+					set_variable = {
+						name = stolen_gold
+						value = root.var:stolen_gold_3
+					}
+					trigger_event = {
+						id = agent_schemes.0011
+						days = 15
+					}
 				}
 			}
-			60 = {
-				modifier = {
-					add = scope:ruler_3.cp:councillor_spymaster.intrigue
-					factor = 1.1
+			50 = {
+				custom_tooltip = {
+					text = agent_schemes.0010.failure.desc
+				}
+				compare_modifier = {
+					value = scope:ruler_3.cp:councillor_spymaster.intrigue
+					multiplier = 2
 				}
 				modifier = {
 					add = scope:ruler_3.capital_county.title_province.fort_level
-					factor = 1.1
+					factor = 2
 				}
-				send_interface_toast = {					
-					title = agent_schemes.0010.tt.failure
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_3
-					scope:ruler_3 = {
-						add_opinion = {
-							target = root
-							modifier = unfriendly_opinion
-							opinion = -25
-						}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_3
 					}
-					var:selected_agent = {
-						increase_wounds_effect = { REASON = fight }
+					trigger_event = {
+						id = agent_schemes.0012
+						days = 15
 					}
 				}
 			}
+		}
 		}
 	}
 
@@ -518,58 +556,140 @@ agent_schemes.0010 = {
 		trigger = {
 			exists = scope:ruler_4
 		}
-		random_list = {
-			40 = {
-				modifier = {
-					add = var:selected_agent.intrigue
-					multiply = 2
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0010.d.success.desc
 				}
-				
-				send_interface_toast = {
-					title = agent_schemes.0010.tt.success
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_4
-				
-					
-					root = { add_gold = var:stolen_gold_4 }
-					scope:ruler_4 = {
-						remove_short_term_gold = root.var:stolen_gold_4
-					}					
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_4
+					}
+					set_variable = {
+						name = stolen_gold
+						value = root.var:stolen_gold_4
+					}
+					trigger_event = {
+						id = agent_schemes.0011
+						days = 15
+					}	
 				}
 			}
-			60 = {
-				modifier = {
-					add = scope:ruler_4.cp:councillor_spymaster.intrigue
-					factor = 1.1
+			50 = {
+				custom_tooltip = {
+					text = agent_schemes.0010.failure.desc
+				}
+				compare_modifier = {
+					value = scope:ruler_4.cp:councillor_spymaster.intrigue
+					multiplier = 2
 				}
 				modifier = {
 					add = scope:ruler_4.capital_county.title_province.fort_level
-					factor = 1.1
+					factor = 2
 				}
-				send_interface_toast = {					
-					title = agent_schemes.0010.tt.failure
-					left_icon = var:selected_agent
-					right_icon = scope:ruler_4
-					scope:ruler_4 = {
-						add_opinion = {
-							target = root
-							modifier = unfriendly_opinion
-							opinion = -25
-						}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_4
 					}
-					var:selected_agent = {
-						increase_wounds_effect = { REASON = fight }
+					trigger_event = {
+						id = agent_schemes.0012
+						days = 15
 					}
 				}
 			}
+		}
 		}
 	}
 
 	option = { # On a better thought
 		name = agent_schemes.0010.e
 		
-		var:selected_agent = {
+		root.var:selected_agent = {
 			remove_character_modifier = schemed_recently
+		}
+	}	
+}
+
+## Steal money: Success
+agent_schemes.0011 = {
+	title = agent_schemes.success.t
+	desc = agent_schemes.success.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = paranoia
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = personality_vengeful
+	}
+
+	option = {
+		name = agent_schemes.option
+		send_interface_toast = {
+			title = agent_schemes.0010.tt.success
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim		
+			
+			root = { add_gold = root.var:stolen_gold }
+			root.var:selected_victim = {
+				remove_short_term_gold = root.var:stolen_gold
+			}					
+		}
+	}
+}
+
+## Steal money: Failure
+agent_schemes.0012 = {
+	title = agent_schemes.failure.t
+	desc = agent_schemes.failure.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = paranoia
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = personality_vengeful
+	}
+
+	option = { # Failure
+		name = agent_schemes.option
+		send_interface_toast = {					
+			title = agent_schemes.0010.tt.failure
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim
+			root.var:selected_victim = {
+				add_opinion = {
+					target = root
+					modifier = accused_crime_opinion
+					opinion = -25
+				}
+			}
+			root.var:selected_agent = {
+				increase_wounds_effect = { REASON = fight }
+			}
 		}
 	}
 }
@@ -583,7 +703,7 @@ agent_schemes.0020 = {
 	content_source = realms_dlc
 	theme = murder_scheme
 	right_portrait = {
-		character = var:selected_agent
+		character = root.var:selected_agent
 		animation = paranoia
 	}
 	left_portrait = {
@@ -602,7 +722,7 @@ agent_schemes.0020 = {
 		character = scope:artifact_4.artifact_owner
 		animation = bold
 	}
-	override_background = { reference = throne_room_evil }
+	override_background = { reference = drylands }
 
 	immediate = {
 		random_artifact = {
@@ -709,6 +829,72 @@ agent_schemes.0020 = {
 			exists = scope:artifact_1
 		}
 		name = agent_schemes.0020.a
+
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = high_skill_rating
+			40 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.a.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_1.artifact_owner
+					}
+					set_variable = {
+						name = stolen_artifact
+						value = scope:artifact_1
+					}
+					trigger_event = {
+						id = agent_schemes.0021
+						days = 15
+					}	
+				}
+			}
+			60 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.failure.desc
+				}
+				compare_modifier = {
+					value = scope:artifact_1.artifact_owner.intrigue
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:artifact_1.artifact_owner.location.title_province.fort_level
+					factor = 3
+				}
+				send_interface_toast = {					
+					title = agent_schemes.0020.tt.failure
+					left_icon = root.var:selected_agent
+					right_icon = scope:artifact_1.artifact_owner
+					root = {
+						set_variable = {
+							name = selected_victim
+							value = scope:artifact_1.artifact_owner
+						}
+						trigger_event = {
+							id = agent_schemes.0022
+							days = 15
+						}
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # Artifact 2
@@ -716,13 +902,134 @@ agent_schemes.0020 = {
 			exists = scope:artifact_2
 		}
 		name = agent_schemes.0020.b
+
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = high_skill_rating
+			40 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.b.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_2.artifact_owner
+					}
+					set_variable = {
+						name = stolen_artifact
+						value = scope:artifact_2
+					}
+					trigger_event = {
+						id = agent_schemes.0021
+						days = 15
+					}	
+				}
+			}
+			60 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.failure.desc
+				}
+				compare_modifier = {
+					value = scope:artifact_2.artifact_owner.intrigue
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:artifact_2.artifact_owner.location.title_province.fort_level
+					factor = 3
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_2.artifact_owner
+					}
+					trigger_event = {
+						id = agent_schemes.0022
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
-	option = { # Artifact 3		
+	option = { # Artifact 3
 		trigger = {
 			exists = scope:artifact_3
 		}
 		name = agent_schemes.0020.c
+
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = high_skill_rating
+			40 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.c.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_3.artifact_owner
+					}
+					set_variable = {
+						name = stolen_artifact
+						value = scope:artifact_3
+					}
+					trigger_event = {
+						id = agent_schemes.0021
+						days = 15
+					}	
+				}
+			}
+			60 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.failure.desc
+				}
+				compare_modifier = {
+					value = scope:artifact_3.artifact_owner.intrigue
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:artifact_3.artifact_owner.location.title_province.fort_level
+					factor = 3
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_3.artifact_owner
+					}
+					trigger_event = {
+						id = agent_schemes.0022
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # Artifact 4
@@ -730,12 +1037,150 @@ agent_schemes.0020 = {
 			exists = scope:artifact_4
 		}
 		name = agent_schemes.0020.d
+
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = high_skill_rating
+			40 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.d.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+				
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_4.artifact_owner
+					}
+					set_variable = {
+						name = stolen_artifact
+						value = scope:artifact_4
+					}
+					trigger_event = {
+						id = agent_schemes.0021
+						days = 15
+					}	
+				}
+			}
+			60 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.failure.desc
+				}
+				compare_modifier = {
+					value = scope:artifact_4.artifact_owner.intrigue
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:artifact_4.artifact_owner.location.title_province.fort_level
+					factor = 3
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_4.artifact_owner
+					}
+					trigger_event = {
+						id = agent_schemes.0022
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # On a better thought
 		name = agent_schemes.0020.e
-		var:selected_agent = {
+		root.var:selected_agent = {
 			remove_character_modifier = schemed_recently
+		}
+	}
+}
+
+
+## Steal artifact: Success
+agent_schemes.0021 = {
+	title = agent_schemes.success.t
+	desc = agent_schemes.success.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = paranoia
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = personality_vengeful
+	}
+
+	option = {
+		name = agent_schemes.option
+		send_interface_toast = {
+			title = agent_schemes.0020.tt.success
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim		
+			
+			root.var:stolen_artifact = {
+				set_owner = {
+					target = root.var:selected_agent
+					history = {
+						location = root.var:selected_victim.location
+						actor = root.var:selected_victim
+						recipient = root.var:selected_agent
+						type = stolen
+					}
+				}
+			}				
+		}
+	}
+}
+
+## Steal artifact: Failure
+agent_schemes.0022 = {
+	title = agent_schemes.failure.t
+	desc = agent_schemes.failure.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = paranoia
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = personality_vengeful
+	}
+
+	option = { # Failure
+		name = agent_schemes.option
+		send_interface_toast = {					
+			title = agent_schemes.0020.tt.failure
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim
+			root.var:selected_victim = {
+				add_opinion = {
+					target = root
+					modifier = accused_crime_opinion
+					opinion = -25
+				}
+			}
+			root.var:selected_agent = {
+				increase_wounds_effect = { REASON = fight }
+			}
 		}
 	}
 }
@@ -748,7 +1193,7 @@ agent_schemes.0030 = {
 	content_source = realms_dlc
 	theme = murder_scheme
 	right_portrait = {
-		character = var:selected_agent
+		character = root.var:selected_agent
 		animation = assassin
 	}
 	left_portrait = {
@@ -767,7 +1212,7 @@ agent_schemes.0030 = {
 		character = scope:target_4
 		animation = bold
 	}
-	override_background = { reference = throne_room_evil }
+	override_background = { reference = drylands }
 
 	immediate = {
 		random_ruler = {
@@ -876,42 +1321,518 @@ agent_schemes.0030 = {
 
 	}
 	
-	option = { # Province 1
+	option = { # Target 1
 		trigger = {
 			exists = scope:target_1
 		}
 		name = agent_schemes.0030.a
-	}
 
-	option = { # Province 2
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = very_high_skill_rating
+			10 = {
+				custom_tooltip = {
+					text = agent_schemes.0030.a.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0031
+						days = 15
+					}	
+				}
+			}
+			20 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.a.partial_success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0032
+						days = 15
+					}	
+				}
+			} 
+			70 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_1.intrigue
+					multiplier = 3
+				}
+				compare_modifier = {
+					value = scope:target_1.prowess
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:target_1.location.title_province.fort_level
+					factor = 1.5
+				}
+				
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0033
+						days = 15
+					}
+				}
+			}
+		}
+		}
+	}
+	
+	option = { # Target 2
 		trigger = {
 			exists = scope:target_2
 		}
 		name = agent_schemes.0030.b
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = very_high_skill_rating
+			10 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.b.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_2
+					}
+					trigger_event = {
+						id = agent_schemes.0031
+						days = 15
+					}	
+				}
+			}
+			20 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.b.partial_success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_2
+					}
+					trigger_event = {
+						id = agent_schemes.0032
+						days = 15
+					}	
+				}
+			} 
+			70 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_2.intrigue
+					multiplier = 3
+				}
+				compare_modifier = {
+					value = scope:target_2.prowess
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:target_2.location.title_province.fort_level
+					factor = 1.5
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_2
+					}
+					trigger_event = {
+						id = agent_schemes.0033
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
-	option = { # Province 3		
+	option = { # Target 3		
 		trigger = {
 			exists = scope:target_3
 		}
 		name = agent_schemes.0030.c
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = very_high_skill_rating
+			10 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.c.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_3
+					}
+					trigger_event = {
+						id = agent_schemes.0031
+						days = 15
+					}	
+				}
+			}
+			20 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.c.partial_success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_3
+					}
+					trigger_event = {
+						id = agent_schemes.0032
+						days = 15
+					}	
+				}
+			} 
+			70 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_3.intrigue
+					multiplier = 3
+				}
+				compare_modifier = {
+					value = scope:target_3.prowess
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:target_3.location.title_province.fort_level
+					factor = 1.5
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_3
+					}
+					trigger_event = {
+						id = agent_schemes.0033
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
-	option = { # Province 4
+	option = { # Target 4
 		trigger = {
 			exists = scope:target_4
 		}
 		name = agent_schemes.0030.d
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = very_high_skill_rating
+			10 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.d.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_4
+					}
+					trigger_event = {
+						id = agent_schemes.0031
+						days = 15
+					}	
+				}
+			}
+			20 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.d.partial_success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_4
+					}
+					trigger_event = {
+						id = agent_schemes.0032
+						days = 15
+					}	
+				}
+			} 
+			70 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_4.intrigue
+					multiplier = 3
+				}
+				compare_modifier = {
+					value = scope:target_4.prowess
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:target_4.location.title_province.fort_level
+					factor = 1.5
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_4
+					}
+					trigger_event = {
+						id = agent_schemes.0033
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # On a better thought
 		name = agent_schemes.0030.e
-		var:selected_agent = {
+		root.var:selected_agent = {
 			remove_character_modifier = schemed_recently
 		}
 	}
 }
 
+## Steal artifact: Success
+agent_schemes.0031 = {
+	title = agent_schemes.success.t
+	desc = agent_schemes.success.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = assassin
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = dead
+	}
+
+	option = {
+		name = agent_schemes.option
+		send_interface_toast = {
+			title = agent_schemes.0030.tt.success
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim
+			root.var:selected_victim = {
+				death = {
+					death_reason = death_assassination
+					killer = root.var:selected_agent
+				}
+			}
+		}
+	}
+}
+
+
+## Steal artifact: Partial Success
+agent_schemes.0032 = {
+	title = agent_schemes.partial_success.t
+	desc = agent_schemes.partial_success.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = assassin
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = fear
+	}
+
+	option = {
+		name = agent_schemes.option
+		send_interface_toast = {
+			title = agent_schemes.0030.tt.partial_success
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim		
+				
+			root.var:selected_victim = {
+				increase_wounds_effect = { REASON = murder }
+			}
+			attempted_murder_opinion_effect = {
+				MURDERER = root.var:selected_agent
+				VICTIM = root.var:selected_victim	
+			}
+		}
+	}
+}
+
+## Steal artifact: Failure
+agent_schemes.0033 = {
+	title = agent_schemes.failure.t
+	desc = agent_schemes.failure.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = assassin
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = fear
+	}
+
+	option = { # Failure
+		name = agent_schemes.option
+		send_interface_toast = {					
+			title = agent_schemes.0030.tt.failure
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim
+
+			attempted_murder_opinion_effect = {
+				MURDERER = root.var:selected_agent
+				VICTIM = root.var:selected_victim	
+			}
+		}
+	}
+}
+
+# Fabricate hooks
 agent_schemes.0040 = {
 	title = agent_schemes.0040.t
 	desc = agent_schemes.0040.desc
@@ -919,7 +1840,7 @@ agent_schemes.0040 = {
 	content_source = realms_dlc
 	theme = murder_scheme
 	right_portrait = {
-		character = var:selected_agent
+		character = root.var:selected_agent
 		animation = eavesdrop
 	}
 	left_portrait = {
@@ -938,7 +1859,7 @@ agent_schemes.0040 = {
 		character = scope:target_4
 		animation = bold
 	}
-	override_background = { reference = throne_room_evil }
+	override_background = { reference = garden }
 
 	immediate = {
 		random_ruler = {
@@ -1051,6 +1972,59 @@ agent_schemes.0040 = {
 			exists = scope:target_1
 		}
 		name = agent_schemes.0040.a
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.a.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+				}
+				
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0041
+						days = 15
+					}
+				}
+			}
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_1.intrigue
+					multiplier = 3
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0042
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # Secret Owner 2
@@ -1058,6 +2032,58 @@ agent_schemes.0040 = {
 			exists = scope:target_2
 		}
 		name = agent_schemes.0040.b
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.b.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+				}
+				
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_2
+					}
+					trigger_event = {
+						id = agent_schemes.0041
+						days = 15
+					}
+				}
+			}
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_2.intrigue
+					multiplier = 3
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_2
+					}
+					trigger_event = {
+						id = agent_schemes.0042
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # Secret Owner 3
@@ -1065,6 +2091,58 @@ agent_schemes.0040 = {
 			exists = scope:target_3
 		}
 		name = agent_schemes.0040.c
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.c.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+				}
+				
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_3
+					}
+					trigger_event = {
+						id = agent_schemes.0041
+						days = 15
+					}
+				}
+			}
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_3.intrigue
+					multiplier = 3
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_3
+					}
+					trigger_event = {
+						id = agent_schemes.0042
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # Secret Owner 4
@@ -1072,12 +2150,133 @@ agent_schemes.0040 = {
 			exists = scope:target_4
 		}
 		name = agent_schemes.0040.d
+
+		root.var:selected_agent = { duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.d.success.desc
+				}
+				modifier = {
+					factor = 1.1
+					limit = {
+						root.var:selected_agent = root
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+				}
+				
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_4
+					}
+					trigger_event = {
+						id = agent_schemes.0041
+						days = 15
+					}
+				}
+			}
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_4.intrigue
+					multiplier = 3
+				}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:target_4
+					}
+					trigger_event = {
+						id = agent_schemes.0042
+						days = 15
+					}
+				}
+			}
+		}
+		}
 	}
 
 	option = { # On a better thought
 		name = agent_schemes.0040.e
-		var:selected_agent = {
+		root.var:selected_agent = {
 			remove_character_modifier = schemed_recently
+		}
+	}
+}
+
+
+## Hook fabrication: Success
+agent_schemes.0041 = {
+	title = agent_schemes.success.t
+	desc = agent_schemes.success.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = eavesdrop
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = personality_vengeful
+	}
+
+	option = {
+		name = agent_schemes.option
+		send_interface_toast = {
+			title = agent_schemes.0040.tt.success
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim		
+			root = {
+				add_hook = {
+					type = fabrication_hook
+					target = root.var:selected_victim
+				}					
+			}	
+		}
+	}
+}
+
+## Hook fabrication: Failure
+agent_schemes.0042 = {
+	title = agent_schemes.failure.t
+	desc = agent_schemes.failure.desc
+	type = character_event
+
+	content_source = realms_dlc
+	theme = murder_scheme
+	right_portrait = {
+		character = root.var:selected_agent
+		animation = eavesdrop
+	}
+	left_portrait = {
+		character = root.var:selected_victim
+		animation = personality_vengeful
+	}
+
+	option = { # Failure
+		name = agent_schemes.option
+		send_interface_toast = {					
+			title = agent_schemes.0040.tt.failure
+			left_icon = root.var:selected_agent
+			right_icon = root.var:selected_victim
+			root.var:selected_victim = {
+				add_opinion = {
+					target = root
+					modifier = accused_crime_opinion
+					opinion = -35
+				}
+			}
 		}
 	}
 }

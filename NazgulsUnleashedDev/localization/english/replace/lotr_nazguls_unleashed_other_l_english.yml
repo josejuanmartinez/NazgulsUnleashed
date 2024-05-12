@@ -22,8 +22,8 @@
  steal_artifact_desc:0 "Steal a personal or court artifact from a foreign liege or their courtiers" 
  assassinate_name:0 "Assassinate" 
  assassinate_desc:0 "Attempt an assassination on a foreign councillor"
- extort_name:0 "Learn secrets" 
- extort_desc:0 "Learn secrets from a councillor to gain a hook on them" 
+ extort_name:0 "Fabricate a plot" 
+ extort_desc:0 "Fabricate a plot to gain a hook on an enemy courtier and extort them" 
 
  schemed_recently:0 "Schemed recently"
  schemed_recently_desc:0 "This character has schemed recently"

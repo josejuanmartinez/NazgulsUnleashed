@@ -17,8 +17,6 @@ can_do_schemes_indur = {
 				}
 			}	
 		}
-		gold > 0
-		piety > 0
 	}
 }
 
