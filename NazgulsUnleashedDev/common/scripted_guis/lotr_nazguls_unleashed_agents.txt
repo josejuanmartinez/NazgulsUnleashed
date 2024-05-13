@@ -89,48 +89,24 @@ select_extort = {
 
 trigger_steal_gold = {
 	effect = 	{
-		var:selected_agent = { add_character_modifier = {
-			modifier = schemed_recently
-			years = 4
-		} }
-
 		trigger_event = agent_schemes.0010
-
 	}
 }
 
 trigger_steal_artifact = {
 	effect = 	{
-		var:selected_agent = { add_character_modifier = {
-			modifier = schemed_recently
-			years = 4
-		} }
-
 		trigger_event = agent_schemes.0020
-
 	}
 }
 
 trigger_assassinate = {
 	effect = 	{
-		var:selected_agent = { add_character_modifier = {
-			modifier = schemed_recently
-			years = 4
-		} }
-
 		trigger_event = agent_schemes.0030
-
 	}
 }
 
 trigger_extort = {
 	effect = 	{
-		var:selected_agent = { add_character_modifier = {
-			modifier = schemed_recently
-			years = 4
-		} }
-
 		trigger_event = agent_schemes.0040
-
 	}
 }

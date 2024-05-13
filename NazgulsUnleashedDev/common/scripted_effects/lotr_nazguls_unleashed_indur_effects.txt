@@ -1,41 +1,14 @@
 indur_quarterly_events_effect = {
-	steal_gold = yes
+	random_list = {
+		3 = { steal_gold = yes }
+		2 = { steal_artifact = yes }
+		1 = { assassinate = yes }
+		10 = { fabricate_hook = yes }
+	}
 }
 
 steal_gold = {
-	if = {
-		limit = {
-			NOT = {
-				exists = root.var:selected_agent
-			}
-		}
-		if = {
-			limit = {
-				has_trait = indur_scheme_court
-				NOT = {
-					has_character_modifier = schemed_recently
-				}
-			}				
-			set_variable = {
-				name = selected_agent
-				value = root
-			}
-		}					
-		else = {
-			random_courtier = {
-				limit = {
-					has_trait = indur_scheme_court
-					NOT = {
-						has_character_modifier = schemed_recently
-					}
-				}
-				set_variable = {
-					name = selected_agent
-					value = this
-				}
-			}
-		}
-	}
+
 	random_ruler = {
 		limit = {
 			NOR = {
@@ -82,26 +55,39 @@ steal_gold = {
 			value = 25
 		}
 	}
-		
-		
-	root.var:selected_agent = { duel = {
-		skill = intrigue
-		value = medium_skill_rating
-		50 = {
-			custom_tooltip = {
-				text = agent_schemes.0010.a.success.desc
+
+	
+	if = {
+		limit = {
+			has_trait = indur_scheme_court
+			NOT = {
+				has_character_modifier = schemed_recently
 			}
-			modifier = {
-				factor = 1.1
-				limit = {
-					root.var:selected_agent = root
+		}				
+		set_variable = {
+			name = selected_agent
+			value = root
+		}
+		
+		add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		} 
+
+		duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				custom_tooltip = {
+					text = agent_schemes.0010.a.success.desc
 				}
-			}
-			compare_modifier = {
-				value = scope:duel_value
-				multiplier = 4
-			}	
-			root = {
+				modifier = {
+					factor = 1.1
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}	
 				set_variable = {
 					name = selected_victim
 					value = scope:ruler_1
@@ -115,20 +101,18 @@ steal_gold = {
 					days = 15
 				}
 			}
-		}
-		50 = {
-			custom_tooltip = {
-				text = agent_schemes.0010.failure.desc
-			}
-			compare_modifier = {
-				value = scope:ruler_1.cp:councillor_spymaster.intrigue
-				multiplier = 2
-			}
-			modifier = {
-				add = scope:ruler_1.capital_county.title_province.fort_level
-				factor = 2
-			}
-			root = {
+			50 = {
+				custom_tooltip = {
+					text = agent_schemes.0010.failure.desc
+				}
+				compare_modifier = {
+					value = scope:ruler_1.cp:councillor_spymaster.intrigue
+					multiplier = 2
+				}
+				modifier = {
+					add = scope:ruler_1.capital_county.title_province.fort_level
+					factor = 2
+				}
 				set_variable = {
 					name = selected_victim
 					value = scope:ruler_1
@@ -139,6 +123,615 @@ steal_gold = {
 				}
 			}
 		}
+	}					
+	else = {
+		random_courtier = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}
+			root = {
+				set_variable = {
+					name = selected_agent
+					value = this
+				}
+			}
+			
+			add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			} 
+
+			duel = {
+				skill = intrigue
+				value = medium_skill_rating
+				50 = {
+					custom_tooltip = {
+						text = agent_schemes.0010.a.success.desc
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 4
+					}	
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_1
+					}
+					set_variable = {
+						name = stolen_gold
+						value = root.var:stolen_gold_1
+					}
+					trigger_event = {
+						id = agent_schemes.0011
+						days = 15
+					}
+				}
+				50 = {
+					custom_tooltip = {
+						text = agent_schemes.0010.failure.desc
+					}
+					compare_modifier = {
+						value = scope:ruler_1.cp:councillor_spymaster.intrigue
+						multiplier = 2
+					}
+					modifier = {
+						add = scope:ruler_1.capital_county.title_province.fort_level
+						factor = 2
+					}
+					set_variable = {
+						name = selected_victim
+						value = scope:ruler_1
+					}
+					trigger_event = {
+						id = agent_schemes.0012
+						days = 15
+					}
+				}
+			}
+		}
 	}
+}
+
+steal_artifact = {
+	random_artifact = {
+		limit = {
+			artifact_owner = {
+				NOR = {
+					culture = root.location.culture
+					#culture_group = root.location.culture_group
+					culture = root.culture
+					#culture_group = root.culture_group
+					faith = root.faith
+					top_liege = root.top_liege
+					is_wastelands = yes
+					AND = {
+						artifact_owner = { 
+							is_nazgul = yes
+						}
+						is_nazgul = yes
+					}
+				}
+			}
+		}					
+		save_scope_as = artifact_1
+	}
+
+	if = {
+		limit = {
+			has_trait = indur_scheme_court
+			NOT = {
+				has_character_modifier = schemed_recently
+			}
+		}				
+		set_variable = {
+			name = selected_agent
+			value = root
+		}
+		add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		}
+		duel = {
+			skill = intrigue
+			value = high_skill_rating
+			40 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.a.success.desc
+				}
+				modifier = {
+					factor = 1.1
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 4
+				}
+
+				set_variable = {
+					name = selected_victim
+					value = scope:artifact_1.artifact_owner
+				}
+				set_variable = {
+					name = stolen_artifact
+					value = scope:artifact_1
+				}
+				trigger_event = {
+					id = agent_schemes.0021
+					days = 15
+				}	
+			}
+			60 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0020.failure.desc
+				}
+				compare_modifier = {
+					value = scope:artifact_1.artifact_owner.intrigue
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:artifact_1.artifact_owner.location.title_province.fort_level
+					factor = 3
+				}
+				
+				set_variable = {
+					name = selected_victim
+					value = scope:artifact_1.artifact_owner
+				}
+				trigger_event = {
+					id = agent_schemes.0022
+					days = 15
+				}
+				
+			}
+		}
+	}					
+	else = {
+		random_courtier = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}
+			root = {
+				set_variable = {
+					name = selected_agent
+					value = this
+				}
+			}
+			add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			}
+			duel = {
+				skill = intrigue
+				value = high_skill_rating
+				40 = {					
+					custom_tooltip = {
+						text = agent_schemes.0020.a.success.desc
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 4
+					}
+	
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_1.artifact_owner
+					}
+					set_variable = {
+						name = stolen_artifact
+						value = scope:artifact_1
+					}
+					trigger_event = {
+						id = agent_schemes.0021
+						days = 15
+					}	
+				}
+				60 = {
+					
+					custom_tooltip = {
+						text = agent_schemes.0020.failure.desc
+					}
+					compare_modifier = {
+						value = scope:artifact_1.artifact_owner.intrigue
+						multiplier = 3
+					}
+					modifier = {
+						add = scope:artifact_1.artifact_owner.location.title_province.fort_level
+						factor = 3
+					}
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_1.artifact_owner
+					}
+					trigger_event = {
+						id = agent_schemes.0022
+						days = 15
+					}
+				}
+			}
+		}
+	}
+}
+
+assassinate = {
+	
+	random_ruler = {
+		random_courtier = {
+			limit = {
+				NOR = {
+					culture = root.location.culture
+					#culture_group = root.location.culture_group
+					culture = root.culture
+					#culture_group = root.culture_group
+					faith = root.faith
+					top_liege = root.top_liege
+					is_wastelands = yes
+					AND = {
+						is_nazgul = yes
+						root = {
+							is_nazgul = yes
+						}
+					}
+				}
+			}
+			save_scope_as = target_1
+		}
+	}
+	if = {
+		limit = {
+			has_trait = indur_scheme_court
+			NOT = {
+				has_character_modifier = schemed_recently
+			}
+		}				
+		set_variable = {
+			name = selected_agent
+			value = root
+		}
+		add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		}
+		duel = {
+			skill = intrigue
+			value = very_high_skill_rating
+			10 = {
+				custom_tooltip = {
+					text = agent_schemes.0030.a.success.desc
+				}
+				modifier = {
+					factor = 1.1
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				set_variable = {
+					name = selected_victim
+					value = scope:target_1
+				}
+				trigger_event = {
+					id = agent_schemes.0031
+					days = 15
+				}
+			}
+			20 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.a.partial_success.desc
+				}
+				modifier = {
+					factor = 1.1
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 5
+				}
+				compare_modifier = {
+					value = root.var:selected_agent.prowess
+					multiplier = 1.2
+				}
+				
+				set_variable = {
+					name = selected_victim
+					value = scope:target_1
+				}
+				trigger_event = {
+					id = agent_schemes.0032
+					days = 15
+				}	
+				
+			} 
+			70 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0030.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_1.intrigue
+					multiplier = 3
+				}
+				compare_modifier = {
+					value = scope:target_1.prowess
+					multiplier = 3
+				}
+				modifier = {
+					add = scope:target_1.location.title_province.fort_level
+					factor = 1.5
+				}
+				
+				set_variable = {
+					name = selected_victim
+					value = scope:target_1
+				}
+				trigger_event = {
+					id = agent_schemes.0033
+					days = 15
+				}
+			}
+		}
+	}					
+	else = {
+		random_courtier = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}
+			root = {
+				set_variable = {
+					name = selected_agent
+					value = this
+				}
+			}
+			add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			}
+			duel = {
+				skill = intrigue
+				value = very_high_skill_rating
+				10 = {
+					custom_tooltip = {
+						text = agent_schemes.0030.a.success.desc
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 5
+					}
+					compare_modifier = {
+						value = root.var:selected_agent.prowess
+						multiplier = 1.2
+					}
+					
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0031
+						days = 15
+					}
+				}
+				20 = {
+					
+					custom_tooltip = {
+						text = agent_schemes.0030.a.partial_success.desc
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 5
+					}
+					compare_modifier = {
+						value = root.var:selected_agent.prowess
+						multiplier = 1.2
+					}
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0032
+						days = 15
+					}
+				} 
+				70 = {
+					
+					custom_tooltip = {
+						text = agent_schemes.0030.failure.desc
+					}
+					compare_modifier = {
+						value = scope:target_1.intrigue
+						multiplier = 3
+					}
+					compare_modifier = {
+						value = scope:target_1.prowess
+						multiplier = 3
+					}
+					modifier = {
+						add = scope:target_1.location.title_province.fort_level
+						factor = 1.5
+					}
+					
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0033
+						days = 15
+					}
+				}
+			}
+		}
+	}
+}
+
+fabricate_hook = {
+	
+	random_ruler = {
+		random_courtier = {
+			limit = {
+				NOR = {
+					culture = root.location.culture
+					#culture_group = root.location.culture_group
+					culture = root.culture
+					#culture_group = root.culture_group
+					faith = root.faith
+					top_liege = root.top_liege
+					is_wastelands = yes
+					AND = {
+						is_nazgul = yes
+						root = {
+							is_nazgul = yes
+						}
+					}
+				}
+			}
+			save_scope_as = target_1
+		}
+	}
+
+
+	if = {
+		limit = {
+			has_trait = indur_scheme_court
+			NOT = {
+				has_character_modifier = schemed_recently
+			}
+		}				
+		set_variable = {
+			name = selected_agent
+			value = root
+		}
+		
+		add_character_modifier = {
+			modifier = schemed_recently
+			years = 4
+		}
+		duel = {
+			skill = intrigue
+			value = medium_skill_rating
+			50 = {
+				
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.a.success.desc
+				}
+				modifier = {
+					factor = 1.1
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3
+				}
+				
+				set_variable = {
+					name = selected_victim
+					value = scope:target_1
+				
+				}
+				trigger_event = {
+					id = agent_schemes.0041
+					days = 15
+				}
+			}
+			50 = {
+				
+				custom_tooltip = {
+					text = agent_schemes.0040.failure.desc
+				}
+				compare_modifier = {
+					value = scope:target_1.intrigue
+					multiplier = 3
+				}
+				set_variable = {
+					name = selected_victim
+					value = scope:target_1
+				}
+				trigger_event = {
+					id = agent_schemes.0042
+					days = 15
+				}
+			}
+		}
+
+	}					
+	else = {
+		random_courtier = {
+			limit = {
+				has_trait = indur_scheme_court
+				NOT = {
+					has_character_modifier = schemed_recently
+				}
+			}
+			root  = {
+				set_variable = {
+					name = selected_agent
+					value = this
+				}
+			}
+			
+			
+			add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			}
+			duel = {
+				skill = intrigue
+				value = medium_skill_rating
+				50 = {
+					
+					
+					custom_tooltip = {
+						text = agent_schemes.0040.a.success.desc
+					}
+					modifier = {
+						factor = 1.1
+					}
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 3
+					}
+					
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0041
+						days = 15
+					}
+				}
+				50 = {
+					
+					custom_tooltip = {
+						text = agent_schemes.0040.failure.desc
+					}
+					compare_modifier = {
+						value = scope:target_1.intrigue
+						multiplier = 3
+					}
+					set_variable = {
+						name = selected_victim
+						value = scope:target_1
+					}
+					trigger_event = {
+						id = agent_schemes.0042
+						days = 15
+					}
+				}
+			}
+		}
 	}
 }

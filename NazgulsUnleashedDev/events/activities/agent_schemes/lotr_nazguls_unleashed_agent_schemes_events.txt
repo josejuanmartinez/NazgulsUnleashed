@@ -175,6 +175,15 @@ agent_schemes.0010 = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				exists = var:selected_agent
+			}
+			var:selected_agent = { add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			} }
+		}
 		random_ruler = {
 			limit = {
 				NOR = {
@@ -389,31 +398,6 @@ agent_schemes.0010 = {
 			}
 		}
 	}
-
-	
-	trigger = {
-		AND = {
-			exists = root.var:selected_agent
-			OR = {
-				AND = {
-					exists = scope:ruler_1
-					exists = root.var:stolen_gold_1
-				}
-				AND = {
-					exists = scope:ruler_2
-					exists = root.var:stolen_gold_2
-				}
-				AND = {
-					exists = scope:ruler_3
-					exists = root.var:stolen_gold_3
-				}
-				AND = {
-					exists = scope:ruler_4
-					exists = root.var:stolen_gold_4
-				}
-			}
-		}		
-	}
 	
 	option = { # Ruler 1
 		name = agent_schemes.0010.a
@@ -432,9 +416,7 @@ agent_schemes.0010 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -497,9 +479,7 @@ agent_schemes.0010 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -562,9 +542,7 @@ agent_schemes.0010 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -627,9 +605,7 @@ agent_schemes.0010 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -715,14 +691,52 @@ agent_schemes.0011 = {
 				remove_short_term_gold = root.var:stolen_gold
 			}					
 		}
-			
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0010.success.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0010.success.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0010.revealed_secret.success.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0010.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0010.rumour.t
+						desc = indur_quarterly_events_effect.0010.rumour.desc
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		}  }
 	}
 }
 
@@ -761,13 +775,50 @@ agent_schemes.0012 = {
 			}
 		}
 		
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0010.failure.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0010.failure.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0010.revealed_secret.failure.t
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0010.revealed_secret.failure.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0010.rumour.t
+						desc = indur_quarterly_events_effect.0010.rumour.desc
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -834,6 +885,15 @@ agent_schemes.0020 = {
 					}
 				}
 			}
+		}
+		if = {
+			limit = {
+				exists = var:selected_agent
+			}
+			var:selected_agent = { add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			} }
 		}
 		random_artifact = {
 			limit = {
@@ -934,6 +994,7 @@ agent_schemes.0020 = {
 		}
 	}
 	
+	
 	option = { # Artifact 1
 		trigger = {
 			exists = scope:artifact_1
@@ -953,9 +1014,7 @@ agent_schemes.0020 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -990,37 +1049,19 @@ agent_schemes.0020 = {
 					add = scope:artifact_1.artifact_owner.location.title_province.fort_level
 					factor = 3
 				}
-				send_interface_toast = {					
-					title = agent_schemes.0020.tt.failure
-					left_icon = root.var:selected_agent
-					right_icon = scope:artifact_1.artifact_owner
-					root = {
-						set_variable = {
-							name = selected_victim
-							value = scope:artifact_1.artifact_owner
-						}
-						trigger_event = {
-							id = agent_schemes.0022
-							days = 15
-						}
+				root = {
+					set_variable = {
+						name = selected_victim
+						value = scope:artifact_1.artifact_owner
+					}
+					trigger_event = {
+						id = agent_schemes.0022
+						days = 15
 					}
 				}
 			}
 		}
 		}
-	}
-
-	
-	trigger = {
-		AND = {
-			exists = root.var:selected_agent
-			OR = {
-				exists = scope:artifact_1
-				exists = scope:artifact_2
-				exists = scope:artifact_3
-				exists = scope:artifact_4
-			}
-		}		
 	}
 
 	option = { # Artifact 2
@@ -1039,9 +1080,7 @@ agent_schemes.0020 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1107,9 +1146,7 @@ agent_schemes.0020 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1174,9 +1211,7 @@ agent_schemes.0020 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1271,14 +1306,51 @@ agent_schemes.0021 = {
 				}
 			}				
 		}
-		
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0020.success.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0020.success.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0020.revealed_secret.success.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0020.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0020.rumour.t
+						desc = indur_quarterly_events_effect.0020.rumour.desc
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1316,14 +1388,52 @@ agent_schemes.0022 = {
 				increase_wounds_effect = { REASON = fight }
 			}
 		}
-		
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0020.failure.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0020.failure.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0020.revealed_secret.failure.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0020.revealed_secret.failure.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0020.rumour.t
+						desc = indur_quarterly_events_effect.0020.rumour.desc
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1389,6 +1499,15 @@ agent_schemes.0030 = {
 					}
 				}
 			}
+		}
+		if = {
+			limit = {
+				exists = var:selected_agent
+			}
+			var:selected_agent = { add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			} }
 		}
 		random_ruler = {
 			random_courtier = {
@@ -1496,18 +1615,6 @@ agent_schemes.0030 = {
 
 	}
 	
-	
-	trigger = {
-		AND = {
-			exists = root.var:selected_agent
-			OR = {
-				exists = scope:target_1
-				exists = scope:target_2
-				exists = scope:target_3
-				exists = scope:target_4
-			}
-		}		
-	}
 
 	option = { # Target 1
 		trigger = {
@@ -1527,9 +1634,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1558,9 +1663,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1629,9 +1732,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1659,9 +1760,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1729,9 +1828,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1759,9 +1856,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1829,9 +1924,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1859,9 +1952,7 @@ agent_schemes.0030 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -1952,14 +2043,52 @@ agent_schemes.0031 = {
 				}
 			}
 		}
-		
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0030.success.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0030.success.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0030.revealed_secret.success.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0030.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0030.rumour.t
+						desc = indur_quarterly_events_effect.0030.rumour.desc
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1996,14 +2125,52 @@ agent_schemes.0032 = {
 				VICTIM = root.var:selected_victim	
 			}
 		}
-		
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0030.partial_success.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0030.partial_success.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0030.revealed_secret.partial_success.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0030.revealed_secret.partial_success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0030.rumour.t
+						desc = indur_quarterly_events_effect.0030.rumour.desc
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -2037,16 +2204,52 @@ agent_schemes.0033 = {
 			}
 		}
 		
-		every_ruler = {
-			NOT = {
-				this = root
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0030.failure.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0030.failure.desc
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
 			}
-		}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0030.revealed_secret.failure.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0030.revealed_secret.failure.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0030.rumour.t
+						desc = indur_quarterly_events_effect.0030.rumour.desc
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -2112,6 +2315,15 @@ agent_schemes.0040 = {
 					}
 				}
 			}
+		}
+		if = {
+			limit = {
+				exists = var:selected_agent
+			}
+			var:selected_agent = { add_character_modifier = {
+				modifier = schemed_recently
+				years = 4
+			} }
 		}
 		random_ruler = {
 			random_courtier = {
@@ -2218,17 +2430,6 @@ agent_schemes.0040 = {
 		}	
 	}
 	
-	trigger = {
-		AND = {
-			exists = root.var:selected_agent
-			OR = {
-				exists = scope:target_1
-				exists = scope:target_2
-				exists = scope:target_3
-				exists = scope:target_4
-			}
-		}		
-	}
 
 	option = { # Secret Owner 1
 		trigger = {
@@ -2250,9 +2451,7 @@ agent_schemes.0040 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -2309,9 +2508,7 @@ agent_schemes.0040 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -2368,9 +2565,7 @@ agent_schemes.0040 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -2428,9 +2623,7 @@ agent_schemes.0040 = {
 				}
 				modifier = {
 					factor = 1.1
-					limit = {
-						root.var:selected_agent = root
-					}
+					root.var:selected_agent = root
 				}
 				compare_modifier = {
 					value = scope:duel_value
@@ -2512,13 +2705,52 @@ agent_schemes.0041 = {
 			}	
 		}
 		
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0040.success.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0040.success.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0040.revealed_secret.success.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0040.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0040.rumour.t
+						desc = indur_quarterly_events_effect.0040.rumour.desc
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -2554,12 +2786,51 @@ agent_schemes.0042 = {
 			}
 		}
 		
-		every_ruler = {
-			send_interface_message = {
-				title = indur_quarterly_events_effect.0040.failure.t
-				left_icon = character:nazgul4
-				desc = indur_quarterly_events_effect.0040.failure.desc
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
 			}
-		}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_spymaster.intrigue
+						exists = cp:councillor_spymaster
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0040.revealed_secret.failure.t
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+						desc = indur_quarterly_events_effect.0040.revealed_secret.failure.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = indur_quarterly_events_effect.0040.rumour.t
+						desc = indur_quarterly_events_effect.0040.rumour.desc
+						
+						left_icon = root
+						right_icon = root.var:selected_victim
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }

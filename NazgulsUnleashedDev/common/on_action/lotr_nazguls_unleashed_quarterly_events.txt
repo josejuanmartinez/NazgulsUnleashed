@@ -8,6 +8,9 @@ quarterly_playable_pulse = {
 blind_sorcerer_quarterly_check = {
 	trigger = {
 		root = character:nazgul5
+		character:nazgul5 = {
+			is_ai = yes
+		}
 		OR = {
 			AND = {
 				is_sorcerer = yes
@@ -32,6 +35,9 @@ blind_sorcerer_quarterly_check = {
 indur_quarterly_check = {
 	trigger = {
 		root = character:nazgul4
+		character:nazgul4 = {
+			is_ai = yes
+		}
 		OR = {
 			AND = {
 				has_trait = indur_scheme_court			
