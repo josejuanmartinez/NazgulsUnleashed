@@ -70,6 +70,18 @@ evil.0001 = {
 	immediate = {
 		play_music_cue = "mx_cue_illness"
 
+		if = {
+			limit = {
+				NOT = {
+					exists = var:ritual_caster
+				}
+			}
+			set_variable = {
+				name = ritual_caster
+				value = root
+			}
+		}
+
 		#add_character_flag = {
 		#	flag = planning_an_activity
 		#	days = 30

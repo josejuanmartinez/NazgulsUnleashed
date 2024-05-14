@@ -1,0 +1,6 @@
+lineudo35 = {
+	7030.1.1 = {
+        employer = lineofsauron
+        give_council_position = councillor_steward
+	}
+}

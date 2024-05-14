@@ -503,6 +503,7 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 	trait = cynical
 	trait = deceitful
 	trait = indur_scheme_court
+	intrigue = 8
 
 	disallow_random_traits = yes
 
@@ -542,7 +543,10 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 					value = title:k_cirith_nargil
 				}
 			}
-		}
+		}		
+	}
+	7030.1.1 = {		
+		employer = lineofsauron
 		give_council_position = councillor_spymaster
 	}
 
@@ -626,7 +630,11 @@ nazgul5 = {
 					value = title:k_luglurak
 				}
 			}
-		}
+		}		
+	}
+
+	7030.1.1 = {
+		employer = lineofsauron
 		give_council_position = councillor_court_chaplain
 	}
 
