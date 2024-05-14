@@ -710,11 +710,11 @@ agent_schemes.0011 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0010.revealed_secret.success.t
+						title = agents_quarterly_events_effect.0010.revealed_secret.success.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0010.revealed_secret.success.desc
+						desc = agents_quarterly_events_effect.0010.revealed_secret.success.desc
 					}
 				}
 				10 = { 
@@ -724,8 +724,8 @@ agent_schemes.0011 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0010.rumour.t
-						desc = indur_quarterly_events_effect.0010.rumour.desc
+						title = agents_quarterly_events_effect.0010.rumour.t
+						desc = agents_quarterly_events_effect.0010.rumour.desc
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
@@ -794,10 +794,10 @@ agent_schemes.0012 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0010.revealed_secret.failure.t
+						title = agents_quarterly_events_effect.0010.revealed_secret.failure.t
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0010.revealed_secret.failure.desc
+						desc = agents_quarterly_events_effect.0010.revealed_secret.failure.desc
 					}
 				}
 				10 = { 
@@ -807,8 +807,8 @@ agent_schemes.0012 = {
 
 					send_interface_toast = {						
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0010.rumour.t
-						desc = indur_quarterly_events_effect.0010.rumour.desc
+						title = agents_quarterly_events_effect.0010.rumour.t
+						desc = agents_quarterly_events_effect.0010.rumour.desc
 						left_icon = root
 						right_icon = root.var:selected_victim
 					}
@@ -1325,11 +1325,11 @@ agent_schemes.0021 = {
 					send_interface_toast = {
 						
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0020.revealed_secret.success.t
+						title = agents_quarterly_events_effect.0020.revealed_secret.success.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0020.revealed_secret.success.desc
+						desc = agents_quarterly_events_effect.0020.revealed_secret.success.desc
 					}
 				}
 				10 = { 
@@ -1339,8 +1339,8 @@ agent_schemes.0021 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0020.rumour.t
-						desc = indur_quarterly_events_effect.0020.rumour.desc
+						title = agents_quarterly_events_effect.0020.rumour.t
+						desc = agents_quarterly_events_effect.0020.rumour.desc
 						left_icon = root
 						right_icon = root.var:selected_victim
 					}
@@ -1407,11 +1407,11 @@ agent_schemes.0022 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0020.revealed_secret.failure.t
+						title = agents_quarterly_events_effect.0020.revealed_secret.failure.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0020.revealed_secret.failure.desc
+						desc = agents_quarterly_events_effect.0020.revealed_secret.failure.desc
 					}
 				}
 				10 = { 
@@ -1421,8 +1421,8 @@ agent_schemes.0022 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0020.rumour.t
-						desc = indur_quarterly_events_effect.0020.rumour.desc
+						title = agents_quarterly_events_effect.0020.rumour.t
+						desc = agents_quarterly_events_effect.0020.rumour.desc
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
@@ -2062,11 +2062,11 @@ agent_schemes.0031 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0030.revealed_secret.success.t
+						title = agents_quarterly_events_effect.0030.revealed_secret.success.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0030.revealed_secret.success.desc
+						desc = agents_quarterly_events_effect.0030.revealed_secret.success.desc
 					}
 				}
 				10 = { 
@@ -2076,8 +2076,8 @@ agent_schemes.0031 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0030.rumour.t
-						desc = indur_quarterly_events_effect.0030.rumour.desc
+						title = agents_quarterly_events_effect.0030.rumour.t
+						desc = agents_quarterly_events_effect.0030.rumour.desc
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
@@ -2144,11 +2144,11 @@ agent_schemes.0032 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0030.revealed_secret.partial_success.t
+						title = agents_quarterly_events_effect.0030.revealed_secret.partial_success.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0030.revealed_secret.partial_success.desc
+						desc = agents_quarterly_events_effect.0030.revealed_secret.partial_success.desc
 					}
 				}
 				10 = { 
@@ -2158,8 +2158,8 @@ agent_schemes.0032 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0030.rumour.t
-						desc = indur_quarterly_events_effect.0030.rumour.desc
+						title = agents_quarterly_events_effect.0030.rumour.t
+						desc = agents_quarterly_events_effect.0030.rumour.desc
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
@@ -2223,11 +2223,11 @@ agent_schemes.0033 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0030.revealed_secret.failure.t
+						title = agents_quarterly_events_effect.0030.revealed_secret.failure.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0030.revealed_secret.failure.desc
+						desc = agents_quarterly_events_effect.0030.revealed_secret.failure.desc
 					}
 				}
 				10 = { 
@@ -2237,8 +2237,8 @@ agent_schemes.0033 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0030.rumour.t
-						desc = indur_quarterly_events_effect.0030.rumour.desc
+						title = agents_quarterly_events_effect.0030.rumour.t
+						desc = agents_quarterly_events_effect.0030.rumour.desc
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
@@ -2724,11 +2724,11 @@ agent_schemes.0041 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0040.revealed_secret.success.t
+						title = agents_quarterly_events_effect.0040.revealed_secret.success.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0040.revealed_secret.success.desc
+						desc = agents_quarterly_events_effect.0040.revealed_secret.success.desc
 					}
 				}
 				10 = { 
@@ -2738,8 +2738,8 @@ agent_schemes.0041 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0040.rumour.t
-						desc = indur_quarterly_events_effect.0040.rumour.desc
+						title = agents_quarterly_events_effect.0040.rumour.t
+						desc = agents_quarterly_events_effect.0040.rumour.desc
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
@@ -2805,11 +2805,11 @@ agent_schemes.0042 = {
 					}
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0040.revealed_secret.failure.t
+						title = agents_quarterly_events_effect.0040.revealed_secret.failure.t
 						
 						left_icon = root
 						right_icon = root.var:selected_victim
-						desc = indur_quarterly_events_effect.0040.revealed_secret.failure.desc
+						desc = agents_quarterly_events_effect.0040.revealed_secret.failure.desc
 					}
 				}
 				10 = { 
@@ -2819,8 +2819,8 @@ agent_schemes.0042 = {
 
 					send_interface_toast = {
 						type = event_generic_neutral_text
-						title = indur_quarterly_events_effect.0040.rumour.t
-						desc = indur_quarterly_events_effect.0040.rumour.desc
+						title = agents_quarterly_events_effect.0040.rumour.t
+						desc = agents_quarterly_events_effect.0040.rumour.desc
 						
 						left_icon = root
 						right_icon = root.var:selected_victim

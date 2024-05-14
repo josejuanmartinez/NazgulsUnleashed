@@ -15,24 +15,16 @@ blind_sorcerer_quarterly_events_effect = {
 			0 = { 
 				modifier = {
 					add = 1
-					if = {
-						limit = {
-							is_nazgul = yes
-						}
-					}
+					is_nazgul = yes
 				}
 				cast_summon_being_of_darkness = yes
 			}
 			0 = { 
 				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_nazgul = yes
-								health < 50
-							}
-						}
+					add = 1
+					AND = {
+						is_nazgul = yes
+						health < 50
 					}
 				}
 				cast_nazgul_restoration = yes
@@ -40,14 +32,8 @@ blind_sorcerer_quarterly_events_effect = {
 			0 = { 
 				
 				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_at_war = yes
-							}
-						}
-					}
+					add = 1
+					is_at_war = yes
 				}
 				cast_words_of_power = yes
 			}
@@ -55,86 +41,33 @@ blind_sorcerer_quarterly_events_effect = {
 			0 = { 
 				
 				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_nazgul = yes
-							}
-						}
-					}
+					add = 1
+					is_nazgul = yes
 				}
 				cast_purse_them_relentlessly = yes
 			}
 			0 = { 
 				
 				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_nazgul = yes
-							}
-						}
-					}
+					add = 1
+					is_nazgul = yes
 				}
 				cast_black_breath = yes
 			}					
 			0 = { 
 				
 				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_maiar = yes
-							}
-						}
-					}
-					
+					add = 1
+					is_maiar = yes
 				}
 				cast_ambassador_of_darkness = yes
 			}
 			0 = { 
 				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_maiar = yes
-							}
-						}
-					}
+					add = 1
+					is_maiar = yes
 				}
 				cast_shapeshifting = yes
-			}
-			0 = {
-				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_maiar = yes
-							}
-						}
-					}
-				}
-				cast_abnormal_winter = yes
-			}
-			
-			0 = { 
-				
-				modifier = {
-					add = {
-						value = 1
-						if = {
-							limit = {
-								is_maiar = yes
-							}
-						}
-					}
-				}
-				cast_the_plague = yes
 			}
 		}
 	}
@@ -155,39 +88,22 @@ blind_sorcerer_quarterly_events_effect = {
 				0 = { 
 					modifier = {
 						add = 1
-						if = {
-							limit = {
-								is_nazgul = yes
-							}
-						}
+						is_nazgul = yes
 					}
 					cast_summon_being_of_darkness = yes
 				}
 				0 = { 
 					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_nazgul = yes
-									health < 50
-								}
-							}
-						}
+						add = 1
+						is_nazgul = yes
 					}
 					cast_nazgul_restoration = yes
 				}
 				0 = { 
 					
 					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_at_war = yes
-								}
-							}
-						}
+						add = 1
+						is_at_war = yes
 					}
 					cast_words_of_power = yes
 				}
@@ -195,86 +111,33 @@ blind_sorcerer_quarterly_events_effect = {
 				0 = { 
 					
 					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_nazgul = yes
-								}
-							}
-						}
+						add = 1
+						is_nazgul = yes
 					}
 					cast_purse_them_relentlessly = yes
 				}
 				0 = { 
 					
 					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_nazgul = yes
-								}
-							}
-						}
+						add = 1
+						is_nazgul = yes
 					}
 					cast_black_breath = yes
 				}					
 				0 = { 
 					
 					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_maiar = yes
-								}
-							}
-						}
-						
+						add = 1
+						is_maiar = yes
 					}
 					cast_ambassador_of_darkness = yes
 				}
 				0 = { 
 					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_maiar = yes
-								}
-							}
-						}
+						add = 1
+						is_maiar = yes
 					}
 					cast_shapeshifting = yes
-				}
-				0 = {
-					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_maiar = yes
-								}
-							}
-						}
-					}
-					cast_abnormal_winter = yes
-				}
-				
-				0 = { 
-					
-					modifier = {
-						add = {
-							value = 1
-							if = {
-								limit = {
-									is_maiar = yes
-								}
-							}
-						}
-					}
-					cast_the_plague = yes
 				}
 			}
 		}
@@ -1385,81 +1248,6 @@ cast_cast_the_darkness = {
 							years = 1
 						}
 					}								
-				}
-			}
-		}
-	}
-}
-
-cast_abnormal_winter = {
-	set_variable = {name = low_mod value = 0}
-	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
-	
-	set_variable = {name = high_mod value = 0}
-	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
-	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
-
-	if = {
-		limit = { is_blind_sorcerer_casting = yes} 
-		add_character_modifier = {
-			modifier = practiced_sorcery_recently
-			years = 4
-		}
-	}
-	else = {
-		add_character_modifier = {
-			modifier = practiced_sorcery_recently
-			years = 5
-		}
-	}
-	add_piety = {
-		value = -750
-		if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
-	}
-	random_list = {
-		50 = {	# Failure
-			desc = evil.0022.a
-			trigger_event = {
-				id = evil.0122
-				days = { 10 30 }
-			}
-		}
-		50 = {	# Success
-			desc = evil.0023.a
-			trigger_event = {
-				id = evil.1823
-				days = { 10 30 }
-			}
-			custom_tooltip = custom_desc_abnormal_winter.tt
-
-			every_neighboring_and_across_water_top_liege_realm_owner = {
-				limit = {
-					NOT = {	any_character_artifact = { has_variable = elven_ring } }
-				}
-				save_scope_as = enemy
-				hidden_effect = {
-					every_living_character = {
-						if = {
-							limit = {this.top_liege = scope:enemy}
-							add_character_modifier = {
-								modifier = abnormal_winter_character_modifier
-								years = 1
-							}
-						}
-					}
-				
-					every_realm_county = {
-						limit = {
-							NOT = { culture ?= culture:wastelands }
-							NOT = {
-								has_county_modifier = abnormal_winter_modifier
-							}
-						}
-						add_county_modifier = {
-							modifier = abnormal_winter_modifier
-							years = 1
-						}
-					}
 				}
 			}
 		}

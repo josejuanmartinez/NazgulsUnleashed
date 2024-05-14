@@ -1,4 +1,9 @@
 quarterly_playable_pulse = {
+	trigger = { 
+		is_wastelands = no 
+		is_ai = yes
+		is_human = no
+	}
 	on_actions = {
 		blind_sorcerer_quarterly_check
 		indur_quarterly_check
@@ -8,8 +13,13 @@ quarterly_playable_pulse = {
 blind_sorcerer_quarterly_check = {
 	trigger = {
 		root = character:nazgul5
+		root = {
+			is_ai = yes
+			is_human = no
+		}
 		character:nazgul5 = {
 			is_ai = yes
+			is_human = no
 		}
 		OR = {
 			AND = {
@@ -23,7 +33,6 @@ blind_sorcerer_quarterly_check = {
 				}
 			}	
 		}
-		gold > 0
 		piety > 0
 	}
 
@@ -35,8 +44,13 @@ blind_sorcerer_quarterly_check = {
 indur_quarterly_check = {
 	trigger = {
 		root = character:nazgul4
+		root = {
+			is_ai = yes
+			is_human = no
+		}
 		character:nazgul4 = {
 			is_ai = yes
+			is_human = no
 		}
 		OR = {
 			AND = {

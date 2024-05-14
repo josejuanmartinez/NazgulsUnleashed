@@ -4,6 +4,12 @@ indur_quarterly_events_effect = {
 		2 = { steal_artifact = yes }
 		1 = { assassinate = yes }
 		10 = { fabricate_hook = yes }
+		0 = {
+			modifier = {
+				add = 50
+				health < 50
+			}
+		}
 	}
 }
 

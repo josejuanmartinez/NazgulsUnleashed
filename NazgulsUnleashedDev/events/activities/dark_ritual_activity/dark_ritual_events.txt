@@ -525,6 +525,49 @@ evil.0121 = {
     }
 	option = {
 		name =  evil.0021.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0121.revealed_secret.failure.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0121.revealed_secret.failure.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0121.rumour.t
+						desc = sorcery_quarterly_events_effect.0121.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -554,6 +597,49 @@ evil.0122 = {
     }
 	option = {
 		name =  evil.0022.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			set_variable = {
+				name = selected_victim
+				value = root.var:selected_victim
+			}
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0122.revealed_secret.failure.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0122.revealed_secret.failure.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0122.rumour.t
+						desc = sorcery_quarterly_events_effect.0122.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -586,6 +672,45 @@ evil.0123 = {
     }
 	option = {
 		name =  evil.0023.horde.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0123.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0123.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0123.rumour.t
+						desc = sorcery_quarterly_events_effect.0123.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -615,6 +740,45 @@ evil.0124 = {
     }
 	option = {
 		name =  evil.0024.horde.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0124.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0124.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0124.rumour.t
+						desc = sorcery_quarterly_events_effect.0124.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -645,6 +809,45 @@ evil.0223 = {
     }
 	option = {
 		name =  evil.0023.horde.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0223.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0223.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0223.rumour.t
+						desc = sorcery_quarterly_events_effect.0223.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -674,6 +877,45 @@ evil.0224 = {
     }
 	option = {
 		name =  evil.0024.horde.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0224.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0224.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0224.rumour.t
+						desc = sorcery_quarterly_events_effect.0224.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -704,6 +946,45 @@ evil.0323 = {
     }
 	option = {
 		name =  evil.0023.horde.c
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0323.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0323.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0323.rumour.t
+						desc = sorcery_quarterly_events_effect.0323.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 # Critical success
@@ -732,6 +1013,45 @@ evil.0324 = {
     }
 	option = {
 		name =  evil.0024.horde.c
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0324.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0324.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0324.rumour.t
+						desc = sorcery_quarterly_events_effect.0324.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -762,6 +1082,45 @@ evil.0423 = {
     }
 	option = {
 		name =  evil.0023.summon.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0423.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0423.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0423.rumour.t
+						desc = sorcery_quarterly_events_effect.0423.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -791,6 +1150,44 @@ evil.0424 = {
     }
 	option = {
 		name =  evil.0024.summon.a
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0424.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0424.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0424.rumour.t
+						desc = sorcery_quarterly_events_effect.0424.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -821,6 +1218,44 @@ evil.0523 = {
     }
 	option = {
 		name =  evil.0023.summon.b
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0523.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0523.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0523.rumour.t
+						desc = sorcery_quarterly_events_effect.0523.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -850,6 +1285,44 @@ evil.0524 = {
     }
 	option = {
 		name =  evil.0024.summon.b
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0524.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0524.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0524.rumour.t
+						desc = sorcery_quarterly_events_effect.0524.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -880,6 +1353,44 @@ evil.0623 = {
     }
 	option = {
 		name =  evil.0023.summon.c
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0623.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0623.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0623.rumour.t
+						desc = sorcery_quarterly_events_effect.0623.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -909,6 +1420,45 @@ evil.0624 = {
     }
 	option = {
 		name =  evil.0024.summon.c
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0624.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0624.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0624.rumour.t
+						desc = sorcery_quarterly_events_effect.0624.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -939,6 +1489,45 @@ evil.0723 = {
     }
 	option = {
 		name =  evil.0023.powerspell.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0723.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0723.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0723.rumour.t
+						desc = sorcery_quarterly_events_effect.0722.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -968,6 +1557,45 @@ evil.0724 = {
     }
 	option = {
 		name = evil.0024.powerspell.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0724.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0724.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0724.rumour.t
+						desc = sorcery_quarterly_events_effect.0724.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -999,6 +1627,44 @@ evil.0823 = {
     }
 	option = {
 		name =  evil.0023.powerspell.b
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0823.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0823.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0823.rumour.t
+						desc = sorcery_quarterly_events_effect.0823.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1028,6 +1694,45 @@ evil.0824 = {
     }
 	option = {
 		name = evil.0024.powerspell.b
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0824.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0824.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0824.rumour.t
+						desc = sorcery_quarterly_events_effect.0824.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
+		
 	}
 }
 
@@ -1060,6 +1765,45 @@ evil.0923 = {
     }
 	option = {
 		name =  evil.0023.powerspell.c
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0923.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0923.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0923.rumour.t
+						desc = sorcery_quarterly_events_effect.0923.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
+		
 	}
 }
 
@@ -1089,6 +1833,45 @@ evil.0924 = {
     }
 	option = {
 		name = evil.0024.powerspell.c
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0924.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.0924.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.0924.rumour.t
+						desc = sorcery_quarterly_events_effect.0924.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1150,6 +1933,45 @@ evil.1024 = {
     }
 	option = {
 		name =  evil.0024.craft.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1023.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1023.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1024.rumour.t
+						desc = sorcery_quarterly_events_effect.1024.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1182,6 +2004,44 @@ evil.1123 = {
     }
 	option = {
 		name =  evil.0023.lamentation.a
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1123.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1123.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1123.rumour.t
+						desc = sorcery_quarterly_events_effect.1123.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1211,6 +2071,45 @@ evil.1124 = {
     }
 	option = {
 		name =  evil.0024.lamentation.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1124.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1124.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1124.rumour.t
+						desc = sorcery_quarterly_events_effect.1124.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1241,6 +2140,45 @@ evil.1223 = {
     }
 	option = {
 		name =  evil.0023.lamentation.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1223.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1223.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1223.rumour.t
+						desc = sorcery_quarterly_events_effect.1223.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1270,6 +2208,45 @@ evil.1224 = {
     }
 	option = {
 		name =  evil.0024.lamentation.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1224.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1224.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1224.rumour.t
+						desc = sorcery_quarterly_events_effect.1224.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1301,6 +2278,45 @@ evil.1323 = {
     }
 	option = {
 		name =  evil.0023.lamentation.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1323.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1323.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1323.rumour.t
+						desc = sorcery_quarterly_events_effect.1323.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1330,6 +2346,44 @@ evil.1324 = {
     }
 	option = {
 		name =  evil.0024.lamentation.c
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1324.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1324.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1324.rumour.t
+						desc = sorcery_quarterly_events_effect.1324.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1363,6 +2417,44 @@ evil.1423 = {
     }
 	option = {
 		name =  evil.0023.treachery.a
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1423.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1423.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1423.rumour.t
+						desc = sorcery_quarterly_events_effect.1423.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1392,6 +2484,44 @@ evil.1424 = {
     }
 	option = {
 		name =  evil.0024.treachery.a
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1424.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1424.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1424.rumour.t
+						desc = sorcery_quarterly_events_effect.1424.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1425,6 +2555,44 @@ evil.1523 = {
     }
 	option = {
 		name =  evil.0023.treachery.b
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1523.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1523.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1523.rumour.t
+						desc = sorcery_quarterly_events_effect.1523.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1454,6 +2622,45 @@ evil.1524 = {
     }
 	option = {
 		name =  evil.0024.treachery.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1524.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1524.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1524.rumour.t
+						desc = sorcery_quarterly_events_effect.1524.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1486,6 +2693,45 @@ evil.1623 = {
     }
 	option = {
 		name =  evil.0023.treachery.c
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1623.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1623.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1623.rumour.t
+						desc = sorcery_quarterly_events_effect.1623.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1515,6 +2761,45 @@ evil.1624 = {
     }
 	option = {
 		name =  evil.0024.treachery.c
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1624.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1624.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1624.rumour.t
+						desc = sorcery_quarterly_events_effect.1624.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1548,6 +2833,45 @@ evil.1723 = {
 	option = {
 		name =  evil.0023.darkness.a
 	}
+
+	hidden_effect = { every_ruler = {
+		limit = {
+			NOT = {
+				this = root
+			}
+		}
+		
+		random_list = {
+			10 = { 
+				modifier = {
+					add = cp:councillor_court_chaplain.learning
+					exists = cp:councillor_court_chaplain
+				}
+				send_interface_toast = {
+					type = event_generic_neutral_text
+					title = sorcery_quarterly_events_effect.1723.revealed_secret.success.t
+					left_icon = root
+					desc = sorcery_quarterly_events_effect.1723.revealed_secret.success.desc
+				}
+			}
+			10 = { 
+				modifier = {
+					add = intrigue
+				}
+
+				send_interface_toast = {						
+					type = event_generic_neutral_text
+					title = sorcery_quarterly_events_effect.1723.rumour.t
+					desc = sorcery_quarterly_events_effect.1723.rumour.desc
+					left_icon = root
+				}
+
+			}
+			50 = { 
+
+			}
+		}
+	} }
 }
 
 # Critical success
@@ -1576,6 +2900,45 @@ evil.1724 = {
     }
 	option = {
 		name =  evil.0024.darkness.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1724.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1724.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1724.rumour.t
+						desc = sorcery_quarterly_events_effect.1724.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1609,6 +2972,45 @@ evil.1823 = {
     }
 	option = {
 		name =  evil.0023.darkness.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1823.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1823.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1823.rumour.t
+						desc = sorcery_quarterly_events_effect.1823.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1638,6 +3040,45 @@ evil.1824 = {
     }
 	option = {
 		name =  evil.0024.darkness.b
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1824.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1824.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1824.rumour.t
+						desc = sorcery_quarterly_events_effect.1824.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1671,6 +3112,45 @@ evil.1923 = {
     }
 	option = {
 		name =  evil.0023.darkness.c
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1923.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1923.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1923.rumour.t
+						desc = sorcery_quarterly_events_effect.1923.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
@@ -1700,6 +3180,44 @@ evil.1924 = {
     }
 	option = {
 		name =  evil.0024.darkness.c
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1924.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1924.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1924.rumour.t
+						desc = sorcery_quarterly_events_effect.1924.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }
 	}
 }
 
