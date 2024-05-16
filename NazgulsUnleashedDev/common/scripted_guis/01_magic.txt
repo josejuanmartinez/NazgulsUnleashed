@@ -135,11 +135,23 @@ select_invoke_watchers = {
 }
 select_summon_being_of_darkness = {
 	is_valid = {
-		var:ritual_caster = {
+		OR = {
 			AND = {
-				NOT = { has_character_modifier = fell_beast_mount_modifier }
-				has_trait = nazgul
-			}		
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					AND = {
+						NOT = { has_character_modifier = fell_beast_mount_modifier }
+						has_trait = nazgul
+					}		
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				AND = {
+					NOT = { has_character_modifier = fell_beast_mount_modifier }
+					has_trait = nazgul
+				}		
+			}
 		}
 	}
 	effect = {
@@ -184,7 +196,18 @@ select_words_of_power = {
 }
 select_forge_morgul_weapons = {
 	is_valid = {
-		NOT = { has_character_modifier = morgul_weapons }
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					NOT = { has_character_modifier = morgul_weapons }	
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				NOT = { has_character_modifier = morgul_weapons }
+			}
+		}
 	}
 	effect = {
 		set_variable = {
@@ -195,8 +218,17 @@ select_forge_morgul_weapons = {
 }
 select_purse_them_relentlessly = {
 	is_valid = {
-		var:ritual_caster = {
-			has_trait = nazgul
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = nazgul
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				has_trait = nazgul
+			}
 		}
 	}
 	effect = {
@@ -208,10 +240,16 @@ select_purse_them_relentlessly = {
 }
 select_black_breath = {
 	is_valid = {
-		var:ritual_caster = {
-			OR = {
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = nazgul
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
 				has_trait = nazgul
-				has_trait = maiar
 			}
 		}
 	}
@@ -224,10 +262,16 @@ select_black_breath = {
 }
 select_nazgul_restoration = {
 	is_valid = {
-		var:ritual_caster = {
-			OR = {
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = nazgul
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
 				has_trait = nazgul
-				has_trait = maiar
 			}
 		}
 	}
@@ -240,8 +284,17 @@ select_nazgul_restoration = {
 }
 select_ambassador_of_darkness = {
 	is_valid = {
-		var:ritual_caster = {
-			has_trait = maiar
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = maiar
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -253,8 +306,17 @@ select_ambassador_of_darkness = {
 }
 select_shapeshifting = {
 	is_valid = {
-		var:ritual_caster = {
-			has_trait = maiar
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = maiar
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -266,8 +328,17 @@ select_shapeshifting = {
 }
 select_reveal_the_secrets = {
 	is_valid = {
-		var:ritual_caster = {
-			has_trait = maiar
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = maiar
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -279,8 +350,17 @@ select_reveal_the_secrets = {
 }
 select_cast_the_darkness = {
 	is_valid = {		
-		var:ritual_caster = {
-			has_trait = maiar
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = maiar
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -292,8 +372,17 @@ select_cast_the_darkness = {
 }
 select_abnormal_winter = {
 	is_valid = {
-		var:ritual_caster = {
-			has_trait = maiar
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = maiar
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -305,8 +394,17 @@ select_abnormal_winter = {
 }
 select_the_plague = {
 	is_valid = {
-		var:ritual_caster = {
-			has_trait = maiar
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					has_trait = maiar
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				has_trait = maiar
+			}
 		}
 	}
 	effect = {
@@ -342,10 +440,10 @@ select_location = {
 
 cast_call_the_horde = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
@@ -355,7 +453,7 @@ cast_call_the_horde = {
 			add_piety = {
 				value = -250
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		set_variable = {name = low_mod value = 0}
@@ -366,16 +464,16 @@ cast_call_the_horde = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -389,7 +487,7 @@ cast_call_the_horde = {
 		}
 		
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			
 			flag:sacred_place = {
 				random_list = {
@@ -1587,10 +1685,10 @@ cast_call_the_horde = {
 # Also called Invigorate the Horde
 cast_mark_of_war = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
@@ -1600,7 +1698,7 @@ cast_mark_of_war = {
 			add_piety = {
 				value = -250
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		
@@ -1612,16 +1710,16 @@ cast_mark_of_war = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -1634,7 +1732,7 @@ cast_mark_of_war = {
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			
 			flag:sacred_place = {
 				random_list = {
@@ -1851,11 +1949,11 @@ cast_mark_of_war = {
 #Also called assemble the warlords
 cast_assemble_the_warchiefs = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {		
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -1867,7 +1965,7 @@ cast_assemble_the_warchiefs = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
@@ -1877,7 +1975,7 @@ cast_assemble_the_warchiefs = {
 			add_piety = {
 				value = -250
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		
@@ -1889,16 +1987,16 @@ cast_assemble_the_warchiefs = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -2021,7 +2119,7 @@ cast_assemble_the_warchiefs = {
 # Raise the dead
 cast_rise_the_dead = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 
 	effect = {
@@ -2033,15 +2131,15 @@ cast_rise_the_dead = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
@@ -2051,12 +2149,12 @@ cast_rise_the_dead = {
 			add_piety = {
 				value = -300
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -2069,7 +2167,7 @@ cast_rise_the_dead = {
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -2248,7 +2346,7 @@ cast_rise_the_dead = {
 # Also called invoke sigils
 cast_invoke_watchers = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -2259,16 +2357,16 @@ cast_invoke_watchers = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -2281,7 +2379,7 @@ cast_invoke_watchers = {
 			}
 		}
 
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 400
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 200}
@@ -2291,12 +2389,12 @@ cast_invoke_watchers = {
 			add_piety = {
 				value = -400
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 200}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -2410,7 +2508,7 @@ cast_invoke_watchers = {
 
 cast_summon_being_of_darkness = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -2421,16 +2519,16 @@ cast_summon_being_of_darkness = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -2443,7 +2541,7 @@ cast_summon_being_of_darkness = {
 			}
 		}
 
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 250}
@@ -2453,11 +2551,11 @@ cast_summon_being_of_darkness = {
 			add_piety = {
 				value = -500
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -2589,7 +2687,7 @@ cast_summon_being_of_darkness = {
 
 cast_cracks_of_the_earth = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -2600,16 +2698,16 @@ cast_cracks_of_the_earth = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -2622,7 +2720,7 @@ cast_cracks_of_the_earth = {
 			}
 		}
 
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 600
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 300}
@@ -2632,11 +2730,11 @@ cast_cracks_of_the_earth = {
 			add_piety = {
 				value = -600
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 300}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	 # Failure
@@ -2846,7 +2944,7 @@ cast_cracks_of_the_earth = {
 
 cast_dark_vitality = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {	
 		set_variable = {name = low_mod value = 0}
@@ -2857,16 +2955,16 @@ cast_dark_vitality = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -2879,7 +2977,7 @@ cast_dark_vitality = {
 			}
 		}
 
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 200
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 100}
@@ -2889,12 +2987,12 @@ cast_dark_vitality = {
 			add_piety = {
 				value = -200
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 100}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	 # Failure
@@ -3210,7 +3308,7 @@ cast_dark_vitality = {
 
 cast_words_of_power = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {	
 		set_variable = {name = low_mod value = 0}
@@ -3221,16 +3319,16 @@ cast_words_of_power = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -3242,7 +3340,7 @@ cast_words_of_power = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
@@ -3252,12 +3350,12 @@ cast_words_of_power = {
 			add_piety = {
 				value = -300
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	 # Failure
@@ -3574,7 +3672,7 @@ cast_words_of_power = {
 
 cast_forge_morgul_weapons = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -3585,16 +3683,16 @@ cast_forge_morgul_weapons = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -3606,7 +3704,7 @@ cast_forge_morgul_weapons = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 375}
@@ -3616,11 +3714,11 @@ cast_forge_morgul_weapons = {
 			add_piety = {
 				value = -750
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -3722,7 +3820,7 @@ cast_forge_morgul_weapons = {
 
 cast_purse_them_relentlessly = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -3733,15 +3831,15 @@ cast_purse_them_relentlessly = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -3753,7 +3851,7 @@ cast_purse_them_relentlessly = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
@@ -3763,11 +3861,11 @@ cast_purse_them_relentlessly = {
 			add_piety = {
 				value = -300
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -3875,7 +3973,7 @@ cast_purse_them_relentlessly = {
 
 cast_black_breath = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -3886,15 +3984,15 @@ cast_black_breath = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -3906,7 +4004,7 @@ cast_black_breath = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 750}
@@ -3916,11 +4014,11 @@ cast_black_breath = {
 			add_piety = {
 				value = -1500
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 750}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -4185,7 +4283,7 @@ cast_black_breath = {
 
 cast_nazgul_restoration = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -4196,15 +4294,15 @@ cast_nazgul_restoration = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -4216,7 +4314,7 @@ cast_nazgul_restoration = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 250
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 125}
@@ -4226,11 +4324,11 @@ cast_nazgul_restoration = {
 			add_piety = {
 				value = -250
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-			trigger = var:ritual_location
+			trigger = var:ritual_caster.var:ritual_location
 			flag:sacred_place = {
 				random_list = {
 					25 = {	# Failure
@@ -4343,7 +4441,7 @@ cast_nazgul_restoration = {
 
 cast_ambassador_of_darkness = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -4354,14 +4452,14 @@ cast_ambassador_of_darkness = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 250}
@@ -4371,11 +4469,11 @@ cast_ambassador_of_darkness = {
 			add_piety = {
 				value = -500
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -4388,7 +4486,7 @@ cast_ambassador_of_darkness = {
 			}
 		}
 		switch = {
-				trigger = var:ritual_location
+				trigger = var:ritual_caster.var:ritual_location
 				flag:sacred_place = {
 					random_list = {
 						25 = {	# Failure
@@ -4496,7 +4594,7 @@ cast_ambassador_of_darkness = {
 
 cast_shapeshifting = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -4507,14 +4605,14 @@ cast_shapeshifting = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 500
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 250}
@@ -4524,11 +4622,11 @@ cast_shapeshifting = {
 			add_piety = {
 				value = -500
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 250}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -4541,7 +4639,7 @@ cast_shapeshifting = {
 			}
 		}
 		switch = {
-				trigger = var:ritual_location
+				trigger = var:ritual_caster.var:ritual_location
 				flag:sacred_place = {
 					random_list = {
 						25 = {	# Failure
@@ -4649,7 +4747,7 @@ cast_shapeshifting = {
 
 cast_reveal_the_secrets = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -4660,15 +4758,15 @@ cast_reveal_the_secrets = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -4680,7 +4778,7 @@ cast_reveal_the_secrets = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 300
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 150}
@@ -4690,11 +4788,11 @@ cast_reveal_the_secrets = {
 			add_piety = {
 				value = -300
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 150}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-				trigger = var:ritual_location
+				trigger = var:ritual_caster.var:ritual_location
 				flag:sacred_place = {
 					random_list = {
 						25 = {	# Failure
@@ -4914,7 +5012,7 @@ cast_reveal_the_secrets = {
 
 cast_cast_the_darkness = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {		
 		set_variable = {name = low_mod value = 0}
@@ -4925,15 +5023,15 @@ cast_cast_the_darkness = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -4945,7 +5043,7 @@ cast_cast_the_darkness = {
 				years = 5
 			}
 		}		
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 1000
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 500}
@@ -4955,11 +5053,11 @@ cast_cast_the_darkness = {
 			add_piety = {
 				value = -1000
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 500}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-				trigger = var:ritual_location
+				trigger = var:ritual_caster.var:ritual_location
 				flag:sacred_place = {
 					random_list = {
 						25 = {	# Failure
@@ -5162,7 +5260,7 @@ cast_cast_the_darkness = {
 
 cast_abnormal_winter = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -5173,15 +5271,15 @@ cast_abnormal_winter = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -5193,7 +5291,7 @@ cast_abnormal_winter = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 750}
@@ -5203,11 +5301,11 @@ cast_abnormal_winter = {
 			add_piety = {
 				value = -750
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-				trigger = var:ritual_location
+				trigger = var:ritual_caster.var:ritual_location
 				flag:sacred_place = {
 					random_list = {
 						25 = {	# Failure
@@ -5450,7 +5548,7 @@ cast_abnormal_winter = {
 
 cast_the_plague = {
 	is_valid = {
-		NOT = { var:ritual_location = flag:no_location }
+		NOT = { var:ritual_caster.var:ritual_location = flag:no_location }
 	}
 	effect = {
 		set_variable = {name = low_mod value = 0}
@@ -5461,15 +5559,15 @@ cast_the_plague = {
 		if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
 		if = {
-			limit = {exists = var:temple var:temple = 5}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 5}
 			change_variable = {name = low_mod add = -10}
 		}
 		else_if = {
-			limit = {exists = var:temple var:temple = 3}
+			limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 3}
 			change_variable = {name = high_mod add = 10}
 		}
 		if = {
-			limit = { var:ritual_location = flag:holy_site_1 }
+			limit = { var:ritual_caster.var:ritual_location = flag:holy_site_1 }
 			add_character_modifier = {
 				modifier = practiced_sorcery_recently
 				years = 4
@@ -5481,7 +5579,7 @@ cast_the_plague = {
 				years = 5
 			}
 		}
-		if = {limit = {exists = var:temple var:temple = 4}
+		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 1500
 				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 750}
@@ -5491,11 +5589,11 @@ cast_the_plague = {
 			add_piety = {
 				value = -1500
 				if = {limit = { is_blind_sorcerer_casting = yes} add = 750}
-				if = {limit = {exists = var:temple var:temple = 2} multiply = 0.8 subtract = 1}
+				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
 		switch = {
-				trigger = var:ritual_location
+				trigger = var:ritual_caster.var:ritual_location
 				flag:sacred_place = {
 					random_list = {
 						25 = {	# Failure

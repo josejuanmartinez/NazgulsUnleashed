@@ -361,7 +361,7 @@ evil.0010 = {
 		}
 		name = evil.0010.a
 		custom_tooltip = evil.0010.a.tt
-		set_variable = {name = temple value = 1}
+		var:ritual_caster = { set_variable = {name = temple value = 1} } 
 		# trigger_event = evil.0012
 	}
 
@@ -379,7 +379,7 @@ evil.0010 = {
 		}
 		name = evil.0010.b
 		custom_tooltip = evil.0010.b.tt
-		set_variable = {name = temple value = 2}
+		var:ritual_caster = { set_variable = {name = temple value = 2} } 
 		# trigger_event = evil.0012
 	}
 
@@ -397,7 +397,7 @@ evil.0010 = {
 		}
 		name = evil.0010.c
 		custom_tooltip = evil.0010.c.tt
-		set_variable = {name = temple value = 3}
+		var:ritual_caster = { set_variable = {name = temple value = 3} } 
 		# trigger_event = evil.0012
 	}
 
@@ -424,7 +424,7 @@ evil.0010 = {
 		# remove_character_flag = planning_an_activity
 		name = evil.0010.e
 		custom_tooltip = evil.0010.e.tt
-		remove_variable = ritual_location
+		var:ritual_caster = { remove_variable = ritual_location } 
 	}
 
 }
@@ -465,7 +465,7 @@ evil.0011 = {
 		}
 		name = evil.0011.a
 		custom_tooltip = evil.0011.a.tt
-		set_variable = {name = temple value = 4}
+		var:ritual_caster = { set_variable = {name = temple value = 4} } 
 		# trigger_event = evil.0012
 	}
 
@@ -484,7 +484,7 @@ evil.0011 = {
 		}
 		name = evil.0011.b
 		custom_tooltip = evil.0011.b.tt
-		set_variable = {name = temple value = 5}
+		var:ritual_caster = { set_variable = {name = temple value = 5} } 
 		# trigger_event = evil.0012
 	}
 
@@ -505,7 +505,7 @@ evil.0011 = {
 		name = evil.0011.d
 		custom_tooltip = evil.0011.d.tt
 		# remove_character_flag = planning_an_activity
-		remove_variable = ritual_location
+		var:ritual_caster = { remove_variable = ritual_location } 
 	}
 
 }
@@ -524,15 +524,15 @@ evil.0121 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -545,10 +545,7 @@ evil.0121 = {
 				}
 			}
 			
-			set_variable = {
-				name = selected_victim
-				value = root.var:selected_victim
-			}
+			
 			random_list = {
 				10 = { 
 					modifier = {
@@ -596,15 +593,15 @@ evil.0122 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -617,10 +614,7 @@ evil.0122 = {
 				}
 			}
 			
-			set_variable = {
-				name = selected_victim
-				value = root.var:selected_victim
-			}
+			
 			random_list = {
 				10 = { 
 					modifier = {
@@ -671,15 +665,15 @@ evil.0123 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -739,15 +733,15 @@ evil.0124 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -808,15 +802,15 @@ evil.0223 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -876,15 +870,15 @@ evil.0224 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -945,15 +939,15 @@ evil.0323 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1012,15 +1006,15 @@ evil.0324 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1081,15 +1075,15 @@ evil.0423 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1149,15 +1143,15 @@ evil.0424 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1217,15 +1211,15 @@ evil.0523 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1284,15 +1278,15 @@ evil.0524 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1352,15 +1346,15 @@ evil.0623 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1419,15 +1413,15 @@ evil.0624 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1488,15 +1482,15 @@ evil.0723 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1556,15 +1550,15 @@ evil.0724 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1626,15 +1620,15 @@ evil.0823 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1693,15 +1687,15 @@ evil.0824 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1764,15 +1758,15 @@ evil.0923 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1832,15 +1826,15 @@ evil.0924 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1903,15 +1897,15 @@ evil.1023 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -1932,15 +1926,15 @@ evil.1024 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2003,15 +1997,15 @@ evil.1123 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2070,15 +2064,15 @@ evil.1124 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2139,15 +2133,15 @@ evil.1223 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2207,15 +2201,15 @@ evil.1224 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2277,15 +2271,15 @@ evil.1323 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2345,15 +2339,15 @@ evil.1324 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2416,15 +2410,15 @@ evil.1423 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2483,15 +2477,15 @@ evil.1424 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2554,15 +2548,15 @@ evil.1523 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2621,15 +2615,15 @@ evil.1524 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2692,15 +2686,15 @@ evil.1623 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2760,15 +2754,15 @@ evil.1624 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2831,15 +2825,15 @@ evil.1723 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2899,15 +2893,15 @@ evil.1724 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -2971,15 +2965,15 @@ evil.1823 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -3039,15 +3033,15 @@ evil.1824 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -3111,15 +3105,15 @@ evil.1923 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {
@@ -3179,15 +3173,15 @@ evil.1924 = {
 		animation = schadenfreude
 	}
 	override_background = {
-        trigger = { var:ritual_location = flag:sacred_place }
+        trigger = { var:ritual_caster.var:ritual_location = flag:sacred_place }
         reference = temple
     }
     override_background = {
-        trigger = { var:ritual_location = flag:wilds }
+        trigger = { var:ritual_caster.var:ritual_location = flag:wilds }
         reference = wilderness_mountains
     }
     override_background = {
-        trigger = { var:ritual_location = flag:home }
+        trigger = { var:ritual_caster.var:ritual_location = flag:home }
         reference = sitting_room
     }
 	option = {

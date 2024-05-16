@@ -5182,7 +5182,7 @@ nurnoth_0_character76_wife = {
 
     sexuality = Heterosexual
     
-    female = no
+    female = yes
     
     father = nurnoth_0_character75
     mother = nurnoth_0_character75_wife
@@ -5217,7 +5217,7 @@ nurnoth_0_character76 = {
 
     sexuality = heterosexual
     
-    female = yes
+    female = no
     
     diplomacy = 1
     martial = 8
@@ -12710,7 +12710,7 @@ nurnoth_1_character85_wife = {
 
     sexuality = Heterosexual
     
-    female = no
+    female = yes
     
     father = nurnoth_1_character82
     mother = nurnoth_1_character82_wife
@@ -12745,7 +12745,7 @@ nurnoth_1_character85 = {
 
     sexuality = heterosexual
     
-    female = yes
+    female = no
     
     diplomacy = 10
     martial = 2
@@ -33985,7 +33985,7 @@ orc_0_character93_wife = {
 
     sexuality = Heterosexual
     
-    female = no
+    female = yes
     
     father = orc_0_character91
     mother = orc_0_character91_wife
@@ -34020,7 +34020,7 @@ orc_0_character93 = {
 
     sexuality = heterosexual
     
-    female = yes
+    female = no
     
     diplomacy = 8
     martial = 12

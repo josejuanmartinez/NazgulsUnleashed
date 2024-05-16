@@ -107,6 +107,10 @@ nazgul1 = {
 		}
 	}
 
+	7028.1.1 = {
+		give_council_position = councillor_marshal
+	}
+
 	7032.1.1 = {
 		effect = {
 			add_dread = 100
@@ -545,8 +549,7 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 			}
 		}		
 	}
-	7030.1.1 = {		
-		employer = lineofsauron
+	7029.1.1 = {
 		give_council_position = councillor_spymaster
 	}
 
@@ -567,7 +570,7 @@ nazgul5 = {
 
 	
 	trait = intellect_good_2
-	trait = education_stewardship_4
+	trait = education_learning_4
 	trait = sorcerer_3
 	trait = deceitful
 	trait = ambitious
@@ -634,7 +637,6 @@ nazgul5 = {
 	}
 
 	7030.1.1 = {
-		employer = lineofsauron
 		give_council_position = councillor_court_chaplain
 	}
 

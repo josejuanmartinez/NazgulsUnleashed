@@ -6,15 +6,17 @@
     cost_piety = 1000
     cost_prestige = 1000
 	can_construct = {
-		building_requirement_refuge = { LEVEL = 02 }
-		scope:holder = {
-            OR = {
-                culture = culture:penni
-			    culture = { any_parent_culture_or_above = { this = culture:penni } }
-            }
+		custom_description = {
+			text = holy_site_building_trigger			
+			faith_is_evil = yes
 		}
 	}
-
+	is_enabled = {
+		custom_description = {
+			text = holy_site_building_trigger			
+			faith_is_evil = yes
+		}
+	}
 	#is_enabled = {
 	#	custom_description = {
 	#		text = holy_site_building_trigger

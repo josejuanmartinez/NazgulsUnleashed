@@ -7,17 +7,17 @@ blind_sorcerer_quarterly_events_effect = {
 			}
 		}
 		random_list = {
-			1 = { cast_call_the_horde = yes }
-			1 = { cast_mark_of_war = yes }
-			1 = { cast_assemble_the_warchiefs = yes }
-			1 = { cast_rise_the_dead = yes }
-			1 = { cast_invoke_watchers = yes }
+			1 = { ai_cast_call_the_horde = yes }
+			1 = { ai_cast_mark_of_war = yes }
+			1 = { ai_cast_assemble_the_warchiefs = yes }
+			1 = { ai_cast_rise_the_dead = yes }
+			1 = { ai_cast_invoke_watchers = yes }
 			0 = { 
 				modifier = {
 					add = 1
 					is_nazgul = yes
 				}
-				cast_summon_being_of_darkness = yes
+				ai_cast_summon_being_of_darkness = yes
 			}
 			0 = { 
 				modifier = {
@@ -27,7 +27,7 @@ blind_sorcerer_quarterly_events_effect = {
 						health < 50
 					}
 				}
-				cast_nazgul_restoration = yes
+				ai_cast_nazgul_restoration = yes
 			}
 			0 = { 
 				
@@ -35,16 +35,16 @@ blind_sorcerer_quarterly_events_effect = {
 					add = 1
 					is_at_war = yes
 				}
-				cast_words_of_power = yes
+				ai_cast_words_of_power = yes
 			}
-			1 = { cast_forge_morgul_weapons = yes }
+			1 = { ai_cast_forge_morgul_weapons = yes }
 			0 = { 
 				
 				modifier = {
 					add = 1
 					is_nazgul = yes
 				}
-				cast_purse_them_relentlessly = yes
+				ai_cast_purse_them_relentlessly = yes
 			}
 			0 = { 
 				
@@ -52,7 +52,7 @@ blind_sorcerer_quarterly_events_effect = {
 					add = 1
 					is_nazgul = yes
 				}
-				cast_black_breath = yes
+				ai_cast_black_breath = yes
 			}					
 			0 = { 
 				
@@ -60,14 +60,14 @@ blind_sorcerer_quarterly_events_effect = {
 					add = 1
 					is_maiar = yes
 				}
-				cast_ambassador_of_darkness = yes
+				ai_cast_ambassador_of_darkness = yes
 			}
 			0 = { 
 				modifier = {
 					add = 1
 					is_maiar = yes
 				}
-				cast_shapeshifting = yes
+				ai_cast_shapeshifting = yes
 			}
 		}
 	}
@@ -80,24 +80,24 @@ blind_sorcerer_quarterly_events_effect = {
 				}
 			}
 			random_list = {
-				1 = { cast_call_the_horde = yes }
-				1 = { cast_mark_of_war = yes }
-				1 = { cast_assemble_the_warchiefs = yes }
-				1 = { cast_rise_the_dead = yes }
-				1 = { cast_invoke_watchers = yes }
+				1 = { ai_cast_call_the_horde = yes }
+				1 = { ai_cast_mark_of_war = yes }
+				1 = { ai_cast_assemble_the_warchiefs = yes }
+				1 = { ai_cast_rise_the_dead = yes }
+				1 = { ai_cast_invoke_watchers = yes }
 				0 = { 
 					modifier = {
 						add = 1
 						is_nazgul = yes
 					}
-					cast_summon_being_of_darkness = yes
+					ai_cast_summon_being_of_darkness = yes
 				}
 				0 = { 
 					modifier = {
 						add = 1
 						is_nazgul = yes
 					}
-					cast_nazgul_restoration = yes
+					ai_cast_nazgul_restoration = yes
 				}
 				0 = { 
 					
@@ -105,16 +105,16 @@ blind_sorcerer_quarterly_events_effect = {
 						add = 1
 						is_at_war = yes
 					}
-					cast_words_of_power = yes
+					ai_cast_words_of_power = yes
 				}
-				1 = { cast_forge_morgul_weapons = yes }
+				1 = { ai_cast_forge_morgul_weapons = yes }
 				0 = { 
 					
 					modifier = {
 						add = 1
 						is_nazgul = yes
 					}
-					cast_purse_them_relentlessly = yes
+					ai_cast_purse_them_relentlessly = yes
 				}
 				0 = { 
 					
@@ -122,7 +122,7 @@ blind_sorcerer_quarterly_events_effect = {
 						add = 1
 						is_nazgul = yes
 					}
-					cast_black_breath = yes
+					ai_cast_black_breath = yes
 				}					
 				0 = { 
 					
@@ -130,14 +130,14 @@ blind_sorcerer_quarterly_events_effect = {
 						add = 1
 						is_maiar = yes
 					}
-					cast_ambassador_of_darkness = yes
+					ai_cast_ambassador_of_darkness = yes
 				}
 				0 = { 
 					modifier = {
 						add = 1
 						is_maiar = yes
 					}
-					cast_shapeshifting = yes
+					ai_cast_shapeshifting = yes
 				}
 			}
 		}
@@ -146,7 +146,7 @@ blind_sorcerer_quarterly_events_effect = {
 
 ########################### CASTING EFFECTS #######################
 
-cast_call_the_horde = {
+ai_cast_call_the_horde = {
 	add_piety = {
 		value = -250
 		if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
@@ -412,7 +412,7 @@ cast_call_the_horde = {
 }
 
 # Also called Invigorate the Horde
-cast_mark_of_war = {
+ai_cast_mark_of_war = {
 	add_piety = {
 		value = -250
 		if = {limit = { is_blind_sorcerer_casting = yes} add = 125}
@@ -484,7 +484,7 @@ cast_mark_of_war = {
 }
 
 #Also called assemble the warlords
-cast_assemble_the_warchiefs = {
+ai_cast_assemble_the_warchiefs = {
 	if = {
 		limit = { is_blind_sorcerer_casting = yes} 
 		add_character_modifier = {
@@ -537,7 +537,7 @@ cast_assemble_the_warchiefs = {
 }
 
 # Raise the dead
-cast_rise_the_dead = {
+ai_cast_rise_the_dead = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -600,7 +600,7 @@ cast_rise_the_dead = {
 }
 
 # Also called invoke sigils
-cast_invoke_watchers = {
+ai_cast_invoke_watchers = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -651,7 +651,7 @@ cast_invoke_watchers = {
 	}
 }
 
-cast_summon_being_of_darkness = {
+ai_cast_summon_being_of_darkness = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -702,7 +702,7 @@ cast_summon_being_of_darkness = {
 	}
 }
 
-cast_words_of_power = {
+ai_cast_words_of_power = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -790,7 +790,7 @@ cast_words_of_power = {
 	}
 }
 
-cast_forge_morgul_weapons = {
+ai_cast_forge_morgul_weapons = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -837,7 +837,7 @@ cast_forge_morgul_weapons = {
 	}	
 }
 
-cast_purse_them_relentlessly = {
+ai_cast_purse_them_relentlessly = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -884,7 +884,7 @@ cast_purse_them_relentlessly = {
 	}
 }
 
-cast_black_breath = {
+ai_cast_black_breath = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -975,7 +975,7 @@ cast_black_breath = {
 	}
 }
 
-cast_nazgul_restoration = {
+ai_cast_nazgul_restoration = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -1023,7 +1023,7 @@ cast_nazgul_restoration = {
 	}
 }
 
-cast_ambassador_of_darkness = {
+ai_cast_ambassador_of_darkness = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -1072,7 +1072,7 @@ cast_ambassador_of_darkness = {
 	}
 }
 
-cast_shapeshifting = {
+ai_cast_shapeshifting = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -1119,7 +1119,7 @@ cast_shapeshifting = {
 	}
 }
 
-cast_reveal_the_secrets = {
+ai_cast_reveal_the_secrets = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -1188,7 +1188,7 @@ cast_reveal_the_secrets = {
 	}
 }
 
-cast_cast_the_darkness = {
+ai_cast_the_darkness = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	
@@ -1254,7 +1254,7 @@ cast_cast_the_darkness = {
 	}
 }
 
-cast_the_plague = {
+ai_cast_the_plague = {
 	set_variable = {name = low_mod value = 0}
 	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
 	

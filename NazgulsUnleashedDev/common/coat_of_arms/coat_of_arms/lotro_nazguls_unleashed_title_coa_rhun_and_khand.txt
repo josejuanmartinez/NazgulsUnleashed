@@ -10,11 +10,11 @@
 
 k_obamarl = {
 	pattern = "pattern_solid.dds"
-	color1 = rgb { 94 52 49 }
+	color1 = black
 	colored_emblem = {
-		color1 = rgb { 154 82 49 }
-		texture = "cat_mountain.dds"
-		instance = { position = { 0.5 0.5 } scale = { 2.5 2.5 } }
+		color1 = rgb { 200 82 49 }
+		texture = "ce_rhovanion_02.dds"
+		instance = { position = { 0.5 0.43 } scale = { 1 1 } }
 	}
 }
 
@@ -40,11 +40,11 @@ c_obamarl = {
 
 c_ongushar = {
 	pattern = "pattern_solid.dds"
-	color1 = rgb { 94 52 49 }
+	color1 = black
 	colored_emblem = {
-		color1 = black
-		texture = "ce_leofrings_02.dds"
-		instance = { position = { 0.5 0.485 } scale = { 0.75 0.75 } }
+		color1 = rgb { 94 52 49 }
+		texture = "ce_rhovanion_02.dds"
+		instance = { position = { 0.5 0.44 } scale = { 1 1 } }
 	}
 }
 

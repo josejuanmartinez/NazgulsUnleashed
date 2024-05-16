@@ -242,7 +242,7 @@
                                         fontsize = 14
                                         maximumsize = { 400 -1 }
                                         multiline = yes
-                                        text = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName)).ExecuteTooltip(GuiScope.SetRoot( GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope).End)]"
+                                        text = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName)).ExecuteTooltip(GuiScope.SetRoot( GetPlayer.MakeScope).End)]"
                                     }
                                 }
                             }
@@ -291,7 +291,7 @@
                                 onclick = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                                 onclick = "[GetScriptedGui('ritual_costs_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                                 onclick = "[GetVariableSystem.Clear( 'window_sorcery_blind_sorcerer' )]"                    
-                                visible = "[And(GetPlayer.MakeScope.Var('ritual_location').IsSet, And(GetPlayer.MakeScope.Var('ritual_caster').IsSet, GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet))]"
+                                visible = "[And(GetPlayer.MakeScope.Var('ritual_caster').IsSet, And(GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('ritual_location').IsSet, GetPlayer.MakeScope.Var('ritual_caster').GetCharacter.MakeScope.Var('selected_spell').IsSet))]"
                             }
                         }
                     }

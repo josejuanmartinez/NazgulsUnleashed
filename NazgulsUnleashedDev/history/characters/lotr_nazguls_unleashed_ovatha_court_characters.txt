@@ -24163,12 +24163,47 @@ tol_buruth_1_character80 = {
 
 tol_buruth_1_character81_wife = {
     name = Durna
+    dynasty = dynasty_cilzeron
     religion = lidless_eye
     culture = igath
 
-    sexuality = heterosexual
+    sexuality = Heterosexual
     
     female = yes
+    
+    diplomacy = 4
+    martial = 7
+    stewardship = 10
+    intrigue = 1
+    learning = 1
+    prowess = 7
+    
+    trait = education_diplomacy_2
+    trait = callous
+	trait = forgiving
+	trait = lustful
+	trait = lazy
+
+    6987.12.8 = {
+        birth = yes
+    }
+            
+    7063.11.6 = {
+        death = { death_reason = death_natural_causes }
+    }
+}
+
+tol_buruth_1_character81 = {
+    name = Fuqkazam
+    religion = lidless_eye
+    culture = igath
+
+    father = tol_buruth_1_character78
+    mother = tol_buruth_1_character78_wife
+    
+    sexuality = heterosexual
+    
+    female = no
     
     diplomacy = 7
     martial = 5
@@ -24190,45 +24225,10 @@ tol_buruth_1_character81_wife = {
         employer = nazgul9
         give_council_position = councillor_court_chaplain
     }
-    7060.12.8 = {
-        death = { death_reason = death_natural_causes }
-    }
-}
-
-tol_buruth_1_character81 = {
-    name = Fuqkazam
-    dynasty = dynasty_cilzeron
-    religion = lidless_eye
-    culture = igath
-
-    sexuality = Heterosexual
-    
-    female = no
-    
-    father = tol_buruth_1_character78
-    mother = tol_buruth_1_character78_wife
-    
-    diplomacy = 4
-    martial = 7
-    stewardship = 10
-    intrigue = 1
-    learning = 1
-    prowess = 7
-    
-    trait = education_diplomacy_2
-    trait = callous
-	trait = forgiving
-	trait = lustful
-	trait = lazy
-
-    6987.12.8 = {
-        birth = yes
-    }
     7009.12.6 = {
         add_spouse = tol_buruth_1_character81_wife
     }
-            
-    7063.11.6 = {
+    7060.12.8 = {
         death = { death_reason = death_natural_causes }
     }
 }

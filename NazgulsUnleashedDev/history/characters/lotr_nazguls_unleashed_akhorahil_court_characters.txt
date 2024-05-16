@@ -18441,7 +18441,7 @@ akhorahil_nurniag_0_character68_wife = {
 
     sexuality = Heterosexual
     
-    female = no
+    female = yes
     
     father = akhorahil_nurniag_0_character67
     mother = akhorahil_nurniag_0_character67_wife
@@ -18477,7 +18477,7 @@ akhorahil_nurniag_0_character68 = {
 
     sexuality = heterosexual
     
-    female = yes
+    female = no
     
     diplomacy = 12
     martial = 4
