@@ -137,7 +137,7 @@ nazgul2 = { # Khamûl, once High-King of Wômawas Drûs, mightiest of the great 
 	trait = wrathful
 	trait = temperate
 	trait = shrewd
-	trait = sorcerer_1
+	trait = sorcerer_2
 	trait = flexible_leader
 	
 	diplomacy = 5
@@ -202,9 +202,7 @@ nazgul2 = { # Khamûl, once High-King of Wômawas Drûs, mightiest of the great 
 	}
 }
 
-# Harwenal Vedaraba, born Adûnabêth of Numenor, known to Gondor of old as Hôarmûrath (on account of striking as if a mist), Third of the Nine, The Golden King of Harad
-# He is a half-Haradrim, Half-Numenorean, a bastard of a Lord of Forostar
-# For ease of use, elsewhere he is referred to as the 'Haradrim Nazgul'
+# Adunaphel
 goldenking1 = {
 	name = Harwenal_Vedaraba
 	dynasty = dynasty_goldenking
@@ -220,7 +218,6 @@ goldenking1 = {
 	trait = deceitful
 	trait = vengeful
 	trait = education_learning_4
-	trait = sorcerer_2
 	trait = lifestyle_physician
 	trait = desert_warrior
 	trait = reclusive
@@ -346,7 +343,7 @@ goldenking1 = {
 	}
 }
 
-nazgul6 = { # Mauhoshat, Dwimmerleik of the North, Lord of Ûrd. The Sixth Nazgul  
+nazgul6 = { # Hoarmurath. The Sixth Nazgul  
 	name = Mauhoshat
 	dynasty = dynasty_urd
 	religion = lidless_eye
@@ -366,6 +363,7 @@ nazgul6 = { # Mauhoshat, Dwimmerleik of the North, Lord of Ûrd. The Sixth Nazgu
 	trait = gregarious
 	trait = architect
 	trait = unyielding_defender
+	trait = sorcerer_2
 
 	disallow_random_traits = yes
 
@@ -391,8 +389,21 @@ nazgul6 = { # Mauhoshat, Dwimmerleik of the North, Lord of Ûrd. The Sixth Nazgu
 		}
 	}
 
-	7032.1.1 = {
-		employer = lineofsauron
+	
+	6975.1.1 = {
+		effect = {
+			add_dread = 100
+			create_character_memory = {
+				type = ascended_throne_memory
+			}
+			scope:new_memory = {
+				save_scope_as = ascended_throne_memory
+				set_variable = {
+					name = landed_title
+					value = title:k_durthang
+				}
+			}
+		}		
 	}
 
 	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
@@ -408,7 +419,6 @@ nazgul7 = { # Dendra-Dwâr, Dwâr of Waw. The Seventh Nazgul
 	sexuality = asexual
 
 	trait = education_martial_3
-	trait = sorcerer_1
 	trait = ambitious
 	trait = wrathful
 	trait = callous
@@ -438,8 +448,21 @@ nazgul7 = { # Dendra-Dwâr, Dwâr of Waw. The Seventh Nazgul
 		}
 	}
 
-	7032.1.1 = {
-		employer = lineofsauron
+	
+	6975.1.1 = {
+		effect = {
+			add_dread = 100
+			create_character_memory = {
+				type = ascended_throne_memory
+			}
+			scope:new_memory = {
+				save_scope_as = ascended_throne_memory
+				set_variable = {
+					name = landed_title
+					value = title:k_durthang
+				}
+			}
+		}		
 	}
 
 	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
@@ -455,7 +478,7 @@ nazgul8 = { # Rên-Iey of Khey Sârt. The Eigth Nazgul
 	sexuality = asexual
 
 	trait = education_martial_4
-	trait = sorcerer_2
+	trait = sorcerer_1
 	trait = ambitious
 	trait = zealous
 	trait = brave
@@ -484,9 +507,21 @@ nazgul8 = { # Rên-Iey of Khey Sârt. The Eigth Nazgul
 			learn_language = language_westron
 		}
 	}
-
-	7032.1.1 = {
-		employer = lineofsauron
+	
+	6975.1.1 = {
+		effect = {
+			add_dread = 100
+			create_character_memory = {
+				type = ascended_throne_memory
+			}
+			scope:new_memory = {
+				save_scope_as = ascended_throne_memory
+				set_variable = {
+					name = landed_title
+					value = title:k_ungol
+				}
+			}
+		}		
 	}
 
 	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
@@ -534,7 +569,7 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 		}
 	}
 
-	6050.8.22 = {
+	6975.1.1 = {
 		effect = {
 			add_dread = 100
 			create_character_memory = {
@@ -620,7 +655,7 @@ nazgul5 = {
 		}
 	}
 
-	6050.8.22 = {
+	6975.1.1 = {
 		effect = {
 			add_dread = 100
 			create_character_memory = {
@@ -660,6 +695,7 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 	trait = callous
 	trait = brave
 	trait = open_terrain_expert
+	trait = long_rider
 	
 	disallow_random_traits = yes
 

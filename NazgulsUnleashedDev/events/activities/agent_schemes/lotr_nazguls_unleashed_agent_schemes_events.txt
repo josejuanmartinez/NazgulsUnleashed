@@ -1046,7 +1046,7 @@ agent_schemes.0020 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:artifact_1.artifact_owner.location.title_province.fort_level
+					add = scope:artifact_1.artifact_owner.location.county.fort_level
 					factor = 3
 				}
 				root = {
@@ -1112,7 +1112,7 @@ agent_schemes.0020 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:artifact_2.artifact_owner.location.title_province.fort_level
+					add = scope:artifact_2.artifact_owner.location.county.fort_level
 					factor = 3
 				}
 				root = {
@@ -1177,7 +1177,7 @@ agent_schemes.0020 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:artifact_3.artifact_owner.location.title_province.fort_level
+					add = scope:artifact_3.artifact_owner.location.county.fort_level
 					factor = 3
 				}
 				root = {
@@ -1243,7 +1243,7 @@ agent_schemes.0020 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:artifact_4.artifact_owner.location.title_province.fort_level
+					add = scope:artifact_4.artifact_owner.location.county.fort_level
 					factor = 3
 				}
 				root = {
@@ -1698,7 +1698,7 @@ agent_schemes.0030 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:target_1.location.title_province.fort_level
+					add = scope:target_1.location.county.fort_level
 					factor = 1.5
 				}
 				
@@ -1795,7 +1795,7 @@ agent_schemes.0030 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:target_2.location.title_province.fort_level
+					add = scope:target_2.location.county.fort_level
 					factor = 1.5
 				}
 				root = {
@@ -1891,7 +1891,7 @@ agent_schemes.0030 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:target_3.location.title_province.fort_level
+					add = scope:target_3.location.county.fort_level
 					factor = 1.5
 				}
 				root = {
@@ -1987,7 +1987,7 @@ agent_schemes.0030 = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:target_4.location.title_province.fort_level
+					add = scope:target_4.location.county.fort_level
 					factor = 1.5
 				}
 				root = {

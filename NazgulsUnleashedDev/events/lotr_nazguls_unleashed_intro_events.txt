@@ -3,6 +3,8 @@
 # 0004 - Indur Intro
 # 0009 - Ovatha Intro
 # 0005 - Akhorahil Intro
+# 0008 - Ren Intro
+# 0005 - Hoarmurath Intro
 
 
 nazguls_unleashed.0004 = { # Indur
@@ -83,6 +85,52 @@ nazguls_unleashed.0005 = { # Akhorahil
 	
 	option = { 
 		name = nazguls_unleashed.0005.a
+	}
+}
+
+nazguls_unleashed.0006 = { # Hoarmurath
+	content_source = realms_dlc
+	type = character_event
+	title = nazguls_unleashed.0006.t
+	desc = nazguls_unleashed.0006.desc
+	theme = martial_strategy_focus
+	override_background = {
+		reference = throne_room_evil
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		play_music_cue = lotr_cue_nazgul
+	}
+	
+	option = { 
+		name = nazguls_unleashed.0006.a
+	}
+}
+
+nazguls_unleashed.0008 = { # Ren
+	content_source = realms_dlc
+	type = character_event
+	title = nazguls_unleashed.0008.t
+	desc = nazguls_unleashed.0008.desc
+	theme = martial_strategy_focus
+	override_background = {
+		reference = throne_room_evil
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	immediate = {
+		play_music_cue = lotr_cue_nazgul
+	}
+	
+	option = { 
+		name = nazguls_unleashed.0008.a
 	}
 }
 

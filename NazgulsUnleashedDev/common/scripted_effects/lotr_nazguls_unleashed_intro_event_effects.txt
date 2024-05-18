@@ -59,6 +59,30 @@
 			}
 		}
 	}	
+	character:nazgul6 = { # Hoarmurath
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = { 
+				id = nazguls_unleashed.0006
+				days = 1
+			}
+		}
+	}	
+	character:nazgul8 = { # Ren
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = { 
+				id = nazguls_unleashed.0008
+				days = 1
+			}
+		}
+	}	
 }
 
 generate_schemes_list_on_start = {

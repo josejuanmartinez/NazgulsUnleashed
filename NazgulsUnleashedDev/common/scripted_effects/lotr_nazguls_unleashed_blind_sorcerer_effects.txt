@@ -45,15 +45,7 @@ blind_sorcerer_quarterly_events_effect = {
 					is_nazgul = yes
 				}
 				ai_cast_purse_them_relentlessly = yes
-			}
-			0 = { 
-				
-				modifier = {
-					add = 1
-					is_nazgul = yes
-				}
-				ai_cast_black_breath = yes
-			}					
+			}				
 			0 = { 
 				
 				modifier = {
@@ -68,6 +60,41 @@ blind_sorcerer_quarterly_events_effect = {
 					is_maiar = yes
 				}
 				ai_cast_shapeshifting = yes
+			}
+				
+			0 = { 
+				modifier = {
+					add = 1
+					is_maiar = yes
+				}
+				ai_cast_cracks_of_the_earth = yes
+			}
+			0 = { 
+				modifier = {
+					add = 4
+					root = character:nazgul8 # Ren
+				}
+				ai_cast_cracks_of_the_earth = yes
+			}
+			0 = { 
+				modifier = {
+					add = 4
+					AND = {
+						root = character:nazgul6 # Hoarmurath
+						is_at_war = yes
+					}
+				}
+				ai_cast_abnormal_winter = yes
+			}
+			0 = { 
+				modifier = {
+					add = 1
+					AND = {
+						is_maiar = yes
+						is_at_war = yes
+					}
+				}
+				ai_cast_abnormal_winter = yes
 			}
 		}
 	}
@@ -139,6 +166,41 @@ blind_sorcerer_quarterly_events_effect = {
 					}
 					ai_cast_shapeshifting = yes
 				}
+				
+				0 = { 
+					modifier = {
+						add = 1
+						is_maiar = yes
+					}
+					ai_cast_cracks_of_the_earth = yes
+				}
+				0 = { 
+					modifier = {
+						add = 4
+						root = character:nazgul8 # Ren
+					}
+					ai_cast_cracks_of_the_earth = yes
+				}
+				0 = { 
+					modifier = {
+						add = 4
+						AND = {
+							root = character:nazgul6 # Hoarmurath
+							is_at_war = yes
+						}
+					}
+					ai_cast_abnormal_winter = yes
+				}
+				0 = { 
+					modifier = {
+						add = 1
+						AND = {
+							is_maiar = yes
+							is_at_war = yes
+						}
+					}
+					ai_cast_abnormal_winter = yes
+				}
 			}
 		}
 	}
@@ -173,14 +235,16 @@ ai_cast_call_the_horde = {
 	}
 	
 	random_list = {
-		50 = {	# Failure
+		50 = {	# Failure		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
 				days = { 15 30 }
 			}
 		}
-		50 = {	# success
+		50 = {	# success		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0123
@@ -440,14 +504,16 @@ ai_cast_mark_of_war = {
 	}
 			
 	random_list = {
-		50 = {	# Failure
+		50 = {	# Failure		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
 				days = { 15 30 }
 			}
 		}
-		50 = {	# success
+		50 = {	# success		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0223
@@ -512,14 +578,16 @@ ai_cast_assemble_the_warchiefs = {
 
 	flag:home = {
 		random_list = {
-			50 = {	# Failure
+			50 = {	# Failure			
+				modifier = {add = var:low_mod}
 				desc = evil.0022.a
 				trigger_event = {
 					id = evil.0122
 					days = { 15 30 }
 				}
 			}
-			50 = {	# Success
+			50 = {	# Success			
+				modifier = {add = var:high_mod}
 				desc = evil.0023.a
 				hidden_effect = {
 					create_knight = yes
@@ -565,6 +633,8 @@ ai_cast_rise_the_dead = {
 	}
 	random_list = {
 		50 = {	# Failure
+		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -572,6 +642,8 @@ ai_cast_rise_the_dead = {
 			}
 		}
 		50 = {	# Success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0423
@@ -628,14 +700,17 @@ ai_cast_invoke_watchers = {
 	}
 		
 	random_list = {
-		50 = {	# Failure							
+		50 = {	# Failure		
+			modifier = {add = var:low_mod}							
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
 				days = { 10 30 }
 			}
 		}
-		50 = {	# success				
+		50 = {	# success
+		
+			modifier = {add = var:high_mod}				
 			desc = evil.0023.a
 			root.location = {
 				add_province_modifier = {
@@ -678,6 +753,8 @@ ai_cast_summon_being_of_darkness = {
 	}
 	random_list = {
 		50 = {	# Failure
+		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -685,6 +762,8 @@ ai_cast_summon_being_of_darkness = {
 			}
 		}
 		50 = {	# success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0623
@@ -729,6 +808,8 @@ ai_cast_words_of_power = {
 	}
 	random_list = {
 		50 = {	 #Failure
+			
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -736,6 +817,8 @@ ai_cast_words_of_power = {
 			}
 		}
 		50 = {	 #success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0923
@@ -817,6 +900,8 @@ ai_cast_forge_morgul_weapons = {
 	}
 	random_list = {
 		50 = {	# Failure
+		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -824,6 +909,8 @@ ai_cast_forge_morgul_weapons = {
 			}
 		}
 		50 = {	# Success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1023
@@ -864,6 +951,8 @@ ai_cast_purse_them_relentlessly = {
 	}
 	random_list = {
 		50 = {	# Failure
+		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -871,6 +960,8 @@ ai_cast_purse_them_relentlessly = {
 			}
 		}
 		50 = {	# success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1123
@@ -911,6 +1002,8 @@ ai_cast_black_breath = {
 	}
 	random_list = {
 		50 = {	# Failure
+		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -918,6 +1011,8 @@ ai_cast_black_breath = {
 			}
 		}
 		50 = {	# Success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1223
@@ -1002,6 +1097,8 @@ ai_cast_nazgul_restoration = {
 	}
 	random_list = {
 		50 = {	# Failure
+		
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1009,6 +1106,8 @@ ai_cast_nazgul_restoration = {
 			}
 		}
 		50 = {	# success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1323
@@ -1051,6 +1150,8 @@ ai_cast_ambassador_of_darkness = {
 	flag:home = {
 		random_list = {
 			50 = {	# Failure
+			
+				modifier = {add = var:low_mod}
 				desc = evil.0022.a
 				trigger_event = {
 					id = evil.0122
@@ -1058,6 +1159,8 @@ ai_cast_ambassador_of_darkness = {
 				}
 			}
 			50 = {	# success
+			
+				modifier = {add = var:high_mod}
 				desc = evil.0023.a
 				trigger_event = {
 					id = evil.1423
@@ -1099,6 +1202,7 @@ ai_cast_shapeshifting = {
 	}
 	random_list = {
 		50 = {	# Failure
+			modifier = {add = var:low_mod}			
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1106,6 +1210,8 @@ ai_cast_shapeshifting = {
 			}
 		}
 		50 = {	# success
+		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1523
@@ -1146,13 +1252,15 @@ ai_cast_reveal_the_secrets = {
 	}
 	random_list = {
 		50 = {	# Failure
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
 				days = { 10 30 }
 			}
 		}
-		50 = {	# success
+		50 = {	# success		
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1623
@@ -1215,13 +1323,15 @@ ai_cast_the_darkness = {
 	}
 	random_list = {
 		50 = {	# Failure
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
 				days = { 10 30 }
 			}
 		}
-		50 = {	# success
+		50 = {	# success			
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1723
@@ -1280,7 +1390,8 @@ ai_cast_the_plague = {
 		if = {limit = { is_blind_sorcerer_casting = yes} add = 750}
 	}
 	random_list = {
-		50 = {	# Failure
+		50 = {	# Failure			
+			modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1288,6 +1399,7 @@ ai_cast_the_plague = {
 			}
 		}
 		50 = {	# Success
+			modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1923
@@ -1369,6 +1481,183 @@ ai_cast_the_plague = {
 					}
 				}
 			}
+		}
+	}
+}
+
+ai_cast_cracks_of_the_earth = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -600
+		if = {limit = { root = character:nazgul8 } add = 300} # If Ren
+	}
+	random_list = {
+		50 = {	 #Failure		
+			modifier = {add = var:low_mod}
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	 #success		
+			modifier = {add = var:high_mod}
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.0723
+				days = { 10 30 }
+			}
+			root.location.county = {
+				if = {
+					limit = {
+						holder.top_liege = root.liege
+						NOT = {has_county_modifier = cracks_of_the_earth_modifier}
+					}
+					add_county_modifier = {
+						modifier = cracks_of_the_earth_modifier
+						years = 5
+					}
+				}
+				every_neighboring_county = {
+					if = {
+						limit = {
+							holder.top_liege = root.liege
+							NOT = {has_county_modifier = cracks_of_the_earth_modifier}
+						}
+						add_county_modifier = {
+							modifier = cracks_of_the_earth_modifier
+							years = 5
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+ai_cast_abnormal_winter = {
+	set_variable = {name = low_mod value = 0}
+	if = { limit = { is_human_sorcerer = yes } set_variable = {name = low_mod value = 25} }
+	
+	set_variable = {name = high_mod value = 0}
+	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
+	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
+
+	if = {
+		limit = { is_blind_sorcerer_casting = yes} 
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 4
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = practiced_sorcery_recently
+			years = 5
+		}
+	}
+	add_piety = {
+		value = -450
+		if = {limit = { root = character:nazgul6 } add = 225} # If Hoarmurath
+	}
+	random_list = {
+		50 = {	# Failure
+			modifier = {add = var:low_mod}
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
+			}
+		}
+		50 = {	# Success
+			modifier = {add = var:high_mod}
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1823
+				days = { 10 30 }
+			}
+			custom_tooltip = custom_desc_abnormal_winter.tt
+
+			every_independent_ruler = {
+				limit = {									
+					NOT = {	any_character_artifact = { has_variable = elven_ring } }
+					is_landed = yes
+					is_at_war_with = root
+				}
+				save_scope_as = enemy
+			}
+			random_county = {
+				limit = {
+					holder = scope:enemy
+				}
+				save_scope_as = enemy_county
+			}
+			scope:enemy_county = {
+				
+				add_county_modifier = {
+					modifier = abnormal_winter_modifier
+					years = 1
+				}
+				hidden_effect = {
+					holder = {								
+						every_courtier_or_guest = {									
+							limit = {
+								location.county = this
+							}
+							add_character_modifier = {
+								modifier = abnormal_winter_character_modifier
+								years = 1
+							}
+						}
+					}
+				}
+				every_neighboring_county = {
+					limit = {
+						NOT = { culture ?= culture:wastelands }
+						NOT = {
+							has_county_modifier = abnormal_winter_modifier
+						}
+						NOT = {	any_character_artifact = { has_variable = elven_ring } }
+						holder = {
+							is_at_war_with = root
+						}
+					}
+					add_county_modifier = {
+						modifier = abnormal_winter_modifier
+						years = 1
+					}
+					hidden_effect = {
+						holder = {								
+							every_courtier_or_guest = {										
+								add_character_modifier = {
+									modifier = abnormal_winter_character_modifier
+									years = 1
+								}
+							}
+						}
+					}
+				}
+			}
+			
 		}
 	}
 }

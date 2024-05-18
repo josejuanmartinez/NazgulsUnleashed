@@ -28,3 +28,30 @@
 		religion = lidless_eye
 	}
 }
+
+
+651 = { #Durthang (b_durthang)
+	culture = murdurhai
+	religion = lidless_eye
+	holding = castle_holding
+	4033.1.1 = {
+		culture = gondorian
+		religion = faith_edain
+	}
+	5000.1.1 = {
+		culture = murdurhai
+		religion = sons_of_sauron
+	}
+	6800.1.1 = {
+		culture = ghashhai
+		religion = lidless_eye
+	}
+	4000.1.1 = {			
+		buildings = {		
+			castle_04
+			slave_mines_04
+			furnaces_03
+#			uruk_pits_05 #TODONEWCAPS
+		}	
+	}		
+}

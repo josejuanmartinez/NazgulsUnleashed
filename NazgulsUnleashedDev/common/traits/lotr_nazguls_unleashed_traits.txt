@@ -18,3 +18,9 @@
 	same_opinion = 10
 	same_faith_opinion = 5
 }
+
+long_rider = {
+	icon = whip_master.dds
+	physical = yes
+	movement_speed = 0.4
+}

@@ -14,9 +14,9 @@ can_do_sorcery = {
 		NOT = {
 			has_character_modifier = practiced_sorcery_recently
 		}
+		gold > 0
+		piety > 0
 	}
-	gold > 0
-	piety > 0
 }
 
 can_do_sorcery_blind_sorcerer = {
@@ -163,7 +163,24 @@ select_summon_being_of_darkness = {
 }
 select_cracks_of_the_earth = {
 	is_valid = {
-		always = yes
+		OR = {
+			AND = {
+				exists = var:ritual_caster
+				var:ritual_caster = {
+					OR = {
+						has_trait = maiar
+						this = character:nazgul8 # Ren
+					}
+				}
+			}
+			AND = {
+				NOT = { exists = var:ritual_caster }
+				OR = {
+					has_trait = maiar
+					root = character:nazgul8
+				}
+			}
+		}
 	}
 	effect = {
 		set_variable = {
@@ -328,18 +345,7 @@ select_shapeshifting = {
 }
 select_reveal_the_secrets = {
 	is_valid = {
-		OR = {
-			AND = {
-				exists = var:ritual_caster
-				var:ritual_caster = {
-					has_trait = maiar
-				}
-			}
-			AND = {
-				NOT = { exists = var:ritual_caster }
-				has_trait = maiar
-			}
-		}
+		always = yes
 	}
 	effect = {
 		set_variable = {
@@ -372,16 +378,23 @@ select_cast_the_darkness = {
 }
 select_abnormal_winter = {
 	is_valid = {
+		is_at_war = yes
 		OR = {
 			AND = {
 				exists = var:ritual_caster
 				var:ritual_caster = {
-					has_trait = maiar
+					OR = {
+						has_trait = maiar
+						this = character:nazgul6 # Hoarmurath
+					}
 				}
 			}
 			AND = {
 				NOT = { exists = var:ritual_caster }
-				has_trait = maiar
+				OR = {
+					has_trait = maiar
+					root = character:nazgul6
+				}
 			}
 		}
 	}
@@ -1799,7 +1812,7 @@ cast_mark_of_war = {
 						}
 						else_if = {
 							limit = {root.faith = faith:white_hand_cult}
-							dd_character_modifier = {
+							add_character_modifier = {
 								modifier = great_white_hand_mark_modifier
 								years = 5
 							}
@@ -2723,13 +2736,13 @@ cast_cracks_of_the_earth = {
 		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 600
-				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 300}
+				if = {limit = { root = character:nazgul8 } subtract = 300}
 			}
 		}
 		else = {
 			add_piety = {
 				value = -600
-				if = {limit = { is_blind_sorcerer_casting = yes} add = 300}
+				if = {limit = { root = character:nazgul8 } add = 300}
 				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -2840,10 +2853,10 @@ cast_cracks_of_the_earth = {
 						}
 						root.location.county = {
 							if = {
-								#limit = {
-								#	holder.top_liege = root.liege
-								#	NOT = {has_county_modifier = cracks_of_the_earth_modifier}
-								#}
+								limit = {
+									holder.top_liege = root.liege
+									NOT = {has_county_modifier = cracks_of_the_earth_modifier}
+								}
 								add_county_modifier = {
 									modifier = cracks_of_the_earth_modifier
 									years = 5
@@ -2871,10 +2884,10 @@ cast_cracks_of_the_earth = {
 						}
 						root.location.county = {
 							if = {
-								#limit = {
-								#	holder.top_liege = root.liege
-								#	NOT = {has_county_modifier = cracks_of_the_earth_modifier}
-								#}
+								limit = {
+									holder.top_liege = root.liege
+									NOT = {has_county_modifier = cracks_of_the_earth_modifier}
+								}
 								add_county_modifier = {
 									modifier = cracks_of_the_earth_modifier
 									years = 6
@@ -4804,7 +4817,8 @@ cast_reveal_the_secrets = {
 							}
 						}
 						50 = {	# success
-							desc = evil.0023.a
+							desc = evil.0023.a							
+							custom_tooltip =  custom_desc_reveal_the_secrets.tt
 							trigger_event = {
 								id = evil.1623
 								days = { 10 30 }
@@ -4838,6 +4852,7 @@ cast_reveal_the_secrets = {
 						}
 						25 = {	# Critical success
 							modifier = {add = var:high_mod}
+							custom_tooltip =  custom_desc_reveal_the_secrets.tt
 							desc = evil.0024.a
 							trigger_event = {
 								id = evil.1624
@@ -4895,6 +4910,7 @@ cast_reveal_the_secrets = {
 						}
 						75 = {	# success
 							desc = evil.0023.a
+							custom_tooltip =  custom_desc_reveal_the_secrets.tt
 							trigger_event = {
 								id = evil.1623
 								days = { 10 30 }
@@ -4928,6 +4944,7 @@ cast_reveal_the_secrets = {
 						}
 						25 = {	# Critical Success
 							desc = evil.0024.a
+							custom_tooltip =  custom_desc_reveal_the_secrets.tt
 							trigger_event = {
 								id = evil.1624
 								days = { 10 30 }
@@ -4973,6 +4990,7 @@ cast_reveal_the_secrets = {
 						}
 						50 = {	# success
 							desc = evil.0023.a
+							custom_tooltip =  custom_desc_reveal_the_secrets.tt
 							trigger_event = {
 								id = evil.1623
 								days = { 10 30 }
@@ -5294,13 +5312,13 @@ cast_abnormal_winter = {
 		if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 4}
 			remove_short_term_gold = {
 				value = 750
-				if = {limit = { is_blind_sorcerer_casting = yes} subtract = 750}
+				if = {limit = { root = character:nazgul6 } subtract = 250}
 			}
 		}
 		else = {
 			add_piety = {
-				value = -750
-				if = {limit = { is_blind_sorcerer_casting = yes} add = 375}
+				value = -450
+				if = {limit = { root = character:nazgul6 } add = 225}
 				if = {limit = {exists = var:ritual_caster.var:temple var:ritual_caster.var:temple = 2} multiply = 0.8 subtract = 1}
 			}
 		}
@@ -5323,31 +5341,62 @@ cast_abnormal_winter = {
 								days = { 10 30 }
 							}
 							
-							custom_tooltip = custom_desc_abnormal_winter.tt
-							every_neighboring_and_across_water_top_liege_realm_owner = {
-								limit = {
+							every_independent_ruler = {
+								limit = {									
 									NOT = {	any_character_artifact = { has_variable = elven_ring } }
+									is_landed = yes
+									is_at_war_with = root
 								}
 								save_scope_as = enemy
-								hidden_effect = {
-									every_living_character = {
-										limit = {this.top_liege = scope:enemy}
-										add_character_modifier = {
-											modifier = abnormal_winter_character_modifier
-											years = 1
-										}
-									}
+							}
+							random_county = {
+								limit = {
+									holder = scope:enemy
+								}
+								save_scope_as = enemy_county
+							}
+							scope:enemy_county = {
 								
-									every_realm_county = {
-										limit = {
-											NOT = { culture ?= culture:wastelands }
-											NOT = {
-												has_county_modifier = abnormal_winter_modifier
+								add_county_modifier = {
+									modifier = abnormal_winter_modifier
+									years = 1
+								}
+								hidden_effect = {
+									holder = {								
+										every_courtier_or_guest = {									
+											limit = {
+												location.county = this
+											}
+											add_character_modifier = {
+												modifier = abnormal_winter_character_modifier
+												years = 1
 											}
 										}
-										add_county_modifier = {
-											modifier = abnormal_winter_modifier
-											years = 1
+									}
+								}
+								every_neighboring_county = {
+									limit = {
+										NOT = { culture ?= culture:wastelands }
+										NOT = {
+											has_county_modifier = abnormal_winter_modifier
+										}
+										NOT = {	any_character_artifact = { has_variable = elven_ring } }
+										holder = {
+											is_at_war_with = root
+										}
+									}
+									add_county_modifier = {
+										modifier = abnormal_winter_modifier
+										years = 1
+									}
+									hidden_effect = {
+										holder = {								
+											every_courtier_or_guest = {										
+												add_character_modifier = {
+													modifier = abnormal_winter_character_modifier
+													years = 1
+												}
+											}
 										}
 									}
 								}
@@ -5361,33 +5410,62 @@ cast_abnormal_winter = {
 								days = { 10 30 }
 							}		
 							
-							custom_tooltip = custom_desc_critical_abnormal_winter.tt
-							every_neighboring_and_across_water_top_liege_realm_owner = {
-								limit = {
+							every_independent_ruler = {
+								limit = {									
 									NOT = {	any_character_artifact = { has_variable = elven_ring } }
+									is_landed = yes
+									is_at_war_with = root
 								}
 								save_scope_as = enemy
+							}
+							random_county = {
+								limit = {
+									holder = scope:enemy
+								}
+								save_scope_as = enemy_county
+							}
+							scope:enemy_county = {
+								
+								add_county_modifier = {
+									modifier = abnormal_winter_modifier
+									years = 2
+								}
 								hidden_effect = {
-									every_living_character = {
-										if = {
-											limit = {this.top_liege = scope:enemy}
+									holder = {								
+										every_courtier_or_guest = {									
+											limit = {
+												location.county = this
+											}
 											add_character_modifier = {
 												modifier = abnormal_winter_character_modifier
 												years = 2
 											}
 										}
 									}
-								
-									every_realm_county = {
-										limit = {
-											NOT = { culture ?= culture:wastelands }
-											NOT = {
-												has_county_modifier = abnormal_winter_modifier
-											}
+								}
+								every_neighboring_county = {
+									limit = {
+										NOT = { culture ?= culture:wastelands }
+										NOT = {
+											has_county_modifier = abnormal_winter_modifier
 										}
-										add_county_modifier = {
-											modifier = abnormal_winter_modifier
-											years = 2
+										NOT = {	any_character_artifact = { has_variable = elven_ring } }
+										holder = {
+											is_at_war_with = root
+										}
+									}
+									add_county_modifier = {
+										modifier = abnormal_winter_modifier
+										years = 2
+									}
+									hidden_effect = {
+										holder = {								
+											every_courtier_or_guest = {										
+												add_character_modifier = {
+													modifier = abnormal_winter_character_modifier
+													years = 2
+												}
+											}
 										}
 									}
 								}
@@ -5422,32 +5500,62 @@ cast_abnormal_winter = {
 								days = { 10 30 }
 							}
 							
-							custom_tooltip = custom_desc_abnormal_winter.tt
-							every_neighboring_and_across_water_top_liege_realm_owner = {
-								limit = {
+							every_independent_ruler = {
+								limit = {									
 									NOT = {	any_character_artifact = { has_variable = elven_ring } }
+									is_landed = yes
+									is_at_war_with = root
 								}
 								save_scope_as = enemy
+							}
+							random_county = {
+								limit = {
+									holder = scope:enemy
+								}
+								save_scope_as = enemy_county
+							}
+							scope:enemy_county = {
+								
+								add_county_modifier = {
+									modifier = abnormal_winter_modifier
+									years = 1
+								}
 								hidden_effect = {
-									every_living_character = {
-										if = {
-											limit = {this.top_liege = scope:enemy}
+									holder = {								
+										every_courtier_or_guest = {									
+											limit = {
+												location.county = this
+											}
 											add_character_modifier = {
 												modifier = abnormal_winter_character_modifier
 												years = 1
 											}
 										}
 									}
-									every_realm_county = {
-										limit = {
-											NOT = { culture ?= culture:wastelands }
-											NOT = {
-												has_county_modifier = abnormal_winter_modifier
-											}
+								}
+								every_neighboring_county = {
+									limit = {
+										NOT = { culture ?= culture:wastelands }
+										NOT = {
+											has_county_modifier = abnormal_winter_modifier
 										}
-										add_county_modifier = {
-											modifier = abnormal_winter_modifier
-											years = 1
+										NOT = {	any_character_artifact = { has_variable = elven_ring } }
+										holder = {
+											is_at_war_with = root
+										}
+									}
+									add_county_modifier = {
+										modifier = abnormal_winter_modifier
+										years = 1
+									}
+									hidden_effect = {
+										holder = {								
+											every_courtier_or_guest = {										
+												add_character_modifier = {
+													modifier = abnormal_winter_character_modifier
+													years = 1
+												}
+											}
 										}
 									}
 								}
@@ -5459,32 +5567,62 @@ cast_abnormal_winter = {
 								id = evil.1824
 								days = { 10 30 }
 							}							
-							custom_tooltip = custom_desc_critical_abnormal_winter.tt
-							every_neighboring_and_across_water_top_liege_realm_owner = {
-								limit = {
+							every_independent_ruler = {
+								limit = {									
 									NOT = {	any_character_artifact = { has_variable = elven_ring } }
+									is_landed = yes
+									is_at_war_with = root
 								}
 								save_scope_as = enemy
+							}
+							random_county = {
+								limit = {
+									holder = scope:enemy
+								}
+								save_scope_as = enemy_county
+							}
+							scope:enemy_county = {
+								
+								add_county_modifier = {
+									modifier = abnormal_winter_modifier
+									years = 2
+								}
 								hidden_effect = {
-									every_living_character = {
-										if = {
-											limit = {this.top_liege = scope:enemy}
+									holder = {								
+										every_courtier_or_guest = {									
+											limit = {
+												location.county = this
+											}
 											add_character_modifier = {
 												modifier = abnormal_winter_character_modifier
 												years = 2
 											}
 										}
 									}
-									every_realm_county = {
-										limit = {
-											NOT = { culture ?= culture:wastelands }
-											NOT = {
-												has_county_modifier = abnormal_winter_modifier
-											}
+								}
+								every_neighboring_county = {
+									limit = {
+										NOT = { culture ?= culture:wastelands }
+										NOT = {
+											has_county_modifier = abnormal_winter_modifier
 										}
-										add_county_modifier = {
-											modifier = abnormal_winter_modifier
-											years = 2
+										NOT = {	any_character_artifact = { has_variable = elven_ring } }
+										holder = {
+											is_at_war_with = root
+										}
+									}
+									add_county_modifier = {
+										modifier = abnormal_winter_modifier
+										years = 2
+									}
+									hidden_effect = {
+										holder = {								
+											every_courtier_or_guest = {										
+												add_character_modifier = {
+													modifier = abnormal_winter_character_modifier
+													years = 2
+												}
+											}
 										}
 									}
 								}
@@ -5507,34 +5645,62 @@ cast_abnormal_winter = {
 								id = evil.1823
 								days = { 10 30 }
 							}
-							custom_tooltip = custom_desc_abnormal_winter.tt
-
-							every_neighboring_and_across_water_top_liege_realm_owner = {
-								limit = {
+							every_independent_ruler = {
+								limit = {									
 									NOT = {	any_character_artifact = { has_variable = elven_ring } }
+									is_landed = yes
+									is_at_war_with = root
 								}
 								save_scope_as = enemy
+							}
+							random_county = {
+								limit = {
+									holder = scope:enemy
+								}
+								save_scope_as = enemy_county
+							}
+							scope:enemy_county = {
+								
+								add_county_modifier = {
+									modifier = abnormal_winter_modifier
+									years = 1
+								}
 								hidden_effect = {
-									every_living_character = {
-										if = {
-											limit = {this.top_liege = scope:enemy}
+									holder = {								
+										every_courtier_or_guest = {									
+											limit = {
+												location.county = this
+											}
 											add_character_modifier = {
 												modifier = abnormal_winter_character_modifier
 												years = 1
 											}
 										}
 									}
-								
-									every_realm_county = {
-										limit = {
-											NOT = { culture ?= culture:wastelands }
-											NOT = {
-												has_county_modifier = abnormal_winter_modifier
-											}
+								}
+								every_neighboring_county = {
+									limit = {
+										NOT = { culture ?= culture:wastelands }
+										NOT = {
+											has_county_modifier = abnormal_winter_modifier
 										}
-										add_county_modifier = {
-											modifier = abnormal_winter_modifier
-											years = 1
+										NOT = {	any_character_artifact = { has_variable = elven_ring } }
+										holder = {
+											is_at_war_with = root
+										}
+									}
+									add_county_modifier = {
+										modifier = abnormal_winter_modifier
+										years = 1
+									}
+									hidden_effect = {
+										holder = {								
+											every_courtier_or_guest = {										
+												add_character_modifier = {
+													modifier = abnormal_winter_character_modifier
+													years = 1
+												}
+											}
 										}
 									}
 								}

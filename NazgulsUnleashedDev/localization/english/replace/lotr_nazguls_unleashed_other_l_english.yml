@@ -29,3 +29,5 @@
 
  schemed_recently:0 "Schemed recently"
  schemed_recently_desc:0 "This character has schemed recently"
+
+ custom_desc_reveal_the_secrets.tt:0 "Exposes the scheme and creates a manipulation hook on any scheming agent in your court"

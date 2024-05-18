@@ -94,8 +94,8 @@ c_mordath = {
 #Baugatsor-i-Sauron							
 c_baugatsor_i_sauron = {							
 	7032.1.1 = {							
-	holder = lineofsauron
-	change_development_level = 5
+	    holder = lineofsauron
+	    change_development_level = 5
 	}						
 }
 							
@@ -131,26 +131,131 @@ c_durthang = {
 		holder = strongorc3
 		change_development_level = 10
 	}
-	7033.1.1 = {
-		liege = d_udun
+    6975.1.1 = {
+        holder = nazgul6
+        change_development_level = 12
 	}
 }
-							
-#Lhingris							
+
+# Durthang
+k_durthang = {
+    6975.1.1 = {
+		liege = e_mordor
+        holder = nazgul6
+        change_development_level = 12
+	}
+}
+					
+					
+#Ephel Duath							
+d_ephel_duath = { #temporary							
+	6455.1.1 = {							
+		holder = lineofsauron					
+		liege = e_mordor
+	}
+    
+    6975.1.1 = {
+		liege = e_mordor
+        holder = nazgul6
+        change_development_level = 12
+	}
+}
+
+
 c_lhingris = {							
     6871.1.1 = {							
 	    holder = strongorc3
 	    change_development_level = 6
+        liege = e_mordor
 	}						
+    6975.1.1 = {
+	    holder = nazgul6
+	    change_development_level = 12
+    }
 }
+
+# Ungol
+k_ungol = {
+    6975.1.1 = {
+		liege = e_mordor
+        holder = nazgul8
+        change_development_level = 12
+	}
+}
+
+d_ungol = {
+    6975.1.1 = {
+        liege = e_mordor
+        holder = nazgul8
+        change_development_level = 12
+	}
+}
+
 
 c_cirith_ungol = {							
     6871.1.1 = {							
-	    change_development_level = 12
+	    change_development_level = 6
 	    holder = weakorc13
-	    liege = k_morgul
-	}				
+        liege = e_mordor
+	}    						
+    6975.1.1 = {
+	    holder = nazgul8
+	    change_development_level = 12
+    }
 }
+					
+#Barad-Wath							
+c_barad_wath = {							
+	6838.1.1 = {							
+		holder = strongorc2
+		change_development_level = 10					
+		liege = e_mordor
+	}	   						
+    6975.1.1 = {
+	    holder = nazgul8
+	    change_development_level = 12
+    }					
+}
+							
+#Dath Nethryn							
+c_dath_nethryn = {							
+	6838.1.1 = {							
+		holder = weakorc9
+		change_development_level = 3
+        liege=e_mordor
+	}   						
+    6975.1.1 = {
+	    holder = nazgul8
+	    change_development_level = 12
+    }
+}
+
+
+#Mulburz							
+c_kam_lagurz = {		
+	6975.1.1 = {
+		holder = strongorc13	#Shagrat, actually garrison commander of cirith ungol
+		change_development_level = 6					
+		liege = e_mordor
+	}       						
+    6996.1.1 = {
+	    holder = nazgul8
+	    change_development_level = 12
+    }
+}
+
+c_lugashbur = {		
+    6975.1.1 = {
+		holder = strongorc2	#Shagrat, actually garrison commander of cirith ungol
+		change_development_level = 6					
+		liege = e_mordor
+	} 					
+	6989.1.1 = {
+	    holder = nazgul8
+	    change_development_level = 12
+	}											
+}
+	
 							
 #Barad-dûr							
 c_barad_dur = {							
@@ -242,26 +347,6 @@ c_bash = {
 	}							
 }
 							
-#Barad-Wath							
-c_barad_wath = {							
-	6838.1.1 = {							
-		holder = strongorc2
-		change_development_level = 10					
-		liege = e_mordor
-	}						
-}
-							
-#Dath Nethryn							
-c_dath_nethryn = {							
-	6838.1.1 = {							
-		holder = weakorc9
-		change_development_level = 3
-	}
-	7000.1.1 = {		
-		liege = e_mordor
-	}
-}
-							
 #Mulburz							
 c_mulburz = {							
 	6977.1.1 = {							
@@ -272,30 +357,7 @@ c_mulburz = {
 		liege = e_mordor
 	}						
 }
-							
-#Mulburz							
-c_kam_lagurz = {		
-	6996.1.1 = {
-		holder = strongorc13	#Shagrat, actually garrison commander of cirith ungol
-		change_development_level = 6					
-		liege = k_morgul
-	}
-}
-
-c_lugashbur = {							
-	6989.1.1 = {							
-		change_development_level = 6				
-		holder = strongorc2
-	}											
-}
-							
-#Ephel Duath							
-d_ephel_duath = { #temporary							
-	6455.1.1 = {							
-		holder = nazgul1					
-		liege = e_mordor
-	}					
-}
+	
 							
 #Núrn							
 k_nurn = {	
@@ -2687,7 +2749,7 @@ c_friyar = {
 
 #Cirith Nargil
 k_cirith_nargil = {
-    7000.1.1 = {
+    6975.1.1 = {
 		liege = e_mordor
         holder = nazgul4
         change_development_level = 12
@@ -2695,7 +2757,7 @@ k_cirith_nargil = {
 }
 
 d_cirith_nargil = {
-    7000.1.1 = {
+    6975.1.1 = {
         liege = e_mordor
         holder = nazgul4
         change_development_level = 12
@@ -2703,7 +2765,7 @@ d_cirith_nargil = {
 }
 
 c_cirith_nargil = {
-    7000.1.1 = {
+    6975.1.1 = {
         holder = nazgul4
         change_development_level = 12
 	}
@@ -2740,7 +2802,7 @@ k_luglurak = {
     6049.7.20 = {
         holder = lineibo7
     }
-    7000.2.1 = {
+    6975.1.1 = {
         holder = nazgul5
 		liege = e_mordor
         change_development_level = 12
@@ -2776,7 +2838,7 @@ d_luglurak = {
     6049.7.20 = {
         holder = lineibo7
     }
-    7000.2.1 = {
+    6975.1.1 = {
         holder = nazgul5
         liege = e_mordor
         change_development_level = 12
@@ -2812,7 +2874,7 @@ c_luglurak = {
     6049.7.20 = {
         holder = lineibo7
     }
-    7000.2.1 = {
+    6975.1.1 = {
         holder = nazgul5
         change_development_level = 12
 	}

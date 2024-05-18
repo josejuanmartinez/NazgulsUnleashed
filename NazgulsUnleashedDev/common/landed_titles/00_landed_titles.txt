@@ -12077,6 +12077,313 @@ e_mordor = {
 		name_list_umbarean = cn_mordor_adunaic
 		name_list_mardrukan = cn_mordor_adunaic
 	}
+
+	k_durthang = {
+		color = blue
+
+		d_ephel_duath = {
+			color = blue
+			
+			capital = c_durthang
+			
+			c_durthang = {
+				color = { 133 27 46 }
+			
+				cultural_names = {
+			        name_list_mountain_orc = cn_durthang_black_speech
+			        name_list_goblin = cn_durthang_black_speech
+				}	
+				b_durthang = {
+					province = 651
+					
+					cultural_names = {
+						name_list_mountain_orc = cn_durthang_black_speech
+						name_list_goblin = cn_durthang_black_speech
+					}		
+					color = { 110 251 185 }
+					
+				}
+				
+			}
+			
+			c_lhingris = {
+				color = { 177 76 73 }
+				
+				cultural_names = {
+					name_list_orc = cn_lhingris_blackspeech
+					name_list_mountain_orc = cn_lhingris_blackspeech
+					name_list_goblin = cn_lhingris_blackspeech	
+				}
+				
+				b_barad_perras = {
+					province = 650
+					
+					color = { 90 29 69 }
+					cultural_names = {
+						name_list_orc = cn_b_barad_perras_blackspeech
+						name_list_mountain_orc = cn_b_barad_perras_blackspeech
+						name_list_goblin = cn_b_barad_perras_blackspeech	
+					}
+				}
+				b_kala_murg = {
+					province = 652
+					
+					color = { 213 72 86 }
+					
+					cultural_names = {
+						name_list_dunedain = cn_b_kala_murg_sindarin
+						name_list_ranger = cn_b_kala_murg_sindarin
+						name_list_quenya = cn_b_kala_murg_sindarin
+						name_list_sindarin = cn_b_kala_murg_sindarin
+						name_list_nandorin = cn_b_kala_murg_sindarin
+						name_list_elven = cn_b_kala_murg_sindarin
+					}						
+				}				
+			}
+		}
+	}
+
+	k_ungol = {
+		color = {245 133 22}
+		capital = c_cirith_ungol
+
+		d_ungol = {
+			color = {245 133 22}
+			capital = c_cirith_ungol
+		
+			c_cirith_ungol = {
+				color = { 144 80 69 }
+			
+				cultural_names = {
+					name_list_mountain_orc = cn_cirith_ungol_black_speech
+					name_list_goblin = cn_cirith_ungol_black_speech
+				}	
+				
+				b_cirith_ungol = {
+					province = 654
+					
+					color = { 72 172 212 }
+					cultural_names = {
+						name_list_mountain_orc = cn_cirith_ungol_black_speech
+						name_list_goblin = cn_cirith_ungol_black_speech
+					}
+				}
+				
+				b_barad_ungol = {
+					province = 655
+					
+					color = { 130 165 136 }
+					cultural_names = {
+						name_list_orc = cn_b_barad_ungol_black_speech
+						name_list_mountain_orc = cn_b_barad_ungol_black_speech
+						name_list_goblin = cn_b_barad_ungol_black_speech
+					}	
+				}
+				
+				b_kra_burzum = {
+					province = 653
+					
+					color = { 254 4 195 }
+					cultural_names = {
+						name_list_dunedain = cn_b_kra_burzum_sindarin
+						name_list_ranger = cn_b_kra_burzum_sindarin
+						name_list_quenya = cn_b_kra_burzum_sindarin
+						name_list_sindarin = cn_b_kra_burzum_sindarin
+						name_list_nandorin = cn_b_kra_burzum_sindarin
+						name_list_elven = cn_b_kra_burzum_sindarin
+					}	
+				}
+				
+			}
+
+			c_kam_lagurz = {
+				color = { 205 52 40 }
+				
+				cultural_names = {
+					name_list_dunedain = cn_c_kam_lagurz_sindarin
+					name_list_ranger = cn_c_kam_lagurz_sindarin
+					name_list_quenya = cn_c_kam_lagurz_sindarin
+					name_list_sindarin = cn_c_kam_lagurz_sindarin
+					name_list_nandorin = cn_c_kam_lagurz_sindarin
+					name_list_elven = cn_c_kam_lagurz_sindarin
+		        }
+				
+				b_kam_lagurz = {
+					province = 657
+					
+					color = { 225 25 218 }
+					cultural_names = {
+						name_list_dunedain = cn_c_kam_lagurz_sindarin
+						name_list_ranger = cn_c_kam_lagurz_sindarin
+						name_list_quenya = cn_c_kam_lagurz_sindarin
+						name_list_sindarin = cn_c_kam_lagurz_sindarin
+						name_list_nandorin = cn_c_kam_lagurz_sindarin
+						name_list_elven = cn_c_kam_lagurz_sindarin
+					}	
+				}
+
+				b_mamshar = {
+					province = 2585
+					
+					color = { 126 194 205 }
+					cultural_names = {
+						name_list_dunedain = cn_b_mamshar_sindarin
+						name_list_ranger = cn_b_mamshar_sindarin
+						name_list_quenya = cn_b_mamshar_sindarin
+						name_list_sindarin = cn_b_mamshar_sindarin
+						name_list_nandorin = cn_b_mamshar_sindarin
+						name_list_elven = cn_b_mamshar_sindarin
+					}	
+				}
+				
+				b_digturrmar = {
+					province = 656
+					
+					color = { 174 205 65 }
+					cultural_names = {
+						name_list_dunedain = cn_b_digturrmar_sindarin
+						name_list_ranger = cn_b_digturrmar_sindarin
+						name_list_quenya = cn_b_digturrmar_sindarin
+						name_list_sindarin = cn_b_digturrmar_sindarin
+						name_list_nandorin = cn_b_digturrmar_sindarin
+						name_list_elven = cn_b_digturrmar_sindarin
+					}
+					
+				}
+				
+			}
+
+			c_dath_nethryn = {
+				color = { 140 1 1 }
+			
+				cultural_names = {
+					name_list_orc = cn_dath_nethryn_blackspeech
+					name_list_mountain_orc = cn_dath_nethryn_blackspeech
+					name_list_goblin = cn_dath_nethryn_blackspeech
+				}
+		
+				b_dath_nethryn = {
+					province = 643
+					
+					color = { 173 46 97 }
+					cultural_names = {
+						name_list_orc = cn_dath_nethryn_blackspeech
+						name_list_mountain_orc = cn_dath_nethryn_blackspeech
+						name_list_goblin = cn_dath_nethryn_blackspeech
+					}	
+				}
+
+				b_baulabad = {
+					province = 2618
+					
+					color = { 68 29 201 }
+					
+				}
+				
+				b_flaksharbtur = {
+					province = 645
+					
+					color = { 171 143 10 }
+					cultural_names = {
+						name_list_dunedain = cn_b_flaksharbtur_sindarin
+						name_list_ranger = cn_b_flaksharbtur_sindarin
+						name_list_quenya = cn_b_flaksharbtur_sindarin
+						name_list_sindarin = cn_b_flaksharbtur_sindarin
+						name_list_nandorin = cn_b_flaksharbtur_sindarin
+						name_list_elven = cn_b_flaksharbtur_sindarin
+					}	
+				}
+				
+				b_gwathiraug = {
+					province = 642
+					
+					color = { 193 177 236 }
+					cultural_names = {
+						name_list_orc = cn_b_gwathiraug_blackspeech
+						name_list_mountain_orc = cn_b_gwathiraug_blackspeech
+						name_list_goblin = cn_b_gwathiraug_blackspeech
+					}	
+				}				
+			}
+
+			c_barad_wath = {
+				color = { 123 31 1 }
+				cultural_names = {
+					name_list_orc = cn_barad_wath_blackspeech
+					name_list_mountain_orc = cn_barad_wath_blackspeech
+					name_list_goblin = cn_barad_wath_blackspeech
+		        }	
+				b_barad_wath = {
+					province = 640
+					
+					color = { 91 146 254 }
+					cultural_names = {
+						name_list_orc = cn_barad_wath_blackspeech
+						name_list_mountain_orc = cn_barad_wath_blackspeech
+						name_list_goblin = cn_barad_wath_blackspeech
+		        	}	
+				}
+				
+				b_morigost = {
+					province = 641
+					
+					color = { 253 200 60 }
+					cultural_names = {
+						name_list_orc = cn_b_morigost_blackspeech
+						name_list_mountain_orc = cn_b_morigost_blackspeech
+						name_list_goblin = cn_b_morigost_blackspeech
+					}	
+				}
+				
+				b_orodir = {
+					province = 644
+					
+					color = { 29 95 79 }
+					cultural_names = {
+						name_list_orc = cn_b_orodir_blackspeech
+						name_list_mountain_orc = cn_b_orodir_blackspeech
+						name_list_goblin = cn_b_orodir_blackspeech
+					}	
+				}				
+			}
+
+			c_lugashbur = {
+				color = { 120 30 1 }
+				
+				cultural_names = {
+					name_list_dunedain = cn_lugashbur_sindarin
+					name_list_ranger = cn_lugashbur_sindarin
+					name_list_quenya = cn_lugashbur_sindarin
+					name_list_sindarin = cn_lugashbur_sindarin
+					name_list_nandorin = cn_lugashbur_sindarin
+					name_list_elven = cn_lugashbur_sindarin
+		        }
+
+				b_burzumshar = {
+					province = 2589
+					
+					color = { 180 242 62 }
+					
+				}
+				
+				b_hammukar = {
+					province = 2591
+					
+					color = { 157 68 196 }
+					
+				}
+				
+				b_kermandur = {
+					province = 2596
+					
+					color = { 146 57 190 }
+					
+				}
+
+			}
+		}
+
+	}
 	
 	k_gorgoroth = {
 		color = { 167 18 18 }
@@ -12160,26 +12467,6 @@ e_mordor = {
 						
 						name_list_wastelands = cn_b_udun_wastelands
 					}
-					
-				}
-				
-			}
-			
-			c_durthang = {
-				color = { 133 27 46 }
-			
-				cultural_names = {
-			        name_list_mountain_orc = cn_durthang_black_speech
-			        name_list_goblin = cn_durthang_black_speech
-				}	
-				b_durthang = {
-					province = 651
-					
-					cultural_names = {
-						name_list_mountain_orc = cn_durthang_black_speech
-						name_list_goblin = cn_durthang_black_speech
-					}		
-					color = { 110 251 185 }
 					
 				}
 				
@@ -12385,157 +12672,7 @@ e_mordor = {
 			}
 		}
 
-		d_ephel_duath = {
-			color = { 177 75 59 }
-			
-			capital = c_cirith_ungol
-			
-            cultural_names = {
-			    name_list_orc = cn_ephel_duath_blackspeech
-			    name_list_mountain_orc = cn_ephel_duath_blackspeech
-			    name_list_goblin = cn_ephel_duath_blackspeech
-			}	
-				
-			c_cirith_ungol = {
-				color = { 144 80 69 }
-			
-				cultural_names = {
-					name_list_mountain_orc = cn_cirith_ungol_black_speech
-					name_list_goblin = cn_cirith_ungol_black_speech
-		        }	
-				
-				b_cirith_ungol = {
-					province = 654
-					
-					color = { 72 172 212 }
-					cultural_names = {
-						name_list_mountain_orc = cn_cirith_ungol_black_speech
-						name_list_goblin = cn_cirith_ungol_black_speech
-					}
-				}
-				
-				b_barad_ungol = {
-					province = 655
-					
-					color = { 130 165 136 }
-					cultural_names = {
-						name_list_orc = cn_b_barad_ungol_black_speech
-						name_list_mountain_orc = cn_b_barad_ungol_black_speech
-						name_list_goblin = cn_b_barad_ungol_black_speech
-					}	
-				}
-				
-				b_kra_burzum = {
-					province = 653
-					
-					color = { 254 4 195 }
-					cultural_names = {
-						name_list_dunedain = cn_b_kra_burzum_sindarin
-						name_list_ranger = cn_b_kra_burzum_sindarin
-						name_list_quenya = cn_b_kra_burzum_sindarin
-						name_list_sindarin = cn_b_kra_burzum_sindarin
-						name_list_nandorin = cn_b_kra_burzum_sindarin
-						name_list_elven = cn_b_kra_burzum_sindarin
-					}	
-				}
-				
-			}
-			
-			c_lhingris = {
-				color = { 177 76 73 }
-				
-				cultural_names = {
-					name_list_orc = cn_lhingris_blackspeech
-					name_list_mountain_orc = cn_lhingris_blackspeech
-					name_list_goblin = cn_lhingris_blackspeech	
-				}
-				
-				b_barad_perras = {
-					province = 650
-					
-					color = { 90 29 69 }
-					cultural_names = {
-						name_list_orc = cn_b_barad_perras_blackspeech
-						name_list_mountain_orc = cn_b_barad_perras_blackspeech
-						name_list_goblin = cn_b_barad_perras_blackspeech	
-					}
-				}
-				b_kala_murg = {
-					province = 652
-					
-					color = { 213 72 86 }
-					
-					cultural_names = {
-						name_list_dunedain = cn_b_kala_murg_sindarin
-						name_list_ranger = cn_b_kala_murg_sindarin
-						name_list_quenya = cn_b_kala_murg_sindarin
-						name_list_sindarin = cn_b_kala_murg_sindarin
-						name_list_nandorin = cn_b_kala_murg_sindarin
-						name_list_elven = cn_b_kala_murg_sindarin
-					}	
-					
-				}
-				
-			}
-			
-			c_kam_lagurz = {
-				color = { 205 52 40 }
-				
-				cultural_names = {
-					name_list_dunedain = cn_c_kam_lagurz_sindarin
-					name_list_ranger = cn_c_kam_lagurz_sindarin
-					name_list_quenya = cn_c_kam_lagurz_sindarin
-					name_list_sindarin = cn_c_kam_lagurz_sindarin
-					name_list_nandorin = cn_c_kam_lagurz_sindarin
-					name_list_elven = cn_c_kam_lagurz_sindarin
-		        }
-				
-				b_kam_lagurz = {
-					province = 657
-					
-					color = { 225 25 218 }
-					cultural_names = {
-						name_list_dunedain = cn_c_kam_lagurz_sindarin
-						name_list_ranger = cn_c_kam_lagurz_sindarin
-						name_list_quenya = cn_c_kam_lagurz_sindarin
-						name_list_sindarin = cn_c_kam_lagurz_sindarin
-						name_list_nandorin = cn_c_kam_lagurz_sindarin
-						name_list_elven = cn_c_kam_lagurz_sindarin
-					}	
-				}
-
-				b_mamshar = {
-					province = 2585
-					
-					color = { 126 194 205 }
-					cultural_names = {
-						name_list_dunedain = cn_b_mamshar_sindarin
-						name_list_ranger = cn_b_mamshar_sindarin
-						name_list_quenya = cn_b_mamshar_sindarin
-						name_list_sindarin = cn_b_mamshar_sindarin
-						name_list_nandorin = cn_b_mamshar_sindarin
-						name_list_elven = cn_b_mamshar_sindarin
-					}	
-				}
-				
-				b_digturrmar = {
-					province = 656
-					
-					color = { 174 205 65 }
-					cultural_names = {
-						name_list_dunedain = cn_b_digturrmar_sindarin
-						name_list_ranger = cn_b_digturrmar_sindarin
-						name_list_quenya = cn_b_digturrmar_sindarin
-						name_list_sindarin = cn_b_digturrmar_sindarin
-						name_list_nandorin = cn_b_digturrmar_sindarin
-						name_list_elven = cn_b_digturrmar_sindarin
-					}
-					
-				}
-				
-			}
-			
-		}
+		
 		
 		d_perth_ulmyn = {
 			color = { 84 1 1 }
@@ -12544,139 +12681,8 @@ e_mordor = {
 			    name_list_mountain_orc = cn_perth_ulmyn_blackspeech
 			    name_list_goblin = cn_perth_ulmyn_blackspeech
 		    }	
-			capital = c_barad_wath
-			
-			c_barad_wath = {
-				color = { 123 31 1 }
-				cultural_names = {
-					name_list_orc = cn_barad_wath_blackspeech
-					name_list_mountain_orc = cn_barad_wath_blackspeech
-					name_list_goblin = cn_barad_wath_blackspeech
-		        }	
-				b_barad_wath = {
-					province = 640
-					
-					color = { 91 146 254 }
-					cultural_names = {
-						name_list_orc = cn_barad_wath_blackspeech
-						name_list_mountain_orc = cn_barad_wath_blackspeech
-						name_list_goblin = cn_barad_wath_blackspeech
-		        	}	
-				}
-				
-				b_morigost = {
-					province = 641
-					
-					color = { 253 200 60 }
-					cultural_names = {
-						name_list_orc = cn_b_morigost_blackspeech
-						name_list_mountain_orc = cn_b_morigost_blackspeech
-						name_list_goblin = cn_b_morigost_blackspeech
-					}	
-				}
-				
-				b_orodir = {
-					province = 644
-					
-					color = { 29 95 79 }
-					cultural_names = {
-						name_list_orc = cn_b_orodir_blackspeech
-						name_list_mountain_orc = cn_b_orodir_blackspeech
-						name_list_goblin = cn_b_orodir_blackspeech
-					}	
-				}
-				
-			}
-			
-			c_lugashbur = {
-				color = { 120 30 1 }
-				
-				cultural_names = {
-					name_list_dunedain = cn_lugashbur_sindarin
-					name_list_ranger = cn_lugashbur_sindarin
-					name_list_quenya = cn_lugashbur_sindarin
-					name_list_sindarin = cn_lugashbur_sindarin
-					name_list_nandorin = cn_lugashbur_sindarin
-					name_list_elven = cn_lugashbur_sindarin
-		        }
-
-				b_burzumshar = {
-					province = 2589
-					
-					color = { 180 242 62 }
-					
-				}
-				
-				b_hammukar = {
-					province = 2591
-					
-					color = { 157 68 196 }
-					
-				}
-				
-				b_kermandur = {
-					province = 2596
-					
-					color = { 146 57 190 }
-					
-				}
-
-			}
-			
-			c_dath_nethryn = {
-				color = { 140 1 1 }
-			
-				cultural_names = {
-					name_list_orc = cn_dath_nethryn_blackspeech
-					name_list_mountain_orc = cn_dath_nethryn_blackspeech
-					name_list_goblin = cn_dath_nethryn_blackspeech
-				}
-		
-				b_dath_nethryn = {
-					province = 643
-					
-					color = { 173 46 97 }
-					cultural_names = {
-						name_list_orc = cn_dath_nethryn_blackspeech
-						name_list_mountain_orc = cn_dath_nethryn_blackspeech
-						name_list_goblin = cn_dath_nethryn_blackspeech
-					}	
-				}
-
-				b_baulabad = {
-					province = 2618
-					
-					color = { 68 29 201 }
-					
-				}
-				
-				b_flaksharbtur = {
-					province = 645
-					
-					color = { 171 143 10 }
-					cultural_names = {
-						name_list_dunedain = cn_b_flaksharbtur_sindarin
-						name_list_ranger = cn_b_flaksharbtur_sindarin
-						name_list_quenya = cn_b_flaksharbtur_sindarin
-						name_list_sindarin = cn_b_flaksharbtur_sindarin
-						name_list_nandorin = cn_b_flaksharbtur_sindarin
-						name_list_elven = cn_b_flaksharbtur_sindarin
-					}	
-				}
-				
-				b_gwathiraug = {
-					province = 642
-					
-					color = { 193 177 236 }
-					cultural_names = {
-						name_list_orc = cn_b_gwathiraug_blackspeech
-						name_list_mountain_orc = cn_b_gwathiraug_blackspeech
-						name_list_goblin = cn_b_gwathiraug_blackspeech
-					}	
-				}
-				
-			}
-			
+			capital = c_mulburz
+						
 			c_mulburz = {
 				color = { 121 1 25 }	
 				

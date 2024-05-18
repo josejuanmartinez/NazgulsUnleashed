@@ -1031,25 +1031,83 @@ d_gap_of_khand = {
 }
 
 k_obamarl = {
-	5191.1.1 = { # Yurzal of the Middle Army, great variag warlord
-		holder = khandwarlord2
-	}
+    5191.1.1 = { # Yurzal of the Middle Army, great variag warlord
+        holder = khandwarlord2
+    }
     6050.8.22 = {
-		holder = nazgul9
+        holder = lineofskakali2
+    }
+    6077.4.2 = {
+        holder = lineofskakali4
+    }
+    6735.1.1 = {
+        holder = line_malikar_0 #Kanhai
+    }
+    6786.1.1 = {
+        holder = ovathaVIII #Othava VIII
+    }
+    6799.8.29 = {
+        holder = line_malikar_1 #Kanhai II
+    }
+    6860.3.1 = {
+        holder = line_malikar_2 #Irbo
+    }
+    6871.1.18 = {
+        holder = line_malikar_3 #Askul	#killed in duel with linehabodid1
+    }
+    6900.1.3 = {
+        holder = linehabodid1 #Habor
+        change_development_level = 12
+    }
+    6977.3.14 = {
+        holder = linehabodid3 #Asternakh
+    }
+
+    7000.1.1 = {
+        holder = nazgul9
         
         change_development_level = 9
-	}
+    }
 }
 
 d_obamarl = {
-	5191.1.1 = { # Yurzal of the Middle Army, great variag warlord
-		holder = khandwarlord2
-	}
+    5191.1.1 = { # Yurzal of the Middle Army, great variag warlord
+        holder = khandwarlord2
+    }
     6050.8.22 = {
-		holder = nazgul9
+        holder = lineofskakali2
+    }
+    6077.4.2 = {
+        holder = lineofskakali4
+    }
+    6735.1.1 = {
+        holder = line_malikar_0 #Kanhai
+    }
+    6786.1.1 = {
+        holder = ovathaVIII #Othava VIII
+    }
+    6799.8.29 = {
+        holder = line_malikar_1 #Kanhai II
+    }
+    6860.3.1 = {
+        holder = line_malikar_2 #Irbo
+    }
+    6871.1.18 = {
+        holder = line_malikar_3 #Askul	#killed in duel with linehabodid1
+    }
+    6900.1.3 = {
+        holder = linehabodid1 #Habor
+        change_development_level = 12
+    }
+    6977.3.14 = {
+        holder = linehabodid3 #Asternakh
+    }
+
+    7000.1.1 = {
+        holder = nazgul9
         
         change_development_level = 9
-	}
+    }
 }
 
 
@@ -1057,39 +1115,40 @@ c_obamarl = {
 	5191.1.1 = { # Yurzal of the Middle Army, great variag warlord
 		holder = khandwarlord2
 	}
-    6050.8.22 = {
+	6050.8.22 = {
+		holder = lineofskakali2
+	}
+	6077.4.2 = {
+		holder = lineofskakali4
+	}
+	6735.1.1 = {
+        holder = line_malikar_0 #Kanhai
+    }
+	6786.1.1 = {
+        holder = ovathaVIII #Othava VIII
+    }
+	6799.8.29 = {
+        holder = line_malikar_1 #Kanhai II
+    }
+    6860.3.1 = {
+        holder = line_malikar_2 #Irbo
+    }
+    6871.1.18 = {
+        holder = line_malikar_3 #Askul	#killed in duel with linehabodid1
+    }
+	6900.1.3 = {
+        holder = linehabodid1 #Habor
+		change_development_level = 12
+    }
+    6977.3.14 = {
+        holder = linehabodid3 #Asternakh
+    }
+    
+    7000.1.1 = {
 		holder = nazgul9
         
         change_development_level = 9
 	}
-	# 6050.8.22 = {
-	# 	holder = lineofskakali2
-	# }
-	# 6077.4.2 = {
-	# 	holder = lineofskakali4
-	# }
-	# 6735.1.1 = {
-    #     holder = line_malikar_0 #Kanhai
-    # }
-	# 6786.1.1 = {
-    #     holder = ovathaVIII #Othava VIII
-    # }
-	# 6799.8.29 = {
-    #     holder = line_malikar_1 #Kanhai II
-    # }
-    # 6860.3.1 = {
-    #     holder = line_malikar_2 #Irbo
-    # }
-    # 6871.1.18 = {
-    #     holder = line_malikar_3 #Askul	#killed in duel with linehabodid1
-    # }
-	# 6900.1.3 = {
-    #     holder = linehabodid1 #Habor
-	# 	change_development_level = 12
-    # }
-    # 6977.3.14 = {
-    #     holder = linehabodid3 #Asternakh
-    # }
     # 7022.11.15 = {
     #     holder = linehabodid6 #Balun
     # }

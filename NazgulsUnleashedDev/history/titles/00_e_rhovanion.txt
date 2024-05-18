@@ -8805,17 +8805,19 @@ c_ongushar = {
 		holder = k_wastelands_holder
 		change_development_level = -100
 		government = wastelands_government
-	}	
-    6050.8.22 = {
+	}
+    6897.11.28 = {
+        holder = lineofguthmunding1 #Guthmund
+    }
+    
+    6969.4.28 = {
+        holder = lineofguthmunding3 #SE_xbald
+    }
+    	
+    6975.1.1 = {
         holder = nazgul9 # Ovatha the Long Rider
         change_development_level = 4
     }
-    #6897.11.28 = {
-    #    holder = lineofguthmunding1 #Guthmund
-    #}
-    #6969.4.28 = {
-    #    holder = lineofguthmunding3 #SE_xbald
-    #}
     #7011.7.1 = {
     #    holder = lineofguthmunding5 #SE_lrE_d
     #}

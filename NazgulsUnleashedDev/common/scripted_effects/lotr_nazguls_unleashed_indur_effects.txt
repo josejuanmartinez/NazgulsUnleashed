@@ -278,7 +278,7 @@ steal_artifact = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:artifact_1.artifact_owner.location.title_province.fort_level
+					add = scope:artifact_1.artifact_owner.location.county.fort_level
 					factor = 3
 				}
 				
@@ -347,7 +347,7 @@ steal_artifact = {
 						multiplier = 3
 					}
 					modifier = {
-						add = scope:artifact_1.artifact_owner.location.title_province.fort_level
+						add = scope:artifact_1.artifact_owner.location.county.fort_level
 						factor = 3
 					}
 					set_variable = {
@@ -471,7 +471,7 @@ assassinate = {
 					multiplier = 3
 				}
 				modifier = {
-					add = scope:target_1.location.title_province.fort_level
+					add = scope:target_1.location.county.fort_level
 					factor = 1.5
 				}
 				
@@ -565,7 +565,7 @@ assassinate = {
 						multiplier = 3
 					}
 					modifier = {
-						add = scope:target_1.location.title_province.fort_level
+						add = scope:target_1.location.county.fort_level
 						factor = 1.5
 					}
 					
