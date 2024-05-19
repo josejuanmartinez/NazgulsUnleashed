@@ -1524,7 +1524,7 @@ evil.0723 = {
 					send_interface_toast = {						
 						type = event_generic_neutral_text
 						title = sorcery_quarterly_events_effect.0723.rumour.t
-						desc = sorcery_quarterly_events_effect.0722.rumour.desc
+						desc = sorcery_quarterly_events_effect.0723.rumour.desc
 						left_icon = root
 					}
 
@@ -2838,46 +2838,46 @@ evil.1723 = {
     }
 	option = {
 		name =  evil.0023.darkness.a
+
+		hidden_effect = { every_ruler = {
+			limit = {
+				NOT = {
+					this = root
+				}
+			}
+			
+			random_list = {
+				10 = { 
+					modifier = {
+						add = cp:councillor_court_chaplain.learning
+						exists = cp:councillor_court_chaplain
+					}
+					send_interface_toast = {
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1723.revealed_secret.success.t
+						left_icon = root
+						desc = sorcery_quarterly_events_effect.1723.revealed_secret.success.desc
+					}
+				}
+				10 = { 
+					modifier = {
+						add = intrigue
+					}
+
+					send_interface_toast = {						
+						type = event_generic_neutral_text
+						title = sorcery_quarterly_events_effect.1723.rumour.t
+						desc = sorcery_quarterly_events_effect.1723.rumour.desc
+						left_icon = root
+					}
+
+				}
+				50 = { 
+
+				}
+			}
+		} }	
 	}
-
-	hidden_effect = { every_ruler = {
-		limit = {
-			NOT = {
-				this = root
-			}
-		}
-		
-		random_list = {
-			10 = { 
-				modifier = {
-					add = cp:councillor_court_chaplain.learning
-					exists = cp:councillor_court_chaplain
-				}
-				send_interface_toast = {
-					type = event_generic_neutral_text
-					title = sorcery_quarterly_events_effect.1723.revealed_secret.success.t
-					left_icon = root
-					desc = sorcery_quarterly_events_effect.1723.revealed_secret.success.desc
-				}
-			}
-			10 = { 
-				modifier = {
-					add = intrigue
-				}
-
-				send_interface_toast = {						
-					type = event_generic_neutral_text
-					title = sorcery_quarterly_events_effect.1723.rumour.t
-					desc = sorcery_quarterly_events_effect.1723.rumour.desc
-					left_icon = root
-				}
-
-			}
-			50 = { 
-
-			}
-		}
-	} }
 }
 
 # Critical success

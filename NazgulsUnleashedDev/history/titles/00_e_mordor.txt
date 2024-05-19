@@ -222,12 +222,10 @@ c_dath_nethryn = {
 	6838.1.1 = {							
 		holder = weakorc9
 		change_development_level = 3
-        liege=e_mordor
-	}   						
-    6975.1.1 = {
-	    holder = nazgul8
-	    change_development_level = 12
-    }
+	}
+	7000.1.1 = {		
+		liege = e_mordor
+	}
 }
 
 

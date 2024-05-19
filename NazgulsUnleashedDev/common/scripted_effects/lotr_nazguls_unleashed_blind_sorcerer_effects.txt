@@ -1,4 +1,4 @@
-blind_sorcerer_quarterly_events_effect = {
+sorcery_quarterly_events_effect = {
 	if = {
 		limit = {
 			is_sorcerer = yes
@@ -98,7 +98,10 @@ blind_sorcerer_quarterly_events_effect = {
 			}
 		}
 	}
-	else = {
+	else_if = {
+		limit = {
+			root = character:nazgul5
+		}
 		random_courtier = {
 			limit = {
 				is_sorcerer = yes
@@ -177,7 +180,7 @@ blind_sorcerer_quarterly_events_effect = {
 				0 = { 
 					modifier = {
 						add = 4
-						root = character:nazgul8 # Ren
+						liege = character:nazgul8 # Ren
 					}
 					ai_cast_cracks_of_the_earth = yes
 				}
@@ -185,7 +188,7 @@ blind_sorcerer_quarterly_events_effect = {
 					modifier = {
 						add = 4
 						AND = {
-							root = character:nazgul6 # Hoarmurath
+							liege = character:nazgul6 # Hoarmurath
 							is_at_war = yes
 						}
 					}
@@ -236,7 +239,7 @@ ai_cast_call_the_horde = {
 	
 	random_list = {
 		50 = {	# Failure		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -244,7 +247,7 @@ ai_cast_call_the_horde = {
 			}
 		}
 		50 = {	# success		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0123
@@ -505,7 +508,7 @@ ai_cast_mark_of_war = {
 			
 	random_list = {
 		50 = {	# Failure		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -513,7 +516,7 @@ ai_cast_mark_of_war = {
 			}
 		}
 		50 = {	# success		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0223
@@ -576,29 +579,27 @@ ai_cast_assemble_the_warchiefs = {
 	if = { limit = { has_trait = sorcerer_2 }  set_variable = {name = high_mod value = 15} }
 	if = { limit = { has_trait = sorcerer_3 }  set_variable = {name = high_mod value = 30} }
 
-	flag:home = {
-		random_list = {
-			50 = {	# Failure			
-				modifier = {add = var:low_mod}
-				desc = evil.0022.a
-				trigger_event = {
-					id = evil.0122
-					days = { 15 30 }
-				}
+	random_list = {
+		50 = {	# Failure			
+			# modifier = {add = var:low_mod}
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 15 30 }
 			}
-			50 = {	# Success			
-				modifier = {add = var:high_mod}
-				desc = evil.0023.a
-				hidden_effect = {
-					create_knight = yes
-					create_knight = yes
-					create_knight = yes
-				}
-				custom_tooltip = assemble_the_warchiefs.success
-				trigger_event = {
-					id = evil.0323
-					days = { 15 30 }
-				}
+		}
+		50 = {	# Success			
+			# modifier = {add = var:high_mod}
+			desc = evil.0023.a
+			hidden_effect = {
+				create_knight = yes
+				create_knight = yes
+				create_knight = yes
+			}
+			custom_tooltip = assemble_the_warchiefs.success
+			trigger_event = {
+				id = evil.0323
+				days = { 15 30 }
 			}
 		}
 	}
@@ -634,7 +635,7 @@ ai_cast_rise_the_dead = {
 	random_list = {
 		50 = {	# Failure
 		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -643,7 +644,7 @@ ai_cast_rise_the_dead = {
 		}
 		50 = {	# Success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0423
@@ -701,7 +702,7 @@ ai_cast_invoke_watchers = {
 		
 	random_list = {
 		50 = {	# Failure		
-			modifier = {add = var:low_mod}							
+			# modifier = {add = var:low_mod}							
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -710,7 +711,7 @@ ai_cast_invoke_watchers = {
 		}
 		50 = {	# success
 		
-			modifier = {add = var:high_mod}				
+			# modifier = {add = var:high_mod}				
 			desc = evil.0023.a
 			root.location = {
 				add_province_modifier = {
@@ -754,7 +755,7 @@ ai_cast_summon_being_of_darkness = {
 	random_list = {
 		50 = {	# Failure
 		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -763,7 +764,7 @@ ai_cast_summon_being_of_darkness = {
 		}
 		50 = {	# success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0623
@@ -809,7 +810,7 @@ ai_cast_words_of_power = {
 	random_list = {
 		50 = {	 #Failure
 			
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -818,7 +819,7 @@ ai_cast_words_of_power = {
 		}
 		50 = {	 #success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0923
@@ -901,7 +902,7 @@ ai_cast_forge_morgul_weapons = {
 	random_list = {
 		50 = {	# Failure
 		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -910,7 +911,7 @@ ai_cast_forge_morgul_weapons = {
 		}
 		50 = {	# Success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1023
@@ -952,7 +953,7 @@ ai_cast_purse_them_relentlessly = {
 	random_list = {
 		50 = {	# Failure
 		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -961,7 +962,7 @@ ai_cast_purse_them_relentlessly = {
 		}
 		50 = {	# success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1123
@@ -1003,7 +1004,7 @@ ai_cast_black_breath = {
 	random_list = {
 		50 = {	# Failure
 		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1012,7 +1013,7 @@ ai_cast_black_breath = {
 		}
 		50 = {	# Success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1223
@@ -1098,7 +1099,7 @@ ai_cast_nazgul_restoration = {
 	random_list = {
 		50 = {	# Failure
 		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1107,7 +1108,7 @@ ai_cast_nazgul_restoration = {
 		}
 		50 = {	# success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1323
@@ -1147,29 +1148,27 @@ ai_cast_ambassador_of_darkness = {
 			years = 5
 		}
 	}
-	flag:home = {
-		random_list = {
-			50 = {	# Failure
-			
-				modifier = {add = var:low_mod}
-				desc = evil.0022.a
-				trigger_event = {
-					id = evil.0122
-					days = { 10 30 }
-				}
+	random_list = {
+		50 = {	# Failure
+		
+			# modifier = {add = var:low_mod}
+			desc = evil.0022.a
+			trigger_event = {
+				id = evil.0122
+				days = { 10 30 }
 			}
-			50 = {	# success
-			
-				modifier = {add = var:high_mod}
-				desc = evil.0023.a
-				trigger_event = {
-					id = evil.1423
-					days = { 10 30 }
-				}
-				add_character_modifier = {
-					modifier = ambassador_of_darkness_modifier
-					years = 5
-				}
+		}
+		50 = {	# success
+		
+			# modifier = {add = var:high_mod}
+			desc = evil.0023.a
+			trigger_event = {
+				id = evil.1423
+				days = { 10 30 }
+			}
+			add_character_modifier = {
+				modifier = ambassador_of_darkness_modifier
+				years = 5
 			}
 		}
 	}
@@ -1202,7 +1201,7 @@ ai_cast_shapeshifting = {
 	}
 	random_list = {
 		50 = {	# Failure
-			modifier = {add = var:low_mod}			
+			# modifier = {add = var:low_mod}			
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1211,7 +1210,7 @@ ai_cast_shapeshifting = {
 		}
 		50 = {	# success
 		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1523
@@ -1252,7 +1251,7 @@ ai_cast_reveal_the_secrets = {
 	}
 	random_list = {
 		50 = {	# Failure
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1260,7 +1259,7 @@ ai_cast_reveal_the_secrets = {
 			}
 		}
 		50 = {	# success		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1623
@@ -1323,7 +1322,7 @@ ai_cast_the_darkness = {
 	}
 	random_list = {
 		50 = {	# Failure
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1331,7 +1330,7 @@ ai_cast_the_darkness = {
 			}
 		}
 		50 = {	# success			
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1723
@@ -1391,7 +1390,7 @@ ai_cast_the_plague = {
 	}
 	random_list = {
 		50 = {	# Failure			
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1399,7 +1398,7 @@ ai_cast_the_plague = {
 			}
 		}
 		50 = {	# Success
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1923
@@ -1512,7 +1511,7 @@ ai_cast_cracks_of_the_earth = {
 	}
 	random_list = {
 		50 = {	 #Failure		
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1520,7 +1519,7 @@ ai_cast_cracks_of_the_earth = {
 			}
 		}
 		50 = {	 #success		
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.0723
@@ -1581,7 +1580,7 @@ ai_cast_abnormal_winter = {
 	}
 	random_list = {
 		50 = {	# Failure
-			modifier = {add = var:low_mod}
+			# modifier = {add = var:low_mod}
 			desc = evil.0022.a
 			trigger_event = {
 				id = evil.0122
@@ -1589,7 +1588,7 @@ ai_cast_abnormal_winter = {
 			}
 		}
 		50 = {	# Success
-			modifier = {add = var:high_mod}
+			# modifier = {add = var:high_mod}
 			desc = evil.0023.a
 			trigger_event = {
 				id = evil.1823
@@ -1636,7 +1635,7 @@ ai_cast_abnormal_winter = {
 						NOT = {
 							has_county_modifier = abnormal_winter_modifier
 						}
-						NOT = {	any_character_artifact = { has_variable = elven_ring } }
+						NOT = {	holder.top_liege = { any_character_artifact = { has_variable = elven_ring } } }
 						holder = {
 							is_at_war_with = root
 						}

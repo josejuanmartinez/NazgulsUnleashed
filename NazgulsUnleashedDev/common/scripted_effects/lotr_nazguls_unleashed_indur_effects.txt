@@ -203,6 +203,7 @@ steal_gold = {
 steal_artifact = {
 	random_artifact = {
 		limit = {
+			has_variable = elven_ring
 			artifact_owner = {
 				NOR = {
 					culture = root.location.culture
@@ -212,15 +213,11 @@ steal_artifact = {
 					faith = root.faith
 					top_liege = root.top_liege
 					is_wastelands = yes
-					AND = {
-						artifact_owner = { 
-							is_nazgul = yes
-						}
-						is_nazgul = yes
-					}
+					is_nazgul = yes
+					is_maiar = yes
 				}
 			}
-		}					
+		}
 		save_scope_as = artifact_1
 	}
 

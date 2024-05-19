@@ -759,3 +759,10 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 		}
 	}
 }
+
+mouthofsauron = {
+	
+	7030.1.1 = {
+		give_council_position = councillor_chancellor
+	}
+}

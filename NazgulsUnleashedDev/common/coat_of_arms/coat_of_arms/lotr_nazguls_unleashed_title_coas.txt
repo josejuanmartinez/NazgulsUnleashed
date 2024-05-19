@@ -13,8 +13,8 @@ k_obamarl = {
 	color1 = black
 	colored_emblem = {
 		color1 = rgb { 200 82 49 }
-		texture = "ce_rhovanion_02.dds"
-		instance = { position = { 0.5 0.43 } scale = { 1 1 } }
+		texture = "ce_horse_01.dds"
+		instance = { position = { 0.5 0.43 } scale = { 0.8 0.8 } }
 	}
 }
 
