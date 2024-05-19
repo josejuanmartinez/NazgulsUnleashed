@@ -108,6 +108,23 @@ nazguls_unleashed.0006 = { # Hoarmurath
 	
 	option = { 
 		name = nazguls_unleashed.0006.a
+		hidden_effect = {
+			root.cp:councillor_chancellor = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_court_chaplain = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_marshal = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_steward = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_spymaster = {			
+				add_martial_skill = 5			
+			}
+		}
 	}
 }
 
@@ -131,6 +148,23 @@ nazguls_unleashed.0008 = { # Ren
 	
 	option = { 
 		name = nazguls_unleashed.0008.a
+		hidden_effect = {
+			root.cp:councillor_chancellor = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_court_chaplain = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_marshal = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_steward = {
+				add_martial_skill = 5			
+			}
+			root.cp:councillor_spymaster = {			
+				add_martial_skill = 5			
+			}
+		}
 	}
 }
 

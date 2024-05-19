@@ -196,10 +196,7 @@ nazgul2 = { # Khamûl, once High-King of Wômawas Drûs, mightiest of the great 
 			add_dread = 100
 		}
 	}
-
-	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-		death = { death_reason = death_nazgul }
-	}
+	
 }
 
 # Adunaphel
@@ -338,9 +335,7 @@ goldenking1 = {
 		}
 	}
 
-	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-		death = { death_reason = death_nazgul }
-	}
+	
 }
 
 nazgul6 = { # Hoarmurath. The Sixth Nazgul  
@@ -406,9 +401,7 @@ nazgul6 = { # Hoarmurath. The Sixth Nazgul
 		}		
 	}
 
-	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-		death = { death_reason = death_nazgul }
-	}
+	
 }
 
 nazgul7 = { # Dendra-Dwâr, Dwâr of Waw. The Seventh Nazgul
@@ -465,9 +458,7 @@ nazgul7 = { # Dendra-Dwâr, Dwâr of Waw. The Seventh Nazgul
 		}		
 	}
 
-	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-		death = { death_reason = death_battle }
-	}
+	
 }
 
 nazgul8 = { # Rên-Iey of Khey Sârt. The Eigth Nazgul
@@ -480,8 +471,8 @@ nazgul8 = { # Rên-Iey of Khey Sârt. The Eigth Nazgul
 	trait = education_martial_4
 	trait = sorcerer_1
 	trait = ambitious
-	trait = zealous
-	trait = brave
+	trait = paranoid
+	trait = wrathful
 	trait = holy_warrior
 
 	disallow_random_traits = yes
@@ -524,9 +515,7 @@ nazgul8 = { # Rên-Iey of Khey Sârt. The Eigth Nazgul
 		}		
 	}
 
-	7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-		death = { death_reason = death_nazgul }
-	}
+	
 }
 
 
@@ -587,10 +576,6 @@ nazgul4 = { # Yí Indûr, The Second Unifier of Mûmakan. The Fourth Nazgul
 	7029.1.1 = {
 		give_council_position = councillor_spymaster
 	}
-
-	#7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-	#	death = { death_reason = death_nazgul }
-	#}
 }
 
 nazgul5 = {
@@ -675,9 +660,6 @@ nazgul5 = {
 		give_council_position = councillor_court_chaplain
 	}
 
-	# 7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-	# 	death = { death_reason = death_nazgul }
-	# }
 }
 
 nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
@@ -776,8 +758,4 @@ nazgul9 = { # Ûvatha/Ôvatha I of Khand. The Ninth Nazgul
 			}
 		}
 	}
-
-	# 7052.1.1 = { # Passes out of Ea with the destruction of the One Ring
-	# 	death = { death_reason = death_nazgul }
-	# }
 }

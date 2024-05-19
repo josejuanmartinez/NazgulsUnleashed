@@ -3652,6 +3652,31 @@
 					boy = male
 					girl = female
 				}
+
+				
+				ren_unique_headgear = {					
+					index = 202
+					male = {
+						1 = male_headgear_ren_01
+					}
+					female = {
+						1 = male_headgear_ren_01
+					}
+					boy = male
+					girl = female
+				}
+
+				hoarmurath_unique_headgear = {					
+					index = 203
+					male = {
+						1 = male_headgear_hoarmurath_01
+					}
+					female = {
+						1 = male_headgear_hoarmurath_01
+					}
+					boy = male
+					girl = female
+				}
 				
 		}
 

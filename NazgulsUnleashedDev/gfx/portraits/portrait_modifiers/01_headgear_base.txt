@@ -5586,6 +5586,46 @@ headgear = {
 		}
 	}
 
+	ren = {
+		usage = game
+		dna_modifiers = {
+			accessory = {
+				mode = add		
+				gene = headgear
+				template = ren_unique_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				exists = character:nazgul8 #Ren
+				this = character:nazgul8 #Ren
+			}
+		}
+	}
+
+	hoarmurath = {
+		usage = game
+		dna_modifiers = {
+			accessory = {
+				mode = add		
+				gene = headgear
+				template = hoarmurath_unique_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				exists = character:nazgul6 #Hoarmurath
+				this = character:nazgul6 #Hoarmurath
+			}
+		}
+	}
+
 	## Sauron ##
 
 	sauron = {
